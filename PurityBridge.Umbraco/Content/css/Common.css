@@ -1,0 +1,382 @@
+html, body {
+    background: none repeat scroll 0 0 rgba(0, 0, 255, 0.03);
+}
+
+.page-boxed {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    max-width: 1080px;
+}
+
+.quick-search fieldset {
+    width: 1011px;
+    z-index: 15;
+}
+
+.page-header.main-page:after {
+    margin-right: -528px;
+    position: fixed;
+    top: 92px;
+}
+
+.page-header {
+    height: 90px;
+    z-index: 17;
+}
+
+.page .divWhite {
+    background: none repeat scroll 0 0 #ffffff;
+    border-bottom: 3px solid buttonface;
+    height: 90px;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    visibility: visible;
+    z-index: 16;
+}
+
+.page-boxed .divWhite {
+    min-width: 1080px;
+}
+
+.page .quick-search-form {
+    border-bottom: 3px solid buttonface;
+    height: 90px;
+    min-width: 100%;
+    position: fixed;
+    visibility: visible;
+    z-index: 15;
+}
+
+.page-boxed .quick-search-form {
+    min-width: 1080px;
+}
+
+.logo {
+    margin-left: -44188px;
+    position: fixed;
+}
+
+.quick-search {
+    margin-top: 0px;
+    position: relative;
+    transition: margin 0.3s ease 0s;
+}
+
+.tuner {
+    top: 93px;
+}
+
+.h1 {
+    font-size: 22px;
+    padding: 0 0 18px;
+}
+
+.h2 {
+    font-size: 16px;
+    padding: 0 0 20px 13px;
+}
+
+.h3, .h4, .h5, .h6 {
+    font-size: 14px;
+}
+
+.p {
+    line-height: 20px;
+    padding: 0 0 20px;
+}
+
+p {
+    text-indent: 0;
+}
+
+.services .main {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.services li {
+    min-height: 170px;
+    padding-bottom: 0;
+}
+
+.page-boxed .services li {
+    width: 454px;
+}
+
+.main {
+    font-size: 24px;
+    font-weight: normal;
+    height: auto !important;
+    margin: -30px 0 30px;
+    width: 100% !important;
+}
+
+.services h2 {
+    margin: 0 0 20px 13px;
+    padding-left: 10px;
+}
+
+.services p {
+    margin: 0 0 20px;
+}
+
+.page-boxed .benefits {
+    margin-top: -120px;
+}
+
+.page-boxed .grid-row {
+    width: 988px;
+}
+
+.page-boxed .benefits .pic {
+    height: 100px;
+}
+
+.page-content {
+    padding-bottom: 0;
+}
+
+.page-boxed .grid-col-3 {
+    width: 226px;
+}
+
+.page-boxed .grid-col-6 {
+    width: 475px;
+}
+
+.page-boxed .work-time dt:after {
+    display: none;
+}
+
+.page-boxed .work-time dt:after {
+    width: 10px;
+}
+
+.page-boxed .work-time dt:after {
+    background: none repeat scroll 0 0 #213540;
+    content: "";
+    height: 1px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 29px;
+}
+
+.page-boxed .work-time dt {
+    float: none;
+    margin-bottom: -21px;
+    text-align: left;
+}
+
+.page-boxed .work-time dt {
+    padding: 0 30px 0 20px;
+}
+
+.page-boxed .work-time dd {
+    font-weight: 300;
+    padding-left: 20px;
+}
+
+.quick-search input, .quick-search select {
+    margin: 30px 0 0 18px;
+    width: 212px;
+}
+
+.page-boxed .page-footer {
+    padding: 30px 0 1px;
+}
+
+    .page-boxed .page-footer .grid-row {
+        margin: 0 auto 20px;
+        width: 1010px;
+    }
+
+img.ls-preloaded {
+    height: 674px !important;
+    width: 1903px !important;
+}
+
+.one-col {
+    width: 336px !important;
+}
+
+.two-cols {
+    width: 545px !important;
+}
+
+.three-cols {
+    width: inherit !important;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .center-block > img {
+        height: inherit !important;
+        width: 100% !important;
+    }
+
+.owl-carousel .item {
+    margin-top: 0;
+}
+
+.doctors .item {
+    padding: 0 15px;
+    width: 360px;
+}
+
+.owl-item {
+    width: 405px !important;
+}
+
+
+/*
+    ============================================
+        Header
+    ============================================
+*/
+
+
+.header {
+    background: none repeat scroll 0 0 #fdf9f6;
+    border: 1px solid buttonface;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transition: height 0.3s ease 0s;
+    width: 100%;
+    z-index: 10000;
+}
+
+    .header .inner {
+        margin: 0 auto;
+        max-width: 69em;
+        padding: 0 1.875em;
+        width: 90%;
+    }
+
+    .header .logo img {
+        display: inline-block;
+        height: 88px;
+        line-height: 88px;
+    }
+
+.logo, .main-nav {
+    display: inline-block;
+    position: relative;
+}
+
+.logo {
+    left: 0;
+    top: 0;
+    margin: 0;
+    float: left;
+}
+
+.main-nav {
+    float: right;
+}
+
+    .main-nav li a, .main-nav li button {
+        font-size: 1.4em;
+        line-height: 88px;
+        padding: 0px 20px;
+    }
+
+
+/*
+    ============================================
+        Header Shrink
+    ============================================
+*/
+
+
+/* Transitions and class for reduced height */
+.header.header-shrink .logo img,
+.header.header-shrink .main-nav li a,
+.header.header-shrink .main-nav li button {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.header.header-shrink,
+.header.header-shrink .logo img,
+.header.header-shrink .main-nav li a,
+.header.header-shrink .main-nav li button {
+    line-height: 44px;
+    height: 44px;
+}
+
+    .header.header-shrink .main-nav li button {
+        cursor: pointer;
+    }
+
+    .header.header-shrink .logo img {
+        height: 44px;
+    }
+
+/*
+    ============================================
+        Search Bar
+    ============================================
+*/
+
+.input-group {
+    border-collapse: separate;
+    display: table;
+    position: relative;
+    line-height: 88px;
+}
+
+.input-group-addon:last-child {
+    border-left: 0 none;
+}
+
+nav .input-group-addon:last-child {
+    margin-top: -4px;
+    padding: 11px;
+}
+
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child), .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.input-group-addon {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+nav input[type="text"] {
+    width: 130px;
+}
+
+.input-group-addon, .input-group-btn {
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.input-group-addon, .input-group-btn, .input-group .form-control {
+    display: table-cell;
+}
+
+.input-group {
+    border-collapse: separate;
+}
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}

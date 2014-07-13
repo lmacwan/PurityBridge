@@ -1,0 +1,5 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "NewsAndEvents.cshtml";
+}
+@Umbraco.RenderMacro("MvcRenderAction", new {action="Index", controller="NewsAndEvents", formtoken="null"})

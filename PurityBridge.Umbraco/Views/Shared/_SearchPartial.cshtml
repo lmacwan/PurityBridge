@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- quick search -->
+<form id="quick-search" class="quick-search">
+    <fieldset>
+        <legend>Quick Search:</legend>
+
+        <input type="text" placeholder="Search by name">
+
+        <select>
+            <option value="4">Speciality</option>
+            <option value="0">Speciality 1</option>
+            <option value="1">Speciality 2</option>
+            <option value="2">Speciality 3</option>
+            <option value="3">Speciality 4</option>
+        </select>
+
+        <select>
+            <option value="0">Locations</option>
+            <option value="1">Primary Health Care</option>
+            <option value="2">Gynaecological Clinic</option>
+            <option value="3">Diagnosis With Precise</option>
+            <option value="4">Cardiac Clinic</option>
+            <option value="5">General Surgery</option>
+        </select>
+
+        <button type="submit">Search</button>
+        <div class="switcher">
+            <button id="quick-search-switcher" type="button">Make Appointment</button>
+        </div>
+    </fieldset>
+</form>
+<!--/ quick search -->

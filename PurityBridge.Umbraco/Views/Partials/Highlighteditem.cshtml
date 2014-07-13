@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<div class="grid-row">
+    @*<h1 class="main">@Parameter.Heading</h1>*@
+    <h1 class="main">Video</h1>
+    <section class="services">
+		<ul>
+			@foreach (var video in Model.Content.Children.Where("Visible"))
+			{
+				<li>
+					<div class="text">
+						@{ Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "250px", VideoId = "testVideo", VideoUrl = video.GetPropertyValue("VideoUrl").ToString(), VideoWidth = "450px" }); }
+					</div>
+				</li>
+			}
+		</ul>
+	</section>
+</div>

@@ -1,0 +1,701 @@
+.page .divColored {
+    background: none repeat scroll 0 0 rgba(133, 98, 168, 0.9);
+}
+
+.main {
+    color: rgba(133, 98, 168, 0.9);
+}
+.services h2 {
+    border-left: 8px double rgba(133, 98, 168, 0.9);
+}
+a {
+    color: #8560a8;
+}
+.button {
+    background: none repeat scroll 0 0 #8560a8;
+    border-color: #8560a8;
+}
+.button:hover {
+    color: #8560a8;
+}
+.button-disabled:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.owl-buttons div {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.owl-buttons div:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.main-nav li .active {
+    border-bottom: 5px solid #aa90c2;
+}
+.main-nav li ul {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.main-nav li:hover > a {
+    background: none repeat scroll 0 0 #8560a8;
+    border-bottom: 5px solid #8560a8;
+}
+.main-nav li li ul {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.main-nav li li ul:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.main-nav li li:hover > a {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.main-nav li li li:hover > a, .main-nav li li li > .active {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.main-nav .text .more {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.main-nav .text .more:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.mobile-main-nav a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.mobile-main-nav li li a {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.mobile-main-nav .text {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.mobile-main-nav .text .more {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.mobile-main-nav .text .more:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.quick-search {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.quick-search input, .quick-search select {
+    color: #8560a8;
+}
+.quick-search select {
+    background-image: url("../img/purple/select.png");
+}
+.quick-search input::-moz-placeholder {
+    color: #8560a8;
+}
+.quick-search button {
+    color: #8560a8;
+}
+.quick-search .switcher {
+    background: url("../img/purple/quick-search.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.page-title {
+    background-color: #8560a8;
+    border-top-color: #aa90c2;
+}
+.slider .intro h2 {
+    color: #8560a8;
+}
+.slider .intro p {
+    color: #8560a8;
+}
+.slider .intro .icon {
+    color: #8560a8;
+}
+.slider .prev, .slider .next {
+    background: none repeat scroll 0 0 #8560a8;
+    border-color: #8560a8;
+}
+.slider .prev:hover, .slider .next:hover {
+    color: #8560a8;
+}
+.benefits .pic {
+    background: none repeat scroll 0 0 rgba(133, 98, 168, 0.9);
+}
+.benefits .text {
+    background: none repeat scroll 0 0 rgba(133, 98, 168, 0.9);
+}
+.benefits .more {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.benefits .more:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.benefits li:nth-child(2n) .pic {
+    background: none repeat scroll 0 0 rgba(170, 144, 194, 0.9);
+}
+.benefits li:nth-child(2n) .text {
+    background: none repeat scroll 0 0 rgba(170, 144, 194, 0.9);
+}
+.benefits li:nth-child(2n) .more {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.benefits li:nth-child(2n) .more:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.services h2 a:hover {
+    color: #8560a8;
+}
+.services .pic, #animating-block-5 .pic, i.pic {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.services .pic:before, #animating-block-5 .pic:before, i.pic:after {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.services .more {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.services .more:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.doctors p {
+    border-color: #8560a8;
+    color: #8560a8;
+}
+.doctors .links a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.doctors .links a:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.doctors .item:hover h3, .doctors .item:hover p {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.doctors-carousel p {
+    color: #8560a8;
+}
+.doctors-carousel .item {
+    border-color: #8560a8;
+}
+.doctors-carousel .links a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.doctors-carousel .links a:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.doctors-carousel .item:hover h3, .doctors-carousel .item:hover p {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable header {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .year {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.timetable .day .cal {
+    border-left-color: #8560a8;
+    color: #8560a8;
+}
+.timetable .switcher {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.timetable .switcher a:hover {
+    color: #8560a8;
+}
+.timetable .switcher .active {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .month-view th {
+    color: #8560a8;
+}
+.timetable .month-view .title {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .month-view .title + .date {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.timetable .month-view .popup {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.timetable .month-view .popup:after {
+    border-top-color: #aa90c2;
+}
+.timetable .month-view .popup .date {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+}
+.timetable .month-view .event-container:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .week-view th {
+    color: #8560a8;
+}
+.timetable .week-view td:first-child i {
+    color: #8560a8;
+}
+.timetable .week-view .event-container:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .week-view .title {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .week-view .popup {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.timetable .week-view .popup:after {
+    border-top-color: #aa90c2;
+}
+.timetable .list-view th {
+    color: #8560a8;
+}
+.timetable .list-view td i {
+    color: #8560a8;
+}
+.timetable .list-view .event-container:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.timetable .list-view .popup {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.timetable .list-view .popup:after {
+    border-top-color: #aa90c2;
+}
+.timetable .mobile-view dt span {
+    border-bottom-color: #8560a8;
+}
+.timetable .mobile-view li i {
+    color: #8560a8;
+}
+.news h3 a:hover {
+    color: #8560a8;
+}
+.news .date {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.news .date i {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.news .date span {
+    color: #8560a8;
+}
+.news .cats .more {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.news .cats .more:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.news .links a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.news .links a:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.photo-tour h3 {
+    color: #8560a8;
+}
+.photo-tour p {
+    border-color: #8560a8;
+}
+.photo-tour .links a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.photo-tour .links a:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.photo-tour .item:hover h3, .photo-tour .item:hover p {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.comments .avatar {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.comments .avatar:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.blog-post .date {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.blog-post .date i {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.blog-post .date span {
+    color: #8560a8;
+}
+.blog-post .share a {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.wpb_text_column ul li:before {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.wpb_text_column .ul3 li:before {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 1px #8560a8 inset;
+    color: #8560a8;
+}
+.wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a:hover {
+    color: #8560a8;
+}
+.wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a:after, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a:before {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.wpb_accordion.wpb_accordion_alt .wpb_accordion_wrapper .ui-state-active a {
+    background: none repeat scroll 0 0 #8560a8;
+    color: #fff;
+}
+.wpb_accordion.wpb_accordion_alt .wpb_accordion_wrapper .ui-state-active a:hover {
+    color: #fff;
+}
+.wpb_button {
+    background: none repeat scroll 0 0 #8560a8;
+    border-color: #8560a8;
+}
+.wpb_button:hover {
+    background: none repeat scroll 0 0 #fff;
+    color: #8560a8;
+}
+.wpb_button.wpb_btn-alt {
+    color: #8560a8;
+}
+.wpb_button.wpb_btn-alt:hover {
+    background: none repeat scroll 0 0 #8560a8;
+    color: #fff;
+}
+.wpb_button.wpb_btn-arrow-right:after {
+    border-left-color: #8560a8;
+}
+.callout .title {
+    color: #8560a8;
+}
+.callout .icon {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.callout .icon:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.wpb_call_to_action {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.capitalized:first-letter {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.vc_text_separator2, .vc_text_separator3 {
+    border-bottom-color: #8560a8;
+}
+.soc-icon {
+    background: none repeat scroll 0 0 #8560a8;
+    border-color: #8560a8;
+}
+.soc-icon:hover {
+    color: #8560a8;
+}
+.soc-icon.soc-icon-alt {
+    color: #8560a8;
+}
+.soc-icon.soc-icon-alt:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.soc-icon.soc-icon-dark {
+    background: none repeat scroll 0 0 #213540;
+    color: #8560a8;
+}
+.soc-icon.soc-icon-dark:hover {
+    background: none repeat scroll 0 0 #8560a8;
+    color: #213540;
+}
+.soc-icon.soc-icon-dark.soc-icon-alt {
+    background: none repeat scroll 0 0 #8560a8;
+    color: #213540;
+}
+.soc-icon.soc-icon-dark.soc-icon-alt:hover {
+    background: none repeat scroll 0 0 #213540;
+    color: #8560a8;
+}
+.milestone .icon {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.milestone .icon:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.milestone .title {
+    color: #8560a8;
+}
+.milestone-alt .icon {
+    color: #8560a8;
+}
+.pricing-table .head {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.pricing-table .col:hover .head {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.pricing-table .col:hover .price {
+    background: none repeat scroll 0 0 #aa90c2;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+.pricing-table .col:hover .listing i {
+    color: #8560a8;
+}
+.pricing-table .col:hover .summary {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.pricing-table .head-first {
+    color: #8560a8;
+}
+.pricing-table .listing-first li:before {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.pricing-table .join button:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.vc_progress_bar .vc_single_bar .vc_bar {
+    background-color: #8560a8 !important;
+}
+.vc_progress_bar .vc_single_bar .vc_bar em {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.vc_progress_bar .vc_single_bar .vc_bar em:after {
+    border-top-color: #8560a8;
+}
+.vc_progress_bar_alt .vc_single_bar .vc_bar em {
+    color: #8560a8;
+}
+.detailed-services dt:hover {
+    color: #8560a8;
+}
+.detailed-services dt:after, .detailed-services dt:before {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.detailed-services dt i {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.detailed-services dt.opened {
+    color: #8560a8;
+}
+.detailed-services dt i:after {
+    border-left-color: #aa90c2;
+}
+.detailed-services dt:nth-child(4n+1) i {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.detailed-services dt:nth-child(4n+1) i:after {
+    border-left-color: #8560a8;
+}
+.detailed-services dd .details {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.detailed-services dd:nth-child(4n) .details {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.wpb_tabs .wpb_tabs_nav li.ui-tabs-active a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.wpb_tabs.wpb_tabs_alt .wpb_tabs_nav li a {
+    border-color: #8560a8;
+}
+.wpb_tabs.wpb_tabs_alt .wpb_tabs_nav li.ui-tabs-active a:after {
+    border-top-color: #8560a8;
+}
+.wpb_tabs.wpb_tabs_alt .wpb_tour_tabs_wrapper .wpb_tab {
+    border-color: #8560a8;
+}
+.wpb_tour .wpb_tabs_nav {
+    border-color: #8560a8;
+}
+.wpb_tour .wpb_tabs_nav li a {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.wpb_tour .wpb_tour_tabs_wrapper .wpb_tab {
+    border-color: #8560a8;
+}
+.testimonial {
+    border-color: #8560a8;
+}
+.testimonial:after, .testimonial:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.testimonial .author {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.testimonial .author:before {
+    border-top-color: #8560a8;
+}
+.wpb_toggle:hover {
+    color: #8560a8;
+}
+.wpb_toggle:after, .wpb_toggle:before {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.wpb_toggle_alt.wpb_toggle_title_active {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.wpb_toggle_alt.wpb_toggle_title_active + .wpb_toggle_content_alt {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.latest-tweets .pic {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.latest-tweets .pic:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.latest-tweets-alt .pic {
+    color: #8560a8;
+}
+.widget-title {
+    border-left-color: #8560a8;
+}
+.widget-site-search input {
+    border-color: #8560a8;
+}
+.widget-site-search .button:after {
+    border-right-color: #8560a8;
+}
+.widget-sevices i {
+    color: #8560a8;
+}
+.widget-sevices a.selected {
+    color: #8560a8;
+}
+.widget-sevices a:hover {
+    color: #8560a8;
+}
+.widget-departments dt:hover {
+    color: #8560a8;
+}
+.widget-departments dt i {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.widget-departments dt i:after {
+    border-left-color: #aa90c2;
+}
+.widget-departments dt:nth-child(4n+1) i {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-departments dt:nth-child(4n+1) i:after {
+    border-left-color: #8560a8;
+}
+.widget-appointment i, i.appointment {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.widget-appointment i:after, i.appointment:after {
+    border-left-color: #aa90c2;
+}
+.widget-appointment .row:nth-child(2n+1) i, i.appointment:nth-child(2n+1) {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-appointment .row:nth-child(2n+1) i:after, i.appointment:nth-child(2n+1):after {
+    border-left-color: #8560a8;
+}
+.widget-twitter .pic {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-twitter .pic:before {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.widget-twitter-alt .pic {
+    color: #8560a8;
+}
+.widget-archives i {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.widget-archives i:after {
+    border-left-color: #aa90c2;
+}
+.widget-archives li:nth-child(2n+1) i {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-archives li:nth-child(2n+1) i:after {
+    border-left-color: #8560a8;
+}
+.widget-archives a:hover {
+    color: #8560a8;
+}
+.widget-calendar td a:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-calendar .ui-datepicker-prev, .widget-calendar .ui-datepicker-next {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-calendar .ui-datepicker-prev:hover, .widget-calendar .ui-datepicker-next:hover {
+    background: none repeat scroll 0 0 #aa90c2;
+}
+.widget-calendar .ui-datepicker-today a {
+    color: #8560a8;
+}
+.widget-calendar .ui-datepicker-today a:after {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-tags a:hover {
+    background: none repeat scroll 0 0 #8560a8;
+    border-color: #8560a8;
+    position: relative;
+}
+.widget-contacts dt:hover {
+    color: #8560a8;
+}
+.widget-contacts dt.opened, .widget-contacts dt.opened + dd {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-contacts dt:before, .widget-contacts dt:after {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-follow a {
+    border-color: #8560a8;
+}
+.widget-follow a:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-follow i {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.widget-follow a:hover i {
+    color: #8560a8;
+}
+#block-404-substrate {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.section-headers {
+    color: #8560a8;
+}
+.page-footer {
+    color: #8560a8;
+}
+.page-footer a:hover {
+    color: #aa90c2;
+}
+.last-news .widget-icon {
+    background-image: url("../img/purple/last-news.png");
+}
+@media not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
+.last-news .widget-icon {
+    background-image: url("../img/purple/last-news@2x.png");
+    background-size: 78px 71px;
+}
+}
+.location li i {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.location nav a {
+    border: 3px solid #8560a8;
+    color: #8560a8;
+}
+.location nav a:hover {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.location .widget-icon {
+    background-image: url("../img/purple/location.png");
+}
+@media not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
+.location .widget-icon {
+    background-image: url("../img/purple/location@2x.png");
+    background-size: 67px 64px;
+}
+}
+.recent-posts .widget-icon {
+    background-image: url("../img/purple/recent-posts.png");
+}
+@media not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
+.recent-posts .widget-icon {
+    background-image: url("../img/purple/recent-posts@2x.png");
+    background-size: 64px 59px;
+}
+}
+.work-time {
+    background: none repeat scroll 0 0 #8560a8;
+}
+.work-time .widget-icon {
+    background-image: url("../img/purple/work-time.png");
+}
+@media not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
+.work-time .widget-icon {
+    background-image: url("../img/purple/work-time@2x.png");
+    background-size: 66px 66px;
+}
+}

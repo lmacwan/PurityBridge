@@ -1,0 +1,63 @@
+﻿@using System.Collections.Generic
+@model List<List<string>>
+
+<div class="grid-row">
+    <!-- benefits -->
+    <section class="benefits">
+        @if (Model != null)
+        {
+            <ul>
+                @foreach (List<string> list in Model)
+                {
+                    <li>
+                        <div class="pic"><i class="fa fa-heart"></i></div>
+                        <div class="text">
+                            <h2>The Clinic</h2>
+                            <p>The private aesthetic clinic based in the heart of Royal Tunbridge Wells.</p>
+                            <a href="#" class="more"></a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            
+            @*<ul>
+                <li>
+                    <div class="pic"><i class="fa fa-heart"></i></div>
+                    <div class="text">
+                        <h2>The Clinic</h2>
+                        <p>The private aesthetic clinic based in the heart of Royal Tunbridge Wells.</p>
+                        <a href="#" class="more"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="pic"><i class="fa fa-flask"></i></div>
+                    <div class="text">
+                        <h2>The Team</h2>
+                        <p>Cum sociis natoque penatibus et magnis dis parturient liquam montes liquam montes.</p>
+                        <a href="#" class="more"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="pic"><i class="fa fa-stethoscope"></i></div>
+                    <div class="text">
+                        <h2>The Consultants</h2>
+                        <p>Suspendisse mattis tristique libero at placerat. Nullam diam risus.</p>
+                        <a href="#" class="more"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="pic"><i class="fa fa-comments-o"></i></div>
+                    <div class="text">
+                        <h2>The Patient Journey</h2>
+                        <p>Pellentesque quam metus, venenatis quis eleifend sit amet porttitor.</p>
+                        <a href="#" class="more"></a>
+                    </div>
+                </li>
+            </ul>*@
+        }
+    </section>
+    <!--/ benefits -->
+</div>

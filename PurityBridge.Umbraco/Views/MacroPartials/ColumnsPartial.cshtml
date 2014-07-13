@@ -1,0 +1,70 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var i = 0;
+    var photoUrl = "";
+    var heading = "";
+    var text = "";
+    var videoUrl = "";
+
+    var span = Model.Content.HasValue("span") ? Model.Content.GetPropertyValue<string>("span") : "Half";
+    var inc = span.Contains("Less") ? 4
+        : span.Contains("Full") ? 12
+        : span.Contains("More") ? 8
+        : 6;
+    <div class="grid-col grid-col-@inc">
+        <section class="services">
+            @*<ul class="managed" data-cols="@ulClass">*@
+            <ul>
+                @foreach (var child in Model.Content.Children)
+                {
+                    <li class="fit">
+                        <div class="text">
+                            @{
+                    heading = child.GetPropertyValue<string>("heading");
+                    text = child.GetPropertyValue<string>("text");
+                            }
+                            @if (child.DocumentTypeAlias == "Text")
+                            {
+                                <h2>@heading</h2>
+                                <p>@text</p>
+                            }
+                            else if (child.DocumentTypeAlias == "PhotoText")
+                            {
+                                <h2>@heading</h2>
+                                photoUrl = Umbraco.TypedMedia(child.GetPropertyValue("photo")).Url;
+                                <p>
+                                    <img src="@photoUrl" alt=""/>
+                                </p>
+                                <p>
+                                    @text
+                                </p>
+                            }
+                            else if (child.DocumentTypeAlias == "Video")
+                            {
+                                <h2>@heading</h2>
+                                <p>
+                                    @{
+                                videoUrl = Umbraco.TypedMedia(child.GetPropertyValue("video")).Url;
+                                    }
+                                    <img src="@videoUrl" alt="" />
+                                </p>
+                                <p>
+                                    @text
+                                </p>
+                            }
+                            else if (child.DocumentTypeAlias == "YouTubeVideo")
+                            {
+                                <h2>@heading</h2>
+                                <p>@text</p>
+                                <p>
+                                    @Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "inherit", VideoId = child.GetPropertyValue<string>("videoId") == "" ? "youTubeVideo" + (i++) + "_" + child.Id : child.GetPropertyValue<string>("videoId"), VideoUrl = child.GetPropertyValue<string>("videoUrl"), VideoWidth = "inherit" })
+                                </p>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </section>
+    </div>   
+}

@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+<div class="grid-row">
+	@*<h1 class="main">@Parameter.Heading</h1>*@
+	<h1 class="main">Video</h1>
+	@{
+		var i = 1;	
+	}
+	<ul>
+    @foreach (var video in Model.Content.Children.Where("Visible"))
+    {
+		<li>
+			<div>
+				@Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "100%", VideoId = "testVideo" + i, VideoUrl = "https://www.youtube.com/watch?v=dasioL290jw&list=PL4FAEE104144D3B9C&index=1", VideoWidth = "100%" })
+				@{i = i + 1;}
+			</div>
+		</li>
+    }
+	</ul>
+</div>

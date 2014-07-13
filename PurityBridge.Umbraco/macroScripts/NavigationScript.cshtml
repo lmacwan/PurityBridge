@@ -1,0 +1,68 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+
+@{
+    var isHomePage = Model.Parent.Name == "home" && Model.Name == "index";
+    var headers = Model.AncestorOrSelf().Headers;
+}
+	
+@* Ensure that the Current Page has children, where the property umbracoNaviHide is not True *@
+@if (headers.Any())
+{
+    if (headers.First().Navigations.First().Children.Where("Visible").Any())
+    {
+        var hasChildren = false;
+        var relatedToName = "";
+        @* For each child page under the root node, where the property umbracoNaviHide is not True *@
+        foreach (var childPage in headers.First().Navigations.First().Children.Where("Visible"))
+        {
+            if (isHomePage && !(childPage.homepagevisible))
+            {
+                continue;
+            }
+            hasChildren = childPage.Children.Where("Visible").Any();
+			<li>
+                @if (hasChildren)
+                {
+                    <i></i>
+                }
+                @if (childPage.relatedTo == "")
+                {
+                        <a href="#" controller="#">@childPage.Name</a>
+                }
+                else
+                {
+                    relatedToName = @Library.NodeById(childPage.relatedTo).Name;
+                    <a href="/@relatedToName/index" controller="@relatedToName">@childPage.Name</a>
+                }
+	            @* if the current page has any children, where the property umbracoNaviHide is not True *@
+                @if (hasChildren)
+                {
+	                @* Call our helper to display the children *@
+                    @childPages(childPage.Children, "/" + relatedToName);
+                }
+            </li>
+        }
+    }
+}
+	
+@helper childPages(dynamic pages, string link)
+{
+    var hasChildren1 = false;
+    <ul>
+        @foreach (var page in pages.Items)
+        {
+            hasChildren1 = page.Children.Where("Visible").Any();
+            <li>
+                <a href="@link/@page.Name/index">@page.Name</a>
+
+                @* if the current page has any children, where the property umbracoNaviHide is not True *@
+                @if (hasChildren1)
+                {                        
+                    @* Call our helper to display the children *@
+                    @childPages(page.Children, @link + "/" + @page.Name)
+                }
+            </li>
+        }
+    </ul>
+}
+

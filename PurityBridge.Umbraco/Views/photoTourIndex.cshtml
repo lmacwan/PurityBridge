@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "PhotoTour.cshtml";
+	var column = Model.Content.Children().Where(c => c.DocumentTypeAlias == "Column").FirstOrDefault();
+}
+<div class="grid-row">
+@Html.Partial("ColumnsPartial", column)
+</div>

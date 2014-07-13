@@ -1,0 +1,5 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "rightChoice.cshtml";
+}
+@Umbraco.RenderMacro("MvcRenderAction", new {action="Index", controller="TheRightChoice", formtoken="null"})

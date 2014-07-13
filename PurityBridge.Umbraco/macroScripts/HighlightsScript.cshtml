@@ -1,0 +1,25 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@if (Model.Parent.Highlights.First().HighlightItems.Where("Visible").Any())
+{
+
+    <div class="grid-row">
+        <!-- benefits -->
+        <section class="benefits">
+            <ul>
+                @* For each child page under the root node, where the property umbracoNaviHide is not True *@
+                @foreach (var childPage in Model.Parent.Highlights.First().HighlightItems.Where("Visible"))
+                {
+
+                    <li>
+                        <div class="pic"><i class="fa fa-@childPage.icon"></i></div>
+                        <div class="text">
+                            <h2>@childPage.heading</h2>
+                            <p>@childPage.description</p>
+                            <a href="/@childPage.link/index" class="more"></a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </section>
+    </div>
+}

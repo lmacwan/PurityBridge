@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+	<files><file><guid>2ea943fd-d0d9-49c5-98c8-7b2aadacad1f.dll</guid><orgPath>/bin</orgPath><orgName>Google.GData.Client.dll</orgName></file><file><guid>2f59552b-787b-4611-a52c-4261408c31be.dll</guid><orgPath>/bin</orgPath><orgName>Google.GData.Extensions.dll</orgName></file><file><guid>c9bee9c9-60ba-4cc4-8935-b291b0aabb5d.dll</guid><orgPath>/bin</orgPath><orgName>Google.GData.YouTube.dll</orgName></file><file><guid>c849a970-c896-4abb-81a4-360dd62510ef.dll</guid><orgPath>/bin</orgPath><orgName>uTube.Core.dll</orgName></file><file><guid>e11bd0ff-fdf3-44eb-b7ff-15a1078d0891.png</guid><orgPath>/css/uTube</orgPath><orgName>player-buttons.png</orgName></file><file><guid>756fedab-3945-4211-941a-93dbdfbd8c81.png</guid><orgPath>/css/uTube</orgPath><orgName>sound.png</orgName></file><file><guid>cc294e5e-9363-4c54-be68-343d4d80f779.js</guid><orgPath>/scripts/uTube</orgPath><orgName>chromeless.player.js</orgName></file><file><guid>d8d0be6e-5f4a-49ed-b7d6-46e0a339aef3.ascx</guid><orgPath>/usercontrols/uTube</orgPath><orgName>post-install.ascx</orgName></file><file><guid>719e2a59-82b2-4a08-86df-46163add0e75.xslt</guid><orgPath>/xslt/uTube</orgPath><orgName>chromeless.player.media.xslt</orgName></file><file><guid>a10f9a16-e129-49a1-a51e-d08dceec7bd1.xslt</guid><orgPath>/xslt/uTube</orgPath><orgName>chromeless.player.xslt</orgName></file></files>
+	<info>
+		<package>
+			<name>uTube</name>
+			<version>1.1</version>
+			<license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+			<url>http://our.umbraco.org/projects/website-utilities/utube</url>
+			<requirements>
+				<major>4</major>
+				<minor>6</minor>
+				<patch>1</patch>
+			</requirements>
+		</package>
+		<author>
+			<name>uTube Team</name>
+			<website>http://utube.codeplex.com/</website>
+		</author>
+		<readme><![CDATA[This package installs the following:
+[Macro] uTube Chromeless Player
+[Macro] uTube Classic Player
+[DataType] uTube Video Picker
+[DataType] uTube Video Uploader
+[Media DocumentType] YouTube Video (Upload)
+Team uTube are:
+Warren Buckley - @warrenbuckley
+Lee Kelleher - @leekelleher
+Morten Christensen - @sitereactor
+Chriztian Steinmeier - @greystate]]></readme>
+	</info>
+	<DocumentTypes />
+	<Templates />
+	<Stylesheets>
+		<Stylesheet>
+			<Name>uTube.chromeless.player</Name>
+			<FileName>uTube.chromeless.player</FileName>
+			<Content>
+				<![CDATA[.youTubePlayer 
+{
+    
+    background-color:#000;
+    color:#fff;
+    position:relative;
+    
+    -moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+    -o-box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.youTubePlayer object 
+{
+    border:1px solid #FFFFFF;
+    outline:1px solid #AAAAAA;
+}
+
+.youTubePlayer .controlDiv
+{
+    background:url(uTube/player-buttons.png) no-repeat 0 0;
+    cursor:pointer; 
+    display:none;
+    left:50%;
+    height:110px;
+    margin:-55px 0 0 -55px;     /* Half of width & height for negative top & negative left margin - to center correctly */
+    position:absolute;
+    top:50%; 
+    width:110px;
+}
+
+.progressBar
+{
+    background-color:#ccc;
+    bottom:20px;
+    cursor:pointer;
+    display:none;
+    height:10px;
+    left:30px;
+    overflow:hidden;
+    position:absolute;
+    right:105px;
+    width:auto;
+    
+    /* A light CSS3 bottom highlight */
+    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+    -o-box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.progressBar .elapsed
+{
+    background-color:#1fa2f6;
+    border-right:1px solid #49AFF0;
+    height:100%;
+    position:absolute;    
+    width:0;
+}
+
+.youTubePlayer .muteControl
+{ 
+    background:url(uTube/sound.png) no-repeat 0 0;
+    cursor:pointer;
+    display:none;
+    position:absolute;
+    width:16px;
+    height:16px;
+    bottom:17px;
+    left:10px;
+}
+
+.youTubePlayer .mute 
+{
+    background-position:0 0;
+}
+.youTubePlayer .unmute
+{
+    background-position:0 -16px;
+}
+
+
+
+/* -- Video Ready (Video ready to play) --*/
+.ready
+{
+}
+
+.ready .controlDiv
+{
+    background-position:0 0;
+    display:block;    
+}
+
+.ready .progressBar
+{
+}
+
+.ready .muteControl
+{
+}
+
+
+/*-- Video Buffering -- */
+.buffering
+{
+}
+
+.buffering .controlDiv
+{
+}
+
+.buffering .progressBar
+{
+}
+
+.buffering .muteControl
+{
+}
+
+
+/*-- Video Playing --*/
+.playing
+{
+}
+
+.playing .controlDiv
+{
+}
+
+.playing:hover .controlDiv
+{
+    background-position:0 -110px;
+    display:block;
+}
+
+.playing .progressBar
+{
+}
+
+.playing:hover .progressBar
+{
+    display:block;
+}
+
+.playing .muteControl
+{
+}
+
+.playing:hover .muteControl
+{
+    display:block;
+}
+
+
+/*-- Video Paused --*/
+.paused
+{
+}
+
+.paused .controlDiv
+{
+    background-position:0 0;
+    display:block;
+}
+
+.paused .progressBar
+{
+    display:block;
+}
+
+.paused .muteControl
+{
+    display:block;
+}
+
+
+/* -- Video Ended --*/
+.ended
+{
+}
+
+.ended .controlDiv
+{
+    background-position:0 -220px;
+    display:block;  
+}
+
+.ended .progressBar
+{
+}
+
+.ended .muteControl
+{
+}
+]]>
+			</Content>
+		</Stylesheet>
+	</Stylesheets>
+	<Macros>
+		<macro>
+			<name>[uTube] Chromeless Player</name>
+			<alias>uTube.ChromelessPlayer</alias>
+			<scriptType>
+			</scriptType>
+			<scriptAssembly>
+			</scriptAssembly>
+			<xslt>uTube/chromeless.player.xslt</xslt>
+			<useInEditor>True</useInEditor>
+			<refreshRate>0</refreshRate>
+			<scriptingFile>
+			</scriptingFile>
+			<properties>
+				<property name="YouTube Video URL or ID" alias="uTubeVideo" show="True" propertyType="text" />
+				<property name="YouTube Video Width in pixels (eg: 320)" alias="uTubeWidth" show="True" propertyType="number" />
+				<property name="YouTube Video Height in pixels (eg: 240)" alias="uTubeHeight" show="True" propertyType="number" />
+			</properties>
+		</macro>
+		<macro>
+			<name>[uTube] Chromeless Player Media</name>
+			<alias>uTube.ChromelessPlayer.media</alias>
+			<scriptType>
+			</scriptType>
+			<scriptAssembly>
+			</scriptAssembly>
+			<xslt>uTube/chromeless.player.media.xslt</xslt>
+			<useInEditor>False</useInEditor>
+			<refreshRate>0</refreshRate>
+			<scriptingFile>
+			</scriptingFile>
+			<properties>
+				<property name="Media ID" alias="mediaID" show="True" propertyType="mediaCurrent" />
+				<property name="YouTube Video Width in pixels (eg: 320)" alias="uTubeWidth" show="True" propertyType="number" />
+				<property name="YouTube Video Height in pixels (eg: 240)" alias="uTubeHeight" show="True" propertyType="number" />
+			</properties>
+		</macro>
+		<macro>
+			<name>[uTube] Classic Player</name>
+			<alias>uTube.ClassicPlayer</alias>
+			<scriptType>uTube.Core.Controls.Player</scriptType>
+			<scriptAssembly>uTube.Core</scriptAssembly>
+			<xslt>
+			</xslt>
+			<useInEditor>True</useInEditor>
+			<refreshRate>0</refreshRate>
+			<scriptingFile>
+			</scriptingFile>
+			<properties>
+				<property name="Allow Full Screen" alias="AllowFullScreen" show="True" propertyType="bool" />
+				<property name="Video Url" alias="VideoUrl" show="True" propertyType="text" />
+				<property name="Video Width" alias="VideoWidth" show="True" propertyType="text" />
+				<property name="Video Id" alias="VideoId" show="True" propertyType="text" />
+				<property name="Aspect Ratio" alias="AspectRatio" show="True" propertyType="text" />
+				<property name="Video Height" alias="VideoHeight" show="True" propertyType="text" />
+			</properties>
+		</macro>
+	</Macros>
+	<DictionaryItems />
+	<Languages />
+	<DataTypes>
+		<DataType Name="uTube Single Video Picker" Id="2cb7b4b8-a92d-4280-906b-8ff0dda54960" Definition="c2ae2a30-86d4-43a1-b3a4-73c2d5feb409">
+			<PreValues>
+				<PreValue Id="5" Value="{&quot;EnablePreview&quot;:true,&quot;PreviewHeight&quot;:240,&quot;PreviewWidth&quot;:320,&quot;ApplicationName&quot;:null,&quot;DeveloperKey&quot;:null}" />
+			</PreValues>
+		</DataType>
+		<DataType Name="uTube Video Uploader" Id="31235fd3-d366-49c1-ab19-9d3ec5d9bec0" Definition="71f89aad-ca0e-4f00-a181-9e4381f1abe5">
+			<PreValues>
+				<PreValue Id="6" Value="{&quot;Username&quot;:&quot;teamutube@gmail.com&quot;,&quot;Password&quot;:&quot;t3amuTub3&quot;,&quot;AuthToken&quot;:null,&quot;ApplicationName&quot;:&quot;uTube&quot;,&quot;DeveloperKey&quot;:&quot;AI39si5qYIjvoCEnHLturSZhoFzb7J6OHU1yvdGBTRaHOmPLbrm5EF5-dBO7e6zPhsMMhQVgqug_rG3UWMkvodOdPEdtqdpiEQ&quot;}" />
+			</PreValues>
+		</DataType>
+	</DataTypes>
+	<control>/usercontrols/uTube/post-install.ascx</control>
+	<Actions>
+		<Action runat="install" alias="addXsltExtension" assembly="/bin/uTube.Core" type="uTube.Core.XsltExtensions.Library" extensionAlias="uTube.XSLT" />
+	</Actions>
+</umbPackage>

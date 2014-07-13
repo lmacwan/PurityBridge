@@ -1,0 +1,17 @@
+﻿@model List<IPublishedContent>
+
+@foreach (var child in Model)
+{
+    <li style="width:@itemWidth">
+        <div class="text">
+            @if (child.DocumentTypeAlias == "TextItemList")
+            {
+                @Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "inherit", VideoId = Model.GetPropertyValue<string>("id"), VideoUrl = Model.GetPropertyValue<string>("VideoUrl"), VideoWidth = "inherit" })
+            }
+            else if (child.DocumentTypeAlias == "YouTubeVideoList")
+            {
+                Html.RenderPartial("YouTubeVideosPartial", child);
+            }
+        </div>
+    </li>
+}

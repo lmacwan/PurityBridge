@@ -1,0 +1,9 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<li>
+	<div class="pic"><i class='fa fa-@{Model.GetProperty("icon");}'></i></div>
+	<div class="text">
+		<h2>@{Model.GetProperty("heading");}</h2>
+		<p>@Model.Content.GetProperty("description")</p>
+		<a href='@Model.Content.GetProperty("url")' class="more"></a>
+	</div>
+</li>

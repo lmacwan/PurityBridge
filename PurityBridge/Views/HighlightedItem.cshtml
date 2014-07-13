@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+<li>
+    <div class="pic"><i class='fa fa-@Umbraco.Field("icon")'></i></div>
+    <div class="text">
+        <h2>@Umbraco.Field("heading")</h2>
+        <p>@Umbraco.Field("description")</p>
+    	@if (Model.Ancestors().Any())
+		{ 
+			var page = Model.Ancestors().OrderBy("Level").ElementAt(0);
+			<a href='@page.Url/@Umbraco.Field("url")' class="more"></a>
+		}
+    </div>
+</li>

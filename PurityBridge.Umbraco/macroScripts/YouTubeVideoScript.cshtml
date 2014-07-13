@@ -1,0 +1,13 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+<div class="grid-row">
+    @*<h1 class="main">@Parameter.Heading</h1>*@
+    <h1 class="main">Video</h1>
+    @{
+        var i = 1;	
+	}
+    @foreach (var video in Model.YouTubeVideos.Where("Visible"))
+    {
+        Model.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "100%", VideoId = "testVideo" + i, VideoUrl = video.VideoUrl, VideoWidth = "100%" });
+        i = i + 1;
+    }
+</div>

@@ -1,0 +1,5 @@
+﻿@model IPublishedContent
+@{
+    Layout = "home.cshtml";
+    var column = Model.Children.Where(c => c.DocumentTypeAlias == "Column").FirstOrDefault();
+}

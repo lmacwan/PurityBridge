@@ -1,0 +1,291 @@
+﻿@{
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"];
+    var actionName = HttpContext.Current.Request.RequestContext.RouteData.Values["action"];
+    var isHomePage = controllerName != null && actionName != null ? controllerName.ToString().Equals("Home") && controllerName.ToString().Equals("Index") : true;
+}
+
+<div class='divWhite'></div>
+<div class='divColored'></div>
+<!-- page header -->
+<header class="page-header main-page">
+
+    <!-- logo -->
+    <section id="logo" class="logo">
+        <div>
+            <a href="/Home/Index" ><img src='/Content/img/logo.png' alt='Purity Bridge'></a>
+        </div>
+    </section>
+    <!--/ logo -->
+    <!-- main nav -->
+    <nav class="main-nav">
+        <ul>
+            <li>
+                <a href="@Url.Action("Index", "Home")" class="active"><i></i>Home</a>
+            </li>
+            @*@if (!(bool)(ViewBag.IsHomePage ?? false))*@
+	    @if (!isHomePage)
+            {
+                <li>
+                    <a href="services.html"><i></i>The Right Choice</a>
+                    <ul>
+                        <li>
+                            <a href="index-2.html" class="active">Clinic</a>
+                        </li>
+                        <li><a href="home-news.html">The team</a></li>
+                        <li><a href="wellness-home.html">The consultants</a></li>
+                        <li><a href="home-one-page.html">The patient journey</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="timetable-week.html"><i></i>Treatments</a>
+                    <ul>
+                        <li><a href="timetable-month.html">Facial</a>
+                            <ul>
+                                <li>
+                                    <a href="index-2.html" class="active">Anti-wrinkle injections</a>
+                                </li>
+                                <li><a href="home-news.html">Dermal fillers</a></li>
+                                <li><a href="wellness-home.html">Cuatomised facial peels</a></li>
+                                <li><a href="home-one-page.html">Sclerortherapy</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="timetable-week.html">Dental</a>
+                            <ul>
+                                <li>
+                                    <a href="index-2.html" class="active">Wisdom teeth removal</a>
+                                </li>
+                                <li><a href="home-one-page.html">Dental implants</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="timetable-list.html">Beauty theraphy</a>
+                            <ul>
+                                <li>
+                                    <a href="index-2.html" class="active">Advanced beauty therapy</a>
+                                </li>
+                                <li><a href="home-one-page.html">Holistic beauty therapy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="timetable-week.html">Surgey</a>
+                            <ul>
+                                <li>
+                                    <a href="index-2.html" class="active">Cosmetic surgery</a>
+                                </li>
+                                <li><a href="home-one-page.html">Oral surgery</a></li>
+                                <li><a href="home-one-page.html">Minor surgical procedures</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            }
+            <li>
+                <a href="news-default.html"><i></i>Location</a>
+            </li>
+ 	    @*@if (!(bool)(ViewBag.IsHomePage ?? false))*@
+	    @if (!isHomePage)
+            {
+                <li class="right">
+
+                    <a href="index-2.html"><i></i>News & Events</a>
+                    <ul>
+                        <li><a href="widgets.html">Various widgets</a></li>
+                        <li>
+                            <a href="#">Huge number of pages</a>
+                            <ul>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="locations.html">Locations</a></li>
+                                <li><a href="doctors.html">Our Doctors</a></li>
+                                <li><a href="full-width-page.html">Full-Width Page</a></li>
+                                <li><a href="page-with-sidebar.html">Page with Sidebar</a></li>
+                                <li><a href="page-with-double-sidebar.html">Double Sidebars Page</a></li>
+                                <li><a href="page-404.html">404 Page</a></li>
+                                <li><a href="page-pricing-table.html">Pricing tables</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="feature-unlimited-color.html">Unlimited Color Variations</a>
+                        </li>
+                        <li><a href="responsive_and_retina_ready.html">Retina Ready & Responsive</a></li>
+                        <li><a href="features-accordion.html">Styled Content Items</a></li>
+                    </ul>
+                </li>
+           
+                <li class="right">
+                    <a href="photo-gallery.html"><i></i>Photo Tour</a>
+                    <ul>
+                        <li>
+                            <a href="photo-four-filter.html">Four columns</a>
+                            <ul>
+                                <li><a href="photo-four-filter.html">With filter</a></li>
+                                <li><a href="photo-four.html">Without filter</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="photo-three-filter.html">Three columns</a>
+                            <ul>
+                                <li><a href="photo-three-filter.html">With filter</a></li>
+                                <li><a href="photo-three.html">Without filter</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="photo-two-filter.html">Two columns</a>
+                            <ul>
+                                <li><a href="photo-two-filter.html">With filter</a></li>
+                                <li><a href="photo-two.html">Without filter</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="photo-one.html">One column</a></li>
+                        <li><a href="photo-single.html">Single item</a></li>
+                    </ul>
+                </li>
+            }
+            <li>
+                <a href="contacts.html"><i></i>Request Apointment</a>
+            </li>
+        </ul>
+    </nav>
+    <!--/ main nav -->
+    <!-- mobile nav -->
+    <nav id="mobile-main-nav" class="mobile-main-nav">
+        <i class="fa fa-bars"></i><a href="#" class="opener">Navigation</a>
+        <ul>
+            <li>
+                <i></i><a href="index-2.html" class="active">Home</a>
+            </li>
+            <li>
+                <a href="services.html">The Right Choice</a>
+                <ul>
+                    <li>
+                        <a href="index-2.html" class="active">Clinic</a>
+                    </li>
+                    <li><a href="home-news.html">The team</a></li>
+                    <li><a href="wellness-home.html">The consultants</a></li>
+                    <li><a href="home-one-page.html">The patient journey</a></li>
+                </ul>
+            </li>
+            <li>
+                <i></i><a href="timetable-week.html">Treatments</a>
+                <ul>
+                    <li><a href="timetable-month.html">Facial</a>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="index-2.html" class="active">Anti-wrinkle injections</a>
+                                    </li>
+                                    <li><a href="home-news.html">Dermal fillers</a></li>
+                                    <li><a href="wellness-home.html">Cuatomised facial peels</a></li>
+                                    <li><a href="home-one-page.html">Sclerortherapy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="timetable-week.html">Dental</a>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="index-2.html" class="active">Wisdom teeth removal</a>
+                                    </li>
+                                    <li><a href="home-one-page.html">Dental implants</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="timetable-list.html">Beauty theraphy</a>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="index-2.html" class="active">Advanced beauty therapy</a>
+                                    </li>
+                                    <li><a href="home-one-page.html">Holistic beauty therapy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="timetable-week.html">Surgey</a>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="index-2.html" class="active">Cosmetic surgery</a>
+                                    </li>
+                                    <li><a href="home-one-page.html">Oral surgery</a></li>
+                                    <li><a href="home-one-page.html">Minor surgical procedures</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i></i><a href="news-default.html">Location</a>
+                <ul>
+                    <li><a href="news-four-columns.html">Four columns</a></li>
+                    <li><a href="news-three-columns.html">Three columns</a></li>
+                    <li><a href="news-two-columns.html">Two columns</a></li>
+                    <li><a href="news-full-width.html">Full width</a></li>
+                    <li><a href="news-blog-post.html">Blog post</a></li>
+                </ul>
+            </li>
+            <li>
+                <i></i><a href="index-2.html">News & Events</a>
+                <ul>
+                    <li><a href="widgets.html">Various widgets</a></li>
+                    <li>
+                        <i></i><a href="#">Huge number of pages</a>
+                        <ul>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                            <li><a href="full-width-page.html">Full-Width Page</a></li>
+                            <li><a href="page-with-sidebar.html">Page with Sidebar</a></li>
+                            <li><a href="page-with-double-sidebar.html">Double Sidebars Page</a></li>
+                            <li><a href="page-404.html">404 Page</a></li>
+                            <li><a href="page-pricing-table.html">Pricing tables</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="feature-unlimited-color.html">Unlimited Color Variations</a>
+                    </li>
+                    <li><a href="responsive_and_retina_ready.html">Retina Ready & Responsive</a></li>
+                    <li><a href="features-accordion.html">Styled Content Items</a></li>
+                </ul>
+            </li>
+            <li>
+                <i></i><a href="photo-gallery.html">Photo Tour</a>
+                <ul>
+                    <li>
+                        <i></i><a href="photo-four-filter.html">Four columns</a>
+                        <ul>
+                            <li><a href="photo-four-filter.html">With filter</a></li>
+                            <li><a href="photo-four.html">Without filter</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i></i><a href="photo-three-filter.html">Three columns</a>
+                        <ul>
+                            <li><a href="photo-three-filter.html">With filter</a></li>
+                            <li><a href="photo-three.html">Without filter</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i></i><a href="photo-two-filter.html">Two columns</a>
+                        <ul>
+                            <li><a href="photo-two-filter.html">With filter</a></li>
+                            <li><a href="photo-two.html">Without filter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="photo-one.html">One column</a></li>
+                    <li><a href="photo-single.html">Single item</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="contacts.html">Resqest Appointment</a>
+            </li>
+        </ul>
+    </nav>
+    <!--/ mobile nav -->
+</header>
+<!--/ page header -->

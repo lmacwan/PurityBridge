@@ -1,0 +1,112 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- metas -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content='Welcome to Purity Bridge - the private cosmetic clinic based in Tunbridge Wells. Call 01892 536 960 to make an appointment.' />
+    <meta name="keywords" content='purity bridge,Minor surgery,beauty therapy,Pacifico,Private cosmetic clinic,Tunbridge Wells,Royal Tunbridge wells,holistic,skin care,facial rejuvenation,body conturing,medical skin care,cosmetic surgery,Consultant plastic surgeon,Marc Pacifico,Mark Pacifico,advanced beauty therapists,South East clinic,BAAPS accredited,BAPRAS,Personalised skin care,TWPS,Tunbridge Wells Plastic Surgery,CQC approved,Care Quality commission,Private consulting' />
+    <meta name="author" content='Purity Bridge' />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--/ metas -->
+    <!-- styles -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/layerslider.css" rel="stylesheet" />
+    <link href="/Content/css/fullwidth/skin.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/Content/css/owl.carousel.css" rel="stylesheet" />
+    <link href="/Content/css/jquery.fancybox.css" rel="stylesheet" />
+    <link href="/Content/css/styles.css" rel="stylesheet" />
+    <link href="/Content/css/color-cyan.css" rel="stylesheet" />
+    <link href="/Content/tuner/css/styles.css" rel="stylesheet" />
+    <link href="/Content/css/Common.css" rel="stylesheet" />
+    <!--/ styles -->
+    <!--[if lt IE 9]><script src="js/html5.js")<![endif]-->
+</head>
+<body>
+    <div class="page">
+        @{ Html.RenderPartial("_HeaderPartial"); }
+
+        <div class="quick-search-form">
+            @{ Html.RenderPartial("_SearchPartial"); }
+        </div>
+        @{ Html.RenderPartial("_SliderPartial"); }
+
+        <!-- page content -->
+        <main class="page-content">
+			@*@{ Html.RenderPartial("_HighlightsPartial", false); }*@
+            @RenderBody()
+        </main>
+        <!--/ page content -->
+
+        @{ Html.RenderPartial("_FooterPartial"); }
+        <!-- copyrights -->
+        <div class="copyrights">Copyright 2013 Purity Bridge</div>
+        <!--/ copyrights -->
+    </div>
+    @RenderSection("scripts", required: false)
+    <!-- scripts -->
+    <script src="/Scripts/js/jquery.min.js"></script>
+    <script src="/Scripts/js/jquery-ui.min.js"></script>
+    <script src="/Scripts/js/jquery.migrate.min.js"></script>
+    <script src="/Scripts/js/owl.carousel.min.js"></script>
+    <script src="/Scripts/js/jquery.isotope.min.js"></script>
+    <script src="/Scripts/js/jquery.fancybox.pack.js"></script>
+    <script src="/Scripts/js/jquery.fancybox-media.js"></script>
+    <script src="/Scripts/js/jquery.flot.js"></script>
+    <script src="/Scripts/js/jquery.flot.pie.js"></script>
+    <script src="/Scripts/js/jquery.flot.categories.js"></script>
+    <script src="/Scripts/js/greensock.js"></script>
+    <script src="/Scripts/js/layerslider.transitions.js"></script>
+    <script src="/Scripts/js/layerslider.kreaturamedia.jquery.js"></script>
+    <!-- Superscrollorama -->
+    <script src="/Scripts/js/jquery.superscrollorama.js"></script>
+    <script src="/Scripts/js/TweenMax.min.js"></script>
+    <script src="/Scripts/js/TimelineMax.min.js"></script>
+    <!--/ Superscrollorama -->
+
+    <script src="/Scripts/js/jquery.ui.core.min.js"></script>
+    <script src="/Scripts/js/jquery.ui.widget.min.js"></script>
+    <script src="/Scripts/js/jquery.ui.tabs.min.js"></script>
+    <script src="/Scripts/js/jquery-ui-tabs-rotate.js"></script>
+    <script src="/Scripts/js/jquery.ui.accordion.min.js"></script>
+    <script src="/Scripts/js/jquery.tweet.js"></script>
+    <!-- EASYPIECHART -->
+    <script src="/Scripts/js/jquery.easypiechart.js"></script>
+    <!--/ EASYPIECHART -->
+    <script src="/Scripts/js/scripts.js"></script>
+    <script src="/Scripts/Common.js"></script>
+    <script src="~/scripts/classie.js"></script>
+    <script src="~/scripts/AnimatedHeader.js"></script>
+
+    <!--/ scripts -->
+
+    <!-- tuner -->
+    <script src="/Content/tuner/js/scripts.js"></script>
+    <div id="tuner" class="tuner">
+        <label>Theme Colors</label>
+        <ul class="colors">
+            <li data-color="blue" class="color-blue active"><span></span></li>
+            <li data-color="green" class="color-green"><span></span></li>
+            <li data-color="pink" class="color-pink"><span></span></li>
+            <li data-color="cyan" class="color-cyan"><span></span></li>
+            <li data-color="orange" class="color-orange"><span></span></li>
+            <li data-color="purple" class="color-purple"><span></span></li>
+        </ul>
+        <label>Layout Styles</label>
+        <ul class="layouts">
+            <li data-layout="boxed">Boxed</li>
+            <li data-layout="widescreen" class="active">Widescreen</li>
+        </ul>
+        <i id="tuner-switcher" class="fa fa-cogs"></i>
+    </div>
+    <!--/ tuner -->
+</body>
+</html>

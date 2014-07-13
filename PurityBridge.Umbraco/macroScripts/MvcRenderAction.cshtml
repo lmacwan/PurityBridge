@@ -1,0 +1,9 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@using Devotit.Umbraco.MvcBridge.Html;
+@{
+    string action = Parameter.Action;
+    string controller = Parameter.Controller;
+    string formtoken = Parameter.Formtoken;
+  
+    @Html.RenderMvcAction(action, controller, formtoken, (umbraco.MacroEngines.DynamicNode)Model, (System.Dynamic.DynamicObject)Parameter);
+}

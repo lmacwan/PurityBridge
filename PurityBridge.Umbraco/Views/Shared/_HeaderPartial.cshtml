@@ -1,0 +1,42 @@
+﻿<!-- page header -->
+@*<div class="header">*@
+<div class="main-page header">
+    <div class="inner">
+        <!-- logo -->
+        <section id="logo" class="logo">
+            <a href="/home/index">
+                <img src='/Content/img/logo.png' alt='Purity Bridge'>
+            </a>
+        </section>
+        <!--/ logo -->
+
+        <!-- main nav -->
+        <nav class="main-nav">
+            <ul>
+                @*@Umbraco.RenderTemplate("_NavigationPartial")*@
+                @Html.Partial("_NavigationPartial")
+                <li>
+                    <button><i class="fa fa-search"></i></button>
+                    <div id="search" style="display:none;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="search-text">
+                            <button class="input-group-addon"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--/ main nav -->
+        <!-- mobile nav -->
+        <nav id="mobile-main-nav" class="mobile-main-nav">
+            <i class="fa fa-bars"></i><a href="#" class="opener">Navigation</a>
+            <ul>
+                @Html.Partial("_NavigationPartial")
+            </ul>
+        </nav>
+        <!--/ mobile nav -->
+    </div>
+</div>
+<!--/ page header -->
+@*</div>*@
