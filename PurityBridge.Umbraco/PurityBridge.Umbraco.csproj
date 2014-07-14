@@ -332,6 +332,7 @@
     <Content Include="Content\css\fullwidth\skin.png" />
     <Content Include="Content\css\jquery.fancybox.css" />
     <Content Include="Content\css\layerslider.css" />
+    <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
