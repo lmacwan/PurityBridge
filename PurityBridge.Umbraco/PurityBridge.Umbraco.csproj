@@ -326,6 +326,14 @@
     <Content Include="Content\css\color-purple.css" />
     <Content Include="Content\css\Common.css" />
     <Content Include="Content\css\Common1.css" />
+    <Content Include="Content\css\demo\csshover3.htc" />
+    <Content Include="Content\css\demo\img\01.jpg" />
+    <Content Include="Content\css\demo\img\02.jpg" />
+    <Content Include="Content\css\demo\img\browsers.png" />
+    <Content Include="Content\css\demo\img\drop.gif" />
+    <Content Include="Content\css\demo\img\drop.png" />
+    <Content Include="Content\css\demo\index.html" />
+    <Content Include="Content\css\demo\menu.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\fullwidth\loading.gif" />
     <Content Include="Content\css\fullwidth\skin.css" />
@@ -501,6 +509,7 @@
     <Content Include="scripts\dummy.txt" />
     <Content Include="macroScripts\NavigationScript.cshtml" />
     <Content Include="macroScripts\YouTubeVideoScript.cshtml" />
+    <Content Include="Content\css\demo\img\Thumbs.db" />
     <None Include="Properties\PublishProfiles\PurityBridge.pubxml" />
     <None Include="scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="scripts\jquery-1.8.2.js" />
