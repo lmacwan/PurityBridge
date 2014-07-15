@@ -20,14 +20,22 @@ var cbpAnimatedHeader = (function () {
         var headerHeight = header.height();
         var sy = scrollY();
         if (sy >= changeHeaderOn) {
-            if (headerHeight >= 45 && ($('#quick-search').hasClass("quick-search-visible"))) {
-                qiuckSearchForm.css('top', headerHeight - 44);
+            if (!(header.hasClass('header-shrink'))) {
+                if ($('#quick-search').hasClass("quick-search-visible")) {
+                    qiuckSearchForm.css('top', headerHeight - 44);
+                } else {
+                    qiuckSearchForm.css('top', -44);
+                }
             }
             header.addClass('header-shrink');
         }
         else {
-            if (headerHeight <= 89 && $('#quick-search').hasClass("quick-search-visible")) {
-                qiuckSearchForm.css('top', headerHeight + 44);
+            if (header.hasClass('header-shrink')) {
+                if ($('#quick-search').hasClass("quick-search-visible")) {
+                    qiuckSearchForm.css('top', headerHeight + 44);
+                } else {
+                    qiuckSearchForm.css('top', 0);
+                }
             }
             header.removeClass('header-shrink');
         }
