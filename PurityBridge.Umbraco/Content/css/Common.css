@@ -110,7 +110,7 @@ p {
     width: 100% !important;
 }
 
-.services h2 {
+.services .text h2 {
     margin: 0 0 20px 13px;
     padding-left: 10px;
 }
@@ -384,4 +384,23 @@ html, body {
 
 .slider-wrapper {
     margin-top:90px;
+}
+/*
+    ================
+        GRID-ROW     
+    ================
+*/
+
+
+
+/*
+    ================
+        SERVICES     
+    ================
+*/
+
+.services .text.accordian h2 {
+    margin: 0px !important;
+    padding-left: 0px !important;
+    border: none !important;
 }
