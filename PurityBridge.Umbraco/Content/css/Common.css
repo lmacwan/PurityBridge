@@ -95,7 +95,7 @@ p {
 
 .services li {
     /*min-height: 170px;*/
-    padding-bottom: 0;
+    padding-bottom: 20px;
 }
 
 .page-boxed .services li {
@@ -115,8 +115,8 @@ p {
     padding-left: 10px;
 }
 
-.services p {
-    margin: 0 0 20px;
+.services .fit p {
+    margin: 0px 0px 10px 0px;
 }
 
 .page-boxed .benefits {

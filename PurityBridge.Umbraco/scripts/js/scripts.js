@@ -5,8 +5,8 @@ $(document).ready(function () {
 
     /*		$("#slider .ls-slide").attr('data-ls','transition2d:5;slidedelay:5000;');	
             $("#slider .ls-l").attr('data-ls','offsetyin:top;delayin:0;durationin:1000;');*/
-    
-$(".widget-departments dt.opened").next().slideToggle('fast');
+
+    $(".widget-departments dt.opened").next().slideToggle('fast');
     composer_include();
     milestone_counter();
     progress_bar_loader();
@@ -152,10 +152,10 @@ $(window).resize(function () {
     /**/
     /* benefits */
     /**/
-    
+
     if ($(window).width() > 767) {
-$('.benefits .text').css('padding-bottom', 51);        
-$('.benefits li').each(function () {
+        $('.benefits .text').css('padding-bottom', 51);
+        $('.benefits li').each(function () {
             if ($(this).outerHeight() < $('.benefits').outerHeight()) {
                 $(this).find('.text').css('padding-bottom', $('.benefits').outerHeight() - $(this).outerHeight() + 51);
             }
@@ -166,19 +166,18 @@ $('.benefits li').each(function () {
             }
         });
     }
+    //else if ($(window).width() > 479) {
+    //    $('.services li:nth-child(even)').each(function () {
+    //        elem = $(this);
+    //        if (elem.outerHeight() < elem.prev().outerHeight()) {
+    //            elem.find('.text').css('padding-bottom', elem.prev().outerHeight() - elem.outerHeight());
+    //        }
+    //        else if ($(this).outerHeight() > $(this).prev().outerHeight()) {
+    //            elem.prev().find('.text').css('padding-bottom', elem.outerHeight() - elem.prev().outerHeight());
+    //        }
+    //    });
+    //}
 
-    else if ($(window).width() > 479) {
-    $('.services li:nth-child(even)').each(function () {
-            elem = $(this);
-            if (elem.outerHeight() < elem.prev().outerHeight()) {
-                elem.find('.text').css('padding-bottom', elem.prev().outerHeight() - elem.outerHeight());
-            }
-            else if ($(this).outerHeight() > $(this).prev().outerHeight()) {
-                elem.prev().find('.text').css('padding-bottom', elem.outerHeight() - elem.prev().outerHeight());
-                
-            }
-        });
-}
 
     /**/
     /* doctors */
@@ -626,9 +625,9 @@ $(window).load(function () {
     /**/
     /* benefits */
     /**/
-    
+
     if ($(window).width() > 767) {
-	$('.benefits .text').css('padding-bottom', 51);
+        $('.benefits .text').css('padding-bottom', 51);
         $('.benefits li').each(function () {
             if ($(this).outerHeight() < $('.benefits').outerHeight()) {
                 $(this).find('.text').css('padding-bottom', $('.benefits').outerHeight() - $(this).outerHeight() + 51);

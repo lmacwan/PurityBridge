@@ -21,7 +21,9 @@
                         }
                         else
                         {
-                            @RenderChild(child, false)
+                            <div class="text">
+                                @RenderChild(child, false)
+                            </div>
                         }
                     </li>
                 }
@@ -70,7 +72,8 @@
 @helper RenderText(IPublishedContent text)
 {   
     var content = text.GetPropertyValue<string>("text").Trim();
-    if (content.Contains('\n'+"")) {
+    if (content.Contains('\n' + ""))
+    {
         content = content.Replace('\n' + "", "</p><p>");
     }
     content = string.Format("<p>{0}</p>", content);
