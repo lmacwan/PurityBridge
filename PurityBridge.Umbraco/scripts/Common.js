@@ -20,9 +20,9 @@ quickSearchForm.css('top', 0);
 
 $('#quick-search-switcher').unbind('click');
 $('#quick-search-switcher').on('click', function () {
-    var top = 0;
+    var top = -2;
     if ($(".header").hasClass("header-shrink")) {
-        top = -44;
+        top = -43;
     }
     if ($("#quick-search").hasClass("quick-search-visible")) {
         quickSearchForm.animate({ 'top': top });

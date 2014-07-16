@@ -24,7 +24,7 @@ var cbpAnimatedHeader = (function () {
                 if ($('#quick-search').hasClass("quick-search-visible")) {
                     qiuckSearchForm.css('top', headerHeight - 44);
                 } else {
-                    qiuckSearchForm.css('top', -44);
+                    qiuckSearchForm.css('top', -47);
                 }
             }
             header.addClass('header-shrink');
