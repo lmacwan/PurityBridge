@@ -6,22 +6,6 @@ $(document).ready(function () {
     /*		$("#slider .ls-slide").attr('data-ls','transition2d:5;slidedelay:5000;');	
             $("#slider .ls-l").attr('data-ls','offsetyin:top;delayin:0;durationin:1000;');*/
     
-
-$('.services li:nth-child(even)').each(function () {
-            elem = $(this);
-            if (elem.outerHeight() < elem.prev().outerHeight()) {
-                elem.find('.text').css('padding-bottom', elem.prev().outerHeight() - elem.outerHeight());
-            }
-            else if ($(this).outerHeight() > $(this).prev().outerHeight()) {
-                elem.prev().find('.text').css('padding-bottom', elem.outerHeight() - elem.prev().outerHeight());
-                
-            }
-        });
-
-
-
-
-
 $(".widget-departments dt.opened").next().slideToggle('fast');
     composer_include();
     milestone_counter();

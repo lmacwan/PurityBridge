@@ -94,7 +94,7 @@ p {
 }
 
 .services li {
-    min-height: 170px;
+    /*min-height: 170px;*/
     padding-bottom: 0;
 }
 

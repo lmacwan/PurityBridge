@@ -13,6 +13,10 @@ $(document).ready(function () {
     if ($(".benefits").length == 0) {
         $(".grid-row").first().css("margin-top", "60px");
     }
+
+    $(".accordian").accordion({
+        collapsible: true
+    });
 });
 
 var quickSearchForm = $('.quick-search-form');

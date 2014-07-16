@@ -1,11 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
 @{
-    var i = 0;
-    var photoUrl = "";
-    var heading = "";
-    var text = "";
-    var videoUrl = "";
 
     var span = Model.Content.HasValue("span") ? Model.Content.GetPropertyValue<string>("span") : "Half";
     var inc = span.Contains("Less") ? 4
@@ -19,52 +13,98 @@
                 @foreach (var child in Model.Content.Children)
                 {
                     <li class="fit">
-                        <div class="text">
-                            @{
-                    heading = child.GetPropertyValue<string>("heading");
-                    text = child.GetPropertyValue<string>("text");
-                            }
-                            @if (child.DocumentTypeAlias == "Text")
-                            {
-                                <h2>@heading</h2>
-                                <p>@text</p>
-                            }
-                            else if (child.DocumentTypeAlias == "PhotoText")
-                            {
-                                <h2>@heading</h2>
-                                photoUrl = Umbraco.TypedMedia(child.GetPropertyValue("photo")).Url;
-                                <p>
-                                    <img src="@photoUrl" alt=""/>
-                                </p>
-                                <p>
-                                    @text
-                                </p>
-                            }
-                            else if (child.DocumentTypeAlias == "Video")
-                            {
-                                <h2>@heading</h2>
-                                <p>
-                                    @{
-                                videoUrl = Umbraco.TypedMedia(child.GetPropertyValue("video")).Url;
-                                    }
-                                    <img src="@videoUrl" alt="" />
-                                </p>
-                                <p>
-                                    @text
-                                </p>
-                            }
-                            else if (child.DocumentTypeAlias == "YouTubeVideo")
-                            {
-                                <h2>@heading</h2>
-                                <p>@text</p>
-                                <p>
-                                    @Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "inherit", VideoId = child.GetPropertyValue<string>("videoId") == "" ? "youTubeVideo" + (i++) + "_" + child.Id : child.GetPropertyValue<string>("videoId"), VideoUrl = child.GetPropertyValue<string>("videoUrl"), VideoWidth = "inherit" })
-                                </p>
-                            }
-                        </div>
+                        @if (child.GetPropertyValue<bool>("Collapsable"))
+                        {
+                            <div class="text accordian">
+                                @RenderChild(child, true)
+                            </div>
+                        }
+                        else
+                        {
+                            @RenderChild(child, false)
+                        }
                     </li>
                 }
             </ul>
         </section>
     </div>   
+}
+
+@helper RenderChild(IPublishedContent child, bool isAccordian)
+{
+    var heading = child.GetPropertyValue<string>("heading");
+    <h2>@heading</h2>
+    
+    if (isAccordian)
+    {
+    <div>
+        @RenderContent(child)
+    </div>
+    }
+    else
+    {
+    @RenderContent(child)
+    }
+}
+
+@helper RenderContent(IPublishedContent child)
+{
+    if (child.DocumentTypeAlias == "Text")
+    {
+    @RenderText(child)
+    }
+    else if (child.DocumentTypeAlias == "PhotoText")
+    {
+    @RenderPhotoText(child)
+    }
+    else if (child.DocumentTypeAlias == "Video")
+    {
+    @RenderVideo(child)
+    }
+    else if (child.DocumentTypeAlias == "YouTubeVideo")
+    {
+    @RenderYouTubeVideo(child)
+    }
+}
+
+@helper RenderText(IPublishedContent text)
+{   
+    var content = text.GetPropertyValue<string>("text").Trim();
+    if (content.Contains('\n'+"")) {
+        content = content.Replace('\n' + "", "</p><p>");
+    }
+    content = string.Format("<p>{0}</p>", content);
+    @Html.Raw(content);
+}
+
+@helper RenderPhotoText(IPublishedContent photoText)
+{
+    var content = photoText.GetPropertyValue<string>("text");
+    var photoUrl = Umbraco.TypedMedia(photoText.GetPropertyValue("photo")).Url;
+    <p>
+        <img src="@photoUrl" alt=""/>
+    </p>
+    <p>
+        @content
+    </p>
+}
+
+@helper RenderVideo(IPublishedContent video)
+{
+    var videoUrl = Umbraco.TypedMedia(video.GetPropertyValue("video")).Url;
+    var content = video.GetPropertyValue<string>("text");
+    <p>
+        <img src="@videoUrl" alt="" />
+    </p>
+    <p>
+        @video
+    </p>
+}
+
+@helper RenderYouTubeVideo(IPublishedContent youTubeVideo)
+{
+    var content = youTubeVideo.GetPropertyValue<string>("text");
+    <p>
+        @Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "inherit", VideoId = youTubeVideo.GetPropertyValue<string>("videoId") == "" ? "youTubeVideo_" + youTubeVideo.Id : youTubeVideo.GetPropertyValue<string>("videoId"), VideoUrl = youTubeVideo.GetPropertyValue<string>("videoUrl"), VideoWidth = "inherit" })
+    </p>
 }
