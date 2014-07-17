@@ -395,9 +395,6 @@ h2 {
     width: 475px;
 }
 
-
-
-
 /*
     ================
         SLIDER     
@@ -407,7 +404,6 @@ h2 {
 .slider-wrapper {
     margin-top: 90px;
 }
-
 
 /*
     ================
@@ -457,9 +453,9 @@ h2 {
     border-bottom: 1px solid #e3e3e3;
 }
 
-
-.services .text h2 {
+.services h2 {
     padding-left: 0px;
+    margin-bottom: 0px;
 }
 
 .services .fit p {
@@ -483,13 +479,12 @@ h2 {
 
 .accordian h2 {
     font-weight: 400;
-    padding: 6px 0px 6px 10px !important;
+    padding: 6px 10px 6px 10px !important;
 }
 
 .accordian div p {
     padding: 5px 15px;
 }
-
 
     .accordian div p:last-child {
         border-bottom: none;
