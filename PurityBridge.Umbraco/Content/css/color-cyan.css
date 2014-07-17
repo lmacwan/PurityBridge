@@ -6,10 +6,6 @@
     color: rgba(0, 171, 165, 0.9);
 }
 
-.services h2 {
-    border-left: 8px double rgba(0, 171, 165, 0.9);
-}
-
 a {
     color: #00aba5;
 }
@@ -920,3 +916,32 @@ a {
         background-size: 66px 66px;
     }
 }
+
+/*
+    ================
+        GENERAL     
+    ================
+*/
+
+h2 {
+    color: rgba(0, 171, 165, 0.9);
+}
+
+/*
+    ================
+      Heading bars     
+    ================
+*/
+.services li h2.bars {
+    border-left: 8px double rgba(0, 171, 165, 0.9);
+    padding: 2px 8px;
+}
+
+/*
+    ================
+       Accordian     
+    ================
+*/
+/*.accordian h2, .accordian h3 {
+    border-color: rgba(0, 171, 165, 0.9);
+}*/

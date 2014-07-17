@@ -15,7 +15,10 @@ $(document).ready(function () {
     }
 
     $(".accordian").accordion({
-        collapsible: true
+        collapsible: true,
+        active: false,
+        icons: { "header": "fa fa-plus", "activeHeader": "fa fa-minus" },
+        heightStyle: "100%"
     });
 });
 

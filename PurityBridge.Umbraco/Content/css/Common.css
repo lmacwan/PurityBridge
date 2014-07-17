@@ -93,11 +93,6 @@ p {
     padding-bottom: 0;
 }
 
-.services li {
-    /*min-height: 170px;*/
-    padding-bottom: 20px;
-}
-
 .page-boxed .services li {
     width: 454px;
 }
@@ -108,15 +103,6 @@ p {
     height: auto !important;
     margin: -30px 0 30px;
     width: 100% !important;
-}
-
-.services .text h2 {
-    margin: 0 0 20px 13px;
-    padding-left: 10px;
-}
-
-.services .fit p {
-    margin: 0px 0px 10px 0px;
 }
 
 .page-boxed .benefits {
@@ -133,14 +119,6 @@ p {
 
 .page-content {
     padding-bottom: 0;
-}
-
-.page-boxed .grid-col-3 {
-    width: 226px;
-}
-
-.page-boxed .grid-col-6 {
-    width: 475px;
 }
 
 .page-boxed .work-time dt:after {
@@ -372,9 +350,53 @@ nav input[type="text"] {
     border-collapse: separate;
 }
 
-html, body {
+/*
+    ================
+        GENERAL     
+    ================
+*/
+
+html, body, h2, p {
     font-family: 'Open Sans', sans-serif;
+    font-size: 13px !important;
 }
+
+h2 {
+    font-weight: bold;
+}
+
+/*
+    ================
+        GRID-COLS     
+    ================
+*/
+
+.grid-col-3 {
+    width: 285px;
+}
+
+.grid-col-6 {
+    width: 570px;
+}
+
+.grid-col-8 {
+    width: 855px;
+}
+
+.grid-col-12 {
+    width: 1140px;
+}
+
+.page-boxed .grid-col-3 {
+    width: 226px;
+}
+
+.page-boxed .grid-col-6 {
+    width: 475px;
+}
+
+
+
 
 /*
     ================
@@ -383,15 +405,19 @@ html, body {
 */
 
 .slider-wrapper {
-    margin-top:90px;
+    margin-top: 90px;
 }
+
+
 /*
     ================
         GRID-ROW     
     ================
 */
 
-
+.grid-row {
+    position: relative;
+}
 
 /*
     ================
@@ -399,8 +425,76 @@ html, body {
     ================
 */
 
-.services .text.accordian h2 {
-    margin: 0px !important;
-    padding-left: 0px !important;
-    border: none !important;
+.services ul {
+    margin: 0px;
+}
+
+.services li {
+    border: none;
+    padding-bottom: 0px;
+    margin: 10px 0px;
+}
+
+/*.services .border-wrapper {
+    background: url('/Content/img/border.gif') repeat scroll 0 0;
+    width: 28px;
+    margin-top: 10px;
+    padding: 10px 25px;
+    content: " ";
+    z-index: 15;
+}
+
+.services .border {
+    border-top: solid 4px #eeeeee;
+    width: 100%;
+    margin-top: -6px;
+    padding: 1px 0px;
+    content: " ";
+    z-index: 14;
+}*/
+
+.services .seperator, .accordian p {
+    border-bottom: 1px solid #e3e3e3;
+}
+
+
+.services .text h2 {
+    padding-left: 0px;
+}
+
+.services .fit p {
+    margin: 5px 0px;
+}
+
+/*
+    ================
+        ACCORDIAN     
+    ================
+*/
+
+.accordian-container {
+    width: inherit;
+}
+
+.accordian h2, .accordian div {
+    border: 0.5px solid #eeeeee;
+    color: inherit;
+}
+
+.accordian h2 {
+    font-weight: 400;
+    padding: 6px 0px 6px 10px !important;
+}
+
+.accordian div p {
+    padding: 5px 15px;
+}
+
+
+    .accordian div p:last-child {
+        border-bottom: none;
+    }
+
+.ui-accordion-header-icon {
+    margin-right: 10px;
 }

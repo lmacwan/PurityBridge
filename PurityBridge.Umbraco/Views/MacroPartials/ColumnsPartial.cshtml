@@ -1,29 +1,46 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-
     var span = Model.Content.HasValue("span") ? Model.Content.GetPropertyValue<string>("span") : "Half";
     var inc = span.Contains("Less") ? 4
         : span.Contains("Full") ? 12
         : span.Contains("More") ? 8
         : 6;
+    var heading = "";
+    var headingBars = "";
+    var itemSeparator = "";
+    
     <div class="grid-col grid-col-@inc">
         <section class="services">
-            @*<ul class="managed" data-cols="@ulClass">*@
             <ul>
                 @foreach (var child in Model.Content.Children)
                 {
-                    <li class="fit">
-                        @if (child.GetPropertyValue<bool>("Collapsable"))
+                    heading = child.GetPropertyValue<string>("heading");
+                    headingBars = child.GetPropertyValue<bool>("HeadingBars") ? "bars" : "";
+                    itemSeparator = child.GetPropertyValue<bool>("ItemSeparator") ? "seperator" : "";
+                    
+                    <li class="fit @itemSeparator">
+                        @if (child.DocumentTypeAlias.ToLower() == "collapsible")
                         {
-                            <div class="text accordian">
-                                @RenderChild(child, true)
+                            <div class="ui-widget-content accordion-container">
+                                <h2>@heading</h2>
+                                <div class="text">
+                                    @RenderCollapsibleContent(child)
+                                </div>
                             </div>
                         }
                         else
                         {
                             <div class="text">
-                                @RenderChild(child, false)
+                                <h2  class="@headingBars">@heading</h2>
+                                @RenderContent(child);
                             </div>
+                            @*if (child.GetPropertyValue<bool>("ItemSeparator"))
+                            {
+                            <div class="border-wrapper">
+                            </div>
+                            <div class="border">
+                            </div>
+                            }*@
                         }
                     </li>
                 }
@@ -32,20 +49,18 @@
     </div>   
 }
 
-@helper RenderChild(IPublishedContent child, bool isAccordian)
+@helper RenderCollapsibleContent(IPublishedContent parent)
 {
-    var heading = child.GetPropertyValue<string>("heading");
-    <h2>@heading</h2>
-    
-    if (isAccordian)
+    var heading = "";
+    foreach (IPublishedContent child in parent.Children)
     {
-    <div>
-        @RenderContent(child)
+        heading = child.GetPropertyValue<string>("heading");
+    <div class="text accordian">
+        <h2>@heading</h2>
+        <div>
+            @RenderContent(child);
+        </div>
     </div>
-    }
-    else
-    {
-    @RenderContent(child)
     }
 }
 

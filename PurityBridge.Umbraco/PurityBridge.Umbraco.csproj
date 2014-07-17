@@ -357,6 +357,7 @@
     <Content Include="Content\img\blue\select.png" />
     <Content Include="Content\img\blue\work-time%402x.png" />
     <Content Include="Content\img\blue\work-time.png" />
+    <Content Include="Content\img\border.gif" />
     <Content Include="Content\img\cyan\location.png" />
     <Content Include="Content\img\cyan\quick-search.png" />
     <Content Include="Content\img\cyan\recent-posts.png" />

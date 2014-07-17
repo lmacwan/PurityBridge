@@ -234,3 +234,423 @@
 2014-07-17 09:56:36,717 [22] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
 2014-07-17 09:56:36,780 [22] INFO  Umbraco.Core.PluginManager - [Thread 26] Starting resolution types of umbraco.interfaces.ITree
 2014-07-17 09:56:36,780 [22] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-17 09:57:51,247 [22] INFO  umbraco.BusinessLogic.Log - [Thread 31] Log scrubbed.  Removed all items older than 2014-05-18 09:57:51
+2014-07-17 09:57:51,248 [22] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 31] Application shutdown. Reason: ConfigurationChange
+2014-07-17 09:58:13,622 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Determining hash of code files on disk
+2014-07-17 09:58:13,638 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Hash determined (took 7ms)
+2014-07-17 09:58:13,647 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-17 09:58:13,672 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 22ms)
+2014-07-17 09:58:13,769 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-17 09:58:13,770 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-17 09:58:13,770 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-17 09:58:13,771 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-17 09:58:13,792 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-17 09:58:13,793 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-17 09:58:13,793 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-17 09:58:13,795 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-17 09:58:13,799 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-17 09:58:13,799 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-17 09:58:13,799 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-17 09:58:13,800 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-17 09:58:14,653 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-17 09:58:14,653 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-17 09:58:14,711 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-17 09:58:14,711 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-17 09:58:14,724 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.ITree
+2014-07-17 09:58:14,725 [25] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-17 09:58:14,738 [25] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 16] Initializing Examine and binding to business logic events
+2014-07-17 09:58:14,932 [25] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 16] Adding examine event handlers for index providers: 3
+2014-07-17 09:58:40,350 [25] INFO  Umbraco.Core.PluginManager - [Thread 27] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-17 09:58:40,350 [25] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-07-17 09:58:46,847 [25] INFO  umbraco.content - [Thread 32] Loading content from disk cache...
+2014-07-17 09:58:46,929 [25] INFO  Umbraco.Core.PluginManager - [Thread 32] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-17 09:58:46,930 [25] INFO  Umbraco.Core.PluginManager - [Thread 32] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-17 09:58:53,468 [25] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+2014-07-17 09:58:53,469 [25] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 0ms)
+2014-07-17 10:10:28,694 [25] INFO  Umbraco.Web.Security.WebSecurity - [Thread 10] User Id: 0 logged in
+2014-07-17 10:13:51,107 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 10] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-17 10:13:51,239 [25] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-07-17 10:13:51,240 [25] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 1ms)
+2014-07-17 10:13:51,803 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 27] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 10:14:48,956 [25] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of umbraco.interfaces.ITree
+2014-07-17 10:14:48,956 [25] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-17 10:43:15,861 [25] INFO  Umbraco.Web.Security.WebSecurity - [Thread 12] User Id: 0 logged in
+2014-07-17 10:43:38,533 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 19] Content 'Botox' with Id '1394' has been published.
+2014-07-17 10:43:38,628 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 8] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 10:43:41,753 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 7] Content 'Procedure' with Id '1395' has been published.
+2014-07-17 10:43:41,809 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 28] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 10:43:44,571 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 6] Content 'Benefits' with Id '1396' has been published.
+2014-07-17 10:43:44,626 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 15] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 10:43:50,222 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 23] Content 'Duration' with Id '1397' has been published.
+2014-07-17 10:43:50,285 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 7] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 10:43:53,481 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 7] Content 'Recovery Period' with Id '1398' has been published.
+2014-07-17 10:43:53,537 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 8] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 10:43:57,627 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 17] Content 'Considerations' with Id '1399' has been published.
+2014-07-17 10:43:57,695 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 19] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:22:37,433 [25] INFO  Umbraco.Web.Security.WebSecurity - [Thread 61] User Id: 0 logged in
+2014-07-17 12:32:46,141 [25] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-17 12:32:46,142 [25] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-17 12:40:13,158 [25] INFO  Umbraco.Core.PluginManager - [Thread 14] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-17 12:40:13,158 [25] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-17 12:41:53,191 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 30] Content 'FAQ' with Id '0' has been published.
+2014-07-17 12:41:53,282 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 40] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:42:18,451 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 41] Content 'Duration' with Id '1397' has been published.
+2014-07-17 12:42:18,512 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 31] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:42:36,791 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 22] Content 'Recovery Period' with Id '1398' has been published.
+2014-07-17 12:42:36,851 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 14] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:43:14,206 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 61] Content 'Considerations' with Id '1399' has been published.
+2014-07-17 12:43:14,271 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 62] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:49:34,635 [25] INFO  umbraco.content - [Thread 18] Loading content from database...
+2014-07-17 12:54:55,797 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 30] Content 'Left Column' with Id '1382' has been published.
+2014-07-17 12:54:55,835 [25] INFO  Umbraco.Core.Services.ContentService - [Thread 30] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-17 12:54:55,839 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 11] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:55:02,137 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 14] Content 'Right Column' with Id '1383' has been published.
+2014-07-17 12:55:02,178 [25] INFO  Umbraco.Core.Services.ContentService - [Thread 14] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-17 12:55:02,181 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 22] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:55:17,259 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 10] Content 'Description Column' with Id '1393' has been published.
+2014-07-17 12:55:17,295 [25] INFO  Umbraco.Core.Services.ContentService - [Thread 10] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-17 12:55:17,298 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 41] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 12:55:48,240 [25] INFO  umbraco.content - [Thread 33] Loading content from database...
+2014-07-17 12:56:12,732 [25] INFO  umbraco.content - [Thread 14] Loading content from database...
+2014-07-17 12:56:23,206 [25] INFO  umbraco.content - [Thread 62] Loading content from database...
+2014-07-17 12:58:07,719 [25] INFO  umbraco.content - [Thread 26] Loading content from database...
+2014-07-17 12:58:40,023 [25] INFO  umbraco.content - [Thread 40] Loading content from database...
+2014-07-17 13:00:03,767 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 24] Content 'Left Column' with Id '1382' has been published.
+2014-07-17 13:00:03,811 [25] INFO  Umbraco.Core.Services.ContentService - [Thread 24] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-17 13:00:03,819 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 22] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 13:00:12,071 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 30] Content 'Right Column' with Id '1383' has been published.
+2014-07-17 13:00:12,116 [25] INFO  Umbraco.Core.Services.ContentService - [Thread 30] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-17 13:00:12,118 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 24] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 13:00:27,210 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 40] Content 'Description Column' with Id '1393' has been published.
+2014-07-17 13:00:27,277 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 10] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 13:00:27,279 [25] INFO  Umbraco.Core.Services.ContentService - [Thread 40] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-17 13:00:55,350 [25] INFO  umbraco.content - [Thread 11] Loading content from database...
+2014-07-17 13:02:06,443 [25] INFO  umbraco.content - [Thread 60] Loading content from database...
+2014-07-17 13:02:11,103 [25] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 10] An unhandled exception occurred
+System.Exception: ContentTypeService failed to find a content type with alias "Collpasible".
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.CreatePublishedContentType(PublishedItemType itemType, String alias)
+   at Umbraco.Core.Cache.CacheProviderExtensions.<>c__DisplayClass9`1.<GetCacheItem>b__8()
+   at Umbraco.Core.Cache.StaticCacheProvider.<>c__DisplayClass1a.<GetCacheItem>b__19(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Umbraco.Core.Cache.StaticCacheProvider.GetCacheItem(String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Cache.CacheProviderExtensions.GetCacheItem[T](ICacheProvider provider, String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.Get(PublishedItemType itemType, String alias)
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.Initialize()
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.get_SortOrder()
+   at System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   at System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__0.MoveNext()
+   at ASP._Page_Views_MacroPartials_ColumnsPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\ColumnsPartial.cshtml:line 16
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_homeIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\homeIndex.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-17 13:02:36,462 [25] INFO  umbraco.content - [Thread 61] Loading content from database...
+2014-07-17 13:02:39,220 [25] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 31] An unhandled exception occurred
+System.Exception: ContentTypeService failed to find a content type with alias "Collpasible".
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.CreatePublishedContentType(PublishedItemType itemType, String alias)
+   at Umbraco.Core.Cache.CacheProviderExtensions.<>c__DisplayClass9`1.<GetCacheItem>b__8()
+   at Umbraco.Core.Cache.StaticCacheProvider.<>c__DisplayClass1a.<GetCacheItem>b__19(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Umbraco.Core.Cache.StaticCacheProvider.GetCacheItem(String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Cache.CacheProviderExtensions.GetCacheItem[T](ICacheProvider provider, String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.Get(PublishedItemType itemType, String alias)
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.Initialize()
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.get_SortOrder()
+   at System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   at System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__0.MoveNext()
+   at ASP._Page_Views_MacroPartials_ColumnsPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\ColumnsPartial.cshtml:line 16
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_homeIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\homeIndex.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-17 13:02:54,976 [25] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 40] An unhandled exception occurred
+System.Exception: ContentTypeService failed to find a content type with alias "Collpasible".
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.CreatePublishedContentType(PublishedItemType itemType, String alias)
+   at Umbraco.Core.Cache.CacheProviderExtensions.<>c__DisplayClass9`1.<GetCacheItem>b__8()
+   at Umbraco.Core.Cache.StaticCacheProvider.<>c__DisplayClass1a.<GetCacheItem>b__19(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Umbraco.Core.Cache.StaticCacheProvider.GetCacheItem(String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Cache.CacheProviderExtensions.GetCacheItem[T](ICacheProvider provider, String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.Get(PublishedItemType itemType, String alias)
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.Initialize()
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.get_SortOrder()
+   at System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   at System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__0.MoveNext()
+   at ASP._Page_Views_MacroPartials_ColumnsPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\ColumnsPartial.cshtml:line 16
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_homeIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\homeIndex.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-17 13:03:04,529 [25] WARN  Umbraco.Web.Routing.DefaultUrlProvider - [Thread 22] Couldn't find any page with nodeId=1402. This is most likely caused by the page not being published.
+2014-07-17 13:03:08,567 [25] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 60] Content 'FAQ' with Id '1402' has been published.
+2014-07-17 13:03:08,623 [25] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 30] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 13:03:12,399 [25] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 10] An unhandled exception occurred
+System.Exception: ContentTypeService failed to find a content type with alias "Collpasible".
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.CreatePublishedContentType(PublishedItemType itemType, String alias)
+   at Umbraco.Core.Cache.CacheProviderExtensions.<>c__DisplayClass9`1.<GetCacheItem>b__8()
+   at Umbraco.Core.Cache.StaticCacheProvider.<>c__DisplayClass1a.<GetCacheItem>b__19(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Umbraco.Core.Cache.StaticCacheProvider.GetCacheItem(String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Cache.CacheProviderExtensions.GetCacheItem[T](ICacheProvider provider, String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.Get(PublishedItemType itemType, String alias)
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.Initialize()
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.get_SortOrder()
+   at System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   at System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__0.MoveNext()
+   at ASP._Page_Views_MacroPartials_ColumnsPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\ColumnsPartial.cshtml:line 16
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_homeIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\homeIndex.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-17 13:03:38,858 [25] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 57] An unhandled exception occurred
+System.Exception: ContentTypeService failed to find a content type with alias "Collpasible".
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.CreatePublishedContentType(PublishedItemType itemType, String alias)
+   at Umbraco.Core.Cache.CacheProviderExtensions.<>c__DisplayClass9`1.<GetCacheItem>b__8()
+   at Umbraco.Core.Cache.StaticCacheProvider.<>c__DisplayClass1a.<GetCacheItem>b__19(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Umbraco.Core.Cache.StaticCacheProvider.GetCacheItem(String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Cache.CacheProviderExtensions.GetCacheItem[T](ICacheProvider provider, String cacheKey, Func`1 getCacheItem)
+   at Umbraco.Core.Models.PublishedContent.PublishedContentType.Get(PublishedItemType itemType, String alias)
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.Initialize()
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.XmlPublishedContent.get_SortOrder()
+   at System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   at System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__0.MoveNext()
+   at ASP._Page_Views_MacroPartials_ColumnsPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\ColumnsPartial.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_homeIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\homeIndex.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-17 13:03:55,396 [25] INFO  umbraco.content - [Thread 41] Loading content from database...
+2014-07-17 13:08:09,607 [25] INFO  Umbraco.Core.PluginManager - [Thread 11] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-17 13:08:09,607 [25] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-17 14:08:32,491 [25] INFO  umbraco.BusinessLogic.Log - [Thread 30] Log scrubbed.  Removed all items older than 2014-05-18 14:08:32
+2014-07-17 14:08:32,492 [25] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 30] Application shutdown. Reason: MaxRecompilationsReached
+2014-07-17 14:08:35,199 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2014-07-17 14:08:35,216 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 8ms)
+2014-07-17 14:08:35,225 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-17 14:08:35,250 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 22ms)
+2014-07-17 14:08:35,347 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-17 14:08:35,348 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-17 14:08:35,348 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-17 14:08:35,349 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-17 14:08:35,369 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-17 14:08:35,370 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-17 14:08:35,370 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-17 14:08:35,372 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-17 14:08:35,376 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-17 14:08:35,376 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-17 14:08:35,377 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-17 14:08:35,377 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-17 14:08:36,268 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-17 14:08:36,268 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-17 14:08:36,327 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-17 14:08:36,328 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-17 14:08:36,341 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2014-07-17 14:08:36,342 [8] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-17 14:08:36,355 [8] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2014-07-17 14:08:36,561 [8] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2014-07-17 14:08:36,928 [8] INFO  umbraco.content - [Thread 33] Loading content from disk cache...
+2014-07-17 14:08:37,072 [8] INFO  Umbraco.Core.PluginManager - [Thread 33] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-17 14:08:37,073 [8] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-07-17 14:08:37,538 [8] INFO  Umbraco.Core.PluginManager - [Thread 33] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-17 14:08:37,539 [8] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-17 14:08:38,524 [8] INFO  Umbraco.Core.PluginManager - [Thread 33] Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+2014-07-17 14:08:38,525 [8] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 0ms)
+2014-07-17 15:28:14,969 [8] INFO  Umbraco.Web.Security.WebSecurity - [Thread 66] User Id: 0 logged in
+2014-07-17 15:28:19,886 [8] INFO  Umbraco.Core.PluginManager - [Thread 70] Starting resolution types of umbraco.interfaces.IAction
+2014-07-17 15:28:19,943 [8] INFO  Umbraco.Core.PluginManager - [Thread 70] Completed resolution of types of umbraco.interfaces.IAction, found 34 (took 56ms)
+2014-07-17 15:28:24,416 [8] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 69] Content 'Description Column' with Id '1393' has been published.
+2014-07-17 15:28:24,557 [8] INFO  Umbraco.Core.PluginManager - [Thread 69] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-07-17 15:28:24,557 [8] INFO  Umbraco.Core.PluginManager - [Thread 69] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 0ms)
+2014-07-17 15:28:25,105 [8] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 77] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 15:55:48,800 [8] INFO  Umbraco.Web.Security.WebSecurity - [Thread 77] User Id: 0 logged in
+2014-07-17 15:56:17,311 [8] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 34] Content 'Private Asthetic Clinic' with Id '1280' has been published.
+2014-07-17 15:56:17,393 [8] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 71] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 15:56:22,659 [8] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 34] Content 'Partnership & Location' with Id '1281' has been published.
+2014-07-17 15:56:22,710 [8] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 71] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 15:59:33,483 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Starting resolution types of umbraco.interfaces.ITree
+2014-07-17 15:59:33,484 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 1ms)
+2014-07-17 16:19:20,157 [8] INFO  Umbraco.Web.Security.WebSecurity - [Thread 78] User Id: 0 logged in
+2014-07-17 16:19:32,543 [8] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 78] Content 'Marc Pacifico' with Id '1336' has been published.
+2014-07-17 16:19:32,607 [8] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 76] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 16:19:50,835 [8] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 74] Content 'Marc Pacifico' with Id '1336' has been published.
+2014-07-17 16:19:50,891 [8] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 77] Provider=ExternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\External\Index\segments_5'., IndexSet: ExternalIndexSet
+2014-07-17 16:35:27,078 [8] INFO  umbraco.BusinessLogic.Log - [Thread 69] Log scrubbed.  Removed all items older than 2014-05-18 16:35:27
+2014-07-17 16:35:27,079 [8] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 69] Application shutdown. Reason: ConfigurationChange
+2014-07-17 16:35:34,595 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Determining hash of code files on disk
+2014-07-17 16:35:34,612 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Hash determined (took 8ms)
+2014-07-17 16:35:34,621 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-17 16:35:34,646 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 23ms)
+2014-07-17 16:35:34,747 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-17 16:35:34,748 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-17 16:35:34,748 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-17 16:35:34,749 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-17 16:35:34,769 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-17 16:35:34,769 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-17 16:35:34,770 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-17 16:35:34,771 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-17 16:35:34,774 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-17 16:35:34,775 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-17 16:35:34,775 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-17 16:35:34,776 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-17 16:35:35,655 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-17 16:35:35,655 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-17 16:35:35,717 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-17 16:35:35,717 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-17 16:35:35,731 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.ITree
+2014-07-17 16:35:35,732 [55] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-17 16:35:35,743 [55] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 16] Initializing Examine and binding to business logic events
+2014-07-17 16:35:35,948 [55] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 16] Adding examine event handlers for index providers: 3
+2014-07-17 16:37:43,003 [55] INFO  umbraco.content - [Thread 76] Loading content from disk cache...
+2014-07-17 16:37:43,120 [55] INFO  Umbraco.Core.PluginManager - [Thread 76] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-17 16:37:43,121 [55] INFO  Umbraco.Core.PluginManager - [Thread 76] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-07-17 16:37:43,496 [55] INFO  Umbraco.Core.PluginManager - [Thread 76] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-17 16:37:43,497 [55] INFO  Umbraco.Core.PluginManager - [Thread 76] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-17 16:37:44,335 [55] INFO  Umbraco.Core.PluginManager - [Thread 76] Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+2014-07-17 16:37:44,335 [55] INFO  Umbraco.Core.PluginManager - [Thread 76] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 0ms)
+2014-07-17 17:18:14,479 [55] INFO  Umbraco.Web.Security.WebSecurity - [Thread 70] User Id: 0 logged in
+2014-07-17 17:20:07,661 [55] INFO  Umbraco.Core.PluginManager - [Thread 23] Starting resolution types of umbraco.interfaces.ITree
+2014-07-17 17:20:07,662 [55] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 1ms)
