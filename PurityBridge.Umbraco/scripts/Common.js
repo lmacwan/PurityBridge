@@ -23,17 +23,17 @@ $(document).ready(function () {
 });
 
 var quickSearchForm = $('.quick-search-form');
-quickSearchForm.css('top', 0);
+quickSearchForm.css('top', -473);
 
 $('#quick-search-switcher').unbind('click');
 $('#quick-search-switcher').on('click', function () {
-    var top = -2;
+    var top = 0;
     if ($(".header").hasClass("header-shrink")) {
-        top = -43;
+        top = -44;
     }
     if ($("#quick-search").hasClass("quick-search-visible")) {
-        quickSearchForm.animate({ 'top': top });
+        quickSearchForm.animate({ 'top': top - 473 });
     } else {
-        quickSearchForm.animate({ 'top': top + 90 });
+        quickSearchForm.animate({ 'top': top  + 90});
     }
 });

@@ -37,19 +37,6 @@ html, body {
     min-width: 1080px;
 }
 
-.page .quick-search-form {
-    border-bottom: 3px solid buttonface;
-    /*height: 90px;*/
-    min-width: 100%;
-    position: fixed;
-    visibility: visible;
-    z-index: 15;
-}
-
-.page-boxed .quick-search-form {
-    min-width: 1080px;
-}
-
 .logo {
     margin-left: -44188px;
     position: fixed;
@@ -155,8 +142,8 @@ p {
 }
 
 .quick-search input, .quick-search select {
-    margin: 30px 0 0 18px;
-    width: 212px;
+    margin: 0px;
+    width: 100%;
 }
 
 .page-boxed .page-footer {
@@ -365,27 +352,141 @@ h2 {
     font-weight: bold;
 }
 
+.container {
+    position: relative;
+    margin: 0px auto;
+    width: 1170px;
+}
+
+    .container .grid-row {
+        width: 100%;
+        padding: 15px 0px;
+        margin: 0px !important;
+    }
+
+    .container .grid-row  {
+        width: 100%;
+        padding: 15px 0px;
+        margin: 0px !important;
+    }
+
+/*
+    ================
+        GRID-ROW     
+    ================
+*/
+
+.grid-row {
+    position: relative;
+}
+
 /*
     ================
         GRID-COLS     
     ================
 */
 
-/*.grid-col-3 {
-    width: 270px;
+/*.grid-col-1 {
+    width: 135px;
+}
+
+.grid-col-2 {
+    width: 195px;
+}
+
+.grid-col-3 {
+    width: 292px;
+}
+
+.grid-col-4 {
+    width: 390px;
+}
+
+.grid-col-5 {
+    width: 487px;
 }
 
 .grid-col-6 {
-    width: 470px;
+    width: 585px;
+}
+
+.grid-col-7 {
+    width: 682px;
 }
 
 .grid-col-8 {
-    width: 724px;
+    width: 780px;
+}
+
+.grid-col-9 {
+    width: 877px;
+}
+
+.grid-col-10 {
+    width: 975px;
+}
+
+.grid-col-11 {
+    width: 1072px;
+}*/
+
+.grid-col {
+    margin: 0px 0px 0px 30px;
+    position: relative;
+    float: left;
+}
+
+    .grid-col .grid-row:first-child {
+        margin-top: -15px !important;
+    }
+
+.grid-col-1 {
+    width: 5.83%;
+}
+
+.grid-col-2 {
+    width: 14.16%;
+}
+
+.grid-col-3 {
+    width: 22.5%;
+}
+
+.grid-col-4 {
+    width: 30.83%;
+}
+
+.grid-col-5 {
+    width: 39.16%;
+}
+
+.grid-col-6 {
+    width: 47.5%;
+}
+
+.grid-col-7 {
+    width: 55.83%;
+}
+
+.grid-col-8 {
+    width: 64.16%;
+}
+
+.grid-col-9 {
+    width: 73.5%;
+}
+
+.grid-col-10 {
+    width: 80.83%;
+}
+
+.grid-col-11 {
+    width: 89.16%;
 }
 
 .grid-col-12 {
-    width: 1003px;
-}*/
+    width: 97.5%;
+}
 
 .page-boxed .grid-col-3 {
     width: 226px;
@@ -403,16 +504,6 @@ h2 {
 
 .slider-wrapper {
     margin-top: 90px;
-}
-
-/*
-    ================
-        GRID-ROW     
-    ================
-*/
-
-.grid-row {
-    position: relative;
 }
 
 /*
@@ -503,14 +594,29 @@ h2 {
 /*.quick-search fieldset {
     height: 480px;
     width: 100%;
+}*/
+
+
+.page .quick-search-form {
+    border-bottom: 3px solid buttonface;
+    height: 562px;
+    min-width: 100%;
+    position: fixed;
+    visibility: visible;
+    z-index: 15;
 }
 
-    .quick-search fieldset legend {
-        line-height: inherit;
-        margin-left:515px;
-    }*/
+.page-boxed .quick-search-form {
+    min-width: 1080px;
+}
 
-    /*.quick-search .grid-col:first-child  {
+.quick-search .legend {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+/*.quick-search .grid-col:first-child  {
         margin-left: -30px;
     }*/
 
@@ -522,6 +628,10 @@ h2 {
     float: none;
 }
 
+.switcher {
+    top: 485px !important;
+}
+
 /*
     ================
         WORK-TIME     
@@ -530,7 +640,11 @@ h2 {
 
 .work-time {
     padding: 40px 0 30px;
-    margin-top: 66px;
+    margin-top: 0px;
+}
+
+.work-time dl {
+    line-height: 45px;
 }
 
 .work-time-button {

@@ -3,7 +3,7 @@ var cbpAnimatedHeader = (function () {
     var docElem = document.documentElement,
 		header = $(".header"),
 		didScroll = false,
-		changeHeaderOn = 150;
+		changeHeaderOn = 50;
 
     function init() {
         window.addEventListener('scroll', function (event) {
@@ -17,14 +17,13 @@ var cbpAnimatedHeader = (function () {
     var qiuckSearchForm = $('.quick-search-form');
 
     function scrollPage() {
-        var headerHeight = header.height();
         var sy = scrollY();
         if (sy >= changeHeaderOn) {
             if (!(header.hasClass('header-shrink'))) {
                 if ($('#quick-search').hasClass("quick-search-visible")) {
-                    qiuckSearchForm.css('top', headerHeight - 44);
+                    qiuckSearchForm.css('top', 44);
                 } else {
-                    qiuckSearchForm.css('top', -47);
+                    qiuckSearchForm.css('top', -517);
                 }
             }
             header.addClass('header-shrink');
@@ -32,9 +31,9 @@ var cbpAnimatedHeader = (function () {
         else {
             if (header.hasClass('header-shrink')) {
                 if ($('#quick-search').hasClass("quick-search-visible")) {
-                    qiuckSearchForm.css('top', headerHeight + 44);
+                    qiuckSearchForm.css('top', 88);
                 } else {
-                    qiuckSearchForm.css('top', 0);
+                    qiuckSearchForm.css('top', -473);
                 }
             }
             header.removeClass('header-shrink');
