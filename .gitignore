@@ -7,9 +7,7 @@
 *.sln.docstates
 
 # Umbraco App_Data files
-App_Data/Logs/
-App_Data/TEMP/
-App_Data/access.config
+App_Data/
 
 
 # Build results
