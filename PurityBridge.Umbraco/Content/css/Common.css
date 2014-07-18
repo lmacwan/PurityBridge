@@ -505,14 +505,14 @@ h2 {
     width: 100%;
 }
 
-    .quick-search fieldset legend {
-        line-height: inherit;
-        margin-left:515px;
-    }*/
+.quick-search fieldset legend {
+    line-height: inherit;
+    margin-left:515px;
+}*/
 
-    /*.quick-search .grid-col:first-child  {
-        margin-left: -30px;
-    }*/
+/*.quick-search .grid-col:first-child  {
+    margin-left: -30px;
+}*/
 
 .quick-search .grid-row {
     margin-top: 92px;
