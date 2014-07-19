@@ -14,29 +14,27 @@ var cbpAnimatedHeader = (function () {
         }, false);
     }
 
-    var qiuckSearchForm = $('.quick-search-form');
-
     function scrollPage() {
         var sy = scrollY();
         if (sy >= changeHeaderOn) {
-            if (!(header.hasClass('header-shrink'))) {
+            if (!(header.hasClass('page-header-shrink'))) {
                 if ($('#quick-search').hasClass("quick-search-visible")) {
-                    qiuckSearchForm.css('top', 44);
+                    qiuckSearchForm.css('top', 56);
                 } else {
-                    qiuckSearchForm.css('top', -517);
+                    qiuckSearchForm.css('top', -146);
                 }
             }
-            header.addClass('header-shrink');
+            header.addClass('page-header-shrink');
         }
         else {
-            if (header.hasClass('header-shrink')) {
+            if (header.hasClass('page-header-shrink')) {
                 if ($('#quick-search').hasClass("quick-search-visible")) {
-                    qiuckSearchForm.css('top', 88);
+                    qiuckSearchForm.css('top', 112);
                 } else {
-                    qiuckSearchForm.css('top', -473);
+                    qiuckSearchForm.css('top', -202);
                 }
             }
-            header.removeClass('header-shrink');
+            header.removeClass('page-header-shrink');
         }
         didScroll = false;
     }

@@ -325,6 +325,7 @@
     <Content Include="Content\css\color-pink.css" />
     <Content Include="Content\css\color-purple.css" />
     <Content Include="Content\css\Common.css" />
+    <Content Include="Content\css\Common_old.css" />
     <Content Include="Content\css\Common1.css" />
     <Content Include="Content\css\demo\csshover3.htc" />
     <Content Include="Content\css\demo\img\01.jpg" />
@@ -342,7 +343,7 @@
     <Content Include="Content\css\layerslider.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\owl.carousel.css" />
-    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\css\styles_old.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
     <Content Include="Content\images\twitter_bird.html" />
     <Content Include="Content\img\blank.gif" />
@@ -546,6 +547,7 @@
     <Content Include="scripts\js\layerslider.transitions.js" />
     <Content Include="scripts\js\owl.carousel.min.js" />
     <Content Include="scripts\js\scripts.js" />
+    <Content Include="Content\css\styles.css" />
     <Content Include="scripts\js\TimelineMax.min.js" />
     <Content Include="scripts\js\TweenMax.min.js" />
     <Content Include="scripts\knockout-2.2.0.debug.js" />

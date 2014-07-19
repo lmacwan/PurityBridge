@@ -26,7 +26,7 @@
     <link href="/Content/css/styles.css" rel="stylesheet" />
     <link href="/Content/css/color-cyan.css" rel="stylesheet" />
     <link href="/Content/tuner/css/styles.css" rel="stylesheet" />
-    <link href="/Content/css/Common.css" rel="stylesheet" />
+    @*<link href="/Content/css/Common.css" rel="stylesheet" />*@
     <!--/ styles -->
     <!--[if lt IE 9]><script src="js/html5.js")<![endif]-->
 </head>
@@ -34,14 +34,11 @@
     <div class="page">
         @{ Html.RenderPartial("_HeaderPartial"); }
 
-        <div class="quick-search-form">
             @{ Html.RenderPartial("_SearchPartial"); }
-        </div>
         @{ Html.RenderPartial("_SliderPartial"); }
 
         <!-- page content -->
         <main class="page-content">
-			@*@{ Html.RenderPartial("_HighlightsPartial", false); }*@
             @RenderBody()
         </main>
         <!--/ page content -->
@@ -82,9 +79,9 @@
     <script src="/Scripts/js/jquery.easypiechart.js"></script>
     <!--/ EASYPIECHART -->
     <script src="/Scripts/js/scripts.js"></script>
-    <script src="/Scripts/Common.js"></script>
+    @*<script src="/Scripts/Common.js"></script>
     <script src="~/scripts/classie.js"></script>
-    <script src="~/scripts/AnimatedHeader.js"></script>
+    <script src="~/scripts/AnimatedHeader.js"></script>*@
 
     <!--/ scripts -->
 
