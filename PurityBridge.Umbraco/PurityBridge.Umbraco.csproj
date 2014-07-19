@@ -595,6 +595,7 @@
     <Content Include="Views\Partials\RenderItemsPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Featured.cshtml" />
+    <Content Include="Views\MacroPartials\_PageTitlePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

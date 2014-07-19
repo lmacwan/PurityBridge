@@ -40,10 +40,10 @@ a {
     background: none repeat scroll 0 0 #00aba5;
 }
 
-/*.main-nav li:hover > a {
+.main-nav li:hover > a {
     background: none repeat scroll 0 0 #00aba5;
     border-bottom: 5px solid #00aba5;
-}*/
+}
 
 .main-nav li li ul {
     background: none repeat scroll 0 0 #4dc4c0;

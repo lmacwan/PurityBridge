@@ -307,7 +307,7 @@ $(function () {
     /* doctors carousel */
     /**/
     $('#doctors-carousel').owlCarousel({
-        items: 4,
+        items: 3,
         itemsDesktop: false,
         itemsDesktopSmall: false,
         itemsTablet: [980, 3],
