@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var isInheritable = ViewBag.IsInheritable;
+    var content = string.Format("<p>{0}</p><br><br>",
+                        Model.Content.GetPropertyValue<string>("text")
+                                     .Replace('\n' + "", "</p><p>"));
+}
+<article>
+    <div class="typography">
+        <h3>
+            @Model.Content.GetPropertyValue("heading")
+        </h3>
+        @Html.Raw(content)
+    </div>
+</article>

@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_TextPartial";
+}
+@section BeforeContent {
+    @{
+        var photoUrl = Umbraco.TypedMedia(Model.Content.GetPropertyValue("photo")).Url;
+    }
+    <p>
+        <img src="@photoUrl" alt=""/>
+    </p>
+}

@@ -1,128 +1,41 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     var span = Model.Content.HasValue("span") ? Model.Content.GetPropertyValue<string>("span") : "Half";
-    var inc = span.Contains("Less") ? 4
+    var inc = span.Contains("Less") ? 3
         : span.Contains("Full") ? 12
-        : span.Contains("More") ? 8
+        : span.Contains("More") ? 9
         : 6;
-    var heading = "";
-    var headingBars = "";
-    var itemSeparator = "";
     
     <div class="grid-col grid-col-@inc">
-        <section class="services">
-            <ul>
-                @foreach (var child in Model.Content.Children)
-                {
-                    heading = child.GetPropertyValue<string>("heading");
-                    headingBars = child.GetPropertyValue<bool>("HeadingBars") ? "bars" : "";
-                    itemSeparator = child.GetPropertyValue<bool>("ItemSeparator") ? "seperator" : "";
-                    
-                    <li class="fit @itemSeparator">
-                        @if (child.DocumentTypeAlias.ToLower() == "collapsible")
-                        {
-                            <div class="ui-widget-content accordion-container">
-                                <h2>@heading</h2>
-                                <div class="text">
-                                    @RenderCollapsibleContent(child)
-                                </div>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="text">
-                                <h2  class="@headingBars">@heading</h2>
-                                @RenderContent(child);
-                            </div>
-                            @*if (child.GetPropertyValue<bool>("ItemSeparator"))
-                            {
-                            <div class="border-wrapper">
-                            </div>
-                            <div class="border">
-                            </div>
-                            }*@
-                        }
-                    </li>
-                }
-            </ul>
-        </section>
+        @foreach (IPublishedContent child in Model.Content.Children)
+        {
+            if (child.DocumentTypeAlias == "Text")
+            {
+                Html.RenderPartial("_TextPartial", child);
+            }
+            else if (child.DocumentTypeAlias == "PhotoText")
+            {
+                Html.RenderPartial("_PhotoTextPartial", child);
+            }
+            else if (child.DocumentTypeAlias == "Video")
+            {
+                Html.RenderPartial("_VideoPartial", child);
+            }
+            else if (child.DocumentTypeAlias == "YouTubeVideo")
+            {
+                Html.RenderPartial("_YouTubeVideoPartial", child);
+            }
+            else if (child.DocumentTypeAlias == "Collapsible")
+            {
+                Html.RenderPartial("_AccordianPartial", child);
+            }
+        }
+
     </div>   
-}
-
-@helper RenderCollapsibleContent(IPublishedContent parent)
-{
-    var heading = "";
-    foreach (IPublishedContent child in parent.Children)
-    {
-        heading = child.GetPropertyValue<string>("heading");
-    <div class="text accordian">
-        <h2>@heading</h2>
-        <div>
-            @RenderContent(child);
-        </div>
+    
+    <div class="grid-col grid-col-3">
+        @Html.Partial("_MakeAnAppoitmentPartial")
+    
+        @Html.Partial("_NewsCompactPartial")
     </div>
-    }
-}
-
-@helper RenderContent(IPublishedContent child)
-{
-    if (child.DocumentTypeAlias == "Text")
-    {
-    @RenderText(child)
-    }
-    else if (child.DocumentTypeAlias == "PhotoText")
-    {
-    @RenderPhotoText(child)
-    }
-    else if (child.DocumentTypeAlias == "Video")
-    {
-    @RenderVideo(child)
-    }
-    else if (child.DocumentTypeAlias == "YouTubeVideo")
-    {
-    @RenderYouTubeVideo(child)
-    }
-}
-
-@helper RenderText(IPublishedContent text)
-{   
-    var content = text.GetPropertyValue<string>("text").Trim();
-    if (content.Contains('\n' + ""))
-    {
-        content = content.Replace('\n' + "", "</p><p>");
-    }
-    content = string.Format("<p>{0}</p>", content);
-    @Html.Raw(content);
-}
-
-@helper RenderPhotoText(IPublishedContent photoText)
-{
-    var content = photoText.GetPropertyValue<string>("text");
-    var photoUrl = Umbraco.TypedMedia(photoText.GetPropertyValue("photo")).Url;
-    <p>
-        <img src="@photoUrl" alt=""/>
-    </p>
-    <p>
-        @content
-    </p>
-}
-
-@helper RenderVideo(IPublishedContent video)
-{
-    var videoUrl = Umbraco.TypedMedia(video.GetPropertyValue("video")).Url;
-    var content = video.GetPropertyValue<string>("text");
-    <p>
-        <img src="@videoUrl" alt="" />
-    </p>
-    <p>
-        @video
-    </p>
-}
-
-@helper RenderYouTubeVideo(IPublishedContent youTubeVideo)
-{
-    var content = youTubeVideo.GetPropertyValue<string>("text");
-    <p>
-        @Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "inherit", VideoId = youTubeVideo.GetPropertyValue<string>("videoId") == "" ? "youTubeVideo_" + youTubeVideo.Id : youTubeVideo.GetPropertyValue<string>("videoId"), VideoUrl = youTubeVideo.GetPropertyValue<string>("videoUrl"), VideoWidth = "inherit" })
-    </p>
 }

@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_TextPartial";
+    var youTubeVideo = Model.Content;
+}
+@section AfterContent {
+    <p>
+        @Umbraco.RenderMacro("uTube.ClassicPlayer", new { AllowFullScreen = "1", AspectRatio = "16:9", VideoHeight = "inherit", VideoId = youTubeVideo.GetPropertyValue<string>("videoId") == "" ? "youTubeVideo_" + youTubeVideo.Id : youTubeVideo.GetPropertyValue<string>("videoId"), VideoUrl = youTubeVideo.GetPropertyValue<string>("videoUrl"), VideoWidth = "inherit" })
+    </p>
+}

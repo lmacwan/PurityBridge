@@ -1,0 +1,21 @@
+﻿@model IPublishedContent
+@{
+    var accordianHeading = Model.GetPropertyValue("heading");
+}
+<!-- accordian @accordianHeading   -->
+<section class="widget widget-departments">
+    @if (Model.HasValue("heading"))
+    {
+        <div class="widget-title">@accordianHeading </div>
+    }
+    <dl>
+        @foreach (IPublishedContent accordianContent in Model.Children)
+        {
+            <dt><i></i>@accordianContent.GetPropertyValue("heading")</dt>
+            <dd>
+                @accordianContent.GetPropertyValue("text")
+            </dd>
+        }
+    </dl>
+</section>
+<!--/ accordian @accordianHeading  -->

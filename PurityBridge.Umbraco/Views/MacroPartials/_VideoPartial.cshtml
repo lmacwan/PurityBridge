@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_TextPartial";
+}
+@section BeforeContent {
+    @{
+        var videoUrl = Umbraco.TypedMedia(Model.Content.GetPropertyValue("video")).Url;
+    }
+    <p>
+        <img src="@videoUrl" alt="@Model.Content.GetPropertyValue("heading")"/>
+    </p>
+}
