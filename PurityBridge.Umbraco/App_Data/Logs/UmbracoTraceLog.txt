@@ -329,3 +329,556 @@ System.NullReferenceException: Object reference not set to an instance of an obj
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 2014-07-22 01:01:23,990 [40] INFO  umbraco.BusinessLogic.Log - [Thread 36] Log scrubbed.  Removed all items older than 2014-05-23 01:01:23
 2014-07-22 01:01:23,990 [40] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 36] Application shutdown. Reason: HostingEnvironment
+2014-07-22 14:22:22,149 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Determining hash of code files on disk
+2014-07-22 14:22:22,166 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Hash determined (took 7ms)
+2014-07-22 14:22:22,175 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-22 14:22:22,199 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 22ms)
+2014-07-22 14:22:22,299 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-22 14:22:22,300 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-22 14:22:22,300 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-22 14:22:22,301 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-22 14:22:22,322 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-22 14:22:22,323 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-22 14:22:22,323 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-22 14:22:22,325 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-22 14:22:22,328 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-22 14:22:22,329 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-22 14:22:22,329 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-22 14:22:22,330 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-22 14:22:23,250 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 14:22:23,250 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 14:22:23,267 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:22:23,268 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-22 14:22:23,285 [122] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 36] Initializing Examine and binding to business logic events
+2014-07-22 14:22:23,804 [122] INFO  umbraco.content - [Thread 36] Loading content from disk cache...
+2014-07-22 14:22:23,836 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-22 14:22:23,837 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 1ms)
+2014-07-22 14:22:24,461 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-22 14:22:24,463 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 1ms)
+2014-07-22 14:22:25,430 [122] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 36] Adding examine event handlers for index providers: 3
+2014-07-22 14:22:25,436 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-22 14:22:25,437 [122] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 1ms)
+2014-07-22 14:22:29,672 [122] INFO  Umbraco.Web.Security.WebSecurity - [Thread 114] User Id: 0 logged in
+2014-07-22 14:22:29,842 [122] INFO  Umbraco.Core.PluginManager - [Thread 110] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 14:22:29,842 [122] INFO  Umbraco.Core.PluginManager - [Thread 110] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 14:22:30,025 [122] INFO  Umbraco.Core.PluginManager - [Thread 114] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:22:30,025 [122] INFO  Umbraco.Core.PluginManager - [Thread 114] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-22 14:22:52,484 [122] ERROR Umbraco.Web.Models.Mapping.ContentPropertyBasicConverter`1[[Umbraco.Web.Models.ContentEditing.ContentPropertyDisplay, umbraco, Version=1.0.5261.28133, Culture=neutral, PublicKeyToken=null]] - [Thread 110] No property editor found, converting to a Label
+System.NullReferenceException: The property editor with alias Spectrum.Color.Picker does not exist
+2014-07-22 14:23:40,459 [122] ERROR Umbraco.Web.Models.Mapping.ContentPropertyBasicConverter`1[[Umbraco.Web.Models.ContentEditing.ContentPropertyDto, umbraco, Version=1.0.5261.28133, Culture=neutral, PublicKeyToken=null]] - [Thread 110] No property editor found, converting to a Label
+System.NullReferenceException: The property editor with alias Spectrum.Color.Picker does not exist
+2014-07-22 14:23:40,581 [122] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 117] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 14:23:40,718 [122] INFO  Umbraco.Core.PluginManager - [Thread 117] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-07-22 14:23:40,735 [122] INFO  Umbraco.Core.PluginManager - [Thread 117] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 16ms)
+2014-07-22 14:23:40,771 [122] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 112] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 14:23:41,200 [122] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 110] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 14:23:41,212 [122] ERROR Umbraco.Web.Models.Mapping.ContentPropertyBasicConverter`1[[Umbraco.Web.Models.ContentEditing.ContentPropertyDisplay, umbraco, Version=1.0.5261.28133, Culture=neutral, PublicKeyToken=null]] - [Thread 117] No property editor found, converting to a Label
+System.NullReferenceException: The property editor with alias Spectrum.Color.Picker does not exist
+2014-07-22 14:27:00,724 [122] INFO  umbraco.content - [Thread 107] Loading content from database...
+2014-07-22 14:27:00,739 [122] INFO  Umbraco.Core.Configuration.ClientDependencyConfiguration - [Thread 117] Updated version number from 193083195 to 3715518
+2014-07-22 14:27:00,743 [122] INFO  Umbraco.Core.PluginManager - [Thread 117] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:27:00,743 [122] INFO  Umbraco.Core.PluginManager - [Thread 117] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-22 14:27:01,093 [122] INFO  umbraco.BusinessLogic.Log - [Thread 106] Log scrubbed.  Removed all items older than 2014-05-23 14:27:01
+2014-07-22 14:27:01,095 [122] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 106] Application shutdown. Reason: ConfigurationChange
+2014-07-22 14:27:01,276 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Determining hash of code files on disk
+2014-07-22 14:27:01,288 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Hash determined (took 10ms)
+2014-07-22 14:27:01,299 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-22 14:27:01,322 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 22ms)
+2014-07-22 14:27:01,369 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-22 14:27:01,370 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-22 14:27:01,370 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-22 14:27:01,371 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-22 14:27:01,380 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-22 14:27:01,381 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-22 14:27:01,381 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-22 14:27:01,383 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-22 14:27:01,383 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-22 14:27:01,384 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-22 14:27:01,384 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-22 14:27:01,384 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-22 14:27:02,170 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 14:27:02,171 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 14:27:02,174 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:27:02,174 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-22 14:27:02,180 [102] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 46] Initializing Examine and binding to business logic events
+2014-07-22 14:27:02,314 [102] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 46] Adding examine event handlers for index providers: 3
+2014-07-22 14:27:02,314 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-22 14:27:02,315 [102] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-22 14:27:05,229 [102] INFO  Umbraco.Core.PluginManager - [Thread 106] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:27:05,230 [102] INFO  Umbraco.Core.PluginManager - [Thread 106] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-22 14:27:05,619 [102] INFO  Umbraco.Core.PluginManager - [Thread 117] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-22 14:27:05,620 [102] INFO  Umbraco.Core.PluginManager - [Thread 117] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-22 14:27:05,918 [102] INFO  Umbraco.Core.PluginManager - [Thread 101] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 14:27:05,919 [102] INFO  Umbraco.Core.PluginManager - [Thread 101] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 14:27:06,186 [102] INFO  Umbraco.Core.Configuration.ClientDependencyConfiguration - [Thread 117] Updated version number from 3715518 to 83489794
+2014-07-22 14:27:06,190 [102] INFO  Umbraco.Core.PluginManager - [Thread 117] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:27:06,190 [102] INFO  Umbraco.Core.PluginManager - [Thread 117] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-22 14:27:06,496 [102] INFO  umbraco.BusinessLogic.Log - [Thread 107] Log scrubbed.  Removed all items older than 2014-05-23 14:27:06
+2014-07-22 14:27:06,498 [102] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 107] Application shutdown. Reason: ConfigurationChange
+2014-07-22 14:27:06,944 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Determining hash of code files on disk
+2014-07-22 14:27:06,962 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Hash determined (took 8ms)
+2014-07-22 14:27:06,971 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-22 14:27:06,997 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 24ms)
+2014-07-22 14:27:07,110 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-22 14:27:07,111 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-22 14:27:07,112 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-22 14:27:07,113 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-22 14:27:07,134 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-22 14:27:07,135 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-22 14:27:07,136 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-22 14:27:07,138 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-22 14:27:07,142 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-22 14:27:07,143 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-22 14:27:07,144 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-22 14:27:07,145 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2014-07-22 14:27:08,130 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 14:27:08,130 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 14:27:08,148 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:27:08,148 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-22 14:27:08,165 [98] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 105] Initializing Examine and binding to business logic events
+2014-07-22 14:27:08,370 [98] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 105] Adding examine event handlers for index providers: 3
+2014-07-22 14:27:08,376 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-22 14:27:08,377 [98] INFO  Umbraco.Core.PluginManager - [Thread 105] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-22 14:27:09,616 [98] INFO  Umbraco.Core.PluginManager - [Thread 117] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 14:27:09,616 [98] INFO  Umbraco.Core.PluginManager - [Thread 117] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-22 14:27:11,224 [98] INFO  Umbraco.Core.PluginManager - [Thread 106] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-22 14:27:11,224 [98] INFO  Umbraco.Core.PluginManager - [Thread 106] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-07-22 14:27:42,490 [98] INFO  Umbraco.Core.Persistence.UmbracoDatabase - [Thread 101]    at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteNonQuery() in c:\Code\github\SamSaffron\MiniProfiler\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 266
+   at Umbraco.Core.Persistence.PetaPocoCommandExtensions.<>c__DisplayClass1.<ExecuteNonQueryWithRetry>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.Database.Execute(String sql, Object[] args)
+2014-07-22 14:27:42,495 [98] ERROR Umbraco.Core.Persistence.Repositories.RecycleBinRepository - [Thread 101] An error occurred while emptying the Recycle Bin: The primary key value cannot be deleted because references to this key still exist. [ Foreign key constraint name = FK_umbracoNode_umbracoNode_id ]
+System.Data.SqlServerCe.SqlCeException (0x80004005): The primary key value cannot be deleted because references to this key still exist. [ Foreign key constraint name = FK_umbracoNode_umbracoNode_id ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteNonQuery() in c:\Code\github\SamSaffron\MiniProfiler\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 266
+   at Umbraco.Core.Persistence.PetaPocoCommandExtensions.<>c__DisplayClass1.<ExecuteNonQueryWithRetry>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.Database.Execute(String sql, Object[] args)
+   at Umbraco.Core.Persistence.Repositories.RecycleBinRepository.EmptyRecycleBin(Guid nodeObjectType)
+2014-07-22 14:27:56,103 [98] INFO  umbraco.content - [Thread 117] Loading content from database...
+2014-07-22 14:27:56,454 [98] INFO  Umbraco.Core.PluginManager - [Thread 117] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-22 14:27:56,455 [98] INFO  Umbraco.Core.PluginManager - [Thread 117] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-22 14:28:36,634 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 107] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 14:28:36,769 [98] INFO  Umbraco.Core.PluginManager - [Thread 107] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-07-22 14:28:36,770 [98] INFO  Umbraco.Core.PluginManager - [Thread 107] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 0ms)
+2014-07-22 14:28:36,862 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 42] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 14:28:37,257 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 40] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 16:59:41,232 [98] INFO  Umbraco.Core.PluginManager - [Thread 109] Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+2014-07-22 16:59:41,250 [98] INFO  Umbraco.Core.PluginManager - [Thread 109] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 17ms)
+2014-07-22 17:23:02,366 [98] INFO  Umbraco.Web.Security.WebSecurity - [Thread 108] User Id: 0 logged in
+2014-07-22 17:23:02,419 [98] INFO  Umbraco.Core.PluginManager - [Thread 121] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 17:23:02,420 [98] INFO  Umbraco.Core.PluginManager - [Thread 121] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 17:25:16,252 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 123] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 17:25:16,289 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 41] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 17:25:16,314 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 95] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 17:27:17,657 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 123] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 17:27:18,641 [98] INFO  Umbraco.Core.PluginManager - [Thread 101] Starting resolution types of umbraco.interfaces.IDataType
+2014-07-22 17:27:18,658 [98] INFO  Umbraco.Core.PluginManager - [Thread 101] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 17ms)
+2014-07-22 17:27:18,686 [98] WARN  Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter - [Thread 101] A legacy GUID id was generated for property editor Spectrum.Color.Picker. This occurs when the legacy APIs are used and done to attempt to maintain backwards compatibility. Consider upgrading all code to use the new Services APIs instead to avoid any potential issues.
+2014-07-22 17:27:18,690 [98] WARN  Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter - [Thread 101] A legacy GUID id was generated for property editor Umbraco.ImageCropper. This occurs when the legacy APIs are used and done to attempt to maintain backwards compatibility. Consider upgrading all code to use the new Services APIs instead to avoid any potential issues.
+2014-07-22 17:27:33,057 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 95] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 17:27:33,112 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 101] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 17:29:24,004 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 41] Content 'Treatments' with Id '1216' has been published.
+2014-07-22 17:29:24,041 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 31] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 17:29:24,067 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 90] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 17:37:44,636 [98] INFO  umbraco.content - [Thread 31] Loading content from database...
+2014-07-22 17:38:22,066 [98] INFO  umbraco.content - [Thread 121] Loading content from database...
+2014-07-22 17:39:27,959 [98] INFO  umbraco.content - [Thread 107] Loading content from database...
+2014-07-22 17:40:05,687 [98] INFO  umbraco.content - [Thread 101] Loading content from database...
+2014-07-22 17:40:08,538 [98] INFO  umbraco.content - [Thread 100] Loading content from database...
+2014-07-22 17:53:33,724 [98] INFO  Umbraco.Web.Security.WebSecurity - [Thread 107] User Id: 0 logged in
+2014-07-22 17:55:20,873 [98] INFO  Umbraco.Core.Persistence.UmbracoDatabase - [Thread 100]    at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteNonQuery() in c:\Code\github\SamSaffron\MiniProfiler\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 266
+   at Umbraco.Core.Persistence.PetaPocoCommandExtensions.<>c__DisplayClass1.<ExecuteNonQueryWithRetry>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.Database.Insert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+2014-07-22 17:55:20,873 [98] ERROR Umbraco.Core.Services.ContentService - [Thread 100] An error occurred executing RePublishAll
+System.Data.SqlServerCe.SqlCeException (0x80004005): A foreign key value cannot be inserted because a corresponding primary key value does not exist. [ Foreign key constraint name = FK_cmsPropertyData_cmsPropertyType_id ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteNonQuery() in c:\Code\github\SamSaffron\MiniProfiler\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 266
+   at Umbraco.Core.Persistence.PetaPocoCommandExtensions.<>c__DisplayClass1.<ExecuteNonQueryWithRetry>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.Database.Insert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at Umbraco.Core.Persistence.Database.Insert(Object poco)
+   at Umbraco.Core.Persistence.Repositories.VersionableRepositoryBase`2.GetPropertyCollection(Int32 id, Guid versionId, IContentTypeComposition contentType, DateTime createDate, DateTime updateDate)
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.CreateContentFromDto(DocumentDto dto, Guid versionId)
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.<GetByPublishedVersion>d__38.MoveNext()
+   at System.Linq.Enumerable.<SelectManyIterator>d__14`2.MoveNext()
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at Umbraco.Core.Services.ContentService.RebuildXmlStructures(Int32[] contentTypeIds)
+   at Umbraco.Core.Services.ContentService.RePublishAll(Int32[] contentTypeIds)
+2014-07-22 17:55:20,960 [98] INFO  umbraco.content - [Thread 121] Loading content from database...
+2014-07-22 18:10:10,551 [98] INFO  umbraco.content - [Thread 123] Loading content from database...
+2014-07-22 18:10:49,761 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 12] Content 'index' with Id '1230' has been published.
+2014-07-22 18:10:49,797 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 107] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:10:49,827 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:12:13,398 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 100] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:12:13,416 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 108] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:12:13,452 [98] INFO  Umbraco.Core.Services.ContentService - [Thread 108] Call was made to ContentService.Publish, use PublishWithStatus instead since that method will provide more detailed information on the outcome
+2014-07-22 18:12:13,455 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 41] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:12:55,460 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 108] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:12:55,508 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 41] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:13:54,926 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 109] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:13:54,955 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 108] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:13:54,974 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 90] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:20:17,704 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 123] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:20:17,737 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 101] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:20:17,763 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:20:36,091 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 95] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:20:36,123 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:20:36,149 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 102] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:20:45,029 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 109] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:20:45,060 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 100] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:20:45,086 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 90] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:21:00,257 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 95] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:21:00,294 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:21:00,314 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 101] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:22:09,330 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 101] Content 'Treatments' with Id '1216' has been published.
+2014-07-22 18:22:09,366 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 12] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:22:09,388 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 41] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:22:16,962 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 41] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:22:16,997 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 107] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:22:17,013 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:22:23,856 [98] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 31] An unhandled exception occurred
+System.InvalidOperationException: The partial view '/Views/Treatments/Index' was not found or no view engine supports the searched locations. The following locations were searched:
+/Views/Treatments/Index
+   at System.Web.Mvc.HtmlHelper.FindPartialView(ViewContext viewContext, String partialViewName, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments.cshtml:line 10
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-22 18:23:53,131 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 107] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:23:53,167 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 90] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:23:53,188 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 102] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:27:06,264 [98] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 43] An unhandled exception occurred
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at ASP._Page_Views_treatmentsIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\treatmentsIndex.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-22 18:27:47,533 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 100] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:27:47,564 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:27:47,583 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 123] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:28:08,606 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 90] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:28:08,647 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 102] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:28:08,663 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:29:06,224 [98] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 12] An unhandled exception occurred
+System.InvalidOperationException: The partial view '/Views/treatmentsIndex' was not found or no view engine supports the searched locations. The following locations were searched:
+/Views/treatmentsIndex
+   at System.Web.Mvc.HtmlHelper.FindPartialView(ViewContext viewContext, String partialViewName, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments.cshtml:line 10
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-22 18:29:41,736 [98] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 100] An unhandled exception occurred
+System.InvalidOperationException: The partial view '~/Views/treatmentsIndex' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/treatmentsIndex
+   at System.Web.Mvc.HtmlHelper.FindPartialView(ViewContext viewContext, String partialViewName, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments.cshtml:line 10
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-22 18:30:03,136 [98] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 107] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.GetPropertyValue[T](IPublishedContent content, String alias, Boolean recurse, Boolean withDefaultValue, T defaultValue)
+   at Umbraco.Web.PublishedContentExtensions.GetPropertyValue[T](IPublishedContent content, String alias)
+   at ASP._Page_Views_MacroPartials__PageTitlePartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_PageTitlePartial.cshtml:line 4
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.RenderPartialExtensions.RenderPartial(HtmlHelper htmlHelper, String partialViewName)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 38
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments.cshtml:line 10
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-22 18:31:39,225 [98] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 41] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.GetPropertyValue[T](IPublishedContent content, String alias, Boolean recurse, Boolean withDefaultValue, T defaultValue)
+   at Umbraco.Web.PublishedContentExtensions.GetPropertyValue[T](IPublishedContent content, String alias)
+   at ASP._Page_Views_MacroPartials__PageTitlePartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_PageTitlePartial.cshtml:line 4
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.RenderPartialExtensions.RenderPartial(HtmlHelper htmlHelper, String partialViewName)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 38
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-22 18:32:20,047 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 41] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:32:20,418 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 107] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:32:53,245 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 117] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:32:53,446 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 123] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:32:53,682 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 109] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:32:56,783 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 117] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:32:56,972 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 41] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:32:57,203 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 91] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:25,551 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 115] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:25,556 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 115] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:25,565 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 115] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:25,582 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 79] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:25,587 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 99] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:25,594 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 89] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:34:31,009 [98] INFO  umbraco.content - [Thread 91] Loading content from database...
+2014-07-22 18:35:34,025 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 104] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:35:34,053 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 89] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:35:34,073 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 99] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:36:09,064 [98] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 104] Content 'Botox Therapy' with Id '1392' has been published.
+2014-07-22 18:36:09,106 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 86] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:36:09,122 [98] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 88] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 18:37:07,926 [98] INFO  umbraco.content - [Thread 88] Loading content from database...
+2014-07-22 18:41:27,578 [98] INFO  umbraco.BusinessLogic.Log - [Thread 110] Log scrubbed.  Removed all items older than 2014-05-23 18:41:27
+2014-07-22 18:41:27,579 [98] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 110] Application shutdown. Reason: MaxRecompilationsReached
+2014-07-22 18:41:30,096 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Determining hash of code files on disk
+2014-07-22 18:41:30,114 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Hash determined (took 8ms)
+2014-07-22 18:41:30,123 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-22 18:41:30,147 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 22ms)
+2014-07-22 18:41:30,266 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-22 18:41:30,267 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-22 18:41:30,267 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-22 18:41:30,268 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-22 18:41:30,288 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-22 18:41:30,289 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-22 18:41:30,289 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-22 18:41:30,291 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-22 18:41:30,295 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-22 18:41:30,295 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-22 18:41:30,296 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-22 18:41:30,296 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-22 18:41:31,222 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 18:41:31,222 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 18:41:31,238 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 18:41:31,238 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-22 18:41:31,254 [97] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 36] Initializing Examine and binding to business logic events
+2014-07-22 18:41:31,479 [97] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 36] Adding examine event handlers for index providers: 3
+2014-07-22 18:41:31,486 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-22 18:41:31,486 [97] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-22 18:41:32,425 [97] INFO  Umbraco.Core.PluginManager - [Thread 84] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-22 18:41:32,425 [97] INFO  Umbraco.Core.PluginManager - [Thread 84] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-07-22 18:41:32,799 [97] INFO  Umbraco.Core.PluginManager - [Thread 84] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-22 18:41:32,800 [97] INFO  Umbraco.Core.PluginManager - [Thread 84] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-22 18:41:33,332 [97] INFO  Umbraco.Core.PluginManager - [Thread 84] Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+2014-07-22 18:41:33,332 [97] INFO  Umbraco.Core.PluginManager - [Thread 84] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 0ms)
+2014-07-22 18:42:19,364 [97] INFO  umbraco.content - [Thread 104] Loading content from disk cache...
+2014-07-22 19:05:52,638 [97] INFO  Umbraco.Web.Security.WebSecurity - [Thread 120] User Id: 0 logged in
+2014-07-22 19:06:08,075 [97] INFO  Umbraco.Core.PluginManager - [Thread 124] Starting resolution types of umbraco.interfaces.IAction
+2014-07-22 19:06:08,111 [97] INFO  Umbraco.Core.PluginManager - [Thread 124] Completed resolution of types of umbraco.interfaces.IAction, found 34 (took 36ms)
+2014-07-22 19:06:11,002 [97] INFO  Umbraco.Core.PluginManager - [Thread 113] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-22 19:06:11,003 [97] INFO  Umbraco.Core.PluginManager - [Thread 113] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-22 19:06:11,030 [97] INFO  Umbraco.Core.PluginManager - [Thread 80] Starting resolution types of umbraco.interfaces.ITree
+2014-07-22 19:06:11,031 [97] INFO  Umbraco.Core.PluginManager - [Thread 80] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-07-22 19:06:35,911 [97] INFO  Umbraco.Core.PluginManager - [Thread 113] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-07-22 19:06:35,912 [97] INFO  Umbraco.Core.PluginManager - [Thread 113] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 0ms)
+2014-07-22 19:06:36,048 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 117] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:06:47,426 [97] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 82] Content 'Treatments List' with Id '0' has been published.
+2014-07-22 19:06:47,520 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 117] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:07:00,767 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 120] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:07:08,572 [97] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 124] Content 'Treatments List' with Id '1417' has been published.
+2014-07-22 19:07:08,622 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 80] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:07:08,637 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 117] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:07:08,694 [97] INFO  Umbraco.Core.PluginManager - [Thread 124] Starting resolution types of umbraco.interfaces.IDataType
+2014-07-22 19:07:08,695 [97] INFO  Umbraco.Core.PluginManager - [Thread 124] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 0ms)
+2014-07-22 19:11:37,578 [97] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 47] Content 'Botox' with Id '0' has been published.
+2014-07-22 19:11:37,632 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 120] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:11:57,528 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 113] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:12:11,212 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 124] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:12:24,867 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 86] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:14:14,156 [97] INFO  umbraco.content - [Thread 113] Loading content from database...
+2014-07-22 19:14:26,059 [97] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 86] Content 'Botox' with Id '1419' has been published.
+2014-07-22 19:14:26,091 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 120] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet
+2014-07-22 19:14:26,117 [97] ERROR UmbracoExamine.DataServices.UmbracoLogService - [Thread 47] Provider=InternalIndexer, NodeId=-1
+System.Exception: Error indexing queue items,Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_3a'., IndexSet: InternalIndexSet

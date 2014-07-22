@@ -22,4 +22,62 @@
     {
         Html.RenderPartial("_AccordianPartial", child);
     }
+    else if (child.DocumentTypeAlias == "List")
+    {
+        var capacity = child.GetPropertyValue<int>("Capacity");
+        var width = capacity == 4
+                        ? "270"
+                        : capacity == 3
+                            ? "370"
+                            : capacity == 2
+                            ? "570"
+                            : "870";
+
+        var height = capacity == 4
+                        ? "142"
+                        : capacity == 3
+                            ? "195"
+                            : capacity == 2
+                            ? "300"
+                            : "548";
+        var isotope = "arrow";
+        var childHeading = "";
+        var childText = "";
+        
+        
+    <section class="widget photo-tour photo-tour-@capacity" id="photo-tour">
+        <div class="widget-title">@child.GetPropertyValue("Heading")</div>
+
+        @*<select class="filter">
+            <option value=".item">Pediatric clinic</option>
+            <option value=".item1">Commodo purus sit</option>
+            <option value=".item2">Nullam euismod</option>
+            <option value=".item3">Quisque venenatis</option>
+        </select>*@
+
+        <div class="grid isotope">
+            @foreach (IPublishedContent thumbnailPage in child.Parent.Children(c => c.Url != Model.Content.Url))
+            {
+                isotope = thumbnailPage.DocumentTypeAlias.ToLower() == "photo"
+                            ?  "eye fancybox"
+                            : "video-camera fancybox";
+                childHeading = thumbnailPage.GetPropertyValue<string>("heading");
+                childText = thumbnailPage.GetPropertyValue<string>("text");
+                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                    <div class="pic">
+                        <img width="@width" height="@height" alt="Nullam euismod commodo" src="@Umbraco.TypedMedia(Model.Content.GetPropertyValue("photo")).Url;">
+                        <div class="links">
+                            <ul>
+                                <li><a class="fa fa-@isotope" href="@thumbnailPage.GetPropertyValue("Url")"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>@childHeading</h3>
+                    <p>@childText</p>
+                </div>
+            }
+            @*<a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>*@
+        </div>
+    </section>
+    }
 }

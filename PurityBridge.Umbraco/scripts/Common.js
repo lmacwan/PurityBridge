@@ -11,4 +11,9 @@ $(document).ready(function () {
     i++;
     controllerName = loc[i];
     $("header a[controller=" + controllerName + "]").addClass("active");
+    $("#umbracoPreviewBadge").remove();
+});
+
+$(window).load(function () {
+    $('#ui-datepicker-div').addClass('widget-calendar');
 });

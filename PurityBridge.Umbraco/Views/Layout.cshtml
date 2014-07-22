@@ -27,12 +27,12 @@
         }
     }
 
-    if (Umbraco.GetPreValueAsString(Model.Content.GetPropertyValue<int>("role")) == "Has Thumbnail" && Model.Content.HasValue("Thumbnail"))
+    if (Model.Content.DocumentTypeAlias.ToLower() == "specificcontent")
     {
     @section ImageSection {
         <section  class="thumbnail-image" style="background-color:@Model.Content.GetPropertyValue("colour")">
             <div class="grid-row">
-                <img src="@CurrentPage.GetCropUrl("thumbnail", "thumb")" style="float:right;">
+                <img src="@CurrentPage.GetCropUrl("thumbnail", "banner")" style="float:right; height:180px; width:360px;">
             </div>
         </section>
     }
@@ -41,4 +41,4 @@
     <div class="grid-col grid-col-@cols">
         @RenderBody()
     </div>
- }
+}
