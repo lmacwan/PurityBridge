@@ -58,17 +58,17 @@
         <div class="grid isotope">
             @foreach (IPublishedContent thumbnailPage in child.Parent.Children(c => c.Url != Model.Content.Url))
             {
-                isotope = thumbnailPage.DocumentTypeAlias.ToLower() == "photo"
-                            ?  "eye fancybox"
-                            : "video-camera fancybox";
+                //isotope = thumbnailPage.DocumentTypeAlias.ToLower() == "specificcontent"
+                //            ?  "eye fancybox"
+                //            : "video-camera fancybox";
                 childHeading = thumbnailPage.GetPropertyValue<string>("heading");
-                childText = thumbnailPage.GetPropertyValue<string>("text");
+                //childText = thumbnailPage.GetPropertyValue<string>("text");
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img width="@width" height="@height" alt="Nullam euismod commodo" src="@Umbraco.TypedMedia(Model.Content.GetPropertyValue("photo")).Url;">
+                        <img width="@width" height="@height" alt="Nullam euismod commodo" src="@thumbnailPage.GetCropUrl("thumbnail", "thumb")">
                         <div class="links">
                             <ul>
-                                <li><a class="fa fa-@isotope" href="@thumbnailPage.GetPropertyValue("Url")"></a></li>
+                                <li><a class="fa fa-@isotope" href="@thumbnailPage.Url"></a></li>
                             </ul>
                         </div>
                     </div>
