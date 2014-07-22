@@ -1,0 +1,75 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- quick search -->
+<div id="quick-search" class="quick-search container">
+    <div class="grid-row">
+        <div class="grid-col grid-col-9">
+            <div class="grid-row">
+                <div class="grid-col grid-col-12 legend">
+                    Book an Appointment
+                </div>
+            </div>
+            <form>
+                <div class="grid-row">
+                    <div class="grid-col grid-col-6">
+                        <input type="text" placeholder="Search by name">
+                    </div>
+                    <div class="grid-col grid-col-6">
+                        <input type="text" placeholder="Search by name">
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-col grid-col-12">
+                        <select>
+                            <option value="4">Speciality</option>
+                            <option value="0">Speciality 1</option>
+                            <option value="1">Speciality 2</option>
+                            <option value="2">Speciality 3</option>
+                            <option value="3">Speciality 4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-col grid-col-12">
+                        <select>
+                            <option value="0">Locations</option>
+                            <option value="1">Primary Health Care</option>
+                            <option value="2">Gynaecological Clinic</option>
+                            <option value="3">Diagnosis With Precise</option>
+                            <option value="4">Cardiac Clinic</option>
+                            <option value="5">General Surgery</option>
+                        </select>
+                        <button type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="grid-col grid-col-3">
+            <!-- work time -->
+            <section class="widget-alt work-time">
+                <div class="widget-icon"></div>
+                <dl>
+                    <dt>Mon</dt>
+                    <dd>08:00 am - 12:00 pm</dd>
+                    <dt>Tue</dt>
+                    <dd>01:00 am - 05:00 pm</dd>
+                    <dt>Wed</dt>
+                    <dd>Free day</dd>
+                    <dt>Thu</dt>
+                    <dd>08:00 am - 12:00 pm</dd>
+                    <dt>Fri</dt>
+                    <dd>08:00 am - 12:00 pm</dd>
+                    <dt>Sat</dt>
+                    <dd>08:00 am - 12:00 pm</dd>
+                    <dt>Sun</dt>
+                    <dd>Free day</dd>
+                </dl>
+                @*<a href="#" class="button">Make an Appointment</a>*@
+            </section>
+            <!--/ work time -->
+        </div>
+        <div class="switcher">
+            <button id="quick-search-switcher" type="button">Make Appointment</button>
+        </div>
+    </div>
+</div>
+<!--/ quick search -->
