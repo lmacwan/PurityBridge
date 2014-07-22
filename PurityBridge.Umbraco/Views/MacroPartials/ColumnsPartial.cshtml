@@ -1,41 +1,37 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    var span = Model.Content.HasValue("span") ? Model.Content.GetPropertyValue<string>("span") : "Half";
-    var inc = span.Contains("Less") ? 3
-        : span.Contains("Full") ? 12
-        : span.Contains("More") ? 9
-        : 6;
-    
-    <div class="grid-col grid-col-@inc">
-        @foreach (IPublishedContent child in Model.Content.Children)
+    Layout = "Layout.cshtml";
+    var cols = 12;
+    foreach (IPublishedContent child in Model.Content.Children)
+    {
+        if (child.DocumentTypeAlias.ToLower() == "column" && !(child.GetPropertyValue<bool>("Right")))
         {
-            if (child.DocumentTypeAlias == "Text")
+            cols -= 3;
+    <div class="grid-col grid-col-3">
+        @Html.Partial("_SideBarPartial", child)
+    </div>
+        }
+        else if (child.DocumentTypeAlias.ToLower() == "column" && child.GetPropertyValue<bool>("Right"))
+        {
+            cols -= 3;
+    <div class="grid-col grid-col-3">
+        @Html.Partial("_SideBarPartial", child)
+    </div>
+        }
+        else if (child.DocumentTypeAlias.ToLower() == "index")
+        {
+            if (cols <= 11 && cols >= 6)
             {
-                Html.RenderPartial("_TextPartial", child);
+    <div class="grid-col grid-col-@cols">
+        @RenderBody()
+    </div>
             }
-            else if (child.DocumentTypeAlias == "PhotoText")
+            else
             {
-                Html.RenderPartial("_PhotoTextPartial", child);
-            }
-            else if (child.DocumentTypeAlias == "Video")
-            {
-                Html.RenderPartial("_VideoPartial", child);
-            }
-            else if (child.DocumentTypeAlias == "YouTubeVideo")
-            {
-                Html.RenderPartial("_YouTubeVideoPartial", child);
-            }
-            else if (child.DocumentTypeAlias == "Collapsible")
-            {
-                Html.RenderPartial("_AccordianPartial", child);
+    @RenderBody()
             }
         }
-
-    </div>   
-    
-    <div class="grid-col grid-col-3">
-        @Html.Partial("_MakeAnAppoitmentPartial")
-    
-        @Html.Partial("_NewsCompactPartial")
-    </div>
-}
+        else
+        { }
+    }
+ }

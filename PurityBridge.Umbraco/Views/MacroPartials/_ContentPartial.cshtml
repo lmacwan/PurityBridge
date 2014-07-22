@@ -1,14 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-    var heading = Model.Content.GetPropertyValue<string>("heading");
-    ViewBag.IsInheritable = Model.Content.DocumentTypeAlias.ToLower() != "text";
-    ViewBag.Content =
-        string.Format("<p>{0}</p>",
-                        Model.Content.GetPropertyValue<string>("text")
-                                     .Replace('\n' + "", "</p><p>").Substring(4));
-}
 
-@helper RenderContentPartial()
+@foreach (IPublishedContent child in Model.Content.Children)
 {
     if (child.DocumentTypeAlias == "Text")
     {
@@ -26,49 +18,7 @@
     {
         Html.RenderPartial("_YouTubeVideoPartial", child);
     }
-}
-
-@helper RenderAccordianPartial()
-{
-    <dl>
-        <dt>
-
-        </dt>
-        <dd>
-
-        </dd>
-    </dl>
-}
-
-@if (Model.Content.DocumentTypeAlias.ToLower() == "collapsible")
-{
-    <section>
-        <div class="widget-title">@heading</div>
-        <dl>
-            @Html.Partial("_AccordianPartial", Model.Content)
-        </dl>
-    </section>  
-}
-else
-{
-    <article>
-        @RenderChildren(Model.Content)
-    </article>  
-}
-
-@RenderBody();
-
-@helper RenderChildren(IPublishedContent parent)
-{
-    foreach (IPublishedContent child in parent.Children)
-    {
-        Html.RenderPartial("_TextPartial", child);
-    }
-}
-
-@helper RenderAccordianChildren(IPublishedContent parent)
-{
-    foreach (IPublishedContent child in parent.Children)
+    else if (child.DocumentTypeAlias == "Collapsible")
     {
         Html.RenderPartial("_AccordianPartial", child);
     }

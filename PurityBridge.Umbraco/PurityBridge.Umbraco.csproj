@@ -596,7 +596,7 @@
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Featured.cshtml" />
     <Content Include="Views\MacroPartials\_PageTitlePartial.cshtml" />
-    <Content Include="Views\MacroPartials\_MakeAnAppoitmentPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_MakeAnAppointmentPartial.cshtml" />
     <Content Include="Views\MacroPartials\_NewsCompactPartial.cshtml" />
     <Content Include="Views\MacroPartials\_FollowPartial.cshtml" />
     <Content Include="Views\MacroPartials\_TextPartial.cshtml" />
@@ -605,6 +605,9 @@
     <Content Include="Views\MacroPartials\_YouTubeVideoPartial.cshtml" />
     <Content Include="Views\MacroPartials\_AccordianPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ContentPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_RelatedLinksPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_SideBarPartial.cshtml" />
+    <Content Include="Views\ThumbnailPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

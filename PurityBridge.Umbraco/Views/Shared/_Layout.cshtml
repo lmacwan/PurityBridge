@@ -26,7 +26,7 @@
     <link href="/Content/css/styles.css" rel="stylesheet" />
     <link href="/Content/css/color-cyan.css" rel="stylesheet" />
     <link href="/Content/tuner/css/styles.css" rel="stylesheet" />
-    @*<link href="/Content/css/Common.css" rel="stylesheet" />*@
+    <link href="/Content/css/Common.css" rel="stylesheet" />
     <!--/ styles -->
     <!--[if lt IE 9]><script src="js/html5.js")<![endif]-->
 </head>
@@ -38,9 +38,15 @@
          @{ Html.RenderPartial("_PageTitlePartial"); }
         @{ Html.RenderPartial("_SliderPartial"); }
 
+        @RenderSection("ImageSection", false)
+
         <!-- page content -->
         <main class="page-content">
-            @RenderBody()
+            <div class="grid-row">
+                @RenderSection("LeftSideBar", false)
+                @RenderBody()
+                @RenderSection("RightSideBar", false)
+            </div>
         </main>
         <!--/ page content -->
 

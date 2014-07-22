@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    var isInheritable = ViewBag.IsInheritable;
+    var IsInheritable = Model.Content.DocumentTypeAlias.ToLower() != "text";
     var content = string.Format("<p>{0}</p><br><br>",
                         Model.Content.GetPropertyValue<string>("text")
                                      .Replace('\n' + "", "</p><p>"));
@@ -10,6 +10,18 @@
         <h3>
             @Model.Content.GetPropertyValue("heading")
         </h3>
+        @if (IsInheritable)
+        {
+            RenderSection("BeforeContent", required: false);
+        }
         @Html.Raw(content)
+        @if (IsInheritable)
+        {
+            RenderSection("AfterContent", required: false);
+        }
     </div>
 </article>
+@if (IsInheritable)
+{
+    RenderBody();
+}        

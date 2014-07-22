@@ -1,2 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@Html.Partial("UnderConstruction")
+
+@{
+    Layout = "Layout.cshtml";
+}
+ @Html.Partial("_ContentPartial", Model.Content.Children(c => c.Url == Model.Content.Url).First());

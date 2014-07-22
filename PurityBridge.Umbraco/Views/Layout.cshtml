@@ -1,6 +1,44 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Shared/_Layout.cshtml";
-}
-@Umbraco.RenderMacro("HighlightsScript")
-@RenderBody()
+    Layout = "Shared/_Layout.cshtml";
+    Umbraco.RenderMacro("HighlightsScript");
+
+    var cols = 12;
+    foreach (IPublishedContent child in Model.Content.Parent.Children)
+    {
+        if (child.DocumentTypeAlias.ToLower() == "sidebar" && child.GetPropertyValue<bool>("Left") && !(IsSectionDefined("LeftSideBar")))
+        {
+            cols -= 3;
+    @section LeftSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_SideBarPartial", child)
+        </div>
+    }
+            
+        }
+        else if (child.DocumentTypeAlias.ToLower() == "sidebar" && !(child.GetPropertyValue<bool>("Left")) && !(IsSectionDefined("RightSideBar")))
+        {
+            cols -= 3;
+    @section RightSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_SideBarPartial", child)
+        </div>
+    }
+        }
+    }
+
+    if (Umbraco.GetPreValueAsString(Model.Content.GetPropertyValue<int>("role")) == "Has Thumbnail" && Model.Content.HasValue("Thumbnail"))
+    {
+    @section ImageSection {
+        <section  class="thumbnail-image" style="background-color:@Model.Content.GetPropertyValue("colour")">
+            <div class="grid-row">
+                <img src="@CurrentPage.GetCropUrl("thumbnail", "thumb")" style="float:right;">
+            </div>
+        </section>
+    }
+    }
+    
+    <div class="grid-col grid-col-@cols">
+        @RenderBody()
+    </div>
+ }

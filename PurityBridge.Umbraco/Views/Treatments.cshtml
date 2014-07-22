@@ -1,5 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Layout.cshtml";
+    var span = Model.Content.HasValue("span") ? Model.Content.GetPropertyValue<string>("span") : "Half";
+    var inc = span.Contains("Less") ? 3
+            : span.Contains("Full") ? 12
+            : span.Contains("More") ? 9
+            : 6;
 }
-@RenderBody()
+@Html.Partial("_ContentPartial")

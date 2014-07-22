@@ -1,0 +1,5 @@
+﻿@model IPublishedContent
+@foreach (var widget in Model.GetPropertyValue("Widgets").AsEnumerableOfOne())
+{
+    @Html.Partial("_"+widget.ToString().Replace(" ", "")+"Partial")
+}
