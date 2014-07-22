@@ -37,8 +37,15 @@
         </section>
     }
     }
-    
+
+    if (cols < 12)
+    {
     <div class="grid-col grid-col-@cols">
         @RenderBody()
     </div>
+    }
+    else
+    {
+    @RenderBody()
+    }
 }

@@ -267,4 +267,45 @@
     <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.5261.28133, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
   </baseType>
+  <baseType type="umbraco.interfaces.IDataType" resolutionType="FindAllTypes">
+    <add type="Umbraco.Core.PropertyEditors.BackwardsCompatibleDataType, Umbraco.Core, Version=1.0.5261.28127, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.PickerRelations.PickerRelationsDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.checkboxlist.checkboxListDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.colorpicker.ColorPickerDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.datepicker.DateDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.datefieldmultiple.DataTypeDatefieldMultiple, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.dictionaryPicker.dictionaryPickerDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.dropdownlist.DropdownListDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.dropdownlist.DropdownListKeysDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.folderbrowser.DataTypeFolderBrowser, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.imagecropper.DataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.label.DataTypeNoEdit, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.listbox.ListBoxDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.listbox.ListBoxKeysDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.macrocontainer.DataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.mediapicker.MediaPickerDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.memberpicker.MemberPickerDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.MultiNodeTreePicker.MNTP_DataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.MultipleTextstring.MultipleTextstringDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.numberfield.IDataTypenteger, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.pagepicker.PagePickerDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.radiobuttonlist.RadioButtonListDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.relatedlinks.RelatedLinksDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.simpleEditor.simpleEditorDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.Slider.SliderDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.tags.DataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.textfieldmultiple.textfieldMultipleDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.textfield.TextFieldDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.tinyMCE3.tinyMCE3dataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.ultimatepicker.ultimatePickerDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.uploadfield.DataTypeUploadField, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.userControlGrapper.usercontrolDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.XPathCheckBoxList.XPathCheckBoxListDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.XPathDropDownList.XPathDropDownListDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.yesno.YesNoDataType, umbraco.editorControls, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.MacroEngines.IRazorDataTypeModel" resolutionType="FindTypesWithAttribute">
+    <add type="umbraco.MacroEngines.RazorDataTypeModels.HtmlStringDataTypeModel, umbraco.MacroEngines, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorDataTypeModels.IntegerDataTypeModel, umbraco.MacroEngines, Version=1.0.5261.28135, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
 </plugins>

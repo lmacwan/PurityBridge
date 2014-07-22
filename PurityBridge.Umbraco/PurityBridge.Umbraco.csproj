@@ -608,6 +608,8 @@
     <Content Include="Views\MacroPartials\_RelatedLinksPartial.cshtml" />
     <Content Include="Views\MacroPartials\_SideBarPartial.cshtml" />
     <Content Include="Views\ThumbnailPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_SpecificContentListPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_ListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

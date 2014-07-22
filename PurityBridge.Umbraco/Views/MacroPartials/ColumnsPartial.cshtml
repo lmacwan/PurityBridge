@@ -1,37 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model IPublishedContent
 @{
-    Layout = "Layout.cshtml";
-    var cols = 12;
-    foreach (IPublishedContent child in Model.Content.Children)
-    {
-        if (child.DocumentTypeAlias.ToLower() == "column" && !(child.GetPropertyValue<bool>("Right")))
-        {
-            cols -= 3;
-    <div class="grid-col grid-col-3">
-        @Html.Partial("_SideBarPartial", child)
-    </div>
-        }
-        else if (child.DocumentTypeAlias.ToLower() == "column" && child.GetPropertyValue<bool>("Right"))
-        {
-            cols -= 3;
-    <div class="grid-col grid-col-3">
-        @Html.Partial("_SideBarPartial", child)
-    </div>
-        }
-        else if (child.DocumentTypeAlias.ToLower() == "index")
-        {
-            if (cols <= 11 && cols >= 6)
-            {
-    <div class="grid-col grid-col-@cols">
-        @RenderBody()
-    </div>
-            }
-            else
-            {
-    @RenderBody()
-            }
-        }
-        else
-        { }
-    }
+   
  }

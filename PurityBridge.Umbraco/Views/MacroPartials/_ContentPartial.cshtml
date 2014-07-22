@@ -1,83 +1,114 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-@foreach (IPublishedContent child in Model.Content.Children)
+@RenderChildren(Model.Content);
+
+@helper RenderChildren(IPublishedContent parent)
 {
-    if (child.DocumentTypeAlias == "Text")
+    foreach (IPublishedContent child in parent.Children)
     {
-        Html.RenderPartial("_TextPartial", child);
+        if (child.DocumentTypeAlias == "Text")
+        {
+            Html.RenderPartial("_TextPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "PhotoText")
+        {
+            Html.RenderPartial("_PhotoTextPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "Video")
+        {
+            Html.RenderPartial("_VideoPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "YouTubeVideo")
+        {
+            Html.RenderPartial("_YouTubeVideoPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "Collapsible")
+        {
+            Html.RenderPartial("_AccordianPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "SpecificContentList")
+        {
+            Html.RenderPartial("_SpecificContentListPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "List")
+        {
+            ViewBag.Umbraco = Umbraco;
+            Html.RenderPartial("_ListPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "Featured")
+        {
+    @renderFeaturedPartial(child)
+        }
+        else if (child.DocumentTypeAlias == "Column")
+        {
+    @renderFeaturedPartial(child)
+        }
     }
-    else if (child.DocumentTypeAlias == "PhotoText")
-    {
-        Html.RenderPartial("_PhotoTextPartial", child);
-    }
-    else if (child.DocumentTypeAlias == "Video")
-    {
-        Html.RenderPartial("_VideoPartial", child);
-    }
-    else if (child.DocumentTypeAlias == "YouTubeVideo")
-    {
-        Html.RenderPartial("_YouTubeVideoPartial", child);
-    }
-    else if (child.DocumentTypeAlias == "Collapsible")
-    {
-        Html.RenderPartial("_AccordianPartial", child);
-    }
-    else if (child.DocumentTypeAlias == "List")
-    {
-        var capacity = child.GetPropertyValue<int>("Capacity");
-        var width = capacity == 4
-                        ? "270"
-                        : capacity == 3
-                            ? "370"
-                            : capacity == 2
-                            ? "570"
-                            : "870";
+}
 
-        var height = capacity == 4
-                        ? "142"
-                        : capacity == 3
-                            ? "195"
-                            : capacity == 2
-                            ? "300"
-                            : "548";
-        var isotope = "arrow";
-        var childHeading = "";
-        var childText = "";
-        
-        
-    <section class="widget photo-tour photo-tour-@capacity" id="photo-tour">
-        <div class="widget-title">@child.GetPropertyValue("Heading")</div>
 
-        @*<select class="filter">
-            <option value=".item">Pediatric clinic</option>
-            <option value=".item1">Commodo purus sit</option>
-            <option value=".item2">Nullam euismod</option>
-            <option value=".item3">Quisque venenatis</option>
-        </select>*@
+@helper renderFeaturedPartial(IPublishedContent featured)
+{
+    var url = "";   
 
-        <div class="grid isotope">
-            @foreach (IPublishedContent thumbnailPage in child.Parent.Children(c => c.Url != Model.Content.Url))
-            {
-                //isotope = thumbnailPage.DocumentTypeAlias.ToLower() == "specificcontent"
-                //            ?  "eye fancybox"
-                //            : "video-camera fancybox";
-                childHeading = thumbnailPage.GetPropertyValue<string>("heading");
-                //childText = thumbnailPage.GetPropertyValue<string>("text");
-                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                    <div class="pic">
-                        <img width="@width" height="@height" alt="Nullam euismod commodo" src="@thumbnailPage.GetCropUrl("thumbnail", "thumb")">
-                        <div class="links">
-                            <ul>
-                                <li><a class="fa fa-@isotope" href="@thumbnailPage.Url"></a></li>
-                            </ul>
+    <div class="grid-row">
+        <section class="widget doctors-carousel doctors">
+            <div class="widget-title">@featured.GetPropertyValue("heading")</div>
+            <div id="doctors-carousel" class="owl-carousel">
+                @foreach (IPublishedContent child1 in featured.Children)
+                {
+                    url = Umbraco.TypedMedia(child1.GetPropertyValue<int>("itemImage")).Url;
+
+                    <div class="item">
+                        <div class="pic">
+                            <img src="@url" width="270" height="270" alt="@child1.GetPropertyValue("heading")">
+                            <div class="links">
+                                <ul>
+                                    <li><a href="#" class="fa fa-share"></a></li>
+                                </ul>
+                            </div>
                         </div>
+                        <h3>@child1.GetPropertyValue("heading")</h3>
+                        <p>@child1.GetPropertyValue("itemDescription")</p>
                     </div>
-                    <h3>@childHeading</h3>
-                    <p>@childText</p>
+                }
+            </div>
+            <div class="owl-controls clickable">
+                <div class="owl-buttons">
+                    <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                    <div class="owl-next"><i class="fa fa-angle-right"></i></div>
                 </div>
-            }
-            @*<a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>*@
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
+}
+
+@helper renderColumns(IPublishedContent parent)
+{
+    var cols = 12;
+    var span = "";
+
+    foreach (IPublishedContent child2 in parent.Children)
+    {
+        span = child2.GetPropertyValue<string>("span");
+
+        cols -= span.Contains("Less")
+                    ? 9
+                    : span.Contains("More")
+                        ? 3
+                        : span.Contains("Full")
+                            ? 0
+                            : 6;
+
+        if (cols < 12)
+        {
+    <div class="grid-col grid-col-@cols">
+       @RenderChildren(child2);
+    </div>
+        }
+        else
+        {
+            @RenderChildren(child2);
+        }
     }
 }
