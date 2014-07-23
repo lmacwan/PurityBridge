@@ -174,4 +174,3 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
-/PurityBridge.Umbraco/App_Data/TEMP

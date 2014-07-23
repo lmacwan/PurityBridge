@@ -1685,3 +1685,77 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2014-07-23 10:24:40,127 [32] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
 2014-07-23 10:24:40,127 [32] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
 2014-07-23 10:24:40,127 [32] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-23 10:27:20,674 [32] INFO  umbraco.BusinessLogic.Log - [Thread 20] Log scrubbed.  Removed all items older than 2014-05-24 10:27:20
+2014-07-23 10:27:20,677 [32] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 20] Application shutdown. Reason: ConfigurationChange
+2014-07-23 10:27:38,701 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2014-07-23 10:27:38,716 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 8ms)
+2014-07-23 10:27:38,716 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-07-23 10:27:38,748 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 19ms)
+2014-07-23 10:27:38,779 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-07-23 10:27:38,779 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-07-23 10:27:38,794 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-07-23 10:27:39,527 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-07-23 10:27:39,527 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-07-23 10:27:39,527 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2014-07-23 10:27:39,527 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-07-23 10:27:39,543 [37] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2014-07-23 10:27:39,683 [37] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2014-07-23 10:27:39,683 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2014-07-23 10:27:39,683 [37] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-07-23 10:27:45,440 [37] INFO  Umbraco.Core.PluginManager - [Thread 17] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-07-23 10:27:45,440 [37] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-07-23 10:27:45,752 [37] INFO  Umbraco.Core.PluginManager - [Thread 25] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-07-23 10:27:45,752 [37] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 0ms)
+2014-07-23 10:27:45,783 [37] INFO  umbraco.content - [Thread 21] Loading content from database...
+2014-07-23 10:27:50,120 [37] INFO  Umbraco.Core.PluginManager - [Thread 28] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-07-23 10:27:50,135 [37] INFO  Umbraco.Core.PluginManager - [Thread 28] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 0ms)
+2014-07-23 10:27:50,697 [37] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 28] An unhandled exception occurred
+System.ApplicationException: Could not create an index searcher with the supplied lucene directory ---> System.IO.FileNotFoundException: Could not find file 'C:\Users\leon\Source\Repos\PurityBridge\PurityBridge.Umbraco\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_7k'.
+   at Lucene.Net.Index.SegmentInfos.FindSegmentsFile.Run(IndexCommit commit)
+   at Lucene.Net.Index.DirectoryReader.Open(Directory directory, IndexDeletionPolicy deletionPolicy, IndexCommit commit, Boolean readOnly, Int32 termInfosIndexDivisor)
+   at Examine.LuceneEngine.Providers.LuceneSearcher.ValidateSearcher(Boolean forceReopen)
+   --- End of inner exception stack trace ---
+   at Examine.LuceneEngine.Providers.LuceneSearcher.ValidateSearcher(Boolean forceReopen)
+   at UmbracoExamine.UmbracoExamineSearcher.GetSearchFields()
+   at UmbracoExamine.UmbracoExamineSearcher.CreateSearchCriteria(String type, BooleanOperation defaultOperation)
+   at Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache.GetUmbracoMedia(Int32 id)
+   at Umbraco.Web.PublishedCache.ContextualPublishedCache`1.GetById(Boolean preview, Int32 contentId)
+   at Umbraco.Web.PublishedContentQuery.TypedDocumentById(Int32 id, ContextualPublishedCache cache)
+   at ASP._Page_Views_MacroPartials__ContentPartial_cshtml.<>c__DisplayClass6.<renderFeaturedPartial>b__5(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_ContentPartial.cshtml:line 60
+   at ASP._Page_Views_MacroPartials__ContentPartial_cshtml.<>c__DisplayClass3.<RenderChildren>b__2(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_ContentPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__ContentPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_ContentPartial.cshtml:line 3
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_treatmentsIndex_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\treatmentsIndex.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
