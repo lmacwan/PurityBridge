@@ -1,10 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model IPublishedContent
 @{
-    Layout= "_TextPartial.cshtml";
+    Layout = "_TextPartial.cshtml";
 }
 @section BeforeContent {
     @{
-        var photoUrl = Umbraco.TypedMedia(Model.Content.GetPropertyValue("photo")).Url;
+        var photoUrl = ((UmbracoHelper)ViewBag.Umbraco).TypedMedia(Model.GetPropertyValue("photo")).Url;
     }
     <p>
         <img src="@photoUrl" alt=""/>

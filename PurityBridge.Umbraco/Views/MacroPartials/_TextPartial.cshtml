@@ -1,27 +1,29 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model IPublishedContent
 @{
-    var IsInheritable = Model.Content.DocumentTypeAlias.ToLower() != "text";
+    
+    var IsInheritable = Model.DocumentTypeAlias.ToLower() != "text";
     var content = string.Format("<p>{0}</p><br><br>",
-                        Model.Content.GetPropertyValue<string>("text")
-                                     .Replace('\n' + "", "</p><p>"));
+                        Model.GetPropertyValue<string>("text")
+                                     .Replace('\n' + "", "</p><p>"));    
 }
 <article>
     <div class="typography">
         <h3>
-            @Model.Content.GetPropertyValue("heading")
+            @Model.GetPropertyValue("heading")
         </h3>
-        @if (IsInheritable)
+        @if (Model.DocumentTypeAlias.ToLower() != "text")
         {
-            RenderSection("BeforeContent", required: false);
+            @RenderSection("BeforeContent", required: false);
+            @Html.Raw(content)
+            @RenderSection("AfterContent", required: false);
         }
-        @Html.Raw(content)
-        @if (IsInheritable)
+        else
         {
-            RenderSection("AfterContent", required: false);
+            @Html.Raw(content)
         }
     </div>
 </article>
-@if (IsInheritable)
+@if (Model.DocumentTypeAlias.ToLower() != "text")
 {
-    RenderBody();
-}        
+    @RenderBody();
+}

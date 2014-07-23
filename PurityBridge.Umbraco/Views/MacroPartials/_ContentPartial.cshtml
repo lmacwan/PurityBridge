@@ -4,6 +4,7 @@
 
 @helper RenderChildren(IPublishedContent parent)
 {
+    ViewBag.Umbraco = Umbraco;
     foreach (IPublishedContent child in parent.Children)
     {
         if (child.DocumentTypeAlias == "Text")
@@ -32,7 +33,6 @@
         }
         else if (child.DocumentTypeAlias == "List")
         {
-            ViewBag.Umbraco = Umbraco;
             Html.RenderPartial("_ListPartial", child);
         }
         else if (child.DocumentTypeAlias == "Featured")
@@ -88,27 +88,22 @@
     var cols = 12;
     var span = "";
 
-    foreach (IPublishedContent child in parent.Children)
-    {
-        span = child.GetPropertyValue<string>("span");
-
-        cols -= span.Contains("Less")
+    span = parent.GetPropertyValue<string>("span");
+    cols = span.Contains("Less")
+                ? 3
+                : span.Contains("More")
                     ? 9
-                    : span.Contains("More")
-                        ? 3
-                        : span.Contains("Full")
-                            ? 0
-                            : 6;
-
-        if (cols < 12)
-        {
-    <div class="grid-col grid-col-@cols">
-       @RenderChildren(child);
-    </div>
-        }
-        else
-        {
-            @RenderChildren(child);
-        }
+                    : span.Contains("Full")
+                        ? 12
+                        : 6;
+    if (cols < 12)
+    {
+            <div class="grid-col grid-col-@cols">
+                @RenderChildren(parent)
+            </div>
+    }
+    else
+    {
+    @RenderChildren(parent)
     }
 }
