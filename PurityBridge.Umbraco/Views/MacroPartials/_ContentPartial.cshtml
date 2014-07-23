@@ -41,7 +41,7 @@
         }
         else if (child.DocumentTypeAlias == "Column")
         {
-    @renderFeaturedPartial(child)
+    @renderColumnsPartial(child)
         }
     }
 }
@@ -55,21 +55,21 @@
         <section class="widget doctors-carousel doctors">
             <div class="widget-title">@featured.GetPropertyValue("heading")</div>
             <div id="doctors-carousel" class="owl-carousel">
-                @foreach (IPublishedContent child1 in featured.Children)
+                @foreach (IPublishedContent child in featured.Children)
                 {
-                    url = Umbraco.TypedMedia(child1.GetPropertyValue<int>("itemImage")).Url;
+                    url = Umbraco.TypedMedia(child.GetPropertyValue<int>("itemImage")).Url;
 
                     <div class="item">
                         <div class="pic">
-                            <img src="@url" width="270" height="270" alt="@child1.GetPropertyValue("heading")">
+                            <img src="@url" width="270" height="270" alt="@child.GetPropertyValue("heading")">
                             <div class="links">
                                 <ul>
                                     <li><a href="#" class="fa fa-share"></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <h3>@child1.GetPropertyValue("heading")</h3>
-                        <p>@child1.GetPropertyValue("itemDescription")</p>
+                        <h3>@child.GetPropertyValue("heading")</h3>
+                        <p>@child.GetPropertyValue("itemDescription")</p>
                     </div>
                 }
             </div>
@@ -83,14 +83,14 @@
     </div>
 }
 
-@helper renderColumns(IPublishedContent parent)
+@helper renderColumnsPartial(IPublishedContent parent)
 {
     var cols = 12;
     var span = "";
 
-    foreach (IPublishedContent child2 in parent.Children)
+    foreach (IPublishedContent child in parent.Children)
     {
-        span = child2.GetPropertyValue<string>("span");
+        span = child.GetPropertyValue<string>("span");
 
         cols -= span.Contains("Less")
                     ? 9
@@ -103,12 +103,12 @@
         if (cols < 12)
         {
     <div class="grid-col grid-col-@cols">
-       @RenderChildren(child2);
+       @RenderChildren(child);
     </div>
         }
         else
         {
-            @RenderChildren(child2);
+            @RenderChildren(child);
         }
     }
 }
