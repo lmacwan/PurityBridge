@@ -42,7 +42,15 @@
 
         <!-- page content -->
         <main class="page-content">
-            @RenderSection("Featured", false)
+
+            @if (Model.Content.Ancestor("content").Children(c => c.DocumentTypeAlias.ToLower() == "highlights").Any())
+            {
+        <div class="grid-row">
+              @{ Html.RenderPartial("_HighlightsPartial", Model.Content.Ancestor("content").Children(c => c.DocumentTypeAlias.ToLower() == "highlights").First()); }
+        </div>
+            }
+
+            @RenderSection("FeaturedSection", false)
             <div class="grid-row">
                 @RenderSection("LeftSideBar", false)
                 @RenderBody()

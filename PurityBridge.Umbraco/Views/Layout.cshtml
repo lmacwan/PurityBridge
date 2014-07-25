@@ -1,10 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Shared/_Layout.cshtml";
-    Umbraco.RenderMacro("HighlightsScript");
+    
     if (Model.Content.Children(c => c.DocumentTypeAlias == "Featured").Any())
     {
-    @section Featured {
+    @section FeaturedSection {
         @{
             ViewBag.Umbraco = Umbraco;
         }

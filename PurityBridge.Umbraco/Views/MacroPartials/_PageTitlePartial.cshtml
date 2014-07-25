@@ -1,13 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 <!-- page title -->
-@if (!(Model.Content.Ancestor("content").GetPropertyValue<bool>("TitleBar")))
+@if (Model.Content.DocumentTypeAlias.ToLower() == "specificcontent")
 {
     <section class="page-title">
         <div class="grid-row clearfix">
             <h1>@Model.Content.GetPropertyValue("heading")</h1>
             <nav class="bread-crumbs">
-                <a href="#">@Model.Content.GetPropertyValue("heading")</a><span>&nbsp;&nbsp;</span>
+                @*<a href="#">@Model.Content.GetPropertyValue("heading")</a><span>&nbsp;&nbsp;</span>*@
                 @RenderBreadCrumbs()
             </nav>
         </div>
@@ -17,12 +17,12 @@
 
 @helper RenderBreadCrumbs()
 {
-    var currentModel = Model.Content.Parent;
-    while (currentModel.DocumentTypeAlias.ToLower() != "layout")
+    var currentModel = Model.Content.Ancestors().OrderByDescending(a => a.Level).Where(a => a.DocumentTypeAlias.ToLower() != "layout");
+    foreach (IPublishedContent ancestror in currentModel)
     {
-    <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-    <a href="@currentModel.Url()">@currentModel.GetPropertyValue("heading")</a>
+    <a href="@ancestror.Url()">@ancestror.GetPropertyValue("heading")</a>
     <span>&nbsp;</span>
-        currentModel = currentModel.Parent;
+    <i class="fa fa-angle-right"></i><span>&nbsp;</span>
     }
+    @Model.Content.GetPropertyValue("heading")<span>&nbsp;&nbsp;</span>
 }

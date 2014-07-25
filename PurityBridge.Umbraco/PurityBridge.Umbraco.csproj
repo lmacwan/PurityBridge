@@ -550,6 +550,7 @@
     <Content Include="scripts\js\layerslider.transitions.js" />
     <Content Include="scripts\js\owl.carousel.min.js" />
     <Content Include="scripts\js\scripts.js" />
+    <Content Include="scripts\js\scripts_old.js" />
     <Content Include="Content\css\styles.css" />
     <Content Include="scripts\js\TimelineMax.min.js" />
     <Content Include="scripts\js\TweenMax.min.js" />
@@ -686,7 +687,6 @@
     <Content Include="Content\fonts\fontawesome-webfontba72.woff" />
     <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="macroScripts\HighlightsScript.cshtml" />
     <Content Include="macroScripts\MvcRenderAction.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\homeIndex.cshtml" />

@@ -1,1 +1,17 @@
-﻿
+﻿@model IPublishedContent
+<!-- benefits -->
+<section class="benefits">
+    <ul>
+        @foreach (var childPage in Model.Children)
+        {
+            <li>
+                <div class="pic"><i class="fa fa-@childPage.GetPropertyValue("icon")"></i></div>
+                <div class="text">
+                    <h2>@childPage.GetPropertyValue("heading")</h2>
+                    <p>@childPage.GetPropertyValue("description")</p>
+                    <a href="/@childPage.GetPropertyValue("link")" class="more"></a>
+                </div>
+            </li>
+        }
+    </ul>
+</section>
