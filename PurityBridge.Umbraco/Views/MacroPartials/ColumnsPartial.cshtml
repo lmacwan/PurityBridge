@@ -1,4 +1,27 @@
 ﻿@model IPublishedContent
 @{
-   
+    var cols = 12;
+    var span = "";
+
+    foreach (IPublishedContent child in Model.Children)
+    {
+        span = child.GetPropertyValue<string>("span");
+        cols = span.Contains("Less")
+                    ? 3
+                    : span.Contains("More")
+                        ? 9
+                        : span.Contains("Full")
+                            ? 12
+                            : 6;
+        if (cols < 12)
+        {
+    <div class="grid-col grid-col-@cols">
+        @Html.Partial("_ChildrenPartial", child)
+    </div>
+        }
+        else
+        {
+            Html.RenderAction("_ChildrenPartial", child);
+        }
+    }
  }

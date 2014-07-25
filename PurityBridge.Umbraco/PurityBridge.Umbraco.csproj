@@ -613,6 +613,8 @@
     <Content Include="Views\ThumbnailPartial.cshtml" />
     <Content Include="Views\MacroPartials\_SpecificContentListPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ListPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_FeaturesPartial.cshtml" />
+    <Content Include="Views\MacroPartials\_ChildrenPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

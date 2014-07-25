@@ -1,0 +1,29 @@
+﻿@model IPublishedContent
+
+@foreach (IPublishedContent child in Model.Children)
+{
+    if (child.DocumentTypeAlias == "Text")
+    {
+        Html.RenderPartial("_TextPartial", child);
+    }
+    else if (child.DocumentTypeAlias == "PhotoText")
+    {
+        Html.RenderPartial("_PhotoTextPartial", child);
+    }
+    else if (child.DocumentTypeAlias == "Video")
+    {
+        Html.RenderPartial("_VideoPartial", child);
+    }
+    else if (child.DocumentTypeAlias == "YouTubeVideo")
+    {
+        Html.RenderPartial("_YouTubeVideoPartial", child);
+    }
+    else if (child.DocumentTypeAlias == "Collapsible")
+    {
+        Html.RenderPartial("_AccordianPartial", child);
+    }
+    else if (child.DocumentTypeAlias == "SpecificContentList")
+    {
+        Html.RenderPartial("_SpecificContentListPartial", child);
+    }
+}

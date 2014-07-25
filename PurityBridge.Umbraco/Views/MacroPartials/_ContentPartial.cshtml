@@ -1,109 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-@RenderChildren(Model.Content);
-
-@helper RenderChildren(IPublishedContent parent)
-{
+@{
     ViewBag.Umbraco = Umbraco;
-    foreach (IPublishedContent child in parent.Children)
-    {
-        if (child.DocumentTypeAlias == "Text")
-        {
-            Html.RenderPartial("_TextPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "PhotoText")
-        {
-            Html.RenderPartial("_PhotoTextPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "Video")
-        {
-            Html.RenderPartial("_VideoPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "YouTubeVideo")
-        {
-            Html.RenderPartial("_YouTubeVideoPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "Collapsible")
-        {
-            Html.RenderPartial("_AccordianPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "SpecificContentList")
-        {
-            Html.RenderPartial("_SpecificContentListPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "List")
-        {
-            Html.RenderPartial("_ListPartial", child);
-        }
-        else if (child.DocumentTypeAlias == "Featured")
-        {
-    @renderFeaturedPartial(child)
-        }
-        else if (child.DocumentTypeAlias == "Column")
-        {
-    @renderColumnsPartial(child)
-        }
-    }
 }
 
 
-@helper renderFeaturedPartial(IPublishedContent featured)
+@foreach (IPublishedContent child in Model.Content.Children(c => c.Children.Count() > 0))
 {
-    var url = "";   
-
-    <div class="grid-row">
-        <section class="widget doctors-carousel doctors">
-            <div class="widget-title">@featured.GetPropertyValue("heading")</div>
-            <div id="doctors-carousel" class="owl-carousel">
-                @foreach (IPublishedContent child in featured.Children)
-                {
-                    url = Umbraco.TypedMedia(child.GetPropertyValue<int>("itemImage")).Url;
-
-                    <div class="item">
-                        <div class="pic">
-                            <img src="@url" width="270" height="270" alt="@child.GetPropertyValue("heading")">
-                            <div class="links">
-                                <ul>
-                                    <li><a href="#" class="fa fa-share"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>@child.GetPropertyValue("heading")</h3>
-                        <p>@child.GetPropertyValue("itemDescription")</p>
-                    </div>
-                }
-            </div>
-            <div class="owl-controls clickable">
-                <div class="owl-buttons">
-                    <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
-                    <div class="owl-next"><i class="fa fa-angle-right"></i></div>
-                </div>
-            </div>
-        </section>
-    </div>
-}
-
-@helper renderColumnsPartial(IPublishedContent parent)
-{
-    var cols = 12;
-    var span = "";
-
-    span = parent.GetPropertyValue<string>("span");
-    cols = span.Contains("Less")
-                ? 3
-                : span.Contains("More")
-                    ? 9
-                    : span.Contains("Full")
-                        ? 12
-                        : 6;
-    if (cols < 12)
+    if (child.DocumentTypeAlias == "Columns")
     {
-            <div class="grid-col grid-col-@cols">
-                @RenderChildren(parent)
-            </div>
+    @Html.Partial("ColumnsPartial", child)
     }
-    else
+    else if (child.DocumentTypeAlias == "List")
     {
-    @RenderChildren(parent)
+    @Html.Partial("_ListPartial", child)
     }
 }
+@Html.Partial("_ChildrenPartial", Model.Content)

@@ -1,0 +1,34 @@
+﻿@model IPublishedContent
+@{
+    var url = "";
+    var Umbraco = (UmbracoHelper)ViewBag.Umbraco;
+}
+
+<section class="widget doctors-carousel doctors">
+    <div class="widget-title">@Model.GetPropertyValue("heading")</div>
+    <div id="doctors-carousel" class="owl-carousel">
+        @foreach (IPublishedContent child in Model.Children)
+        {
+            url = Umbraco.TypedMedia(child.GetPropertyValue<int>("itemImage")).Url;
+
+            <div class="item">
+                <div class="pic">
+                    <img src="@url" width="270" height="270" alt="@child.GetPropertyValue("heading")">
+                    <div class="links">
+                        <ul>
+                            <li><a href="#" class="fa fa-share"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>@child.GetPropertyValue("heading")</h3>
+                <p>@child.GetPropertyValue("itemDescription")</p>
+            </div>
+        }
+    </div>
+    <div class="owl-controls clickable">
+        <div class="owl-buttons">
+            <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+</section>

@@ -2,7 +2,19 @@
 @{
     Layout = "Shared/_Layout.cshtml";
     Umbraco.RenderMacro("HighlightsScript");
+    if (Model.Content.Children(c => c.DocumentTypeAlias == "Featured").Any())
+    {
+    @section Featured {
+        @{
+            ViewBag.Umbraco = Umbraco;
+        }
+        <div class="grid-row">
 
+            @Html.Partial("_FeaturesPartial", Model.Content.Children(c => c.DocumentTypeAlias == "Featured").First())
+
+        </div>
+    }
+    }
     var cols = 12;
     foreach (IPublishedContent child in Model.Content.Parent.Children)
     {

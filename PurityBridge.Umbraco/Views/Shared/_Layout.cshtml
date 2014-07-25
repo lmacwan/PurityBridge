@@ -34,14 +34,15 @@
     <div class="page">
         @{ Html.RenderPartial("_HeaderPartial"); }
 
-            @{ Html.RenderPartial("_SearchPartial"); }
-         @{ Html.RenderPartial("_PageTitlePartial"); }
+        @{ Html.RenderPartial("_SearchPartial"); }
+        @{ Html.RenderPartial("_PageTitlePartial"); }
         @{ Html.RenderPartial("_SliderPartial"); }
 
         @RenderSection("ImageSection", false)
 
         <!-- page content -->
         <main class="page-content">
+            @RenderSection("Featured", false)
             <div class="grid-row">
                 @RenderSection("LeftSideBar", false)
                 @RenderBody()
