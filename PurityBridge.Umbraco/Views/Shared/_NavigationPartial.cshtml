@@ -10,6 +10,7 @@
 {
     //Navigations.First().Children.Where("Visible").Any()
     var navigation = headers.Children(c => c.DocumentTypeAlias == "navigation").FirstOrDefault();
+    var showOnRight = "";
     if (navigation != null)
     {
         var hasChildren = false;
@@ -23,7 +24,10 @@
             }
 
             hasChildren = childPage.Children.Where("Visible").Any();
-			<li>
+            showOnRight = childPage.GetPropertyValue<bool>("right")
+                            ? "class='right'"
+                            : "";
+			<li @showOnRight>
                 @if (hasChildren)
                 {
                     <i></i>
