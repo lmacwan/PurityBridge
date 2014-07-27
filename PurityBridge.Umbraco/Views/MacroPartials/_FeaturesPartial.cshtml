@@ -7,7 +7,7 @@
 <section class="widget doctors-carousel doctors">
     <div class="widget-title">@Model.GetPropertyValue("heading")</div>
     <div id="doctors-carousel" class="owl-carousel">
-        @foreach (IPublishedContent child in Model.Children)
+        @foreach (IPublishedContent child in Model.Children.RandomOrder())
         {
             url = Umbraco.TypedMedia(child.GetPropertyValue<int>("itemImage")).Url;
 
