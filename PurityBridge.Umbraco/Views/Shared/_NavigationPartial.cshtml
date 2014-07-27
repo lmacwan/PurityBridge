@@ -24,9 +24,10 @@
             }
 
             hasChildren = childPage.Children.Where("Visible").Any();
-            showOnRight = childPage.GetPropertyValue<bool>("right")
-                            ? "class='right'"
-                            : "";
+            showOnRight = (childPage.Children.Count() > 0 &&
+                                childPage.Index() + 1 >= navigation.Children(c => c.Children.Count() > 0).Count())
+                                            ? "class=right"
+                                            : "";
 			<li @showOnRight>
                 @if (hasChildren)
                 {
