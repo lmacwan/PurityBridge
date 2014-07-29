@@ -140,3 +140,5 @@ System.Web.HttpParseException (0x80004005): Unexpected "if" keyword after "@" ch
    at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-07-29 09:35:52,883 [7] INFO  umbraco.BusinessLogic.Log - [Thread 36] Log scrubbed.  Removed all items older than 2014-05-30 09:35:52
+2014-07-29 09:35:52,883 [7] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 36] Application shutdown. Reason: ConfigurationChange
