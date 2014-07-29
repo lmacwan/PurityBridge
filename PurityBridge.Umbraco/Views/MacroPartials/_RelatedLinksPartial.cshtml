@@ -1,39 +1,22 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-<!-- help -->
-<section class="widget widget-comments">
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    IPublishedContent linkedContent;
+}
+<section class="widget typography">
     <div class="widget-title">Links</div>
     <div id="help-carousel" class="owl-carousel">
-        <div class="item">
-            @Html.Partial("_PhotoTextPartial")
-        </div>
-        <div class="item">
-            <ul>
-                <li>
-                    <img src="/Content/pic/doctor-3.jpg" alt="">
-                    <p><span class="date">Tincidunt purus purus</span><br>
-                        Bmolestie ut eros. Fusce blandit, sapien eu sollicitudin consectetur.</p>
-                </li>
-                <li>
-                    <img src="/Content/pic/doctor-4.jpg" alt="">
-                    <p><span class="date">Purus purus, tincidunt</span><br>
-                        Bmolestie ut eros. Fusce blandit, sapien eu sollicitudin consectetur.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="item">
-            <ul>
-                <li>
-                    <img src="/Content/pic/doctor-2.jpg" alt="">
-                    <p><span class="date">Bmolestie tincidunt</span><br>
-                        Bmolestie ut eros. Fusce blandit, sapien eu sollicitudin consectetur.</p>
-                </li>
-                <li>
-                    <img src="/Content/pic/doctor-3.jpg" alt="">
-                    <p><span class="date">Fusce purus, tincidunt</span><br>
-                        Bmolestie ut eros. Fusce blandit, sapien eu sollicitudin consectetur.</p>
-                </li>
-            </ul>
-        </div>
+        @*
+            Related Links Parent
+        *@
+        @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
+        {
+            linkedContent = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
+            <div class="item">
+                <h3>@linkedContent.Name</h3>
+                <p>
+                    <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" alt="@linkedContent.Name"/>
+                </p>
+            </div>
+        }
     </div>
 </section>
-<!--/ help -->

@@ -32,7 +32,7 @@
         </select>*@
 
     <div class="grid isotope">
-        @foreach (IPublishedContent thumbnailPage in Model.Ancestor(2).Children(c => c.Url != Model.Parent.Url && c.DocumentTypeAlias.ToLower().Contains("content")))
+        @foreach (IPublishedContent thumbnailPage in Model.Ancestor("content").Children(c => c.Url != Model.Parent.Url && !(c.DocumentTypeAlias.ToLower().Equals("SideBar"))))
         {
             childHeading = thumbnailPage.GetPropertyValue<string>("heading");
             //childText = thumbnailPage.GetPropertyValue<string>("text");

@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 <!-- page title -->
-@if (Model.Content.DocumentTypeAlias.ToLower() == "specificcontent")
+@if (!(Model.Content.GetPropertyValue<bool>("TitleBar")))
 {
     <section class="page-title">
         <div class="grid-row clearfix">
@@ -17,12 +17,15 @@
 
 @helper RenderBreadCrumbs()
 {
-    var currentModel = Model.Content.Ancestors().OrderByDescending(a => a.Level).Where(a => a.DocumentTypeAlias.ToLower() != "layout");
-    foreach (IPublishedContent ancestror in currentModel)
+    if (Model.Content.DocumentTypeAlias != "index")
     {
-    <a href="@ancestror.Url()">@ancestror.GetPropertyValue("heading")</a>
-    <span>&nbsp;</span>
-    <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+        var currentModel = Model.Content.Ancestors().OrderByDescending(a => a.Level).Where(a => a.DocumentTypeAlias.ToLower() != "layout");
+        foreach (IPublishedContent ancestror in currentModel)
+        {
+        <a href="@ancestror.Url()">@ancestror.GetPropertyValue("heading")</a>
+        <span>&nbsp;</span>
+        <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+        }
     }
     @Model.Content.GetPropertyValue("heading")<span>&nbsp;&nbsp;</span>
 }
