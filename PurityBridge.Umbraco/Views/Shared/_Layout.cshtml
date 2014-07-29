@@ -38,8 +38,9 @@
         @{ Html.RenderPartial("_SliderPartial"); }
 
         @RenderSection("ImageSection", false)
+        <!-- page content -->
+        <main>
         @Html.Partial("_HighlightsPartial", Model.Content)
-
         @RenderSection("FeaturedSection", false)
         <div class="grid-row">
             @RenderSection("LeftSideBar", false)
