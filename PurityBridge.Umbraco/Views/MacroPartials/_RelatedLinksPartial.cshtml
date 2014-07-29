@@ -2,20 +2,22 @@
 @{
     IPublishedContent linkedContent;
 }
-<section class="widget typography">
-    <div class="widget-title">Links</div>
-    <div id="help-carousel" class="owl-carousel">
-        @*
-            Related Links Parent
-        *@
+<section class="widget photo-tour photo-tour-4" id="photo-tour">
+    @*   <div class="widget-title">@Model.GetPropertyValue("Heading")</div>*@
+    <div class="grid isotope">
         @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
         {
             linkedContent = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
-            <div class="item">
+            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                <div class="pic">
+                    <img width="270" height="142" alt="Nullam euismod commodo" src="@linkedContent.GetCropUrl("thumbnail", "thumb")">
+                    <div class="links">
+                        <ul>
+                            <li><a class="fa fa-link" href="@linkedContent.Url"></a></li>
+                        </ul>
+                    </div>
+                </div>
                 <h3>@linkedContent.Name</h3>
-                <p>
-                    <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" alt="@linkedContent.Name"/>
-                </p>
             </div>
         }
     </div>

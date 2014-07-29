@@ -673,12 +673,12 @@
     <Content Include="Views\MacroPartials\_AccordianPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ContentPartial.cshtml" />
     <Content Include="Views\MacroPartials\_RelatedLinksPartial.cshtml" />
-    <Content Include="Views\MacroPartials\_SideBarPartial.cshtml" />
     <Content Include="Views\ThumbnailPartial.cshtml" />
     <Content Include="Views\MacroPartials\_SpecificContentListPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ListPartial.cshtml" />
     <Content Include="Views\MacroPartials\_FeaturesPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ChildrenPartial.cshtml" />
+    <Content Include="Views\Shared\_SidebarPartail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -754,7 +754,7 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\homeIndex.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Layout.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_HeaderPartial.cshtml" />
     <Content Include="Views\Shared\_HighlightsPartial.cshtml" />
@@ -762,6 +762,12 @@
     <Content Include="Views\Shared\_SearchPartial.cshtml" />
     <Content Include="Views\Shared\_SliderPartial.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
+      <Project>{38ca711f-2477-4518-b369-6af25634a8a0}</Project>
+      <Name>PurityBridge.Live</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

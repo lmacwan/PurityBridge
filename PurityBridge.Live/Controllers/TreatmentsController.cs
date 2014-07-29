@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Umbraco.Web.Mvc;
 
-namespace PurityBridge.Live.Controllers
+namespace PurityBridge.Live
 {
-    public class TreatmentsController : Controller
+    public class TreatmentsController : RenderMvcController
     {
-        //
-        // GET: /Treatments/
-
-        public ActionResult Index()
+        public override ActionResult Index(Umbraco.Web.Models.RenderModel model)
         {
-            return View();
+            return base.Index(model);
         }
-
     }
 }

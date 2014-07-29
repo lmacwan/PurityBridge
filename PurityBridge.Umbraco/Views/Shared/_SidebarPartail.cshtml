@@ -1,0 +1,24 @@
+﻿
+
+foreach (IPublishedContent child in Model.Content.Parent.Children)
+    {
+        if (child.DocumentTypeAlias.ToLower() == "sidebar" && child.GetPropertyValue<bool>("Left") && !(IsSectionDefined("LeftSideBar")))
+        {
+            cols -= 3;
+    @section LeftSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_SideBarPartial", child)
+        </div>
+    }
+            
+        }
+        else if (child.DocumentTypeAlias.ToLower() == "sidebar" && !(child.GetPropertyValue<bool>("Left")) && !(IsSectionDefined("RightSideBar")))
+        {
+            cols -= 3;
+    @section RightSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_SideBarPartial", child)
+        </div>
+    }
+        }
+    }

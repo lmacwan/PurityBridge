@@ -4,7 +4,6 @@
     ViewBag.Umbraco = Umbraco;
 }
 
-
 @foreach (IPublishedContent child in Model.Content.Children(c => c.Children.Count() > 0))
 {
     if (child.DocumentTypeAlias == "Columns")

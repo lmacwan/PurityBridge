@@ -1,5 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model IPublishedContent
 @{
-    Layout = "NewsAndEvents.cshtml";
+    Layout = "home.cshtml";
+    var column = Model.Children.Where(c => c.DocumentTypeAlias == "Column").FirstOrDefault();
 }
-@Umbraco.RenderMacro("MvcRenderAction", new {action="Index", controller="NewsAndEvents", formtoken="null"})

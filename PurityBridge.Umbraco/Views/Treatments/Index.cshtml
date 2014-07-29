@@ -1,6 +1,23 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
-    Layout = "Layout.cshtml";
+    Layout = "/Views/Shared/Layout.cshtml";
 }
-@Html.Partial("_ContentPartial", Model.Content.Children(c => c.Url == Model.Content.Url).First());
+@*
+    Check if the content is a Default Content. If it is,
+    build the Page Markup.
+*@
+<section class="widget typography">
+    @*<div class="widget-title">Links</div>*@
+    <div id="help-carousel" class="owl-carousel">
+        @foreach (IPublishedContent listItem in Model.Content.Children(c => c.Url != Model.Content.Url))
+        {
+            <div class="item">
+                <h3>@listItem.Name</h3>
+                <p>
+                    <img src="@listItem.GetCropUrl("thumbnail", "thumb")" alt="@listItem.Name"/>
+                </p>
+            </div>
+        }
+    </div>
+</section>

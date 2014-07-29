@@ -1,0 +1,67 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_Layout.cshtml";
+    
+    if (Model.Content.Children(c => c.DocumentTypeAlias == "Featured").Any())
+    {
+    @section FeaturedSection {
+        @{
+            ViewBag.Umbraco = Umbraco;
+        }
+        <div class="grid-row">
+
+            @Html.Partial("_FeaturesPartial", Model.Content.Children(c => c.DocumentTypeAlias == "Featured").First())
+
+        </div>
+    }
+    }
+    var cols = 12;
+   
+    
+    
+    
+    foreach (IPublishedContent child in Model.Content.Parent.Children)
+    {
+        if (child.DocumentTypeAlias.ToLower() == "sidebar" && child.GetPropertyValue<bool>("Left") && !(IsSectionDefined("LeftSideBar")))
+        {
+            cols -= 3;
+    @section LeftSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_SideBarPartial", child)
+        </div>
+    }
+            
+        }
+        else if (child.DocumentTypeAlias.ToLower() == "sidebar" && !(child.GetPropertyValue<bool>("Left")) && !(IsSectionDefined("RightSideBar")))
+        {
+            cols -= 3;
+    @section RightSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_SideBarPartial", child)
+        </div>
+    }
+        }
+    }
+
+    if (Model.Content.DocumentTypeAlias.ToLower() == "specificcontent")
+    {
+    @section ImageSection {
+        <section  class="thumbnail-image" style="background-color:@Model.Content.GetPropertyValue("colour")">
+            <div class="grid-row">
+                <img src="@CurrentPage.GetCropUrl("thumbnail", "banner")" style="float:right; height:180px; width:360px;">
+            </div>
+        </section>
+    }
+    }
+
+    if (cols < 12)
+    {
+    <div class="grid-col grid-col-@cols">
+        @RenderBody()
+    </div>
+    }
+    else
+    {
+    @RenderBody()
+    }
+}
