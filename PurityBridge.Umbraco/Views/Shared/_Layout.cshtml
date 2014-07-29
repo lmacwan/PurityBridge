@@ -38,23 +38,14 @@
         @{ Html.RenderPartial("_SliderPartial"); }
 
         @RenderSection("ImageSection", false)
+        @Html.Partial("_HighlightsPartial", Model.Content)
 
-        <!-- page content -->
-        <main class="page-content">
-
-            @if (Model.Content.Ancestor("content").Children(c => c.DocumentTypeAlias.ToLower() == "highlights").Any())
-            {
+        @RenderSection("FeaturedSection", false)
         <div class="grid-row">
-              @{ Html.RenderPartial("_HighlightsPartial", Model.Content.Ancestor("content").Children(c => c.DocumentTypeAlias.ToLower() == "highlights").First()); }
+            @RenderSection("LeftSideBar", false)
+            @RenderBody()
+            @RenderSection("RightSideBar", false)
         </div>
-            }
-
-            @RenderSection("FeaturedSection", false)
-            <div class="grid-row">
-                @RenderSection("LeftSideBar", false)
-                @RenderBody()
-                @RenderSection("RightSideBar", false)
-            </div>
         </main>
         <!--/ page content -->
 
@@ -94,7 +85,7 @@
     <script src="/Scripts/js/jquery.easypiechart.js"></script>
     <!--/ EASYPIECHART -->
     <script src="/Scripts/js/scripts.js"></script>
-    <script src="/Scripts/Common.js"></script> 
+    <script src="/Scripts/Common.js"></script>
     @*<script src="~/scripts/classie.js"></script>
     <script src="~/scripts/AnimatedHeader.js"></script>*@
 

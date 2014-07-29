@@ -1,17 +1,26 @@
-﻿@model IPublishedContent
-<!-- benefits -->
-<section class="benefits">
-    <ul>
-        @foreach (var childPage in Model.Children)
-        {
-            <li>
-                <div class="pic"><i class="fa fa-@childPage.GetPropertyValue("icon")"></i></div>
-                <div class="text">
-                    <h2>@childPage.GetPropertyValue("heading")</h2>
-                    <p>@childPage.GetPropertyValue("description")</p>
-                    <a href="/@childPage.GetPropertyValue("link")" class="more"></a>
-                </div>
-            </li>
-        }
-    </ul>
-</section>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var highlights = Model.Ancestor("content").Children(c => c.DocumentTypeAlias.ToLower() == "highlights");
+}
+
+@if (highlights.Where("visible").Any())
+{
+    <div class="grid-row">
+        <!-- benefits -->
+        <section class="benefits">
+            <ul>
+                @foreach (var highlightItem in highlights.First().Children)
+                {
+                    <li>
+                        <div class="pic"><i class="fa fa-@highlightItem.GetPropertyValue("icon")"></i></div>
+                        <div class="text">
+                            <h2>@highlightItem.GetPropertyValue("heading")</h2>
+                            <p>@highlightItem.GetPropertyValue("description")</p>
+                            <a href="/@highlightItem.GetPropertyValue("link")" class="more"></a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </section>
+    </div>
+}
