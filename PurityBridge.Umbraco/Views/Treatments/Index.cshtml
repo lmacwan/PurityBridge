@@ -1,16 +1,14 @@
 ﻿@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
-    Layout = "/Views/Shared/Layout.cshtml";
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
 }
-@*
-    Check if the content is a Default Content. If it is,
-    build the Page Markup.
-*@
-<section class="widget typography">
+
+<section class="widget photo-tour photo-tour-4" id="photo-tour">
     @*<div class="widget-title">@Model.GetPropertyValue("Heading")</div>*@
     <div class="grid isotope">
-        @foreach (IPublishedContent thumbnailPage in Model.Content.Children())
+        @foreach (IPublishedContent thumbnailPage in Model.Content.Children(c => c.DocumentTypeAlias.Equals("specificcontent", StringComparison.InvariantCultureIgnoreCase)))
         {
             <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                 <div class="pic">

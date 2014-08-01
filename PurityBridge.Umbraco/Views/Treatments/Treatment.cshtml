@@ -1,0 +1,36 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = true;
+    var sideBars = Model.Content.Children(c => c.Name.ToString().Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
+    var cols = 12;
+}
+
+@if (sideBars.Any())
+{
+    foreach (IPublishedContent sidebar in sideBars.DistinctBy(s => s.GetPropertyValue<bool>("Left")))
+    {
+        cols -= 3;
+        if (sidebar.GetPropertyValue<bool>("Left"))
+        {
+    @section LeftSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_ChildrenPartial", sidebar)
+        </div>
+    }
+        }
+        else
+        {
+    @section RightSideBar {
+        <div class="grid-col grid-col-3">
+            @Html.Partial("_ChildrenPartial", sidebar)
+        </div>
+    }        
+        }
+    }
+}
+
+<div class="grid-col grid-col-@cols">
+    @Html.Partial("_ChildrenPartial", Model.Content.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content",StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+</div>

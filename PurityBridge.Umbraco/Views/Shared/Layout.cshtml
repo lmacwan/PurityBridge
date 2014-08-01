@@ -16,10 +16,7 @@
     }
     }
     var cols = 12;
-   
-    
-    
-    
+       
     foreach (IPublishedContent child in Model.Content.Parent.Children)
     {
         if (child.DocumentTypeAlias.ToLower() == "sidebar" && child.GetPropertyValue<bool>("Left") && !(IsSectionDefined("LeftSideBar")))

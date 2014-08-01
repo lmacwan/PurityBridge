@@ -583,7 +583,6 @@
     <Content Include="Views\photoTourIndex.cshtml" />
     <Content Include="Views\rightChoice.cshtml" />
     <Content Include="Views\rightChoiceIndex.cshtml" />
-    <Content Include="Views\Treatments.cshtml" />
     <Content Include="Views\treatmentsIndex.cshtml" />
     <Content Include="Views\umbHomePage.cshtml" />
     <Content Include="Views\umbLayout.cshtml" />
@@ -592,7 +591,6 @@
     <Content Include="Views\umbTextPage.cshtml" />
     <Content Include="Views\header.cshtml" />
     <Content Include="Views\MacroPartials\YouTubePartial.cshtml" />
-    <Content Include="Views\Index.cshtml" />
     <Content Include="Views\MacroPartials\ColumnsPartial.cshtml" />
     <Content Include="Views\Partials\YouTubeVideosPartial.cshtml" />
     <Content Include="Views\Partials\TextItemsPartial.cshtml" />
@@ -616,10 +614,11 @@
     <Content Include="Views\MacroPartials\_FeaturesPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ChildrenPartial.cshtml" />
     <Content Include="Views\Shared\_SidebarPartail.cshtml" />
+    <Content Include="Views\Treatment\Treatment.cshtml" />
+    <Content Include="Views\Treatment\Index.cshtml" />
+    <Content Include="Views\Treatments\Treatment.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

@@ -1,11 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 
 <!-- page title -->
-@if (!(Model.Content.GetPropertyValue<bool>("TitleBar")))
+@if (!(Model.Name.ToString().Equals("home", StringComparison.InvariantCultureIgnoreCase)))
 {
     <section class="page-title">
         <div class="grid-row clearfix">
-            <h1>@Model.Content.GetPropertyValue("heading")</h1>
+            <h1>@Model.Name</h1>
             <nav class="bread-crumbs">
                 @*<a href="#">@Model.Content.GetPropertyValue("heading")</a><span>&nbsp;&nbsp;</span>*@
                 @RenderBreadCrumbs()
@@ -17,15 +17,15 @@
 
 @helper RenderBreadCrumbs()
 {
-    if (Model.Content.DocumentTypeAlias != "index")
+    if ((bool)ViewBag.ShowTitleBar)
     {
-        var currentModel = Model.Content.Ancestors().OrderByDescending(a => a.Level).Where(a => a.DocumentTypeAlias.ToLower() != "layout");
+        var currentModel = Model.Ancestors().Where(a => a.Level > 1).OrderByDescending(a => a.Level);
         foreach (IPublishedContent ancestror in currentModel)
         {
-        <a href="@ancestror.Url()">@ancestror.GetPropertyValue("heading")</a>
-        <span>&nbsp;</span>
-        <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+    <a href="@ancestror.Url()">@ancestror.Name</a>
+    <span>&nbsp;</span>
+    <i class="fa fa-angle-right"></i><span>&nbsp;</span>
         }
+        @Model.Name<span> &nbsp; &nbsp;</span>
     }
-    @Model.Content.GetPropertyValue("heading")<span>&nbsp;&nbsp;</span>
 }
