@@ -14,5 +14,10 @@ namespace PurityBridge.Live
         {
             return base.Index(model);
         }
+
+        public ActionResult Treatment(RenderModel model)
+        {
+            return View(model.Content);
+        }
     }
 }

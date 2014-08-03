@@ -3,7 +3,7 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var sideBars = Model.Content.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
+        var sideBars = Model.Content.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
     var cols = 12;
 }
 
@@ -31,6 +31,6 @@
     }
 }
 
-<div class="grid-col grid-col-@cols">
+<div id="page-content" class="grid-col grid-col-@cols">
     @Html.Partial("_ChildrenPartial", Model.Content.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content",StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
 </div>

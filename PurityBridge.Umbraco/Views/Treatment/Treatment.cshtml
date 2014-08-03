@@ -3,7 +3,7 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var sideBars = Model.Content.Children(c => c.Name.ToString().Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
+    var sideBars = Model.Content.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
     var cols = 12;
 }
 
@@ -16,7 +16,7 @@
         {
     @section LeftSideBar {
         <div class="grid-col grid-col-3">
-            @Html.Partial("_ChildrenPartial", sidebar)
+             @Html.Partial("_RelatedLinksPartial", sidebar);
         </div>
     }
         }
@@ -24,13 +24,13 @@
         {
     @section RightSideBar {
         <div class="grid-col grid-col-3">
-            @Html.Partial("_ChildrenPartial", sidebar)
+           @Html.Partial("_RelatedLinksPartial", sidebar);
         </div>
     }        
         }
     }
 }
 
-<div class="grid-col grid-col-@cols">
+<div id="page-content" class="grid-col grid-col-@cols">
     @Html.Partial("_ChildrenPartial", Model.Content.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content",StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
 </div>

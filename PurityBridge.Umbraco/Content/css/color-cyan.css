@@ -1,10 +1,14 @@
 /**/
 /* defaults */
 /**/
+::-moz-selection {
+    background-color: #00aba5;
+    color: #FFFFFF;
+}
+
 a {
 	color: #00aba5;
 }
-
 
 /**/
 /* buttons */

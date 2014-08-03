@@ -1,24 +1,53 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
-@{
-    IPublishedContent linkedContent;
-}
-<section class="widget photo-tour photo-tour-4" id="photo-tour">
-    @*   <div class="widget-title">@Model.GetPropertyValue("Heading")</div>*@
-    <div class="grid isotope">
+<!-- help -->
+<section id="relatedLinksSection" class="widget doctors-carousel doctors">
+    <div class="widget-title">Similar Treatments</div>
+
+    <div id="help-carousel" class="owl-carousel">
         @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
         {
-            linkedContent = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
-            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                <div class="pic">
-                    <img width="270" height="142" alt="Nullam euismod commodo" src="@linkedContent.GetCropUrl("thumbnail", "thumb")">
-                    <div class="links">
-                        <ul>
-                            <li><a class="fa fa-link" href="@linkedContent.Url"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <h3>@linkedContent.Name</h3>
+            if (child.Index() % 2 == 0)
+            {
+            <div>
+                <ul>
+                    @RenderChildren(child)
+                </ul>
             </div>
+            }
         }
     </div>
 </section>
+<!--/ help -->
+
+@helper RenderChildren(IPublishedContent child)
+{
+    var linkedContent = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
+    <li class="item">
+        <div class="pic">
+            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@linkedContent.GetPropertyValue("heading")">
+            <div class="links">
+                <ul>
+                    <li><a href="#" class="fa fa-mail-forward"></a></li>
+                </ul>
+            </div>
+        </div>
+        <h3>@linkedContent.GetPropertyValue("heading")</h3>
+        <!-- <p>Ophthomologist</p> -->
+    </li>
+    if (child.Next() != null)
+    {
+        linkedContent = Umbraco.TypedContent(child.Next().GetPropertyValue<int>("relatedPage"));
+    <li class="item">
+        <div class="pic">
+            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@linkedContent.GetPropertyValue("heading")">
+            <div class="links">
+                <ul>
+                    <li><a href="#" class="fa fa-mail-forward"></a></li>
+                </ul>
+            </div>
+        </div>
+        <h3>@linkedContent.GetPropertyValue("heading")</h3>
+        <!-- <p>Ophthomologist</p> -->
+    </li>
+    }
+}

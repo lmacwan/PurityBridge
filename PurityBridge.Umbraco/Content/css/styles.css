@@ -759,9 +759,9 @@ a, button {
     cursor: pointer;
 }
 
-p {
+/*p {
     text-indent: 2em;
-}
+}*/
 
     .services p,
     .wpb_accordion p,
@@ -7498,6 +7498,29 @@ i.appointment {
 ==============================================================================
 */
 
-/*.page-header {
-    height: 96px;
+#page-content > article,
+#page-content > section {
+    padding-right: 60px;
+}
+
+/*.grid-col {
+    border-right: solid 1px;
+    margin-right: -1px;
+    border-right-color: #cbcbcb;
+}
+
+.grid-col:last-child {
+    border-right: none;
 }*/
+
+#relatedLinksSection  li.item {
+	margin-bottom: 30px;
+}
+
+#relatedLinksSection li.item:last-child {
+	margin-bottom: 0px;
+}
+
+#relatedLinksSection  li.item h3 {
+	padding: 10px 0px;
+}
