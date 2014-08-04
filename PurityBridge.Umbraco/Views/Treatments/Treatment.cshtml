@@ -1,9 +1,9 @@
 ﻿@using Umbraco.Core.Models
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var sideBars = Model.Content.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
+    var sideBars = Model.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
     var cols = 12;
 }
 
@@ -16,7 +16,7 @@
         {
     @section LeftSideBar {
         <div class="grid-col grid-col-3">
-            @Html.Partial("_ChildrenPartial", sidebar)
+             @Html.Partial("_RelatedLinksPartial", sidebar)
         </div>
     }
         }
@@ -24,17 +24,13 @@
         {
     @section RightSideBar {
         <div class="grid-col grid-col-3">
-            @Html.Partial("_ChildrenPartial", sidebar)
+           @Html.Partial("_RelatedLinksPartial", sidebar)
         </div>
     }        
         }
     }
 }
-@{
-        var content = Model.Content.Children(c => (c.DocumentTypeAlias.Equals("content",StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()));
-}
-@if(content.Any()) {
-    <div id="page-content" class="grid-col grid-col-@cols">
-        @Html.Partial("_ChildrenPartial", content.First())
-    </div>
-}
+
+<div id="page-content" class="grid-col grid-col-@cols">
+    @Html.Partial("_ChildrenPartial", Model.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content",StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+</div>

@@ -1,7 +1,7 @@
 /**/
 /* defaults */
 /**/
-::-moz-selection {
+*::-moz-selection {
     background-color: #00aba5;
     color: #FFFFFF;
 }

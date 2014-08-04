@@ -11,19 +11,6 @@
         <h3>
             @Model.GetPropertyValue("heading")
         </h3>
-        @if (Model.DocumentTypeAlias.ToLower() != "text")
-        {
-            @RenderSection("BeforeContent", required: false);
-            @Html.Raw(content)
-            @RenderSection("AfterContent", required: false);
-        }
-        else
-        {
-            @Html.Raw(content)
-        }
+        @Html.Raw(content)
     </div>
 </article>
-@if (Model.DocumentTypeAlias.ToLower() != "text")
-{
-    @RenderBody();
-}

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PurityBridge.Live.Controllers
+namespace PurityBridge.Live
 {
     public class PhotoTourController : Controller
     {

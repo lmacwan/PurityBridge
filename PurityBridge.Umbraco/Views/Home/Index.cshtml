@@ -1,40 +1,24 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-<div class="grid-row">
-    <h1 class="main">Welcome to Purity Bridge</h1>
-    <section class="services">
-        <ul>
-            <li>
-                <div class="text">
-                    <h2>The private aesthetic clinic based in the heart of Royal Tunbridge Wells.</h2>
-                    <p>Purity Bridge provides a sophisticated, holistic approach to skin care, facial rejuvenation and body contouring, bridging the divisions between medical skin care, cosmetic surgery and beauty therapy.</p>
-                </div>
-            </li>
-            <li>
-                <div class="text">
-                    <h2>Partnership & Location</h2>
-                    <p>Purity Bridge is partnered with Tunbridge Wells Plastic Surgery and based in a beautiful CQC-approved period building, boasting private consulting suites, a beauty therapy spa as well as minor surgery facilities.</p>
-                </div>
-            </li>
-    </section>
-</div>
-<div class="grid-row">
-    <section class="services">
-        <ul>
-            <li>
-                <div class="text">
-                    <h2>At Purity Bridge we are in the unique position of being able to offer the whole spectrum of disciplines using a tailor made approach to suit your individual needs.</h2>
-                    <p>This is only possible because Purity Bridge is owned and directed by renowned Consultant Plastic Surgeon, Mr. Marc Pacifico, supported by a hand-picked team of specialist doctors, nurses and advanced beauty therapists. Few clinics in the South East can claim to be led by a fully accredited BAAPS and BAPRAS Consultant Plastic Surgeon.</p>
-                </div>
-            </li>
-            <li>
-                <div class="text">
-                    <h2>At Purity Bridge we aim to provide a comprehensive approach, personalised to each individual.</h2>
-                    <p>
-                        We understand that in reality, all the varied disciplines that we offer complement one another. Only by this approach can the best bespoke treatment for you be determined.
-                        Purity Bridge aims to lead the way by providing the highest quality destination for all your cosmetic needs.
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </section>
-</div>
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var highlights = Model.Content.Children(c => c.DocumentTypeAlias.Equals("highlights", StringComparison.CurrentCultureIgnoreCase));
+    var featured = Model.Content.Children(c => c.DocumentTypeAlias.Equals("featured", StringComparison.CurrentCultureIgnoreCase));
+}
+
+@if (highlights.Any())
+{
+    @section HighlightsSection {
+        @Html.Partial("_HighlightsPartial", Model.Content)
+    }
+}
+
+@if (featured.Any())
+{
+    @section FeaturedSection {
+        @Html.Partial("_FeaturesPartial", featured.First())
+    }
+}
+
+@Html.Partial("_ContentPartial", Model.Content.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))

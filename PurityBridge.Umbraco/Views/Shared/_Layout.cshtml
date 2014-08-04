@@ -40,7 +40,7 @@
         @RenderSection("ImageSection", false)
         <!-- page content -->
         <main>
-        @Html.Partial("_HighlightsPartial", Model.Content)
+        @RenderSection("HighlightsSection", false)
         @RenderSection("FeaturedSection", false)
         <div class="grid-row">
             @RenderSection("LeftSideBar", false)

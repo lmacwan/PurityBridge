@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
-    var highlights = Model.Parent.Children(c => c.DocumentTypeAlias.ToLower() == "highlights");
+    var highlights = Model.Children(c => c.DocumentTypeAlias.Equals("highlights", StringComparison.CurrentCultureIgnoreCase));
 }
 
 @if (highlights.Where("visible").Any())

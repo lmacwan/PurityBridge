@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
 
-namespace PurityBridge
+namespace PurityBridge.Live
 {
-    public class HomeController : BaseController
+    public class HomeController : RenderMvcController
     {
-        public ActionResult Index()
+        public override ActionResult Index(RenderModel model)
         {
-            return View();
-        }
-
-        public ActionResult TheRightChoice()
-        {
-            return RedirectToAction("Index", "TheRightChoice");
+            return base.Index(model);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PurityBridge
+namespace PurityBridge.Live
 {
     public class TheRightChoiceController : BaseController
     {

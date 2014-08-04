@@ -1,12 +1,19 @@
-﻿@model IPublishedContent
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
-    Layout = "_TextPartial.cshtml";
+    
+    var IsInheritable = Model.DocumentTypeAlias.ToLower() != "text";
+    var content = string.Format("<p>{0}</p><br><br>",
+                        Model.GetPropertyValue<string>("text")
+                                     .Replace('\n' + "", "</p><p>"));    
 }
-@section BeforeContent {
-    @{
-        var photoUrl = ((UmbracoHelper)ViewBag.Umbraco).TypedMedia(Model.GetPropertyValue("photo")).Url;
-    }
-    <p>
-        <img src="@photoUrl" alt=""/>
-    </p>
-}
+<article>
+    <div class="typography">
+        <h3>
+            @Model.GetPropertyValue("heading")
+        </h3>
+        <p>
+            <img src="@Umbraco.TypedMedia(Model.GetPropertyValue("photo")).Url" alt="@Model.GetPropertyValue("heading")"/>
+        </p>
+        @Html.Raw(content)
+    </div>
+</article>

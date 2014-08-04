@@ -1,4 +1,4 @@
-﻿@model IPublishedContent
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 
 @foreach (IPublishedContent child in Model.Children)
 {
@@ -21,9 +21,5 @@
     else if (child.DocumentTypeAlias == "Collapsible")
     {
         Html.RenderPartial("_AccordianPartial", child);
-    }
-    else if (child.DocumentTypeAlias == "relatedPage")
-    {
-       
     }
 }

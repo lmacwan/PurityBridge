@@ -1,18 +1,13 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
-@{
-    ViewBag.Umbraco = Umbraco;
-}
-
-@foreach (IPublishedContent child in Model.Content.Children(c => c.Children.Count() > 0))
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@foreach (IPublishedContent child in Model.Children())
 {
-    if (child.DocumentTypeAlias == "Columns")
+    if (child.DocumentTypeAlias == "columns")
     {
-    @Html.Partial("ColumnsPartial", child)
+        Html.RenderPartial("ColumnsPartial", child);
     }
     else if (child.DocumentTypeAlias == "List")
     {
-    @Html.Partial("_ListPartial", child)
+        Html.RenderAction("_ListPartial", child);
     }
 }
-@Html.Partial("_ChildrenPartial", Model.Content)
+@Html.Partial("_ChildrenPartial", Model.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))

@@ -576,27 +576,15 @@
     <Content Include="Views\Treatments\Index.cshtml" />
     <Content Include="Views\UnderConstruction.cshtml" />
     <Content Include="Views\Location.cshtml" />
-    <Content Include="Views\locationIndex.cshtml" />
     <Content Include="Views\NewsAndEvents.cshtml" />
-    <Content Include="Views\newsAndEventsIndex.cshtml" />
     <Content Include="Views\PhotoTour.cshtml" />
-    <Content Include="Views\photoTourIndex.cshtml" />
     <Content Include="Views\rightChoice.cshtml" />
-    <Content Include="Views\rightChoiceIndex.cshtml" />
-    <Content Include="Views\treatmentsIndex.cshtml" />
-    <Content Include="Views\umbHomePage.cshtml" />
-    <Content Include="Views\umbLayout.cshtml" />
-    <Content Include="Views\umbNewsItem.cshtml" />
-    <Content Include="Views\umbNewsOverview.cshtml" />
-    <Content Include="Views\umbTextPage.cshtml" />
-    <Content Include="Views\header.cshtml" />
     <Content Include="Views\MacroPartials\YouTubePartial.cshtml" />
     <Content Include="Views\MacroPartials\ColumnsPartial.cshtml" />
     <Content Include="Views\Partials\YouTubeVideosPartial.cshtml" />
     <Content Include="Views\Partials\TextItemsPartial.cshtml" />
     <Content Include="Views\Partials\RenderItemsPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
-    <Content Include="Views\Featured.cshtml" />
     <Content Include="Views\MacroPartials\_PageTitlePartial.cshtml" />
     <Content Include="Views\MacroPartials\_MakeAnAppointmentPartial.cshtml" />
     <Content Include="Views\MacroPartials\_NewsCompactPartial.cshtml" />
@@ -617,6 +605,10 @@
     <Content Include="Views\Treatment\Treatment.cshtml" />
     <Content Include="Views\Treatment\Index.cshtml" />
     <Content Include="Views\Treatments\Treatment.cshtml" />
+    <Content Include="Views\Treatments.cshtml" />
+    <Content Include="Views\Treatment.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -688,7 +680,6 @@
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="macroScripts\MvcRenderAction.cshtml" />
     <Content Include="Views\Home.cshtml" />
-    <Content Include="Views\homeIndex.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
