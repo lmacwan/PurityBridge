@@ -572,7 +572,7 @@
     <Content Include="Views\TheRightChoice\Index.cshtml" />
     <Content Include="Views\Location\Index.cshtml" />
     <Content Include="Views\NewsAndEvents\Index.cshtml" />
-    <Content Include="Views\PhotoTour\Index.cshtml" />
+    <Content Include="Views\Photos\Index.cshtml" />
     <Content Include="Views\Treatments\Index.cshtml" />
     <Content Include="Views\UnderConstruction.cshtml" />
     <Content Include="Views\Location.cshtml" />

@@ -32,14 +32,14 @@
             </div>
         </div>
         <h3>@linkedContent.GetPropertyValue("heading")</h3>
-        <!-- <p>Ophthomologist</p> -->
+         <p></p> 
     </li>
     if (child.Next() != null)
     {
         linkedContent = Umbraco.TypedContent(child.Next().GetPropertyValue<int>("relatedPage"));
     <li class="item">
         <div class="pic">
-            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@linkedContent.GetPropertyValue("heading")">
+            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" alt="@linkedContent.GetPropertyValue("heading")">
             <div class="links">
                 <ul>
                     <li><a href="#" class="fa fa-mail-forward"></a></li>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <h3>@linkedContent.GetPropertyValue("heading")</h3>
-        <!-- <p>Ophthomologist</p> -->
+         <p></p> 
     </li>
     }
 }

@@ -377,7 +377,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\NewsAndEventsController.cs" />
-    <Compile Include="Controllers\PhotoTourController.cs" />
+    <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Controllers\TheRightChoiceController.cs" />
     <Compile Include="Controllers\TreatmentController.cs" />
     <Compile Include="Controllers\TreatmentsController.cs" />
