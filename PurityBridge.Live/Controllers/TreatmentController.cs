@@ -10,9 +10,9 @@ namespace PurityBridge.Live
 {
     public class TreatmentController : RenderMvcController
     {
-        public override ActionResult Index(RenderModel model)
+        public ActionResult Details(RenderModel model)
         {
-            return base.Index(model);
+            return View(model);
         }
     }
 }
