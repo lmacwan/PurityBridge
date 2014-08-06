@@ -1,8 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage                                                                                                                          
 
 @{
     var isHomePage = Model.Content.Name == "home";
-    IEnumerable<IPublishedContent> layout = Model.Content.Siblings().Where(s => s.DocumentTypeAlias.Equals("layout", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
+    IEnumerable<IPublishedContent> layout = Model.Content.Ancestor(1).Siblings().Where(s => s.DocumentTypeAlias.Equals("layout", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
     IEnumerable<IPublishedContent> headers = null;
     if (layout.Any())
     {
