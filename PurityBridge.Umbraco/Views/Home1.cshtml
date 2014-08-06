@@ -1,4 +1,24 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
-    Layout = null;
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var highlights = Model.Content.Children(c => c.DocumentTypeAlias.Equals("highlights", StringComparison.CurrentCultureIgnoreCase));
+    var featured = Model.Content.Children(c => c.DocumentTypeAlias.Equals("featured", StringComparison.CurrentCultureIgnoreCase));
 }
+
+@if (highlights.Any())
+{
+    @section HighlightsSection {
+        @Html.Partial("_HighlightsPartial", Model.Content)
+    }
+}
+
+@if (featured.Any())
+{
+    @section FeaturedSection {
+        @Html.Partial("_FeaturesPartial", featured.First())
+    }
+}
+
+@Html.Partial("_ContentPartial", Model.Content.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))

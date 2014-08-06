@@ -1,21 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-    var isHomePage = Model.Content.Parent.Name == "home" && Model.Content.Name == "index";
-    var headers = Model.Content.AncestorOrSelf(1).Children(c => c.DocumentTypeAlias.Equals("header")).FirstOrDefault();
+    var isHomePage = Model.Content.Name == "home";
+    IEnumerable<IPublishedContent> layout = Model.Content.Siblings().Where(s => s.DocumentTypeAlias.Equals("layout", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
+    IEnumerable<IPublishedContent> headers = null;
+    if (layout.Any())
+    {
+        headers = layout.First().Children(c => c.DocumentTypeAlias.Equals("header") && c.IsVisible());
+    }
 }
-	
-@* Ensure that the Current Page has children, where the property umbracoNaviHide is not True *@
+
 @if (headers != null)
 {
-    //Navigations.First().Children.Where("Visible").Any()
-    var navigation = headers.Children(c => c.DocumentTypeAlias == "navigation").FirstOrDefault();
+    var navigation = headers.First().Children(c => c.DocumentTypeAlias == "navigation" && c.IsVisible()).FirstOrDefault();
     var showOnRight = "";
     if (navigation != null)
     {
         var hasChildren = false;
         var relatedToName = "";
-        @* For each child page under the root node, where the property umbracoNaviHide is not True *@
         foreach (var childPage in navigation.Children.Where("Visible"))
         {
             if (isHomePage && !(childPage.GetPropertyValue<bool>("homepagevisible")))
@@ -45,10 +47,8 @@
                     <a href="/@relatedToName/index" controller="@relatedToName">@childPage.Name</a>
                     }
                 }
-	            @* if the current page has any children, where the property umbracoNaviHide is not True *@
                 @if (hasChildren)
                 {
-	                @* Call our helper to display the children *@
                         @childPages(childPage.Children, "/" + relatedToName);
                 }
             </li>
