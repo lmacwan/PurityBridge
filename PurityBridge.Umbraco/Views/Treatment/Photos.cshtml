@@ -1,0 +1,37 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var test = Model.Content.Children(c => c.DocumentTypeAlias.Equals("BeforeAndAfter"));
+}
+
+<section class="widget photo-tour photo-tour-4" id="photo-tour">
+    <div class="grid isotope">
+        @foreach(IPublishedContent item in test)
+        {
+             <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                <div class="pic">
+                    <ul class="ca-image">
+                        <li class="before">
+                            <a href="#">
+                                <div class="ca-content">
+                                </div>
+                                <img width="270" height="142" alt="@item.GetPropertyValue("heading")-before" src="@Umbraco.TypedMedia(item.GetPropertyValue<int>("before")).Url" style="display:none">
+                            </a>
+                        </li>
+                        <li class="after">
+                            <a href="#">
+                                <div class="ca-content">
+                                </div>
+                                <img width="270" height="142" alt="@item.GetPropertyValue("heading")-after" src="@Umbraco.TypedMedia(item.GetPropertyValue<int>("after")).Url" style="display:none">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h3>@item.GetPropertyValue("heading")</h3>
+                <p></p>
+            </div>
+        }
+    </div>
+</section>

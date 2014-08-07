@@ -5,7 +5,7 @@
 {
     <section class="page-title">
         <div class="grid-row clearfix">
-            <h1>@Model.Ancestor(2).Name</h1>
+            <h1>@Model.Name</h1>
             <nav class="bread-crumbs">
                 @RenderBreadCrumbs()
             </nav>
@@ -25,9 +25,6 @@
     <span>&nbsp;</span>
     <i class="fa fa-angle-right"></i><span>&nbsp;</span>
         }
-        var value = Model.Name.Equals("details", StringComparison.CurrentCultureIgnoreCase)
-                    ? "Treatments"
-                    : Model.Name;
-    @value <span> &nbsp; &nbsp;</span>
+    @Model.Name <span> &nbsp; &nbsp;</span>
     }
 }
