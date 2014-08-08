@@ -318,6 +318,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="Content\audio\californication.html" />
+    <Content Include="Content\css\beforeafter.css" />
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\color-blue.css" />
     <Content Include="Content\css\color-cyan.css" />
@@ -507,6 +508,7 @@
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\AnimatedHeader.js" />
     <Content Include="scripts\AnimatedHeader.min.js" />
+    <Content Include="scripts\BeforeAndAfter.js" />
     <Content Include="scripts\classie.js" />
     <Content Include="scripts\Common.js" />
     <Content Include="scripts\dummy.txt" />
@@ -610,8 +612,17 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Treatment\Details.cshtml" />
+    <Content Include="Views\Treatment\Photos.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Photos\Treatment.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
+      <Project>{38ca711f-2477-4518-b369-6af25634a8a0}</Project>
+      <Name>PurityBridge.Live</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
