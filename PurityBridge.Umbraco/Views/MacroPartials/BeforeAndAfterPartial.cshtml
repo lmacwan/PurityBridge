@@ -1,0 +1,24 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+<div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+    <div class="pic">
+        <ul class="ca-image">
+            <li class="before">
+                <a href="#">
+                    <div class="ca-content">
+                    </div>
+                    <img width="370" height="195" alt="@Model.GetPropertyValue("heading")-before" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("beforeImage")).Url" style="display:none">
+                </a>
+            </li>
+            <li class="after">
+                <a href="#">
+                    <div class="ca-content">
+                    </div>
+                    <img width="370" height="195" alt="@Model.GetPropertyValue("heading")-after" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("afterImage")).Url" style="display:none">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <h3>@Model.GetPropertyValue("heading")</h3>
+    <p></p>
+</div>

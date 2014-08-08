@@ -610,8 +610,15 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Treatment\Details.cshtml" />
+    <Content Include="Views\MacroPartials\BeforeAndAfterPartial.cshtml" />
+    <Content Include="Views\Photos\Treatment.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
+      <Project>{38ca711f-2477-4518-b369-6af25634a8a0}</Project>
+      <Name>PurityBridge.Live</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
