@@ -2,7 +2,7 @@
 @{
     
     var IsInheritable = Model.DocumentTypeAlias.ToLower() != "text";
-    var content = string.Format("<p>{0}</p><br><br>",
+    var content = string.Format("<p>{0}</p>",
                         Model.GetPropertyValue<string>("text")
                                      .Replace('\n' + "", "</p><p>"));    
 }

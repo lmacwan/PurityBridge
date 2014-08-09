@@ -11,6 +11,23 @@ $(document).ready(function () {
     i++;
     controllerName = loc[i];
     $("header a[controller=" + controllerName + "]").addClass("active");
+
+    // Set Cols Width
+    if ($('.treatments-row').height() > $('.vc_row-fluid').children().first().height()) {
+        var width = 0;
+        var elementWidth = 0;
+        $('.treatments-row').children().each(function (i, e) {
+            elementWidth = $(e).outerWidth() + parseInt($(e).css('margin-left').split('px')[0]);
+            if (elementWidth + width >= $('.vc_row-fluid').outerWidth()) {
+                $(e).css({ marginLeft: 0 });
+                width = 0;
+            } else {
+                width = elementWidth + width;
+                $(e).css({ marginBottom: 30 });
+            }
+        });
+    }
+
     $("#umbracoPreviewBadge").remove();
 });
 

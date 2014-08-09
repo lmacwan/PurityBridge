@@ -20,6 +20,22 @@
     }
     else if (child.DocumentTypeAlias == "Collapsible")
     {
+        <div class="vc_text_separator" ></div>
         Html.RenderPartial("_AccordianPartial", child);
+    }
+    else if (child.DocumentTypeAlias.Equals("testimonial", StringComparison.CurrentCultureIgnoreCase))
+    {
+        Html.RenderPartial("TestimonialPartial", child);
+    }
+    else if (child.DocumentTypeAlias.Equals("testimonials", StringComparison.CurrentCultureIgnoreCase))
+    {
+        <div class="vc_text_separator" ></div>
+        if (child.HasValue("heading"))
+        {
+    <div class="widget-title">@child.GetPropertyValue("heading") </div>
+        }
+    <div class="vc_row-fluid treatments-row">
+        @Html.Partial("_ChildrenPartial", child)
+    </div>
     }
 }

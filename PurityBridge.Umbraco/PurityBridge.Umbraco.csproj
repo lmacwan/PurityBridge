@@ -318,6 +318,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="Content\audio\californication.html" />
+    <Content Include="Content\css\beforeafter.css" />
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\color-blue.css" />
     <Content Include="Content\css\color-cyan.css" />
@@ -346,6 +347,7 @@
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\styles_old.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\images\beige_paper.png" />
     <Content Include="Content\images\twitter_bird.html" />
     <Content Include="Content\img\blank.gif" />
     <Content Include="Content\img\blue\last-news%402x.png" />
@@ -612,6 +614,7 @@
     <Content Include="Views\Treatment\Details.cshtml" />
     <Content Include="Views\MacroPartials\BeforeAndAfterPartial.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />
+    <Content Include="Views\MacroPartials\TestimonialPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">

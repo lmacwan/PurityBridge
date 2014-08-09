@@ -763,15 +763,15 @@ a, button {
     text-indent: 2em;
 }*/
 
-    .services p,
-    .wpb_accordion p,
-    .widget p,
-    .wpb_tabs p,
-    .wpb_toggle_content p,
-    .latest-tweets p,
-    p.capitalized {
-        text-indent: initial;
-    }
+.services p,
+.wpb_accordion p,
+.widget p,
+.wpb_tabs p,
+.wpb_toggle_content p,
+.latest-tweets p,
+p.capitalized {
+    text-indent: initial;
+}
 
 html, body {
     background: #f2f2f2;
@@ -2622,8 +2622,13 @@ nav p {
 }
 
 .photo-tour .pic {
+    /*position: relative;
+    padding-bottom: 56.25%;*/
+    background: none repeat scroll 0 0 rgba(77, 196, 192, 0.3);
+    border-radius: 40px 40px 0 0;
+    padding-bottom: 50.25%;
+    padding-top: 40px;
     position: relative;
-    padding-bottom: 56.25%;
 }
 
     .photo-tour .pic img {
@@ -6048,6 +6053,7 @@ iframe {
     .testimonial p {
         font-size: 13px;
         line-height: 20px;
+        text-indent: 25px;
     }
 
     .testimonial img {
@@ -7513,18 +7519,25 @@ i.appointment {
     border-right: none;
 }*/
 
-#relatedLinksSection  li.item {
-	margin-bottom: 30px;
+#relatedLinksSection li.item {
+    margin-bottom: 30px;
 }
 
-#relatedLinksSection li.item:last-child {
-	margin-bottom: 0px;
+    #relatedLinksSection li.item:last-child {
+        margin-bottom: 0px;
+    }
+
+    #relatedLinksSection li.item h3 {
+        padding: 10px 0px;
+    }
+
+.treatments-row {
+    width:93%;
+}
+.vc_text_separator {
+    border: none;
 }
 
-#relatedLinksSection  li.item h3 {
-	padding: 10px 0px;
-}
-
-.photo-tour p {
-
+.testimonial .author:before {
+    content: none;
 }
