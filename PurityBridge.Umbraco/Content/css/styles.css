@@ -1078,8 +1078,8 @@ textarea {
 }
 
 .typography p {
-    margin-top: 15px;
     line-height: 22px;
+    margin-top: 8px;
 }
 
 
@@ -7506,9 +7506,13 @@ i.appointment {
 
 #page-content > article,
 #page-content > section {
+    margin-top: 15px;
     padding-right: 60px;
 }
 
+#page-content > section {
+    margin-top: 35px;
+}
 /*.grid-col {
     border-right: solid 1px;
     margin-right: -1px;
@@ -7531,13 +7535,20 @@ i.appointment {
         padding: 10px 0px;
     }
 
-.treatments-row {
-    width:93%;
-}
+
 .vc_text_separator {
     border: none;
 }
 
+.testimonial .author {
+    padding: 15px 65px 15px 20px;
+}
+
 .testimonial .author:before {
     content: none;
+}
+
+.vc_parent{
+    position: relative;
+    margin-left: 0px;
 }

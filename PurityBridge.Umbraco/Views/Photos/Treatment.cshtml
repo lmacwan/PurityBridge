@@ -8,11 +8,16 @@
 <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
 <section class="widget photo-tour photo-tour-2" id="photo-tour">
     <div class="grid isotope">
+       
         @foreach (IPublishedContent item in test)
         {
             @Html.Partial("BeforeAndAfterPartial", item)
         }
     </div>
+    <form method="post">
+        <div id="page" style="display: none">1</div>
+        <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
+    </form>
 </section>
 @section scripts {
     <script src="~/scripts/BeforeAndAfter.js"></script>

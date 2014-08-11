@@ -1,41 +1,74 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var documentType = string.Empty;
+}
 
 @foreach (IPublishedContent child in Model.Children)
 {
-    if (child.DocumentTypeAlias == "Text")
+    documentType = child.DocumentTypeAlias.ToLower();
+    if (documentType.Equals("text"))
     {
         Html.RenderPartial("_TextPartial", child);
     }
-    else if (child.DocumentTypeAlias == "PhotoText")
+    else if (documentType.Equals("phototext"))
     {
         Html.RenderPartial("_PhotoTextPartial", child);
     }
-    else if (child.DocumentTypeAlias == "Video")
+    else if (documentType.Equals("video"))
     {
         Html.RenderPartial("_VideoPartial", child);
     }
-    else if (child.DocumentTypeAlias == "YouTubeVideo")
+    else if (documentType.Equals("youtubevideo"))
     {
         Html.RenderPartial("_YouTubeVideoPartial", child);
     }
-    else if (child.DocumentTypeAlias == "Collapsible")
+    else if (documentType.Equals("collapsible"))
     {
-        <div class="vc_text_separator" ></div>
+@*<div class="vc_text_separator vc_text_separator3" ></div>*@
         Html.RenderPartial("_AccordianPartial", child);
     }
-    else if (child.DocumentTypeAlias.Equals("testimonial", StringComparison.CurrentCultureIgnoreCase))
+    else if (documentType.Equals("beforeandafter"))
+    {
+        Html.RenderPartial("BeforeAndAfterPartial", child);
+    }
+    else if (documentType.Equals("testimonial"))
     {
         Html.RenderPartial("TestimonialPartial", child);
     }
-    else if (child.DocumentTypeAlias.Equals("testimonials", StringComparison.CurrentCultureIgnoreCase))
+    else if (documentType.Equals("testimonials"))
     {
-        <div class="vc_text_separator" ></div>
-        if (child.HasValue("heading"))
-        {
-    <div class="widget-title">@child.GetPropertyValue("heading") </div>
-        }
-    <div class="vc_row-fluid treatments-row">
-        @Html.Partial("_ChildrenPartial", child)
-    </div>
+        var span = PurityBridge.Umbraco.Utility.GetSpanEquivalent(child.GetPropertyValue<string>("span"));
+        ViewBag.RowSpan = span;
+        var rowSpanEquivalent = "vc_parent vc_span" + span;
+    <section class="widget">
+        <div class="@rowSpanEquivalent treatments-row">
+            @if (child.HasValue("heading"))
+            {
+                <div class="widget-title">@child.GetPropertyValue("heading") </div>
+            }
+            @foreach (IPublishedContent testimonial in child.Children(c => c.IsVisible()))
+            {
+                Html.RenderPartial("TestimonialPartial", testimonial);
+            }
+        </div>
+    </section>
+    }
+    else if (documentType.Equals("photocomparisions"))
+    {
+        //var span = PurityBridge.Umbraco.Utility.GetSpanEquivalent(child.GetPropertyValue<string>("span"));
+        //ViewBag.RowSpan = span;
+        //var rowSpanEquivalent = "vc_parent vc_span" + span;
+    <section class="widget">
+        <div class="@rowSpanEquivalent photo-comaprisions-row">
+            @if (child.HasValue("heading"))
+            {
+                <div class="widget-title">@child.GetPropertyValue("heading") </div>
+            }
+            @foreach (IPublishedContent photoComaprison in child.Children(c => c.IsVisible()))
+            {
+                Html.RenderPartial("BeforeAndAfterPartial", photoComaprison);
+            }
+        </div>
+    </section>
     }
 }

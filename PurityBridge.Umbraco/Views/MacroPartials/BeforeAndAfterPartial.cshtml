@@ -1,6 +1,52 @@
-﻿@using Umbraco.Core.Models
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
-<div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+
+@{
+    var cols = 12;
+    var span = string.Empty;
+
+    cols = PurityBridge.Umbraco.Utility.GetSpanEquivalent(Model.Parent.GetPropertyValue<string>("childrensSpan"));
+    span = "vc_span" + (((cols * ((int)ViewBag.RowSpan)) / 12)-1);
+
+    <div class="@span" style="position:relative">
+        <div class="pic">
+            <ul class="ca-image">
+                <li class="before">
+                    <a href="#">
+                        <div class="ca-content">
+                            <div class="mask">
+                                <p>B</p>
+                                <p>E</p>
+                                <p>F</p>
+                                <p>O</p>
+                                <p>R</p>
+                                <p>E</p>
+                            </div>
+                        </div>
+                        <img alt="@Model.GetPropertyValue("heading")-before" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("beforeImage")).Url" style="display:none">
+                    </a>
+                </li>
+                <li class="after">
+                    <a href="#">
+                        <div class="ca-content">
+                            <div class="mask">
+                                <p>A</p>
+                                <p>F</p>
+                                <p>T</p>
+                                <p>E</p>
+                                <p>R</p>
+                            </div>
+                        </div>
+                        <img alt="@Model.GetPropertyValue("heading")-after" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("afterImage")).Url" style="display:none">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <h3>@Model.GetPropertyValue("heading")</h3>
+        <p></p>
+    </div>
+}
+
+@*<div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
     <div class="pic">
         <ul class="ca-image">
             <li class="before">
@@ -36,4 +82,4 @@
     </div>
     <h3>@Model.GetPropertyValue("heading")</h3>
     <p></p>
-</div>
+</div>*@

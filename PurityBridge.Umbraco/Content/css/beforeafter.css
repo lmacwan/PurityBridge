@@ -1,10 +1,16 @@
 .ca-image {
+    padding: 0px;
+}
+
+.ca-image.hover {
     padding: 0 50px;
 }
 
     .ca-image li {
-        width: 225px;
-        height: 220px;
+        max-width: 225px;
+        width: 100%;
+        max-height: 220px;
+        height: 100%;
         border: 10px solid #00aba5;
         overflow: hidden;
         position: relative;
@@ -119,7 +125,7 @@ li.after {
     display: none;
 }
 
-.ca-image li:hover {
+.ca-image li.hover:hover {
     border: 10px solid #fff;
     z-index: 999;
     background: rgb(0, 171, 165);
@@ -130,7 +136,7 @@ li.after {
     transform: scale(1.3);
 }
 
-    .ca-image li:hover .ca-icon {
+    .ca-image li.hover:hover .ca-icon {
         color: #fff;
         font-size: 60px;
         text-shadow: 0px 0px 1px #000;
@@ -139,13 +145,13 @@ li.after {
         -ms-animation: moveFromBottom 300ms ease;
     }
 
-    .ca-image li:hover .ca-content p {
+    .ca-image li.hover:hover .ca-content p {
         background: rgba(0, 171, 165, 0.5);
         color: #fff;
         text-shadow: 0px 0px 1px #000;
     }
 
-    .ca-image li:hover .ca-main {
+    .ca-image li.hover:hover .ca-main {
         color: #fff;
         -webkit-animation: moveFromBottom 500ms ease;
         -moz-animation: moveFromBottom 500ms ease;

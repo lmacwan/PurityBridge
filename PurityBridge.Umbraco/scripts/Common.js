@@ -13,23 +13,42 @@ $(document).ready(function () {
     $("header a[controller=" + controllerName + "]").addClass("active");
 
     // Set Cols Width
-    if ($('.treatments-row').height() > $('.vc_row-fluid').children().first().height()) {
+    if ($('#page-content .vc_row-fluid').height() > $('#page-content .vc_row-fluid').children().first().height()) {
         var width = 0;
         var elementWidth = 0;
-        $('.treatments-row').children().each(function (i, e) {
+        $('#page-content .vc_row-fluid').children().each(function (i, e) {
             elementWidth = $(e).outerWidth() + parseInt($(e).css('margin-left').split('px')[0]);
-            if (elementWidth + width >= $('.vc_row-fluid').outerWidth()) {
+            if (elementWidth + width >= $('#page-content .vc_row-fluid').outerWidth()) {
                 $(e).css({ marginLeft: 0 });
                 width = 0;
             } else {
                 width = elementWidth + width;
-                $(e).css({ marginBottom: 30 });
             }
+            $(e).css({ marginBottom: 30 });
+            setMargin(e);
         });
     }
 
+    $('.vc_parent').css('margin-left', 0);
+    $('.photo-comaprisions-row li').first().css('margin-left', 0);
+
     $("#umbracoPreviewBadge").remove();
 });
+
+function setMargin(parent) {
+    var width = 0;
+    var elementWidth = 0;
+    $(parent).find(".vc_child").first().css({ marginLeft: 0 });
+    $(parent).children().each(function (i, e) {
+        elementWidth = $(e).outerWidth() + parseInt($(e).css('margin-left').split('px')[0]);
+        if (elementWidth + width >= $(parent).outerWidth()) {
+            $(e).css({ marginLeft: 0 });
+            width = 0;
+        } else {
+            width = elementWidth + width;
+        }
+    });
+}
 
 $(window).load(function () {
     $('#ui-datepicker-div').addClass('widget-calendar');
