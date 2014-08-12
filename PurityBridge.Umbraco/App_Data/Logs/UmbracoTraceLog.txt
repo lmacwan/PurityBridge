@@ -1,45 +1,30 @@
-﻿2014-08-11 21:39:17,051 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2014-08-11 21:39:17,091 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 22ms)
-2014-08-11 21:39:17,116 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
-2014-08-11 21:39:17,212 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 92ms)
-2014-08-11 21:39:17,645 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
-2014-08-11 21:39:17,650 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
-2014-08-11 21:39:17,652 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
-2014-08-11 21:39:17,655 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 3ms)
-2014-08-11 21:39:17,750 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
-2014-08-11 21:39:17,753 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 2ms)
-2014-08-11 21:39:17,754 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
-2014-08-11 21:39:17,758 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 4ms)
-2014-08-11 21:39:17,771 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
-2014-08-11 21:39:17,775 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
-2014-08-11 21:39:17,775 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
-2014-08-11 21:39:17,777 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
-2014-08-11 21:39:21,477 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
-2014-08-11 21:39:21,478 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 1ms)
-2014-08-11 21:39:21,528 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
-2014-08-11 21:39:21,531 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 2ms)
-2014-08-11 21:39:21,574 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
-2014-08-11 21:39:22,592 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
-2014-08-11 21:39:22,621 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
-2014-08-11 21:39:22,622 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 1ms)
-2014-08-11 21:39:30,471 [7] INFO  Umbraco.Core.PluginManager - [Thread 9] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
-2014-08-11 21:39:30,472 [7] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 1ms)
-2014-08-11 21:40:05,226 [7] INFO  Umbraco.Core.PluginManager - [Thread 11] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
-2014-08-11 21:40:05,234 [7] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 8ms)
-2014-08-11 21:40:06,296 [7] INFO  Umbraco.Web.Security.WebSecurity - [Thread 11] User Id: 0 logged in
-2014-08-11 21:40:06,697 [7] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Web.Trees.TreeController
-2014-08-11 21:40:06,698 [7] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
-2014-08-11 21:40:07,055 [7] INFO  Umbraco.Core.PluginManager - [Thread 11] Starting resolution types of umbraco.interfaces.ITree
-2014-08-11 21:40:07,124 [7] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 68ms)
-2014-08-11 21:42:11,003 [7] INFO  umbraco.content - [Thread 10] Loading content from disk cache...
-2014-08-11 21:42:38,579 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of umbraco.interfaces.ICacheRefresher
-2014-08-11 21:42:38,581 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 2ms)
-2014-08-11 21:43:23,206 [7] INFO  umbraco.content - [Thread 11] Loading content from database...
-2014-08-11 21:43:33,106 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 11] Content 'Photo Comaparisions' with Id '1679' has been unpublished.
-2014-08-11 21:43:33,412 [7] WARN  Umbraco.Web.Routing.DefaultUrlProvider - [Thread 11] Couldn't find any page with nodeId=1679. This is most likely caused by the page not being published.
-2014-08-11 21:43:38,787 [7] WARN  Umbraco.Web.Routing.DefaultUrlProvider - [Thread 9] Couldn't find any page with nodeId=1680. This is most likely caused by the page not being published.
-2014-08-11 21:43:42,260 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 21] Content 'Featured' with Id '1680' has been unpublished.
-2014-08-11 21:43:56,467 [7] WARN  Umbraco.Web.Routing.DefaultUrlProvider - [Thread 11] Couldn't find any page with nodeId=1679. This is most likely caused by the page not being published.
-2014-08-11 21:43:59,130 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 10] Content 'Photo Comaparisions' with Id '1679' has been unpublished.
-2014-08-11 21:43:59,317 [7] WARN  Umbraco.Web.Routing.DefaultUrlProvider - [Thread 10] Couldn't find any page with nodeId=1679. This is most likely caused by the page not being published.
-2014-08-11 21:45:04,982 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 21] Content 'Testimonials' with Id '1661' has been published.
+﻿2014-08-12 00:00:13,664 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 86] Content 'FAQs' with Id '0' has been published.
+2014-08-12 00:00:44,842 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 20] Content 'What is the recovery period?' with Id '0' has been published.
+2014-08-12 00:01:08,271 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 18] Content 'How long does the procedure take?' with Id '1699' has been published.
+2014-08-12 00:01:09,151 [7] INFO  UmbracoExamine.DataServices.UmbracoLogService - [Thread 33] Index is being optimized, Provider=ExternalIndexer, NodeId=-1
+2014-08-12 00:01:20,348 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 44] Content 'How long does the procedure take?' with Id '1699' has been published.
+2014-08-12 00:01:20,352 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 44] Content 'What is the recovery period?' with Id '1701' has been published.
+2014-08-12 00:01:51,289 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 44] Content 'What should I do after the injections?' with Id '0' has been published.
+2014-08-12 00:02:10,226 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 18] Content 'What about further treatments?' with Id '0' has been published.
+2014-08-12 00:02:33,466 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 18] Content 'Who should avoid HA fillers?' with Id '0' has been published.
+2014-08-12 00:02:57,767 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 18] Content 'What are the possible complications?' with Id '0' has been published.
+2014-08-12 00:04:23,957 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'Side Bar' with Id '1706' has been published.
+2014-08-12 00:04:23,957 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'Botox Link' with Id '1707' has been published.
+2014-08-12 00:04:52,714 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 31] Content 'Content' with Id '0' has been published.
+2014-08-12 00:05:21,325 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'What is Hyaluronic Acid?' with Id '1696' has been published.
+2014-08-12 00:05:31,223 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 20] Content 'What does it involve?' with Id '1697' has been published.
+2014-08-12 00:05:43,154 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 44] Content 'What are the benefits?' with Id '1698' has been published.
+2014-08-12 00:05:56,741 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'FAQs' with Id '1700' has been published.
+2014-08-12 00:05:57,262 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'How long does the procedure take?' with Id '1699' has been published.
+2014-08-12 00:05:57,497 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'What is the recovery period?' with Id '1701' has been published.
+2014-08-12 00:05:57,798 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'What should I do after the injections?' with Id '1702' has been published.
+2014-08-12 00:05:58,089 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'What about further treatments?' with Id '1703' has been published.
+2014-08-12 00:05:58,337 [7] INFO  UmbracoExamine.DataServices.UmbracoLogService - [Thread 44] Index is being optimized, Provider=InternalIndexer, NodeId=-1
+2014-08-12 00:05:58,398 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'Who should avoid HA fillers?' with Id '1704' has been published.
+2014-08-12 00:05:58,731 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 105] Content 'What are the possible complications?' with Id '1705' has been published.
+2014-08-12 00:06:15,824 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 18] Content 'Content' with Id '1708' has been published.
+2014-08-12 00:06:15,827 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 18] Content 'Side Bar' with Id '1706' has been published.
+2014-08-12 00:14:27,609 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 86] Content 'Master Items' with Id '1179' has been published.
+2014-08-12 00:14:34,327 [7] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 16] Content 'Content Items' with Id '1568' has been published.
+2014-08-12 00:20:15,184 [7] INFO  umbraco.BusinessLogic.Log - [Thread 38] Log scrubbed.  Removed all items older than 2014-06-13 00:20:15
+2014-08-12 00:20:15,186 [7] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 38] Application shutdown. Reason: ConfigurationChange

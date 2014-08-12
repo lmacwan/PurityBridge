@@ -27,7 +27,7 @@
 @*<div class="vc_text_separator vc_text_separator3" ></div>*@
         Html.RenderPartial("_AccordianPartial", child);
     }
-    else if (documentType.Equals("beforeandafter"))
+    else if (documentType.Equals("photocomparisions"))
     {
         Html.RenderPartial("BeforeAndAfterPartial", child);
     }
@@ -35,39 +35,16 @@
     {
         Html.RenderPartial("TestimonialPartial", child);
     }
-    else if (documentType.Equals("testimonials"))
+    else if (child.DocumentTypeAlias.Equals("testimonials", StringComparison.CurrentCultureIgnoreCase))
     {
-        var span = PurityBridge.Umbraco.Utility.GetSpanEquivalent(child.GetPropertyValue<string>("span"));
-        ViewBag.RowSpan = span;
-        var rowSpanEquivalent = "vc_parent vc_span" + span;
-    <section class="widget">
-        <div class="@rowSpanEquivalent treatments-row">
-            @if (child.HasValue("heading"))
-            {
-                <div class="widget-title">@child.GetPropertyValue("heading") </div>
-            }
-            @foreach (IPublishedContent testimonial in child.Children(c => c.IsVisible()))
-            {
-                Html.RenderPartial("TestimonialPartial", testimonial);
-            }
-        </div>
-    </section>
-    }
-    else if (documentType.Equals("photocomparisions"))
-    {
-        //var span = PurityBridge.Umbraco.Utility.GetSpanEquivalent(child.GetPropertyValue<string>("span"));
-        //ViewBag.RowSpan = span;
-        //var rowSpanEquivalent = "vc_parent vc_span" + span;
-    <section class="widget">
-        <div class="@rowSpanEquivalent photo-comaprisions-row">
-            @if (child.HasValue("heading"))
-            {
-                <div class="widget-title">@child.GetPropertyValue("heading") </div>
-            }
-            @foreach (IPublishedContent photoComaprison in child.Children(c => c.IsVisible()))
-            {
-                Html.RenderPartial("BeforeAndAfterPartial", photoComaprison);
-            }
+    <section>
+        @*<div class="vc_text_separator" ></div>*@
+        @if (child.HasValue("heading"))
+        {
+            <div class="widget-title">@child.GetPropertyValue("heading") </div>
+        }
+        <div class="vc_row-fluid treatments-row">
+            @Html.Partial("_ChildrenPartial", child)
         </div>
     </section>
     }

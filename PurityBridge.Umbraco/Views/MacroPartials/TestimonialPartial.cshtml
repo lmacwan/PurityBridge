@@ -1,12 +1,20 @@
 ﻿@model IPublishedContent
 @{
     var cols = 12;
-    var span = string.Empty;
-    
-    cols = PurityBridge.Umbraco.Utility.GetSpanEquivalent(Model.Parent.GetPropertyValue<string>("childrensSpan"));
-    span = "vc_span" + (cols * ((int)ViewBag.RowSpan))/12;
+    var span = "";
+    var spanNo = string.Empty;
 
-    <div class="@span vc_child">
+    span = Model.Parent.GetPropertyValue<string>("childrensSpan");
+    cols = span.Contains("Less")
+                ? 3
+                : span.Contains("More")
+                    ? 9
+                    : span.Contains("Full")
+                        ? 12
+                        : 6;
+    spanNo = "vc_span" + cols;
+
+    <div class="@spanNo">
         <div class="widget testimonial">
             <div class="clearfix">
                 <p>@Model.GetPropertyValue("Content")</p>
@@ -15,6 +23,7 @@
         </div>
     </div>
 }
+
 
 
 

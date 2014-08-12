@@ -7504,37 +7504,47 @@ i.appointment {
 ==============================================================================
 */
 
-#page-content > article,
-#page-content > section {
-    margin-top: 15px;
-    padding-right: 60px;
+.widget-departments dt {
+    font-size: 12px;
+}
+
+.typography h3 {
+    font-size: 14px;
+}
+
+.widget-title {
+    font-size: 16px;
+}
+
+.typography p {
+    padding-right: 8%;
+}
+
+.grid-col-9 {
+    border-right: 1px solid #cecece;
+    padding-right: 35px;
+    width: 829px;
+}
+
+.grid-col-3 {
+    margin-left: 35px;
 }
 
 #page-content > section {
     margin-top: 35px;
 }
-/*.grid-col {
-    border-right: solid 1px;
-    margin-right: -1px;
-    border-right-color: #cbcbcb;
-}
-
-.grid-col:last-child {
-    border-right: none;
-}*/
 
 #relatedLinksSection li.item {
     margin-bottom: 30px;
 }
 
-    #relatedLinksSection li.item:last-child {
-        margin-bottom: 0px;
-    }
+#relatedLinksSection .pic {
+    padding-bottom: 60%;
+}
 
-    #relatedLinksSection li.item h3 {
-        padding: 10px 0px;
-    }
-
+#relatedLinksSection li.item:last-child {
+    margin-bottom: 0px;
+}
 
 .vc_text_separator {
     border: none;
@@ -7544,11 +7554,11 @@ i.appointment {
     padding: 15px 65px 15px 20px;
 }
 
-.testimonial .author:before {
-    content: none;
-}
+    .testimonial .author:before {
+        content: none;
+    }
 
-.vc_parent{
+.vc_parent {
     position: relative;
     margin-left: 0px;
 }
