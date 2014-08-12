@@ -7505,7 +7505,7 @@ i.appointment {
 */
 
 .widget-departments dt {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .typography h3 {
@@ -7561,4 +7561,12 @@ i.appointment {
 .vc_parent {
     position: relative;
     margin-left: 0px;
+}
+
+dd > p {
+    margin-bottom: 10px;
+}
+
+dd > p:last-child {
+    margin-bottom: 0px;
 }

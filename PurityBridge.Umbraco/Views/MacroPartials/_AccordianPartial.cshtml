@@ -9,7 +9,9 @@
         {
             <dt><i class="fa fa-check"></i>@accordianContent.GetPropertyValue("heading")</dt>
             <dd>
-                @accordianContent.GetPropertyValue("text").ToString().Replace("\n","<br><br>")
+                <p>
+                     @Html.Raw(accordianContent.GetPropertyValue("text").ToString().Replace("\n", "</p><p>"))
+                </p>
             </dd>
         }
     </dl>
