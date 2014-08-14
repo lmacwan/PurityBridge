@@ -1,7 +1,7 @@
 ﻿@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
-    Layout = "/Views/Shared/_Layout.cshtml";
+    
     ViewBag.ShowTitleBar = true;
     var sideBars = Model.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
     var cols = 12;
