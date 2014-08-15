@@ -25,7 +25,12 @@
         {
     @section LeftSideBar {
         <div class="grid-col grid-col-3">
+
             @Html.Partial("_RelatedLinksPartial", sidebar)
+            @if (sidebar.GetPropertyValue<bool>("appointmenWidget"))
+            {
+                Html.RenderPartial("_MakeAnAppointmentPartial");
+            }
         </div>
     }
         }
@@ -33,7 +38,12 @@
         {
     @section RightSideBar {
         <div class="grid-col grid-col-3">
+
             @Html.Partial("_RelatedLinksPartial", sidebar)
+            @if (sidebar.GetPropertyValue<bool>("appointmenWidget"))
+            {
+                Html.RenderPartial("_MakeAnAppointmentPartial");
+            }
         </div>
     }        
         }

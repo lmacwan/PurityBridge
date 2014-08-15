@@ -1,0 +1,56 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var treatments = Model.Content.Siblings().Where(s => s.DocumentTypeAlias.Equals("treatments", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
+    IEnumerable<IPublishedContent> photos = new List<IPublishedContent>();
+    IEnumerable<IPublishedContent> matchedCategories = new List<IPublishedContent>();
+    IPublishedContent matchedCategory = null;
+    var treatmentUrl = (string)(TempData["TreatmentUrl"] ?? string.Empty);
+}
+
+<link href="~/Content/css/beforeafter.css" rel="stylesheet" />
+<section class="widget photo-tour photo-tour-2" id="photo-tour">
+
+    @if (treatments.Any())
+    {
+        matchedCategories = treatments.First().Children(c => c.Url == treatmentUrl && c.IsVisible());
+
+
+
+        if (matchedCategories.Any())
+        {
+            matchedCategory = matchedCategories.First();
+        }
+        else
+        {
+            matchedCategory = treatments.First().Children(c => c.IsVisible()).FirstOrDefault();
+        }
+
+        <div class="widget-title heading">@matchedCategory.GetPropertyValue("Heading")</div>
+        <select class="filter">
+            @foreach (IPublishedContent treatment in treatments.First().Children(c => c.IsVisible()))
+            {
+                <option value="@treatment.Url">@treatment.GetPropertyValue("Heading")</option>
+            }
+        </select>
+        
+            photos = matchedCategory.Children(c => c.DocumentTypeAlias.Equals("photos", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible());
+
+            if (photos.Any())
+            {
+
+        <div class="grid isotope">
+            @foreach (IPublishedContent photo in photos.First().Children(c => c.IsVisible()))
+            {
+                @Html.Partial("BeforeAndAfterPartial", photo)
+            }
+        </div>
+            }
+    }
+     <a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>
+</section>
+@section scripts {
+    <script src="~/scripts/BeforeAndAfter.js"></script>
+}

@@ -6,7 +6,6 @@
 }
 
 <section class="widget photo-tour photo-tour-4" id="photo-tour">
-    @*<div class="widget-title">@Model.GetPropertyValue("Heading")</div>*@
     <div class="grid isotope">
         @foreach (IPublishedContent category in Model.Content.Children(c => c.DocumentTypeAlias.Equals("photocategory", StringComparison.InvariantCultureIgnoreCase)))
         {
@@ -24,5 +23,5 @@
             </div>
         }
     </div>
-        <a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>
+    <a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>
 </section>

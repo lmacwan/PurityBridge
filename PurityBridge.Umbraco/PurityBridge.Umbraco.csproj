@@ -616,6 +616,7 @@
     <Content Include="Views\MacroPartials\BeforeAndAfterPartial.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />
     <Content Include="Views\MacroPartials\TestimonialPartial.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
@@ -633,7 +634,9 @@
     <Content Include="macroScripts\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\UrlRewriting.config" />
+    <Content Include="config\UrlRewriting.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\umbracoSettings.config" />

@@ -7516,6 +7516,10 @@ i.appointment {
     font-size: 16px;
 }
 
+.widget-title.heading {
+    font-size: 26px;
+}
+
 .typography p {
     padding-right: 8%;
 }
