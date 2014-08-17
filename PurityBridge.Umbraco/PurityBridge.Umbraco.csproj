@@ -348,6 +348,11 @@
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\styles_old.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\images\logo5.png" />
+    <Content Include="Content\images\logo1.png" />
+    <Content Include="Content\images\logo2.png" />
+    <Content Include="Content\images\logo3.png" />
+    <Content Include="Content\images\logo4.png" />
     <Content Include="Content\images\beige_paper.png" />
     <Content Include="Content\images\twitter_bird.html" />
     <Content Include="Content\img\blank.gif" />

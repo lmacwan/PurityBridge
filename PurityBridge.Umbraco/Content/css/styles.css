@@ -7517,9 +7517,9 @@ i.appointment {
     font-size: 16px;
 }
 
-.widget-title.heading {
-    font-size: 26px;
-}
+    .widget-title.heading {
+        font-size: 26px;
+    }
 
 .typography p {
     padding-right: 8%;
@@ -7572,6 +7572,14 @@ dd > p {
     margin-bottom: 10px;
 }
 
-dd > p:last-child {
-    margin-bottom: 0px;
+    dd > p:last-child {
+        margin-bottom: 0px;
+    }
+
+.page-footer .vc_row-fluid .vc_row-fluid {
+    margin-bottom:0px;
+}
+
+.footer-logo img {
+    margin-top: 30px;
 }
