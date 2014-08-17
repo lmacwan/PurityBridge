@@ -16,7 +16,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <!--/ metas -->
     <!-- styles -->
-@*    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>*@
+    @*    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>*@
     <link href="/Content/css/layerslider.css" rel="stylesheet" />
     <link href="/Content/css/fullwidth/skin.css" rel="stylesheet" />
     <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
@@ -34,7 +34,7 @@
     <div class="page">
         @{ Html.RenderPartial("_HeaderPartial"); }
 
-@*        @{ Html.RenderPartial("_SearchPartial"); }*@
+        @*        @{ Html.RenderPartial("_SearchPartial"); }*@
         @{ Html.RenderPartial("_PageTitlePartial"); }
         @{ Html.RenderPartial("_SliderPartial"); }
 
@@ -53,7 +53,10 @@
 
         @{ Html.RenderPartial("_FooterPartial"); }
         <!-- copyrights -->
-        <div class="copyrights">Copyright 2013 Purity Bridge</div>
+        <div class="copyrights">
+            Copyright 2013 Purity Bridge<br />
+            <a href="/">Contacts</a> | <a href="/privacy-policy.aspx">Privacy Policy</a> | <a href="/terms-conditions.aspx">Terms &amp; Conditions</a> | <a href="/our-links.aspx">Our Links</a> | <a href="/site-map.aspx">Site Map</a> | <a href="/accessibility.aspx">Accessibility</a>
+        </div>
         <!--/ copyrights -->
     </div>
     <!-- scripts -->
@@ -89,7 +92,7 @@
     <script src="/Scripts/Common.js"></script>
     @*<script src="~/scripts/classie.js"></script>
     <script src="~/scripts/AnimatedHeader.js"></script>*@
-    
+
     @RenderSection("scripts", required: false)
     <!--/ scripts -->
 

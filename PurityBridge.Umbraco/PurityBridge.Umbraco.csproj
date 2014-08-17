@@ -516,8 +516,6 @@
     <Content Include="macroScripts\NavigationScript.cshtml" />
     <Content Include="macroScripts\YouTubeVideoScript.cshtml" />
     <Content Include="Content\css\demo\img\Thumbs.db" />
-    <Content Include="App_Data\packages\created\createdPackages.config" />
-    <Content Include="App_Data\packages\installed\installedPackages.config" />
     <None Include="Properties\PublishProfiles\PurityBridge.pubxml" />
     <None Include="scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="scripts\jquery-1.8.2.js" />
@@ -617,6 +615,9 @@
     <Content Include="Views\Photos\Treatment.cshtml" />
     <Content Include="Views\MacroPartials\TestimonialPartial.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Navigations\Category.cshtml" />
+    <Content Include="Views\MacroPartials\_Treatments.cshtml" />
+    <Content Include="Views\Navigations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
