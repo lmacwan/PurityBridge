@@ -15,9 +15,9 @@ namespace PurityBridge.Live.Controllers
             return base.Index(model);
         }
 
-        //public ActionResult Treatment(RenderModel model)
-        //{
-        //    return View(model);
-        //}
+        public ActionResult Treatment(RenderModel model)
+        {
+            return View(model);
+        }
     }
 }

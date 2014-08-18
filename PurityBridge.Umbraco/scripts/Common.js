@@ -32,6 +32,10 @@ $(document).ready(function () {
     $('.vc_parent').css('margin-left', 0);
     $('.photo-comaprisions-row li').first().css('margin-left', 0);
 
+    $("#photo-tour.category .pic").each(function (i, e) {
+        $(e).css('background', "url("+$(e).find("img").attr("src")+")");
+    });
+
     $("#umbracoPreviewBadge").remove();
 });
 

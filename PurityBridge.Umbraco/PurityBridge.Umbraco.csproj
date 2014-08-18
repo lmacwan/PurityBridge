@@ -321,6 +321,7 @@
     <Content Include="Content\audio\californication.html" />
     <Content Include="Content\css\beforeafter.css" />
     <Content Include="Content\css\blank.gif" />
+    <Content Include="Content\css\category.css" />
     <Content Include="Content\css\color-blue.css" />
     <Content Include="Content\css\color-cyan.css" />
     <Content Include="Content\css\color-green.css" />
@@ -623,6 +624,7 @@
     <Content Include="Views\Navigations\Category.cshtml" />
     <Content Include="Views\MacroPartials\_Treatments.cshtml" />
     <Content Include="Views\Navigations\Index.cshtml" />
+    <Content Include="Views\MacroPartials\CategoryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">

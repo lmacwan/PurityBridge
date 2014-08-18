@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var url = string.Format("/gallery/{0}", Model.Url.Split('/').Reverse().Skip(1).First());
+}
+<div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+    <div class="pic">
+        <img src="@Model.GetCropUrl("thumbnail", "thumb")" alt="@Model.GetPropertyValue("heading")" style="display:none"/>
+        <div class="links">
+            <ul>
+                <li><a href="@url" class="fa fa-mail-forward"></a></li>
+            </ul>
+        </div>
+    </div>
+    <h3>@Model.GetPropertyValue("heading")</h3>
+    <p></p>
+</div>
