@@ -623,6 +623,8 @@
     <Content Include="Views\Videos\Treatment_old.cshtml" />
     <Content Include="Views\Treatment\Videos.cshtml" />
     <Content Include="Views\Treatment\Photos.cshtml" />
+    <Content Include="Views\Photos\Treatment.cshtml" />
+    <Content Include="Views\Treatment\Treatment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
