@@ -11,12 +11,15 @@
             <ul>
                 @foreach (var highlightItem in highlights.First().Children)
                 {
+                    var url = string.IsNullOrEmpty(highlightItem.GetPropertyValue<string>("relatedTo"))
+                                ? "/underconstruction"
+                                : Umbraco.TypedContent(highlightItem.GetPropertyValue<int>("relatedTo")).Url;
                     <li>
                         <div class="pic"><i class="fa fa-@highlightItem.GetPropertyValue("icon")"></i></div>
                         <div class="text">
                             <h2>@highlightItem.GetPropertyValue("heading")</h2>
                             <p>@highlightItem.GetPropertyValue("description")</p>
-                            <a href="/@highlightItem.GetPropertyValue("link")" class="more"></a>
+                            <a href="@url" class="more"></a>
                         </div>
                     </li>
                 }

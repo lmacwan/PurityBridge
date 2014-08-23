@@ -1,87 +1,112 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                                                
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                                        
 @{
     var isHomePage = Model.Name.Equals("home", StringComparison.CurrentCultureIgnoreCase);
-    IEnumerable<IPublishedContent> layout = Model.Ancestor(1).Siblings().Where(s => s.DocumentTypeAlias.Equals("layout", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
-    IEnumerable<IPublishedContent> headers = null;
-    if (layout.Any())
-    {
-        headers = layout.First().Children(c => c.DocumentTypeAlias.Equals("header", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible());
-    }
+    var navigationItems = uQuery.GetNodesByType("Navigationitem");
+    IPublishedContent relatedTo = null;
+    var showOnRight = "";
 }
 
-@if (headers != null)
+
+@if (navigationItems.Any())
 {
-    IPublishedContent relatedTo = null;
-    var navigation = headers.First().Children(c => c.DocumentTypeAlias.Equals("navigation", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible()).FirstOrDefault();
-    var showOnRight = "";
-    if (navigation != null)
+    var hasChildren = false;
+    var relatedToName = "";
+    foreach (var topLevelNavigation in navigationItems)
     {
-        var hasChildren = false;
-        var relatedToName = "";
-        foreach (var childPage in navigation.Children.Where("Visible"))
+        hasChildren = topLevelNavigation.Children.Count > 0;
+        showOnRight = (hasChildren &&
+                            topLevelNavigation.GetPrecedingSiblingNodes().Count() > topLevelNavigation.GetSiblingNodes().Count() / 2)
+                                        ? "class=right"
+                                        : "";
+        if (isHomePage && !(topLevelNavigation.GetProperty<bool>("homepageVisible")))
         {
-            hasChildren = childPage.Children.Where("Visible").Any();
-            showOnRight = (childPage.Children.Count() > 0 &&
-                                childPage.Index() >= navigation.Children(c => c.Children.Count() > 0).Count())
-                                            ? "class=right"
-                                            : "";
-            if (isHomePage && !(childPage.GetPropertyValue<bool>("homepageVisible")))
-            {
-                continue;
-            }
+            continue;
+        }
     <li @showOnRight>
-        @if (hasChildren)
+
+        @if (topLevelNavigation.GetProperty<bool>("underConstruction"))
         {
-            <i></i>
+           
+            <a href="/underconstruction" controller="">
+                @if (hasChildren)
+                {
+                    <i class="fa fa-plus"></i>
+                }
+                @topLevelNavigation.Name</a>
         }
-        @if (childPage.GetPropertyValue<bool>("underConstruction"))
+        else if (topLevelNavigation.GetProperty<string>("relatedTo") != null)
         {
-            <a href="/underconstruction" controller="">@childPage.Name</a>
-        }
-        else if (childPage.HasValue("relatedTo"))
-        {
-            relatedTo = Umbraco.TypedContent(childPage.GetPropertyValue<int>("relatedTo"));
-            relatedToName = relatedTo.Url.Contains("home") ? "/" : "/"+relatedTo.Url.Split('/').Reverse().Skip(1).First();
-            <a href="@relatedToName" controller="@childPage.Name">@childPage.Name</a>
+            relatedTo = Umbraco.TypedContent(topLevelNavigation.GetProperty<int>("relatedTo"));
+            relatedToName = relatedTo.Url.Contains("home") ? "/" : "/" + relatedTo.Url.Split('/').Reverse().Skip(1).First();
+            
+            <a href="@relatedToName" controller="@topLevelNavigation.Name">
+                @if (hasChildren)
+                {
+                    <i class="fa fa-plus"></i>
+                }
+                @topLevelNavigation.Name
+            </a>
             
         }
         else
         {
-            <a href="#" controller="@childPage.Name">@childPage.Name</a>
+            <a href="#" controller="@topLevelNavigation.Name">
+                @if (hasChildren)
+                {
+                    <i class="fa fa-plus"></i>
+                }@topLevelNavigation.Name
+
+            </a>
         }
-        @if (childPage.Children.Count() > 0)
+        @if (topLevelNavigation.Children.Count > 0)
         {
-            @childPages(childPage.Children)
+            @childPages(topLevelNavigation.Children)
         }
     </li>
-        }
     }
 }
 
-@helper childPages(dynamic pages)
+@helper childPages(umbraco.NodeFactory.Nodes pages)
 {
     var relatedToName = string.Empty;
     IPublishedContent relatedTo = null;
     <ul>
-        @foreach (IPublishedContent page in pages)
+        @foreach (umbraco.NodeFactory.Node page in pages)
         {
             <li>
-                @if (page.GetPropertyValue<bool>("underConstruction"))
+                @if (page.GetProperty<bool>("underConstruction"))
                 {
-                    <a href="#" controller="/underconstruction">@page.Name</a>
+                    <a href="/underconstruction" controller="">
+                        @if (page.Children.Count > 0)
+                        {
+                            <i class="fa fa-angle-right"></i>
+                        }
+                        @page.Name
+                    </a>
                 }
-                else if (page.HasValue("relatedTo"))
+                else if (page.GetProperty("relatedTo") != null)
                 {
-                    relatedTo = Umbraco.TypedContent(page.GetPropertyValue<int>("relatedTo"));
-                    relatedToName = relatedTo.Url.Substring((relatedTo.Url.IndexOf(relatedTo.Parent.Url) + relatedTo.Parent.Url.Length) - 1);
-                    <a href="@relatedToName" controller="@page.Name">@page.Name</a>
-                    
+                    relatedTo = Umbraco.TypedContent(page.GetProperty<int>("relatedTo"));
+                    relatedToName = "/" + relatedTo.Url.Split('/').Reverse().Skip(1).First();
+                    <a href="@relatedToName" controller="@page.Name">
+                        @if (page.Children.Count > 0)
+                        {
+                            <i class="fa fa-angle-right"></i>
+                        }
+                        @page.Name
+                    </a>
                 }
                 else
                 {
-                    <a href="#" controller="@page.Name">@page.Name</a>
+                    <a href="#" controller="@page.Name">
+                        @if (page.Children.Count > 0)
+                        {
+                            <i class="fa fa-angle-right"></i>
+                        }
+                        @page.Name
+                    </a>
                 }
-                @if (page.Children.Count() > 0)
+                @if (page.Children.Count > 0)
                 {
                     @childPages(page.Children)
                 }

@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
-    var url = string.Format("/gallery/{0}", Model.Url.Split('/').Reverse().Skip(1).First());
+    var urlPrefix = (string)ViewBag.UrlPrefix;
+    var url = string.Format("{1}/{0}", Model.Url.Split('/').Reverse().Skip(1).First(), urlPrefix);
 }
 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
     <div class="pic">
@@ -8,6 +9,7 @@
         <div class="links">
             <ul>
                 <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                @*<li><a class="fa fa-video-camera fancybox" data-fancybox-type="iframe" href="http://www.youtube-nocookie.com/embed/eQQ2bFJQYEY"></a></li>*@
             </ul>
         </div>
     </div>

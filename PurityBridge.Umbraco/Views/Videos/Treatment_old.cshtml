@@ -1,0 +1,48 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var test = Model.Content.Children(c => c.DocumentTypeAlias.Equals("PhotoComparision"));
+}
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
+    <div class="grid isotope">
+
+        @foreach (IPublishedContent item in test)
+        {
+            var url = Model.Content.GetPropertyValue<string>("videoUrl");
+            if (url.StartsWith("http") && url.Contains("youtube"))
+            {
+                url = url.Replace("watch?v=", "embed/");
+                url = "class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='" + url + "'";
+            }
+            else if (url.StartsWith("/"))
+            {
+                url = Umbraco.TypedMedia(url).Url;
+                url = "class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='" + url + "'";
+            }
+            else
+            {
+                url = "#";
+                url = "href='" + url + "'";
+            }
+            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                <div class="pic">
+                    <img src="@Model.Content.GetCropUrl("thumbnail", "thumb")" alt="@Model.Content.GetPropertyValue("heading")" style="display:none"/>
+                    <div class="links">
+                        <ul>
+                            @*<li><a href="@url" class="fa fa-mail-forward"></a></li>*@
+                            <li><a @url></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>@Model.Content.GetPropertyValue("heading")</h3>
+                <p>@Model.Content.GetPropertyValue("text")</p>
+            </div>
+        }
+    </div>
+    <form method="post">
+        <div id="page" style="display: none">1</div>
+        <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
+    </form>
+</section>

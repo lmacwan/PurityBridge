@@ -1,0 +1,36 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var data = Model.Content.Ancestor(1).Siblings().Where(s => s.DocumentTypeAlias.Equals("data", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
+    IEnumerable<IPublishedContent> treatments = data.First().Children(c => c.DocumentTypeAlias.Equals("treatments", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible());
+    ViewBag.UrlPrefix = string.Empty;
+}
+
+<section class="widget photo-tour photo-tour-3 treatments-category" id="photo-tour">
+    @if (treatments.Any())
+    {
+        if (treatments.First().Children.Any())
+        {
+        <div class="grid isotope">
+            @foreach (IPublishedContent category in treatments.First().Children(c => c.IsVisible()))
+            {
+                var url = string.Format("/gallery/videos/{0}", category.Url.Split('/').Reverse().Skip(1).First());
+                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                    <div class="pic">
+                        <img src="@category.GetCropUrl("thumbnail", "thumb")" alt="@category.GetPropertyValue("heading")" style="display:none"/>
+                        <div class="links">
+                            <ul>
+                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                @*<li><a class="fa fa-video-camera fancybox" data-fancybox-type="iframe" href="http://www.youtube-nocookie.com/embed/eQQ2bFJQYEY"></a></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>@category.GetPropertyValue("heading")</h3>
+                    <p></p>
+                </div>
+            }
+        </div>
+        }
+    }
+</section>

@@ -36,6 +36,10 @@ $(document).ready(function () {
         $(e).css('background', "url("+$(e).find("img").attr("src")+")");
     });
 
+    $(".treatments-category .pic").each(function (i, e) {
+        $(e).css('background', "url(" + $(e).find("img").attr("src") + ")");
+    });
+
     $("#umbracoPreviewBadge").remove();
 });
 

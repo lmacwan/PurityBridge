@@ -3,12 +3,13 @@
 <!-- page title -->
 @if (!(Model.Name.ToString().Equals("home", StringComparison.InvariantCultureIgnoreCase)))
 {
+    var name = Model.Name.Equals("Photos", StringComparison.InvariantCultureIgnoreCase) || Model.Name.Equals("Videos", StringComparison.InvariantCultureIgnoreCase)
+                ? Model.Parent.Name +" "+Model.Name
+                : Model.Name;
     <section class="page-title">
         <div class="grid-row clearfix">
-            <h1>@Model.Name</h1>
-            <nav class="bread-crumbs">
-                @RenderBreadCrumbs()
-            </nav>
+            <h1>@name</h1>
+            @RenderBreadCrumbs()
         </div>
     </section>
 }
@@ -16,15 +17,19 @@
 
 @helper RenderBreadCrumbs()
 {
-    if ((bool)ViewBag.ShowTitleBar)
-    {
-        var currentModel = Model.Ancestors().Where(a => a.Level > 1).OrderByDescending(a => a.Level);
-        foreach (IPublishedContent ancestror in currentModel)
+    var currentModel = Model.AncestorsOrSelf().Where(a => a.Level > 1).OrderByDescending(a => a.Level).Skip(1).Reverse();
+    
+    <nav class="bread-crumbs">
+        <a href="/">Home </a><span>&nbsp;</span>
+        @foreach (IPublishedContent ancestror in currentModel)
         {
-    <a href="@ancestror.Url()">@ancestror.Name</a>
-    <span>&nbsp;</span>
-    <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+            <a href="@ancestror.Url()">@ancestror.Name</a>
+            <span>&nbsp;</span>
         }
-    @Model.Name <span> &nbsp; &nbsp;</span>
-    }
+        <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+       @Model.Name
+    </nav>
+    
+    
 }

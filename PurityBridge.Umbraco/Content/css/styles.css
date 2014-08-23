@@ -7593,3 +7593,20 @@ dd > p {
     padding-top: 40px;
     position: relative;
 }
+
+
+.treatments-category .pic {
+    position: relative;
+    padding-bottom: 56.25%;
+    background: none repeat scroll 0 0 rgba(77, 196, 192, 0.3);
+    border-radius: 40px 40px 0 0;
+}
+
+.main-nav .fa-angle-right {
+    float: right !important;
+    font-size: 18px;
+}
+
+.main-nav li li a:before {
+    content: none !important;
+}
