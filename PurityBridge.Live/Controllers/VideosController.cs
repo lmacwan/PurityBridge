@@ -8,21 +8,11 @@ using Umbraco.Web.Mvc;
 
 namespace PurityBridge.Live
 {
-    public class TreatmentController : RenderMvcController
+    public class VideosController : RenderMvcController
     {
         public override ActionResult Index(RenderModel model)
         {
             return base.Index(model);
-        }
-
-        public ActionResult Photos(RenderModel model)
-        {
-            return View(model);
-        }
-
-        public ActionResult Videos(RenderModel model)
-        {
-            return View(model);
         }
     }
 }

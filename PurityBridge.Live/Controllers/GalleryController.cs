@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace PurityBridge.Live.Controllers
+namespace PurityBridge.Live
 {
     public class GalleryController : RenderMvcController
     {
