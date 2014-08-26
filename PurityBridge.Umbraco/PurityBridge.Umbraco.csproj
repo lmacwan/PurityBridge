@@ -620,8 +620,8 @@
     <Content Include="Views\Navigations\Index.cshtml" />
     <Content Include="Views\MacroPartials\CategoryPartial.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
-    <Content Include="Views\Videos\Treatment_old.cshtml" />
-    <Content Include="Views\Treatment\Videos.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\Index_old.cshtml" />
     <Content Include="Views\Treatment\Photos.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />
     <Content Include="Views\Treatment\Treatment.cshtml" />
@@ -647,7 +647,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\umbracoSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\trees.config" />

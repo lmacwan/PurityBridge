@@ -3,33 +3,40 @@
 <!-- page title -->
 @if (!(Model.Name.ToString().Equals("home", StringComparison.InvariantCultureIgnoreCase)))
 {
-    var name = Model.Name.Equals("Photos", StringComparison.InvariantCultureIgnoreCase) || Model.Name.Equals("Videos", StringComparison.InvariantCultureIgnoreCase)
-                ? Model.Parent.Name +" "+Model.Name
-                : Model.Name;
+    //var name = Model.Name.Equals("Photos", StringComparison.InvariantCultureIgnoreCase) || Model.Name.Equals("Videos", StringComparison.InvariantCultureIgnoreCase)
+    //            ? Model.Parent.Name +" "+Model.Name
+    //            : Model.Name;
+
+    var referedNode = Model;
+    var name = Model.GetPropertyValue<string>("heading");
+    if (Model.DocumentTypeAlias == "photo")
+    {
+        name += " Photos";
+    }
+    else if (Model.DocumentTypeAlias == "video")
+    {
+        name += " Videos";
+    }
     <section class="page-title">
         <div class="grid-row clearfix">
             <h1>@name</h1>
-            @RenderBreadCrumbs()
+            @RenderBreadCrumbs(referedNode)
         </div>
     </section>
 }
 <!--/ page title -->
 
-@helper RenderBreadCrumbs()
+@helper RenderBreadCrumbs(IPublishedContent headerNode)
 {
-    var currentModel = Model.AncestorsOrSelf().Where(a => a.Level > 1).OrderByDescending(a => a.Level).Skip(1).Reverse();
-    
     <nav class="bread-crumbs">
         <a href="/">Home </a><span>&nbsp;</span>
-        @foreach (IPublishedContent ancestror in currentModel)
+        @foreach (IPublishedContent ancestor in Model.AncestorsOrSelf().Where(node => node.Level > 1).Skip(1).Reverse())
         {
             <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            <a href="@ancestror.Url()">@ancestror.Name</a>
+            <a href="@ancestor.Url">@ancestor.Name</a>
             <span>&nbsp;</span>
         }
         <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-       @Model.Name
+        @Model.Name
     </nav>
-    
-    
 }

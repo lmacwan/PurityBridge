@@ -2,8 +2,7 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    var data = Model.Content.Ancestor(1).Siblings().Where(s => s.DocumentTypeAlias.Equals("data", StringComparison.CurrentCultureIgnoreCase) && s.IsVisible());
-    IEnumerable<IPublishedContent> treatments = data.First().Children(c => c.DocumentTypeAlias.Equals("treatments", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible());
+    IEnumerable<IPublishedContent> treatments = uQuery.GetNodesByType("Treatments").ToList().ConvertAll<IPublishedContent>(node => Umbraco.TypedContent(node.Id));
     ViewBag.UrlPrefix = string.Empty;
 }
 

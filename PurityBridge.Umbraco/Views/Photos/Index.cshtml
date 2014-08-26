@@ -2,26 +2,34 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    ViewBag.ShowTitleBar = false;
+    IEnumerable<IPublishedContent> treatments = uQuery.GetNodesByType("Treatments").ToList().ConvertAll<IPublishedContent>(node => Umbraco.TypedContent(node.Id));
+    ViewBag.UrlPrefix = string.Empty;
 }
 
-<section class="widget photo-tour photo-tour-4" id="photo-tour">
-    <div class="grid isotope">
-        @foreach (IPublishedContent category in Model.Content.Children(c => c.DocumentTypeAlias.Equals("photocategory", StringComparison.InvariantCultureIgnoreCase)))
+<section class="widget photo-tour photo-tour-3 treatments-category" id="photo-tour">
+    @if (treatments.Any())
+    {
+        if (treatments.First().Children.Any())
         {
-            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                <div class="pic">
-                    <img width="270" height="142" alt="@category.GetPropertyValue("heading")" src="@Umbraco.TypedMedia(category.GetPropertyValue<int>("thumbnail")).Url">
-                    <div class="links">
-                        <ul>
-                            <li><a class="fa fa-link" href="@category.Url"></a></li>
-                        </ul>
+        <div class="grid isotope">
+            @foreach (IPublishedContent category in treatments.First().Children(c => c.IsVisible()))
+            {
+                var url = string.Format("/gallery/photos/{0}", category.Url.Split('/').Reverse().Skip(1).First());
+                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                    <div class="pic">
+                        <img src="@category.GetCropUrl("thumbnail", "thumb")" alt="@category.GetPropertyValue("heading")" style="display:none"/>
+                        <div class="links">
+                            <ul>
+                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                @*<li><a class="fa fa-video-camera fancybox" data-fancybox-type="iframe" href="http://www.youtube-nocookie.com/embed/eQQ2bFJQYEY"></a></li>*@
+                            </ul>
+                        </div>
                     </div>
+                    <h3>@category.GetPropertyValue("heading")</h3>
+                    <p></p>
                 </div>
-                <h3>@category.GetPropertyValue("heading")</h3>
-                <p></p>
-            </div>
+            }
+        </div>
         }
-    </div>
-    <a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>
+    }
 </section>

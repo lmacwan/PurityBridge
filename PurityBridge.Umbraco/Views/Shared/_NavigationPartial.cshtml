@@ -87,7 +87,7 @@
                 else if (page.GetProperty("relatedTo") != null)
                 {
                     relatedTo = Umbraco.TypedContent(page.GetProperty<int>("relatedTo"));
-                    relatedToName = "/" + relatedTo.Url.Split('/').Reverse().Skip(1).First();
+                    relatedToName = relatedTo.Url;
                     <a href="@relatedToName" controller="@page.Name">
                         @if (page.Children.Count > 0)
                         {

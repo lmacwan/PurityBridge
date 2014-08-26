@@ -17,12 +17,12 @@ namespace PurityBridge.Live
 
         public ActionResult Photos(RenderModel model)
         {
-            return View(model);
+            return RedirectToAction("Treatment", "Photos", new { model = model });
         }
 
         public ActionResult Videos(RenderModel model)
         {
-            return View(model);
+            return RedirectToAction("Treatment", "Videos", new { model = model });
         }
     }
 }
