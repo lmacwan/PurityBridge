@@ -620,7 +620,7 @@
     <Content Include="Views\Navigations\Index.cshtml" />
     <Content Include="Views\MacroPartials\CategoryPartial.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
-    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Videos\Treatment.cshtml" />
     <Content Include="Views\Video\Index_old.cshtml" />
     <Content Include="Views\Treatment\Photos.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />

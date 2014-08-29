@@ -1,26 +1,38 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 
 <!-- page title -->
+
 @if (!(Model.Name.ToString().Equals("home", StringComparison.InvariantCultureIgnoreCase)))
 {
     //var name = Model.Name.Equals("Photos", StringComparison.InvariantCultureIgnoreCase) || Model.Name.Equals("Videos", StringComparison.InvariantCultureIgnoreCase)
     //            ? Model.Parent.Name +" "+Model.Name
     //            : Model.Name;
-
+    var isUnderConstruction = Request.RawUrl.Contains("construction");
     var referedNode = Model;
     var name = Model.GetPropertyValue<string>("heading");
-    if (Model.DocumentTypeAlias == "photo")
+    if (!isUnderConstruction && !Request.RawUrl.Contains("location")&& !(Model.Url.Contains(Request.RawUrl)) )
+    {
+        name = Model.Children().Where(d => d.Url.Contains(Request.RawUrl)).FirstOrDefault().GetPropertyValue<string>("heading");
+    }
+    if (Model.DocumentTypeAlias == "Photos")
     {
         name += " Photos";
     }
-    else if (Model.DocumentTypeAlias == "video")
+    else if (Model.DocumentTypeAlias == "Videos")
     {
         name += " Videos";
+    }
+    else if (isUnderConstruction)
+    {
+        name += "Under Construction";
     }
     <section class="page-title">
         <div class="grid-row clearfix">
             <h1>@name</h1>
-            @RenderBreadCrumbs(referedNode)
+            @if (!isUnderConstruction)
+            {
+                @RenderBreadCrumbs(referedNode)
+            }
         </div>
     </section>
 }

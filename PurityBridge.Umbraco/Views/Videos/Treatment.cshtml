@@ -1,0 +1,41 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var videos = Model.Content.Children(c => c.Url.Contains(Request.RawUrl)).FirstOrDefault();
+    var url = "#";
+}
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
+    <div class="grid isotope">
+
+        @foreach (IPublishedContent item in videos.Children)
+        {
+            if (item.DocumentTypeAlias == "YouTubeVideo")
+            {
+                url = item.GetPropertyValue<string>("videoUrl");
+                url = url.Replace("watch?v=", "embed/");
+            }
+            else if (item.DocumentTypeAlias == "VideoItem")
+            {
+                url = Umbraco.TypedMedia(item.GetPropertyValue<int>("videoUrl")).Url;
+            }
+            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                <div class="pic">
+                    <img src="@item.GetCropUrl("thumbnail", "thumb")" alt="@item.GetPropertyValue("heading")"/>
+                    <div class="links">
+                        <ul>
+                            <li><a class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='@url'></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>@item.GetPropertyValue("heading")</h3>
+                <p>@item.GetPropertyValue("text")</p>
+            </div>
+        }
+    </div>
+    <form method="post">
+        <div id="page" style="display: none">1</div>
+        <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
+    </form>
+</section>

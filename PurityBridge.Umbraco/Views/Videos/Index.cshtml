@@ -2,30 +2,30 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    IEnumerable<IPublishedContent> treatments = uQuery.GetNodesByType("Treatments").ToList().ConvertAll<IPublishedContent>(node => Umbraco.TypedContent(node.Id));
+    IEnumerable<IPublishedContent> treatments = Model.Content.Children;
     ViewBag.UrlPrefix = string.Empty;
 }
 
-<section class="widget photo-tour photo-tour-3 treatments-category" id="photo-tour">
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
     @if (treatments.Any())
     {
         if (treatments.First().Children.Any())
         {
         <div class="grid isotope">
-            @foreach (IPublishedContent category in treatments.First().Children(c => c.IsVisible()))
+            @foreach (IPublishedContent category in treatments.Where(c => c.IsVisible()))
             {
-                var url = string.Format("/gallery/videos/{0}", category.Url.Split('/').Reverse().Skip(1).First());
+                var node = uQuery.GetNodesByName(category.Name).Where(n => n.NodeTypeAlias == "Treatment").FirstOrDefault();
+                var url = string.Format("/gallery/videos/{0}", category.UrlName);
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img src="@category.GetCropUrl("thumbnail", "thumb")" alt="@category.GetPropertyValue("heading")" style="display:none"/>
+                        <img src="@Umbraco.TypedContent(node.Id).GetCropUrl("thumbnail", "thumb")" alt="@node.GetProperty("heading")" />
                         <div class="links">
                             <ul>
                                 <li><a href="@url" class="fa fa-mail-forward"></a></li>
-                                @*<li><a class="fa fa-video-camera fancybox" data-fancybox-type="iframe" href="http://www.youtube-nocookie.com/embed/eQQ2bFJQYEY"></a></li>*@
                             </ul>
                         </div>
                     </div>
-                    <h3>@category.GetPropertyValue("heading")</h3>
+                    <h3>@node.GetProperty("heading")</h3>
                     <p></p>
                 </div>
             }

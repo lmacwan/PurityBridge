@@ -7577,7 +7577,7 @@ dd > p {
     }
 
 .page-footer .vc_row-fluid .vc_row-fluid {
-    margin-bottom:0px;
+    margin-bottom: 0px;
 }
 
 .footer-logo img {
@@ -7595,11 +7595,13 @@ dd > p {
 }
 
 
-.treatments-category .pic {
-    position: relative;
-    padding-bottom: 56.25%;
-    background: none repeat scroll 0 0 rgba(77, 196, 192, 0.3);
+#photo-tour img {
     border-radius: 40px 40px 0 0;
+    border-top: 4px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: #00aba5;
+
 }
 
 .main-nav .fa-angle-right {

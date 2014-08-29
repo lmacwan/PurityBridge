@@ -1,8 +1,8 @@
-﻿@{
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
 }
-
 <div class="vc_span12">
     <!-- map -->
     <section class="map">
@@ -11,129 +11,135 @@
     </section>
     <!--/ map -->
 </div>
+<br />
+<br />
+<div class="vc_row-fluid">
+    <div class="vc_span9">
+        <!-- feedback -->
+        <article class="feedback">
+            <div class="widget-title">Get in touch by filling the form below</div>
 
-<div class="vc_span9">
-    <!-- feedback -->
-    <article class="feedback">
-        <div class="widget-title">Get in touch by filling the form below</div>
+            <p>Donec lacinia suscipit magna, et pulvinar tortor facilisis quis. Donec tempor erat vel scelerisque posuere. Nam elementum elit eget tellus faucibus euismod. Aliquam turpis nibh, dictum eu consequat ac, facilisis eu elit. Pellentesque pellentesque orci quam, nec tempus nibh congue ut. Pellentesque tempus vehicula lectus eget tempor. Donec suscipit enim dui, ut sagittis orci rhoncus id.</p>
 
-        <p>Donec lacinia suscipit magna, et pulvinar tortor facilisis quis. Donec tempor erat vel scelerisque posuere. Nam elementum elit eget tellus faucibus euismod. Aliquam turpis nibh, dictum eu consequat ac, facilisis eu elit. Pellentesque pellentesque orci quam, nec tempus nibh congue ut. Pellentesque tempus vehicula lectus eget tempor. Donec suscipit enim dui, ut sagittis orci rhoncus id.</p>
+            <form action="http://html.creaws.com/clinico/php/contact-send.php" id="contactform">
+                <fieldset>
+                    <div class="clearfix">
+                        <div class="input">
+                            <label>Your name:</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div class="input">
+                            <label>Your email:</label>
+                            <input type="text" name="email">
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="input">
+                            <label>Category:</label>
+                            <input type="text" name="category">
+                        </div>
+                        <div class="input">
+                            <label>Subject:</label>
+                            <input type="text" name="subject">
+                        </div>
+                    </div>
+                    <label>Message:</label>
+                    <textarea rows="6" name="message"></textarea>
+                    <div class="clearfix captcha">
+                        @*<div class="captcha-wrapper">
+                            <label for="verify">Verification code:</label>
+                            <iframe src="php/capcha.html" class="capcha-frame" name="capcha_image_frame" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 
-        <form action="http://html.creaws.com/clinico/php/contact-send.php" id="contactform">
-            <fieldset>
-                <div class="clearfix">
-                    <div class="input">
-                        <label>Your name:</label>
-                        <input type="text" name="name">
-                    </div>
-                    <div class="input">
-                        <label>Your email:</label>
-                        <input type="text" name="email">
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <div class="input">
-                        <label>Category:</label>
-                        <input type="text" name="category">
-                    </div>
-                    <div class="input">
-                        <label>Subject:</label>
-                        <input type="text" name="subject">
-                    </div>
-                </div>
-                <label>Message:</label>
-                <textarea rows="6" name="message"></textarea>
-                <div class="clearfix captcha">
-                    <div class="captcha-wrapper">
-                        <label for="verify">Verification code:</label>
-                        <iframe src="php/capcha.html" class="capcha-frame" name="capcha_image_frame" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+                            <input class="verify" type="text" id="verify" name="verify" />
+                        </div>*@
+                        <button type="submit" class="button" value="Submit">Submit</button>
 
-                        <input class="verify" type="text" id="verify" name="verify" />
                     </div>
-                    <button type="submit" class="button" value="Submit">Submit</button>
+                </fieldset>
+            </form>
+        </article>
+        <!--/ feedback -->
+    </div>
 
-                </div>
-            </fieldset>
-        </form>
-    </article>
-    <!--/ feedback -->
+    <div class="vc_span3">
+        <!-- contacts -->
+        <section class="widget widget-contacts">
+            <div class="widget-title">Contact Details</div>
+            <dl>
+                <dt class="opened">Adolescent Gynecology</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+                <dt>Breast Cancer Gene (BRCA)</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+                <dt>Replacement Therapy</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+                <dt>Diagnosis With Precise</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+                <dt>STD Screening</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+                <dt>Occupational Health</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+                <dt>Rhinosinusitis</dt>
+                <dd>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
+                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
+                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+        <!--/ contacts -->
+
+        <!-- follow -->
+        <section class="widget widget-follow">
+            <ul>
+                <li><a href="#"><i class="fa fa-rss"></i>150<br>
+                    Subscribers</a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i>5560<br>
+                    Fans</a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i>2300<br>
+                    Followers</a></li>
+            </ul>
+        </section>
+        <!--/ follow -->
+    </div>
 </div>
-
-<div class="vc_span3">
-    <!-- contacts -->
-    <section class="widget widget-contacts">
-        <div class="widget-title">Contact Details</div>
-        <dl>
-            <dt class="opened">Adolescent Gynecology</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-            <dt>Breast Cancer Gene (BRCA)</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-            <dt>Replacement Therapy</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-            <dt>Diagnosis With Precise</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-            <dt>STD Screening</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-            <dt>Occupational Health</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-            <dt>Rhinosinusitis</dt>
-            <dd>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                    <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                    <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                </ul>
-            </dd>
-        </dl>
-    </section>
-    <!--/ contacts -->
-
-    <!-- follow -->
-    <section class="widget widget-follow">
-        <ul>
-            <li><a href="#"><i class="fa fa-rss"></i>150<br>
-                Subscribers</a></li>
-            <li><a href="#"><i class="fa fa-facebook"></i>5560<br>
-                Fans</a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i>2300<br>
-                Followers</a></li>
-        </ul>
-    </section>
-    <!--/ follow -->
-</div>
+@section scripts {
+    <script src="~/scripts/Common.js"></script>
+}
