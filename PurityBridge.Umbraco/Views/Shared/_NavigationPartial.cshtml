@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                                        
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                                       
 @{
     var isHomePage = Model.Name.Equals("home", StringComparison.CurrentCultureIgnoreCase);
     var navigationItems = uQuery.GetNodesByType("Navigationitem");
@@ -54,7 +54,8 @@
                 @if (hasChildren)
                 {
                     <i class="fa fa-plus"></i>
-                }@topLevelNavigation.GetProperty("heading")
+                }
+                d@topLevelNavigation.GetProperty("heading")
 
             </a>
         }

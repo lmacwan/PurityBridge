@@ -10,7 +10,7 @@
     var isUnderConstruction = Request.RawUrl.Contains("construction");
     var referedNode = Model;
     var name = Model.GetPropertyValue<string>("heading");
-    if (!isUnderConstruction && !Request.RawUrl.Contains("location")&& !(Model.Url.Contains(Request.RawUrl)) )
+    if (!isUnderConstruction && !Request.RawUrl.Contains("contact") && !(Model.Url.Contains(Request.RawUrl)) )
     {
         name = Model.Children().Where(d => d.Url.Contains(Request.RawUrl)).FirstOrDefault().GetPropertyValue<string>("heading");
     }
