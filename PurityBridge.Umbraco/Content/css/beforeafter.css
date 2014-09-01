@@ -3,8 +3,6 @@
 }
 
     .ca-image li {
-        width: 177px;
-        height: 220px;
         border: 5px solid #00aba5;
         overflow: hidden;
         position: relative;
@@ -23,15 +21,20 @@
         transition: all 400ms linear;
     }
 
+.photo-tour-3 .ca-image li {
+    width: 177px;
+    height: 220px;
+}
+
 li {
     border-radius: 0px 30px 30px 0px;
     /*border-radius: 30px;*/
 }
 
-li.after {
-    margin-left: -5px;
-    border-radius: 30px 0px 0px 30px;
-}
+    li.after {
+        margin-left: -5px;
+        border-radius: 30px 0px 0px 30px;
+    }
 
 .ca-image .ca-content .mask {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
@@ -46,32 +49,33 @@ li.after {
 .ca-image .after .ca-content .mask {
     float: right;
 }
-    .ca-image .ca-content .mask p {
-        border: medium none;
-        font-weight: 900;
-        padding: 10px;
-    }
 
-    .ca-image .ca-content .mask p {
-        line-height: 8px;
-        font-size: 18px;
-    }
+.ca-image .ca-content .mask p {
+    border: medium none;
+    font-weight: 900;
+    padding: 10px;
+}
 
-        .ca-image .before .ca-content .mask p:first-child {
-            padding-top:40px
-        }
+.ca-image .ca-content .mask p {
+    line-height: 8px;
+    font-size: 18px;
+}
 
-        .ca-image .before .ca-content .mask p:last-child {
-            padding-bottom:40px
-        }
+.ca-image .before .ca-content .mask p:first-child {
+    padding-top: 40px;
+}
 
-        .ca-image .after .ca-content .mask p:first-child {
-            padding-top:53px
-        }
+.ca-image .before .ca-content .mask p:last-child {
+    padding-bottom: 40px;
+}
 
-        .ca-image .after .ca-content .mask p:last-child {
-            padding-bottom:53px
-        }
+.ca-image .after .ca-content .mask p:first-child {
+    padding-top: 53px;
+}
+
+.ca-image .after .ca-content .mask p:last-child {
+    padding-bottom: 53px;
+}
 
 .ca-image li:last-child {
     margin-right: 0px;
@@ -133,42 +137,41 @@ li.after {
 }
 
 .ca-image li.before:hover {
-    margin-left:27px;
-} 
+    margin-left: 27px;
+}
 
 .ca-image:hover li.after:not(:hover) {
-    margin-left:-27px;
+    margin-left: -27px;
 }
 
 .ca-image li.after:hover {
-    margin-left:-23px;
-} 
-
-.ca-image:hover li.before:not(:hover) {
-    margin-left:0px;
+    margin-left: -23px;
 }
 
-    .ca-image li:hover .ca-icon {
-        color: #fff;
-        font-size: 60px;
-        text-shadow: 0px 0px 1px #000;
-        -webkit-animation: moveFromBottom 300ms ease;
-        -moz-animation: moveFromBottom 300ms ease;
-        -ms-animation: moveFromBottom 300ms ease;
-    }
+.ca-image:hover li.before:not(:hover) {
+    margin-left: 0px;
+}
 
-    .ca-image li:hover .ca-content p {
-        background: rgba(0, 171, 165, 0.5);
-        color: #fff;
-        text-shadow: 0px 0px 1px #000;
-    }
+.ca-image li:hover .ca-icon {
+    color: #fff;
+    font-size: 60px;
+    text-shadow: 0px 0px 1px #000;
+    -webkit-animation: moveFromBottom 300ms ease;
+    -moz-animation: moveFromBottom 300ms ease;
+    -ms-animation: moveFromBottom 300ms ease;
+}
 
-    .ca-image li:hover .ca-main {
-        color: #fff;
-        -webkit-animation: moveFromBottom 500ms ease;
-        -moz-animation: moveFromBottom 500ms ease;
-        -ms-animation: moveFromBottom 500ms ease;
-    }
+.ca-image li:hover .ca-content p {
+    background: rgba(0, 171, 165, 0.5);
+    color: #fff;
+}
+
+.ca-image li:hover .ca-main {
+    color: #fff;
+    -webkit-animation: moveFromBottom 500ms ease;
+    -moz-animation: moveFromBottom 500ms ease;
+    -ms-animation: moveFromBottom 500ms ease;
+}
 
 @-webkit-keyframes moveFromBottom {
     from {
@@ -205,3 +208,99 @@ li.after {
         opacity: 1;
     }
 }
+
+/*In Get Photo Method*/
+
+.fancybox-content .ca-image li,
+.fancybox-content img {
+    width: 400px;
+    height: 450px;
+}
+
+
+    .fancybox-content .ca-image .ca-content .mask p {
+        line-height: 16px;
+        font-size: 24px;
+    }
+
+.fancybox-content .ca-image .before .ca-content .mask p:first-child {
+    padding-top: 130px;
+}
+
+.fancybox-content .ca-image .before .ca-content .mask p:last-child {
+    padding-bottom: 130px;
+}
+
+.fancybox-content .ca-image .after .ca-content .mask p:first-child {
+    padding-top: 147px;
+}
+
+.fancybox-content .ca-image .after .ca-content .mask p:last-child {
+    padding-bottom: 147px;
+}
+
+.fancybox-content .ca-image li.before:hover {
+    margin-left: 40px;
+}
+
+.fancybox-content .ca-image:hover li.after:not(:hover) {
+    margin-left: -40px;
+}
+
+.fancybox-content .ca-image li.after:hover {
+    margin-left: -34px;
+}
+
+.fancybox-content .ca-image:hover li.before:not(:hover) {
+    margin-left: 0px;
+}
+
+.fancybox-content .ca-image li:hover {
+    border: 1px solid #fff;
+    z-index: 999;
+    background: rgb(0, 171, 165);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.fancybox-content .ca-image li .ca-content p,
+.fancybox-content .item > p,
+.fancybox-content h3 {
+    background: rgb(0, 171, 165);
+    color: #fff;
+}
+
+.fancybox-content .pic {
+    padding-bottom: 58.25%;
+}
+
+.photo-tour .pic img  {
+    height: 100%;
+    position: initial;
+    width: 142px;
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+.fancybox-content .pic img  {
+       width: 360px;
+}
+
+/*.before img {
+    float:right;
+}
+
+.before img {
+    float:left;
+}*/
+
+/*.fancybox-content .pic .after img {
+    float:left;
+}
+
+.fancybox-content .pic img {
+    display: inline !important;
+}*/

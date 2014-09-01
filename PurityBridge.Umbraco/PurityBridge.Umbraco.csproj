@@ -625,6 +625,7 @@
     <Content Include="Views\Treatment\Photos.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />
     <Content Include="Views\Treatment\Treatment.cshtml" />
+    <Content Include="Views\MacroPartials\GetPhoto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
@@ -714,6 +715,9 @@
     <Content Include="Views\Shared\_SearchPartial.cshtml" />
     <Content Include="Views\Shared\_SliderPartial.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessLogic\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

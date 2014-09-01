@@ -33,7 +33,7 @@ $(document).ready(function () {
     $('.photo-comaprisions-row li').first().css('margin-left', 0);
 
     $("#photo-tour.category .pic").each(function (i, e) {
-        $(e).css('background', "url("+$(e).find("img").attr("src")+")");
+        $(e).css('background', "url(" + $(e).find("img").attr("src") + ")");
     });
 
     $(".treatments-category .pic").each(function (i, e) {
@@ -54,6 +54,24 @@ function setMargin(parent) {
             width = 0;
         } else {
             width = elementWidth + width;
+        }
+    });
+}
+
+function getPhoto(photoId) {
+    $.ajax({
+        url: "/gallery/photos/get/"+photoId,
+        success: function (data) {
+            $('#' + photoId).fancybox({
+                content: data,
+                autoSize: false,
+                height: 650,
+                width: 850
+            });
+            $('#' + photoId).click();
+        },
+        error: function (data) {
+            alert("Error : " + data);
         }
     });
 }

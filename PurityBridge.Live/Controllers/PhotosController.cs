@@ -19,5 +19,10 @@ namespace PurityBridge.Live
         {
             return View(model);
         }
+
+        public ActionResult Get(int id)
+        {
+            return PartialView("GetPhoto", Umbraco.TypedContent(id));
+        }
     }
 }
