@@ -32,7 +32,7 @@
                 {
                     <i class="fa fa-plus"></i>
                 }
-                @topLevelNavigation.Name</a>
+                @topLevelNavigation.GetProperty("heading")</a>
         }
         else if (topLevelNavigation.GetProperty<string>("relatedTo") != null)
         {
@@ -44,7 +44,7 @@
                 {
                     <i class="fa fa-plus"></i>
                 }
-                @topLevelNavigation.Name
+                @topLevelNavigation.GetProperty("heading")
             </a>
             
         }
@@ -54,7 +54,7 @@
                 @if (hasChildren)
                 {
                     <i class="fa fa-plus"></i>
-                }@topLevelNavigation.Name
+                }@topLevelNavigation.GetProperty("heading")
 
             </a>
         }
