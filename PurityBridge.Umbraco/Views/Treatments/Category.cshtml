@@ -1,0 +1,69 @@
+﻿@*@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    
+    ViewBag.ShowTitleBar = true;
+    var sideBars = Model.Children(c => c.DocumentTypeAlias.Equals("sidebar", StringComparison.InvariantCultureIgnoreCase)).Where("visible");
+    var cols = 12;
+}
+
+@if (sideBars.Any())
+{
+    foreach (IPublishedContent sidebar in sideBars.DistinctBy(s => s.GetPropertyValue<bool>("Left")))
+    {
+        cols -= 3;
+        if (sidebar.GetPropertyValue<bool>("Left"))
+        {
+    @section LeftSideBar {
+        <div class="grid-col grid-col-3">
+             @Html.Partial("_RelatedLinksPartial", sidebar)
+        </div>
+    }
+        }
+        else
+        {
+    @section RightSideBar {
+        <div class="grid-col grid-col-3">
+           @Html.Partial("_RelatedLinksPartial", sidebar)
+        </div>
+    }        
+        }
+    }
+}
+
+<div id="page-content" class="grid-col grid-col-@cols">
+    @Html.Partial("_ChildrenPartial", Model.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content",StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+</div>*@
+
+@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var category = uQuery.GetNodeByUrl(Request.RawUrl);
+    ViewBag.UrlPrefix = string.Empty;
+}
+
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
+    @if (category.NodeTypeAlias == "TreatmentsCategory")
+    {
+        var url = "#";
+        <div class="grid isotope">
+            @foreach (umbraco.NodeFactory.Node treatment in category.GetChildNodesByType("Treatment"))
+            {
+                url = "./"+treatment.UrlName;
+                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                    <div class="pic">
+                        <img src="@Umbraco.TypedContent(treatment.Id).GetCropUrl("thumbnail", "thumb")" alt="@treatment.GetProperty("heading")"/>
+                        <div class="links">
+                            <ul>
+                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>@treatment.GetProperty("heading")</h3>
+                    <p></p>
+                </div>
+            }
+        </div>
+    }
+</section>

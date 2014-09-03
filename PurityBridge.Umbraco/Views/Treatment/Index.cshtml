@@ -4,7 +4,8 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var details = Model.Content.Children(c => c.DocumentTypeAlias.Equals("details", StringComparison.InvariantCultureIgnoreCase));
+    var treatmentNode = uQuery.GetNodeByUrl(Request.RawUrl);
+    var details = Umbraco.TypedContent(treatmentNode.Id).Children(c => c.DocumentTypeAlias.Equals("details", StringComparison.InvariantCultureIgnoreCase));
     IEnumerable<IPublishedContent> sideBars = null;
     if (details.Any())
     {
