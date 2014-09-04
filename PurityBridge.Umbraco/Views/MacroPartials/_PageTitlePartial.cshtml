@@ -10,7 +10,7 @@
     var isUnderConstruction = Request.RawUrl.Contains("construction");
     var referedNode = Model;
     var name = Model.GetPropertyValue<string>("heading");
-    if (!isUnderConstruction && !Request.RawUrl.Contains("contact") && !(Model.Url.Contains(Request.RawUrl)) && Model.HasProperty("isnavigation"))
+    if (Model.HasProperty("isnavigation"))
     {
         name = Model.Children().Where(d => d.Url.Contains(Request.RawUrl)).FirstOrDefault().GetPropertyValue<string>("heading");
     }
@@ -50,5 +50,12 @@
         }
         <i class="fa fa-angle-right"></i><span>&nbsp;</span>
         @Model.Name
+        @if (ViewBag.Category != null)
+        {
+            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+            @ViewBag.Category.Tostring()
+            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+            @uQuery.GetCurrentNode().Name
+        }
     </nav>
 }

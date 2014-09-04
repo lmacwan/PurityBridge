@@ -35,7 +35,7 @@
         <h3>@linkedContent.GetPropertyValue("heading")</h3>
         <p></p>
     </li>
-    if (child.Next() != null)
+    if (child.FollowingSibling() != null)
     {
         linkedContent = Umbraco.TypedContent(child.Next().GetPropertyValue<int>("relatedPage"));
     <li class="item">

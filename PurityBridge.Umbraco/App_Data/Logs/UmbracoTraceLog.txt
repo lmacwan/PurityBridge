@@ -41,3 +41,557 @@
 2014-09-04 15:06:36,935 [24] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 14ms)
 2014-09-04 15:06:37,003 [24] INFO  umbraco.content - [Thread 30] Loading content from database...
 2014-09-04 15:06:55,213 [24] INFO  umbraco.content - [Thread 30] Loading content from database...
+2014-09-04 15:14:42,814 [24] INFO  umbraco.BusinessLogic.Log - [Thread 9] Log scrubbed.  Removed all items older than 2014-07-06 15:14:42
+2014-09-04 15:14:42,815 [24] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 9] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2014-09-04 15:15:28,823 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Determining hash of code files on disk
+2014-09-04 15:15:28,840 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Hash determined (took 7ms)
+2014-09-04 15:15:28,855 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-09-04 15:15:29,026 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 169ms)
+2014-09-04 15:15:29,126 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-09-04 15:15:29,132 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 6ms)
+2014-09-04 15:15:29,133 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-09-04 15:15:29,141 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 7ms)
+2014-09-04 15:15:29,161 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-09-04 15:15:29,166 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 4ms)
+2014-09-04 15:15:29,166 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-09-04 15:15:29,172 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 5ms)
+2014-09-04 15:15:29,176 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-09-04 15:15:29,182 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 5ms)
+2014-09-04 15:15:29,182 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-09-04 15:15:29,188 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 5ms)
+2014-09-04 15:15:30,112 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-09-04 15:15:30,119 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 7ms)
+2014-09-04 15:15:30,137 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 15:15:30,144 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 7ms)
+2014-09-04 15:15:30,156 [20] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 34] Initializing Examine and binding to business logic events
+2014-09-04 15:15:30,355 [20] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 34] Adding examine event handlers for index providers: 3
+2014-09-04 15:15:30,361 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplication
+2014-09-04 15:15:30,369 [20] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 8ms)
+2014-09-04 15:15:30,703 [20] INFO  umbraco.content - [Thread 10] Loading content from disk cache...
+2014-09-04 15:15:58,018 [20] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-09-04 15:15:58,024 [20] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 6ms)
+2014-09-04 15:15:59,413 [20] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-09-04 15:15:59,427 [20] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 13ms)
+2014-09-04 15:16:02,454 [20] WARN  Umbraco.Web.Mvc.RenderMvcController - [Thread 22] No physical template file was found for template Index
+2014-09-04 15:16:02,457 [20] WARN  Umbraco.Web.Mvc.RenderMvcController - [Thread 17] No physical template file was found for template Index
+2014-09-04 15:16:02,479 [20] WARN  Umbraco.Web.Mvc.RenderMvcController - [Thread 7] No physical template file was found for template Index
+2014-09-04 15:16:07,328 [20] WARN  Umbraco.Web.Mvc.RenderMvcController - [Thread 23] No physical template file was found for template Index
+2014-09-04 15:17:40,083 [20] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2014-07-06 15:17:40
+2014-09-04 15:17:40,084 [20] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 21] Application shutdown. Reason: ConfigurationChange
+2014-09-04 15:17:45,169 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Determining hash of code files on disk
+2014-09-04 15:17:45,180 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Hash determined (took 8ms)
+2014-09-04 15:17:45,190 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-09-04 15:17:45,211 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 21ms)
+2014-09-04 15:17:45,270 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-09-04 15:17:45,270 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-09-04 15:17:45,270 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-09-04 15:17:45,271 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-09-04 15:17:45,278 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-09-04 15:17:45,279 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-09-04 15:17:45,279 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-09-04 15:17:45,281 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-09-04 15:17:45,281 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-09-04 15:17:45,282 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-09-04 15:17:45,282 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-09-04 15:17:45,282 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-09-04 15:17:45,969 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-09-04 15:17:45,969 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-09-04 15:17:45,973 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 15:17:45,974 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-09-04 15:17:45,982 [39] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 34] Initializing Examine and binding to business logic events
+2014-09-04 15:17:46,107 [39] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 34] Adding examine event handlers for index providers: 3
+2014-09-04 15:17:46,107 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplication
+2014-09-04 15:17:46,108 [39] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-09-04 15:17:46,461 [39] INFO  umbraco.content - [Thread 23] Loading content from disk cache...
+2014-09-04 15:17:46,701 [39] INFO  Umbraco.Core.PluginManager - [Thread 23] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-09-04 15:17:46,701 [39] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-09-04 15:18:23,652 [39] INFO  umbraco.BusinessLogic.Log - [Thread 18] Log scrubbed.  Removed all items older than 2014-07-06 15:18:23
+2014-09-04 15:18:23,655 [39] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 18] Application shutdown. Reason: ConfigurationChange
+2014-09-04 15:18:57,986 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Determining hash of code files on disk
+2014-09-04 15:18:57,996 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Hash determined (took 8ms)
+2014-09-04 15:18:58,006 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-09-04 15:18:58,025 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 19ms)
+2014-09-04 15:18:58,075 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-09-04 15:18:58,075 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-09-04 15:18:58,075 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-09-04 15:18:58,076 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-09-04 15:18:58,083 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-09-04 15:18:58,084 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-09-04 15:18:58,084 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-09-04 15:18:58,085 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-09-04 15:18:58,086 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-09-04 15:18:58,086 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-09-04 15:18:58,086 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-09-04 15:18:58,087 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-09-04 15:18:58,775 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-09-04 15:18:58,776 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-09-04 15:18:58,778 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 15:18:58,779 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-09-04 15:18:58,785 [44] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 34] Initializing Examine and binding to business logic events
+2014-09-04 15:18:58,918 [44] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 34] Adding examine event handlers for index providers: 3
+2014-09-04 15:18:58,918 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplication
+2014-09-04 15:18:58,918 [44] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-09-04 15:18:59,275 [44] INFO  umbraco.content - [Thread 18] Loading content from disk cache...
+2014-09-04 15:18:59,485 [44] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-09-04 15:18:59,486 [44] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-09-04 15:19:00,157 [44] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 18] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.Children(IPublishedContent content, Func`2 predicate)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 8
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 15:20:41,952 [44] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 10] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.Children(IPublishedContent content, Func`2 predicate)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 8
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 15:21:51,820 [44] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-07-06 15:21:51
+2014-09-04 15:21:51,823 [44] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 50] Application shutdown. Reason: ConfigurationChange
+2014-09-04 15:22:27,792 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Determining hash of code files on disk
+2014-09-04 15:22:27,808 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Hash determined (took 7ms)
+2014-09-04 15:22:27,817 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-09-04 15:22:27,841 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 21ms)
+2014-09-04 15:22:27,937 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-09-04 15:22:27,938 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-09-04 15:22:27,938 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-09-04 15:22:27,939 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-09-04 15:22:27,959 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-09-04 15:22:27,960 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-09-04 15:22:27,960 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-09-04 15:22:27,962 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-09-04 15:22:27,966 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-09-04 15:22:27,966 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-09-04 15:22:27,966 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-09-04 15:22:27,967 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-09-04 15:22:28,861 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-09-04 15:22:28,861 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-09-04 15:22:28,877 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 15:22:28,878 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-09-04 15:22:28,891 [53] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 45] Initializing Examine and binding to business logic events
+2014-09-04 15:22:29,084 [53] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 45] Adding examine event handlers for index providers: 3
+2014-09-04 15:22:29,090 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of umbraco.interfaces.IApplication
+2014-09-04 15:22:29,091 [53] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-09-04 15:22:30,327 [53] INFO  Umbraco.Core.PluginManager - [Thread 52] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 15:22:30,366 [53] INFO  Umbraco.Core.PluginManager - [Thread 52] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 39ms)
+2014-09-04 15:24:11,011 [53] INFO  Umbraco.Core.PluginManager - [Thread 38] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-09-04 15:24:11,011 [53] INFO  Umbraco.Core.PluginManager - [Thread 38] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-09-04 15:24:11,219 [53] INFO  Umbraco.Web.Security.WebSecurity - [Thread 38] User Id: 0 logged in
+2014-09-04 15:55:52,868 [53] INFO  umbraco.content - [Thread 52] Loading content from disk cache...
+2014-09-04 16:02:23,123 [53] INFO  umbraco.BusinessLogic.Log - [Thread 52] Log scrubbed.  Removed all items older than 2014-07-06 16:02:23
+2014-09-04 16:02:23,123 [53] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 52] Application shutdown. Reason: ConfigurationChange
+2014-09-04 16:14:26,716 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Determining hash of code files on disk
+2014-09-04 16:14:26,733 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Hash determined (took 8ms)
+2014-09-04 16:14:26,743 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-09-04 16:14:26,769 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 24ms)
+2014-09-04 16:14:26,867 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-09-04 16:14:26,868 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-09-04 16:14:26,868 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-09-04 16:14:26,869 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 0ms)
+2014-09-04 16:14:26,890 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-09-04 16:14:26,891 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 0ms)
+2014-09-04 16:14:26,891 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-09-04 16:14:26,894 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 1ms)
+2014-09-04 16:14:26,897 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-09-04 16:14:26,898 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2014-09-04 16:14:26,898 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-09-04 16:14:26,898 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2014-09-04 16:14:27,828 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-09-04 16:14:27,829 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-09-04 16:14:27,846 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 16:14:27,847 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 0ms)
+2014-09-04 16:14:27,860 [33] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 45] Initializing Examine and binding to business logic events
+2014-09-04 16:14:28,056 [33] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 45] Adding examine event handlers for index providers: 3
+2014-09-04 16:14:28,063 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of umbraco.interfaces.IApplication
+2014-09-04 16:14:28,063 [33] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-09-04 16:14:28,482 [33] INFO  umbraco.content - [Thread 7] Loading content from disk cache...
+2014-09-04 16:14:28,841 [33] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-09-04 16:14:28,841 [33] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 0ms)
+2014-09-04 16:14:29,435 [33] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-09-04 16:14:29,436 [33] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 1ms)
+2014-09-04 16:14:32,583 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 7] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:15:08,782 [33] INFO  Umbraco.Web.Security.WebSecurity - [Thread 35] User Id: 0 logged in
+2014-09-04 16:16:03,684 [33] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 14] Content 'Facial Peels Link' with Id '1686' has been published.
+2014-09-04 16:16:03,841 [33] INFO  Umbraco.Core.PluginManager - [Thread 14] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2014-09-04 16:16:03,858 [33] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 16ms)
+2014-09-04 16:16:14,601 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 47] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:18:02,388 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 11] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:19:09,637 [33] INFO  Umbraco.Core.PluginManager - [Thread 11] Starting resolution types of umbraco.interfaces.ITree
+2014-09-04 16:19:09,637 [33] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 0ms)
+2014-09-04 16:23:23,479 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 11] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:23:32,321 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 6] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:24:11,289 [33] INFO  umbraco.content - [Thread 16] Loading content from database...
+2014-09-04 16:24:16,629 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 65] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:25:23,032 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 65] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass2.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:26:00,638 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 65] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass2.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:27:04,096 [33] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 58] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.PublishedContentExtensions.HasProperty(IPublishedContent content, String alias)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, Nullable`1 width, Nullable`1 height, String propertyAlias, String cropAlias, Nullable`1 quality, Nullable`1 imageCropMode, Nullable`1 imageCropAnchor, Boolean preferFocalPoint, Boolean useCropDimensions, Boolean cacheBuster, String furtherOptions, Nullable`1 ratioMode, Boolean upScale)
+   at Umbraco.Web.ImageCropperTemplateExtensions.GetCropUrl(IPublishedContent mediaItem, String propertyAlias, String cropAlias)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.<>c__DisplayClass1.<RenderChildren>b__0(TextWriter __razor_helper_writer) in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_MacroPartials__RelatedLinksPartial_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\MacroPartials\_RelatedLinksPartial.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Treatments_Treatment_cshtml.<>c__DisplayClass10.<Execute>b__7() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Treatments\Treatment.cshtml:line 43
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared__Layout_cshtml.Execute() in c:\Users\leon\source\repos\puritybridge\puritybridge.umbraco\Views\Shared\_Layout.cshtml:line 49
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-09-04 16:28:30,378 [33] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 27] Content 'Facial Peels Link' with Id '1686' has been published.
+2014-09-04 16:28:43,167 [33] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 24] Content 'Face Lift Link' with Id '1806' has been published.
+2014-09-04 16:28:55,854 [33] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 27] Content 'Face Lift Link (1)' with Id '1807' has been published.

@@ -380,7 +380,6 @@
     <Compile Include="Controllers\NewsAndEventsController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Controllers\TheRightChoiceController.cs" />
-    <Compile Include="Controllers\TreatmentController.cs" />
     <Compile Include="Controllers\TreatmentsController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\VideosController.cs" />

@@ -20,8 +20,9 @@ namespace PurityBridge.Live
             return View(model);
         }
 
-        public ActionResult Treatment(RenderModel model)
+        public ActionResult Treatment(RenderModel model, string category)
         {
+            ViewBag.Category = category;
             return View(model);
         }
     }

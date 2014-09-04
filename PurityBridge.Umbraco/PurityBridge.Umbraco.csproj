@@ -605,7 +605,7 @@
     <Content Include="Views\MacroPartials\_FeaturesPartial.cshtml" />
     <Content Include="Views\MacroPartials\_ChildrenPartial.cshtml" />
     <Content Include="Views\Shared\_SidebarPartail.cshtml" />
-    <Content Include="Views\Treatment\Index.cshtml" />
+    <Content Include="Views\Treatments\Treatment.cshtml" />
     <Content Include="Views\Treatments\Category.cshtml" />
     <Content Include="Views\Treatments_old.cshtml" />
     <Content Include="Views\Treatment.cshtml">
