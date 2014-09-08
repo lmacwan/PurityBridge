@@ -1,24 +1,24 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<umbraco.NodeFactory.Node>
 @{
-    var highlights = Model.Children(c => c.DocumentTypeAlias.Equals("highlights", StringComparison.CurrentCultureIgnoreCase));
+    var highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "HighlightItem" && child != null);
 }
 
-@if (highlights.Where("visible").Any())
+@if (highlights.Any())
 {
     <div class="grid-row">
         <!-- benefits -->
         <section class="benefits">
             <ul>
-                @foreach (var highlightItem in highlights.First().Children)
+                @foreach (umbraco.NodeFactory.Node highlightItem in highlights)
                 {
-                    var url = string.IsNullOrEmpty(highlightItem.GetPropertyValue<string>("relatedTo"))
+                    var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
                                 ? "/underconstruction"
-                                : Umbraco.TypedContent(highlightItem.GetPropertyValue<int>("relatedTo")).Url;
+                                : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
                     <li>
-                        <div class="pic"><i class="fa fa-@highlightItem.GetPropertyValue("icon")"></i></div>
+                        <div class="pic"><i class="fa fa-@highlightItem.GetProperty("icon")"></i></div>
                         <div class="text">
-                            <h2>@highlightItem.GetPropertyValue("heading")</h2>
-                            <p>@highlightItem.GetPropertyValue("description")</p>
+                            <h2>@highlightItem.GetProperty("heading")</h2>
+                            <p>@highlightItem.GetProperty("description")</p>
                             <a href="@url" class="more"></a>
                         </div>
                     </li>

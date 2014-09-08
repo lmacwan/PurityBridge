@@ -1,28 +1,87 @@
-﻿@using Umbraco.Core.Models
+﻿@*@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    ViewBag.ShowTitleBar = false;
+    var treatmentsData = uQuery.GetNodesByType("TreatmentsData");
+    
 }
 
-<section class="widget photo-tour photo-tour-4" id="photo-tour">
-    @*<div class="widget-title">@Model.GetPropertyValue("Heading")</div>*@
-    <div class="grid isotope">
-        @foreach (IPublishedContent thumbnailPage in Model.Content.Children(c => c.DocumentTypeAlias.Equals("treatment", StringComparison.InvariantCultureIgnoreCase)))
-        {
-            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                <div class="pic">
-                    <img width="270" height="142" alt="@thumbnailPage.GetPropertyValue("heading")" src="@thumbnailPage.GetCropUrl("thumbnail", "thumb")">
-                    <div class="links">
-                        <ul>
-                            <li><a class="fa fa-link" href="@thumbnailPage.Url"></a></li>
-                        </ul>
+@if (treatmentsData.Any())
+{
+    <section class="widget photo-tour photo-tour-4" id="photo-tour">
+        <div class="grid isotope">
+            @foreach (IPublishedContent thumbnailPage in Umbraco.TypedContent(treatmentsData.First().Id).Children(c => c.DocumentTypeAlias.Equals("treatment", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                    <div class="pic">
+                        <img width="270" height="142" alt="@thumbnailPage.GetPropertyValue("heading")" src="@thumbnailPage.GetCropUrl("thumbnail", "thumb")">
+                        <div class="links">
+                            <ul>
+                                <li><a class="fa fa-link" href="@thumbnailPage.Url"></a></li>
+                            </ul>
+                        </div>
                     </div>
+                    <h3>@thumbnailPage.GetPropertyValue("heading")</h3>
+                    <p>@thumbnailPage.GetPropertyValue("text")</p>
                 </div>
-                <h3>@thumbnailPage.GetPropertyValue("heading")</h3>
-                <p>@thumbnailPage.GetPropertyValue("text")</p>
-            </div>
-        }
-        @*<a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>*@
+            }
+        </div>
+    </section>
+}*@
+
+@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var treatmentData = uQuery.GetNodesByType("TreatmentsData");
+    ViewBag.UrlPrefix = string.Empty;
+}
+<section class="widget treatments-carousel">
+    @*<div class="widget-title">@Model.GetProperty("heading")</div>*@
+    <div class="ca-menu">
+        <div id="treatments-carousel" class="owl-carousel">
+            @if (treatmentData.Any())
+            {
+                var categories = treatmentData.First().GetDescendantNodesByType("TreatmentsCategory");
+
+                var url = "#";
+                foreach (umbraco.NodeFactory.Node category in categories)
+                {
+                    url = "./" + category.UrlName;
+                <div class="item">
+                    <a href="@url">
+                        <span class="ca-icon">F</span>
+                        <div class="ca-content">
+                           @* <h2 class="ca-main">@category.GetProperty("heading")</h2>*@
+                            <h2 class="ca-main">@category.Name</h2>
+                        </div>
+                    </a>
+                </div>
+                    
+                @*<div class="item">
+                    <a href="@url">
+                        <span class="ca-icon">F</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">@category.GetProperty("heading")</h2>
+                        </div>
+                    </a>
+                </div>*@
+                }
+            }
+        </div>
+    </div>
+    <div class="owl-controls clickable">
+        <div class="owl-buttons">
+            <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+        </div>
     </div>
 </section>
+@section scripts {
+    <script>
+        $('head').append('<link rel="stylesheet" href="/Content/css/category.css" type="text/css" />');
+        $.cachedScript("/scripts/categories.js").done(function (script, textStatus) {
+            console.log(textStatus);
+        });
+    </script>
+}

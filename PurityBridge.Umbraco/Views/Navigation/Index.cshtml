@@ -1,0 +1,27 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+}
+
+<section class="widget photo-tour photo-tour-4" id="photo-tour">
+    <div class="grid isotope">
+        @foreach (IPublishedContent thumbnailPage in Model.Content.Children)
+        {
+            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                <div class="pic">
+                    <img width="270" height="142" alt="@thumbnailPage.GetPropertyValue("heading")" src="@thumbnailPage.GetCropUrl("thumbnail", "thumb")">
+                    <div class="links">
+                        <ul>
+                            <li><a class="fa fa-link" href="@thumbnailPage.Url"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>@thumbnailPage.GetPropertyValue("heading")</h3>
+                <p>@thumbnailPage.GetPropertyValue("text")</p>
+            </div>
+        }
+        @*<a class="button more" data-page="2" data-template="photo-four" href="#"><i class="fa fa-refresh"></i>Load more</a>*@
+    </div>
+</section>

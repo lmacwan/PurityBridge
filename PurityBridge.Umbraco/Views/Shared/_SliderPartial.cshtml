@@ -1,32 +1,39 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<umbraco.NodeFactory.Node>
 @{
-    var sliders = Model.Content.AncestorOrSelf(2).Children(c => c.DocumentTypeAlias.ToLower() == "slider").FirstOrDefault();
-
-    var url = "";
-    var transiton = "";
-    var slideDuration = 0;
-    var textDuration = 0;
-    var slideTransition = "";
+    var homeData = uQuery.GetNodesByType("HomeData");
+    
 }
-<!-- slider -->
-@if (sliders != null)
+@if (homeData.Any())
 {
+    var sliders = homeData.First().ChildrenAsList.Where(c => c.NodeTypeAlias == "Slider");
+
+    if (sliders.Any())
+    {
+        var url = "";
+        var relatedPage = "";
+        var transiton = "";
+        var slideDuration = 0;
+        var textDuration = 0;
+        var slideTransition = "";
+        
+    <!-- slider -->
     <div class="slider-wrapper">
         <section class="slider" id="slider">
-            @foreach (IPublishedContent slider in sliders.Children)
+            @foreach (umbraco.NodeFactory.Node slider in sliders.First().ChildrenAsList)
             {
-                url = Umbraco.TypedMedia(slider.GetPropertyValue("filepath")).Url;
-                textDuration = (int)((slider.GetPropertyValue<int>("delay") * 0.2851) * 1000);
+                url = Umbraco.TypedMedia(slider.GetProperty<int>("filepath")).Url;
+                relatedPage = Umbraco.TypedContent(slider.GetProperty<int>("relatedPage")).Url;
+                textDuration = (int)((slider.GetProperty<int>("delay") * 0.2851) * 1000);
 
-                slideTransition = slider.GetPropertyValue<int>("slideTransition") <= 0 ? "111" : slider.GetPropertyValue<int>("slideTransition") + "";
+                slideTransition = slider.GetProperty<int>("slideTransition") <= 0 ? "111" : slider.GetProperty<int>("slideTransition") + "";
 
-                if (slider.GetPropertyValue<string>("textTransition").ToLower() == "skew")
+                if (slider.GetProperty<string>("textTransition").ToLower() == "skew")
                 {
                     transiton = "skewxin:30;skewyin:0;offsetxin:right;fadein:false;durationin:" + textDuration + ";durationout:" + (textDuration / 2) + ";offsetxout:right;offsetyout:0;fadeout: true;";
                 }
-                else if (slider.GetPropertyValue<string>("textTransition").ToLower() == "rotate")
+                else if (slider.GetProperty<string>("textTransition").ToLower() == "rotate")
                 {
-                    slideDuration = (int)((slider.GetPropertyValue<int>("delay") * 0.428) * 1000);
+                    slideDuration = (int)((slider.GetProperty<int>("delay") * 0.428) * 1000);
                     transiton = "scalexin:0.3;scaleyin:0.3;rotatexin:180;offsetxin:0;durationin:" + textDuration + ";durationout:" + textDuration + ";scalexout:2;scaleyout:2;offsetxout:0;fadeout: true;showuntil:" + slideDuration + ";";
                 }
                 else
@@ -34,23 +41,23 @@
                     transiton = " offsetyin:top;offsetxin:0;durationin:" + textDuration + ";offsetyout:bottom;offsetxout: 0;durationout:" + (textDuration / 2) + ";";
                 }
                 
-
-
-                <div class="ls-slide" data-ls='transition2d:@slideTransition;slidedelay:@slider.GetPropertyValue("delay")000;'>
+                <div class="ls-slide" data-ls='transition2d:@slideTransition;slidedelay:@slider.GetProperty("delay")000;'>
                     <img src="@url" alt="" class="ls-bg">
                     <div class="intro ls-l" data-ls='@transiton;' style='left: 80%; top: 35%;'>
-                        <h2><span>@slider.GetPropertyValue("line1")</span><span>@slider.GetPropertyValue("line2")</span></h2>
-                        <p>@slider.GetPropertyValue("description")</p>
+                        <h2><span>@slider.GetProperty("line1")</span><span>@slider.GetProperty("line2")</span></h2>
+                        <p>@slider.GetProperty("description")</p>
                         <div class="buttons">
                             <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
-                            <a href="#" class="button">Read More</a>
+                            <a href="@relatedPage" class="button">Read More</a>
                             <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
             }
-
         </section>
     </div> 
+    <!--/ slider -->
+    }
 }
-<!--/ slider -->
+
+

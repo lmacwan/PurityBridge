@@ -36,7 +36,9 @@
 
         @*        @{ Html.RenderPartial("_SearchPartial"); }*@
         @{ Html.RenderPartial("_PageTitlePartial"); }
-        @{ Html.RenderPartial("_SliderPartial"); }
+        @if(uQuery.GetCurrentNode().UrlName == "home") {
+            Html.RenderPartial("_SliderPartial", uQuery.GetCurrentNode());
+        }
 
         @RenderSection("ImageSection", false)
         <!-- page content -->

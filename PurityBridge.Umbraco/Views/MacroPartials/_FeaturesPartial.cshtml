@@ -1,26 +1,26 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<umbraco.NodeFactory.Node>
 @{
     var url = "";
 }
 <div class="grid-row">
     <section class="widget doctors-carousel doctors">
-        <div class="widget-title">@Model.GetPropertyValue("heading")</div>
+        <div class="widget-title">@Model.GetProperty("heading")</div>
         <div id="doctors-carousel" class="owl-carousel">
-            @foreach (IPublishedContent child in Model.Children.RandomOrder())
+            @foreach (umbraco.NodeFactory.Node child in Model.ChildrenAsList.RandomOrder())
             {
-                url = Umbraco.TypedMedia(child.GetPropertyValue<int>("itemImage")).Url;
+                url = Umbraco.TypedMedia(child.GetProperty<int>("itemImage")).Url;
 
                 <div class="item">
                     <div class="pic">
-                        <img src="@url" width="270" height="270" alt="@child.GetPropertyValue("heading")">
+                        <img src="@url" width="270" height="270" alt="@child.GetProperty("heading")">
                         <div class="links">
                             <ul>
                                 <li><a href="#" class="fa fa-share"></a></li>
                             </ul>
                         </div>
                     </div>
-                    <h3>@child.GetPropertyValue("heading")</h3>
-                    <p>@child.GetPropertyValue("itemDescription")</p>
+                    <h3>@child.GetProperty("heading")</h3>
+                    <p>@child.GetProperty("itemDescription")</p>
                 </div>
             }
         </div>

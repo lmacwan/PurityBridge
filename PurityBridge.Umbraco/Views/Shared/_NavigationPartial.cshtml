@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                                 
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                          
 @{
     var isHomePage = Model.Name.Equals("home", StringComparison.CurrentCultureIgnoreCase);
     var navigationItems = uQuery.GetNodesByType("ContentItem");
@@ -6,44 +6,43 @@
 
 @if (navigationItems.Any())
 {
+    var url = "#";
     var hasChildren = false;
     var showOnRight = string.Empty;
-    foreach (umbraco.NodeFactory.Node topLevelNavigation in navigationItems.First().Children)
+    foreach (umbraco.NodeFactory.Node topLevelNavigation in navigationItems.First().ChildrenAsList.Where(c => c.GetProperty<bool>("showInHeader")))
     {
-        hasChildren = topLevelNavigation.Children.Count > 0;
-        showOnRight = (hasChildren &&
-                            topLevelNavigation.GetPrecedingSiblingNodes().Count() > topLevelNavigation.GetSiblingNodes().Count() / 2)
-                                        ? "class=right"
-                                        : "";
+        if (topLevelNavigation.UrlName.Contains("home"))
+        {
+            url = "/";
+        }
+        else
+        {
+            url = topLevelNavigation
+                    .GetProperty<bool>("isPageUnderConstruction")
+                        ? "/under-construction"
+                        : topLevelNavigation.Url;
+
+            hasChildren = topLevelNavigation.Children.Count > 0;
+            showOnRight = (hasChildren &&
+                                topLevelNavigation.GetPrecedingSiblingNodes().Count() > topLevelNavigation.GetSiblingNodes().Count() / 2)
+                                            ? "class=right"
+                                            : "";
+        }
         if (isHomePage && !(topLevelNavigation.GetProperty<bool>("isVisibleOnHomePage")))
         {
             continue;
         }
-@*<li @showOnRight>*@
-    <li class="right">
-        @if (topLevelNavigation.GetProperty<bool>("isPageUnderConstruction"))
-        {
-           
-            <a href="/under-construction" controller="">
-                @if (hasChildren)
-                {
-                    <i class="fa fa-plus"></i>
-                }
-                @topLevelNavigation.Name</a>
-        }
-        else if (topLevelNavigation.Children.Count > 0)
-        {
-            <a href="@topLevelNavigation.Url" controller="@topLevelNavigation.Name">
+    <li @showOnRight>
+        @*<li class="right">*@
+        <a href="@url">
+            @if (hasChildren)
+            {
                 <i class="fa fa-plus"></i>
-                @topLevelNavigation.Name
-            </a>
-            @childPages(topLevelNavigation.Children);
-        }
-        else
+            }
+            @topLevelNavigation.Name</a>
+        @if (hasChildren)
         {
-            <a href="@topLevelNavigation.Url" controller="@topLevelNavigation.Name">
-                @topLevelNavigation.Name
-            </a>
+            @childPages(topLevelNavigation.Children)
         }
     </li>
     }
@@ -51,33 +50,23 @@
 
 @helper childPages(umbraco.NodeFactory.Nodes pages)
 {
+    var url = "#";
+    var hasChildren = false;
     <ul>
         @foreach (umbraco.NodeFactory.Node page in pages)
         {
+            url = page.GetProperty<bool>("isPageUnderConstruction") ? "/under-construction" : page.Url;
+            hasChildren = page.Children.Count > 0;
             <li>
-                @if (page.GetProperty<bool>("isPageUnderConstruction"))
-                {
-           
-                    <a href="/under-construction" controller="">
-                        @if (page.Children.Count > 0)
-                        {
-                            <i class="fa fa-angle-right"></i>
-                        }
-                        @page.Name</a>
-                }
-                else if (page.ChildrenAsList.Where(c => c.HasProperty("isnavigation")).Any())
-                {
-                    <a href="@page.Url" controller="@page.Name">
+                <a href="@url">
+                    @if (page.Children.Count > 0)
+                    {
                         <i class="fa fa-angle-right"></i>
-                        @page.Name
-                    </a>
-                    @childPages(page.Children);
-                }
-                else
+                    }
+                    @page.Name</a>
+                @if (page.Children.Count > 0)
                 {
-                    <a href="@page.Url" controller="@page.Name">
-                        @page.Name
-                    </a>
+                    @childPages(page.Children)
                 }
             </li>
         }

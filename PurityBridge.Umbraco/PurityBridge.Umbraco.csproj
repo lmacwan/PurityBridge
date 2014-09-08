@@ -512,6 +512,7 @@
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\AnimatedHeader.js" />
     <Content Include="scripts\AnimatedHeader.min.js" />
+    <Content Include="scripts\categories.js" />
     <Content Include="scripts\classie.js" />
     <Content Include="scripts\Common.js" />
     <Content Include="scripts\dummy.txt" />

@@ -1,36 +1,37 @@
-
-
 .ca-menu{
-    padding: 0 0 0 96px;
+    padding: 0 0 0 48px;
     margin: 20px auto;
-    /*width: 1080px;*/
+    width: 1080px;
 }
-.ca-menu li{
-    width: 110px;
-    height: 110px;
+.ca-menu .item{
+    width: 250px;
+    height: 220px;
     border: 10px solid rgba(0, 171, 165, 0.9);
     overflow: hidden;
     position: relative;
     float:left;
     background: #fff;
-    margin-left:-96px;
+    /*margin-left:-24px;*/
     -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     -webkit-border-radius: 125px;
     -moz-border-radius: 80px;
-    border-radius: 30px;
+    border-radius: 80px;
     -webkit-transition: all 400ms linear;
     -moz-transition: all 400ms linear;
     -o-transition: all 400ms linear;
     -ms-transition: all 400ms linear;
     transition: all 400ms linear;
 }
+.ca-menu .item:nth-child(even){
+    
+}
 
-.ca-menu li:last-child{
+.ca-menu .item:last-child{
     margin-right: 0px;
 }
-.ca-menu li a{
+.ca-menu .item a{
     text-align: left;
     width: 100%;
     height: 100%;
@@ -70,7 +71,7 @@
 .ca-sub{
     display: none;
 }
-.ca-menu li:hover{
+.ca-menu .item:hover{
     border: 10px solid #fff;
     z-index: 999;
     background: rgb(0, 171, 165);
@@ -80,7 +81,7 @@
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
-.ca-menu li:hover .ca-icon{
+.ca-menu .item:hover .ca-icon{
     color: #fff;
     font-size: 60px;
     text-shadow: 0px 0px 1px #000;
@@ -88,7 +89,7 @@
     -moz-animation: moveFromBottom 300ms ease;
     -ms-animation: moveFromBottom 300ms ease;
 }
-.ca-menu li:hover .ca-main{
+.ca-menu .item:hover .ca-main{
     color: #fff;
     -webkit-animation: moveFromBottom 500ms ease;
     -moz-animation: moveFromBottom 500ms ease;
@@ -124,4 +125,17 @@
         -ms-transform: translateY(0%) scale(1);
         opacity: 1;        
     }
+}
+
+#treatments-carousel .owl-item {
+    width: 262px !important;
+}
+
+#treatments-carousel .owl-wrapper-outer {
+    height: 262px !important;
+    padding-top: 20px !important;
+}
+
+#treatments-carousel .item {
+    padding-right: 0px !important;
 }
