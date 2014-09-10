@@ -19,5 +19,16 @@ namespace PurityBridge.Live
         {
             return View(model);
         }
+
+        public ActionResult Photos(RenderModel model)
+        {
+            return View(model);
+        }
+
+        public ActionResult Videos(RenderModel model)
+        {
+            return View(model);
+        }
+
     }
 }

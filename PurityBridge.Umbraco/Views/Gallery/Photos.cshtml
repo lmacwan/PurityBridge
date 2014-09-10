@@ -1,4 +1,4 @@
-﻿@using Umbraco.Core.Models
+﻿@*@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
@@ -34,4 +34,36 @@
             </div>
         }
     </div>
+</section>*@
+
+@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var photosData = uQuery.GetNodesByType("PhotosData");
+    ViewBag.UrlPrefix = string.Empty;
+}
+
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
+    @if (photosData.Any())
+    {
+        <div class="grid isotope">
+            @foreach (umbraco.NodeFactory.Node treatment in photosData.First().ChildrenAsList.WhereNotNull())
+            {
+                var url = string.Format("/gallery/photos/{0}", treatment.UrlName);
+                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                    <div class="pic">
+                        <img src="@Umbraco.TypedContent(treatment.Id).GetCropUrl("thumbnail", "thumb")" alt="@treatment.GetProperty("heading")" />
+                        <div class="links">
+                            <ul>
+                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>@treatment.GetProperty("heading")</h3>
+                    <p></p>
+                </div>
+            }
+        </div>
+    }
 </section>

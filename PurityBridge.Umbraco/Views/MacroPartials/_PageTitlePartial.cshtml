@@ -1,19 +1,17 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var breadcrumbs = ((PurityBridge.Live.BreadCrumb)ViewBag.BreadCrumbs);
+}
 
 <!-- page title -->
-
 @if (!(Model.Name.ToString().Equals("home", StringComparison.InvariantCultureIgnoreCase)))
 {
-    //var name = Model.Name.Equals("Photos", StringComparison.InvariantCultureIgnoreCase) || Model.Name.Equals("Videos", StringComparison.InvariantCultureIgnoreCase)
-    //            ? Model.Parent.Name +" "+Model.Name
-    //            : Model.Name;
     var isUnderConstruction = Request.RawUrl.Contains("construction");
     var referedNode = Model;
-    var name = Model.GetPropertyValue<string>("heading");
-    if (Model.HasProperty("isnavigation"))
-    {
-        name = Model.Children().Where(d => d.Url.Contains(Request.RawUrl)).FirstOrDefault().GetPropertyValue<string>("heading");
-    }
+    var name = breadcrumbs == null
+                    ? Model.GetPropertyValue<string>("heading")
+                    : breadcrumbs.BreadCrumbs.Last();
+
     if (Model.DocumentTypeAlias == "Photos")
     {
         name += " Photos";
@@ -31,14 +29,14 @@
             <h1>@name</h1>
             @if (!isUnderConstruction)
             {
-                @RenderBreadCrumbs(referedNode)
+                @RenderBreadCrumbs(referedNode, breadcrumbs)
             }
         </div>
     </section>
 }
 <!--/ page title -->
 
-@helper RenderBreadCrumbs(IPublishedContent headerNode)
+@helper RenderBreadCrumbs(IPublishedContent headerNode, PurityBridge.Live.BreadCrumb breadcrumb)
 {
     <nav class="bread-crumbs">
         <a href="/">Home </a><span>&nbsp;</span>
@@ -49,13 +47,19 @@
             <span>&nbsp;</span>
         }
         <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-        @Model.Name
-        @if (ViewBag.Category != null)
+        @if (breadcrumb == null)
         {
+            @Model.Name
+        }
+        else
+        {
+            <a href="@Model.Url">@Model.Name</a>
+            foreach (string arg in breadcrumb.BreadCrumbs)
+            {
             <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            @ViewBag.Category.Tostring()
-            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            @uQuery.GetCurrentNode().Name
+                var node = uQuery.GetCurrentNode().GetDescendantNodes().Where(d => d.UrlName == arg).FirstOrDefault();
+            <a href="@node.Url">@node.Name</a>
+            }
         }
     </nav>
 }

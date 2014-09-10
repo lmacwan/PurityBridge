@@ -4,8 +4,10 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var treatmentNode = uQuery.GetNodeByUrl(Request.RawUrl);
-    var details = Umbraco.TypedContent(treatmentNode.Id).Children(c => c.DocumentTypeAlias.Equals("details", StringComparison.InvariantCultureIgnoreCase));
+    var urlSegments = Request.RawUrl.Split('/').Reverse();
+    var urlName = Request.RawUrl.EndsWith("/") ? string.Concat(urlSegments.Skip(1).Take(1)) : string.Concat(urlSegments.First());
+    var treatmentNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("Treatment").Where(d => d.UrlName == urlName).First();
+    var details = Umbraco.TypedContent(treatmentNode.Id).Children(c => c.DocumentTypeAlias.Equals("details", StringComparison.CurrentCultureIgnoreCase));
     IEnumerable<IPublishedContent> sideBars = null;
     if (details.Any())
     {
@@ -15,6 +17,10 @@
 }
 @section styles {
     <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
+}
+
+@section ImageSection {
+
 }
 
 @if (sideBars != null && sideBars.Any())
@@ -53,9 +59,10 @@
 
 <div id="page-content" class="grid-col grid-col-@cols">
     <div class="vc_row-fluid">
-        @Html.Partial("_ChildrenPartial", details.First().Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+        @Html.Partial("_ChildrenPartial", details.First().Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible()))
     </div>
 </div>
+
 @section scripts {
     <script src="~/scripts/BeforeAndAfter.js"></script>
 }

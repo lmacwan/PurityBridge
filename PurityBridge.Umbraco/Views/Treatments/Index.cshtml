@@ -1,35 +1,34 @@
-﻿@*@using Umbraco.Core.Models
+﻿@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     var treatmentsData = uQuery.GetNodesByType("TreatmentsData");
-    
 }
 
 @if (treatmentsData.Any())
 {
-    <section class="widget photo-tour photo-tour-4" id="photo-tour">
+    <section class="widget photo-tour photo-tour-3" id="photo-tour">
         <div class="grid isotope">
-            @foreach (IPublishedContent thumbnailPage in Umbraco.TypedContent(treatmentsData.First().Id).Children(c => c.DocumentTypeAlias.Equals("treatment", StringComparison.InvariantCultureIgnoreCase)))
+            @foreach (umbraco.NodeFactory.Node category in treatmentsData.First().GetDescendantNodesByType("TreatmentsCategory"))
             {
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img width="270" height="142" alt="@thumbnailPage.GetPropertyValue("heading")" src="@thumbnailPage.GetCropUrl("thumbnail", "thumb")">
+                        <img width="370" height="195" alt="@category.GetProperty("heading")" src="@Umbraco.TypedContent(category.Id).GetCropUrl("thumbnail", "thumb")">
                         <div class="links">
                             <ul>
-                                <li><a class="fa fa-link" href="@thumbnailPage.Url"></a></li>
+                                <li><a class="fa fa-link" href="@category.Url"></a></li>
                             </ul>
                         </div>
                     </div>
-                    <h3>@thumbnailPage.GetPropertyValue("heading")</h3>
-                    <p>@thumbnailPage.GetPropertyValue("text")</p>
+                    <h3>@category.GetProperty("heading")</h3>
+                    <p>@category.GetProperty("text")</p>
                 </div>
             }
         </div>
     </section>
-}*@
+}
 
-@using Umbraco.Core.Models
+@*@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
@@ -37,7 +36,6 @@
     ViewBag.UrlPrefix = string.Empty;
 }
 <section class="widget treatments-carousel">
-    @*<div class="widget-title">@Model.GetProperty("heading")</div>*@
     <div class="ca-menu">
         <div id="treatments-carousel" class="owl-carousel">
             @if (treatmentData.Any())
@@ -52,20 +50,10 @@
                     <a href="@url">
                         <span class="ca-icon">F</span>
                         <div class="ca-content">
-                           @* <h2 class="ca-main">@category.GetProperty("heading")</h2>*@
                             <h2 class="ca-main">@category.Name</h2>
                         </div>
                     </a>
                 </div>
-                    
-                @*<div class="item">
-                    <a href="@url">
-                        <span class="ca-icon">F</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">@category.GetProperty("heading")</h2>
-                        </div>
-                    </a>
-                </div>*@
                 }
             }
         </div>
@@ -84,4 +72,4 @@
             console.log(textStatus);
         });
     </script>
-}
+}*@

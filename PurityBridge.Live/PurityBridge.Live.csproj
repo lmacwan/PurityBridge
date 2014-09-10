@@ -378,7 +378,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\NewsAndEventsController.cs" />
-    <Compile Include="Controllers\PhotosController.cs" />
+    <Compile Include="Controllers\PhotosController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\TheRightChoiceController.cs" />
     <Compile Include="Controllers\TreatmentsController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
@@ -386,6 +388,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BreadCrumb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -400,7 +403,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
