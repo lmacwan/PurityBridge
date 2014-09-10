@@ -2,74 +2,31 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    var treatmentsData = uQuery.GetNodesByType("TreatmentsData");
+    ViewBag.UrlPrefix = string.Empty;
+    var treatmentsNode = uQuery.GetCurrentNode();
 }
 
-@if (treatmentsData.Any())
-{
-    <section class="widget photo-tour photo-tour-3" id="photo-tour">
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
+    @if (treatmentsNode.Children.Count > 0)
+    {
+        var url = "#";
         <div class="grid isotope">
-            @foreach (umbraco.NodeFactory.Node category in treatmentsData.First().GetDescendantNodesByType("TreatmentsCategory"))
+            @foreach (umbraco.NodeFactory.Node category in treatmentsNode.Children)
             {
+                url = "./" + category.UrlName;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img width="370" height="195" alt="@category.GetProperty("heading")" src="@Umbraco.TypedContent(category.Id).GetCropUrl("thumbnail", "thumb")">
+                        <img src="@Umbraco.TypedContent(category.Id).GetCropUrl("thumbnail", "thumb")" alt="@category.GetProperty("heading")"/>
                         <div class="links">
                             <ul>
-                                <li><a class="fa fa-link" href="@category.Url"></a></li>
+                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
                             </ul>
                         </div>
                     </div>
                     <h3>@category.GetProperty("heading")</h3>
-                    <p>@category.GetProperty("text")</p>
+                    <p></p>
                 </div>
             }
         </div>
-    </section>
-}
-
-@*@using Umbraco.Core.Models
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
-@{
-    Layout = "/Views/Shared/_Layout.cshtml";
-    var treatmentData = uQuery.GetNodesByType("TreatmentsData");
-    ViewBag.UrlPrefix = string.Empty;
-}
-<section class="widget treatments-carousel">
-    <div class="ca-menu">
-        <div id="treatments-carousel" class="owl-carousel">
-            @if (treatmentData.Any())
-            {
-                var categories = treatmentData.First().GetDescendantNodesByType("TreatmentsCategory");
-
-                var url = "#";
-                foreach (umbraco.NodeFactory.Node category in categories)
-                {
-                    url = "./" + category.UrlName;
-                <div class="item">
-                    <a href="@url">
-                        <span class="ca-icon">F</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">@category.Name</h2>
-                        </div>
-                    </a>
-                </div>
-                }
-            }
-        </div>
-    </div>
-    <div class="owl-controls clickable">
-        <div class="owl-buttons">
-            <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
-            <div class="owl-next"><i class="fa fa-angle-right"></i></div>
-        </div>
-    </div>
+    }
 </section>
-@section scripts {
-    <script>
-        $('head').append('<link rel="stylesheet" href="/Content/css/category.css" type="text/css" />');
-        $.cachedScript("/scripts/categories.js").done(function (script, textStatus) {
-            console.log(textStatus);
-        });
-    </script>
-}*@

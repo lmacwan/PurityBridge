@@ -3,15 +3,16 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = false;
-    var test = Model.Content.Children(c => c.DocumentTypeAlias.Equals("PhotoComparision"));
+    var photos = Model.Content.Children(c => c.Url.Contains(Request.RawUrl)).FirstOrDefault();
 }
 <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
     <div class="grid isotope">
-       
-        @foreach (IPublishedContent item in test)
+        @foreach (IPublishedContent item in photos.Children)
         {
-            @Html.Partial("BeforeAndAfterPartial", item)
+            <a class="fancybox" id="@item.Id" href="javascript:getPhoto(@item.Id)">
+                @Html.Partial("BeforeAndAfterPartial", item)
+            </a>
         }
     </div>
     <form method="post">
@@ -19,6 +20,3 @@
         <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
     </form>
 </section>
-@section scripts {
-    <script src="~/scripts/BeforeAndAfter.js"></script>
-}
