@@ -3,20 +3,25 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = false;
-    var photos = Model.Content.Children(c => c.Url.Contains(Request.RawUrl)).FirstOrDefault();
+    var currentUrlName = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
+    var treatmentsNodes = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("Treatment").Where(d => d.UrlName == currentUrlName);
 }
 <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
-<section class="widget photo-tour photo-tour-3" id="photo-tour">
-    <div class="grid isotope">
-        @foreach (IPublishedContent item in photos.Children)
-        {
-            <a class="fancybox" id="@item.Id" href="javascript:getPhoto(@item.Id)">
-                @Html.Partial("BeforeAndAfterPartial", item)
-            </a>
-        }
-    </div>
-    <form method="post">
-        <div id="page" style="display: none">1</div>
-        <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
-    </form>
-</section>
+@if (treatmentsNodes.Any())
+{
+    var treatmentContent = Umbraco.TypedContent(treatmentsNodes.First().Id);
+    <section class="widget photo-tour photo-tour-3" id="photo-tour">
+        <div class="grid isotope">
+            @foreach (IPublishedContent item in treatmentContent.Children(c => c.DocumentTypeAlias == "photo").FirstOrDefault().Children)
+            {
+                <a class="fancybox" id="@item.Id" href="javascript:getPhoto(@item.Id)">
+                    @Html.Partial("BeforeAndAfterPartial", item)
+                </a>
+            }
+        </div>
+        <form method="post">
+            <div id="page" style="display: none">1</div>
+            <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
+        </form>
+    </section>
+}

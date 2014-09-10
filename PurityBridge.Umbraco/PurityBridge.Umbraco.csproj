@@ -623,7 +623,6 @@
     <Content Include="Views\Videos\Index.cshtml" />
     <Content Include="Views\Videos\Treatment.cshtml" />
     <Content Include="Views\Video\Index_old.cshtml" />
-    <Content Include="Views\Gallery\Photos.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />
     <Content Include="Views\Treatment\Treatment.cshtml" />
     <Content Include="Views\MacroPartials\GetPhoto.cshtml" />
