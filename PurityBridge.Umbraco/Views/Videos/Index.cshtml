@@ -1,40 +1,38 @@
-﻿@using Umbraco.Core.Models
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    IEnumerable<IPublishedContent> treatments = Model.Content.Children;
-    ViewBag.UrlPrefix = string.Empty;
-    string thumbUrl = string.Empty;
+    var treatmentsData = uQuery.GetNodesByType("TreatmentsData");
 }
 
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
-    @if (treatments.Any())
+    @if (treatmentsData.Any())
     {
-        if (treatments.First().Children.Any())
-        {
+        var videos = treatmentsData.First().GetDescendantNodesByType("Treatment").Select(d => d.GetDescendantNodesByType("TreatmentVideos").FirstOrDefault()).WhereNotNull();
         <div class="grid isotope">
-            @foreach (IPublishedContent category in treatments.Where(c => c.IsVisible()))
+            @foreach (umbraco.NodeFactory.Node video in videos)
             {
-                var url = string.Format("/gallery/videos/{0}", category.UrlName);
-                thumbUrl = category.DocumentTypeAlias.ToLower() == "video"
-                            ? category.GetCropUrl("thumbnail", "thumb")
-                            : (category.HasValue("relatedPage")
-                                ? Umbraco.TypedContent(category.GetPropertyValue<int>("relatedPage")).GetCropUrl("thumbnail", "thumb")
-                                : "#");
+                if (video.ChildrenAsList.Any())
+                {                
+                    var parent =  Umbraco.TypedContent(video.Parent.Id);
+                    var url = "./" + parent.UrlName;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img src="@thumbUrl" alt="@category.GetPropertyValue("heading")" />
+                        <img src="@parent.GetCropUrl("thumbnail", "thumb")" alt="@video.GetProperty("heading")" />
                         <div class="links">
                             <ul>
                                 <li><a href="@url" class="fa fa-mail-forward"></a></li>
                             </ul>
                         </div>
                     </div>
-                    <h3>@category.GetPropertyValue("heading")</h3>
-                    <p></p>
+                    <h3>@video.GetProperty("heading")</h3>
+                    <p>@video.GetProperty("text")</p>
                 </div>
+                }
             }
         </div>
-        }
     }
+    <form method="post">
+        <div id="page" style="display: none">1</div>
+        <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
+    </form>
 </section>
