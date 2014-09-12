@@ -18,7 +18,7 @@
             @foreach (umbraco.NodeFactory.Node category in treatmentsDataChildren.WhereNotNull())
             {
                 matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
-                url = "./" + urlName + "/" + matchedNode.UrlName;
+                url = "./" + matchedNode.UrlName;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
                         <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedNode.Name"/>
