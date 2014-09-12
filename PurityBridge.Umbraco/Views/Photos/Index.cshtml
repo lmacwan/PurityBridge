@@ -1,22 +1,18 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    var photosData = uQuery.GetNodesByType("PhotosData");
-    ViewBag.UrlPrefix = string.Empty;
-    string[] relatedTretamentTreeNode = null;
+    var photos = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("photo");
     IPublishedContent currentTreatment = null;
 }
 
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
-    @if (photosData.Any())
+    @if (photos.Any())
     {
         <div class="grid isotope">
-            @foreach (umbraco.NodeFactory.Node treatment in photosData.First().ChildrenAsList.WhereNotNull())
+            @foreach (umbraco.NodeFactory.Node photo in photos.WhereNotNull())
             {
-                var url = string.Format("./{0}", treatment.UrlName);
-                relatedTretamentTreeNode = treatment.GetProperty<string>("relatedTreatment").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                currentTreatment = Umbraco.TypedContent(relatedTretamentTreeNode).WhereNotNull().FirstOrDefault();
-
+                currentTreatment = Umbraco.TypedContent(photo.GetAncestorNodes().First().Id);
+                var url = "./" + currentTreatment.UrlName;
                 if (currentTreatment != null)
                 {
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
