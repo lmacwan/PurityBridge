@@ -2,31 +2,38 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    var category = uQuery.GetNodeByUrl(Request.RawUrl);
     ViewBag.UrlPrefix = string.Empty;
+    var treatmentsNode = uQuery.GetCurrentNode();
 }
 
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
-    @if (category.NodeTypeAlias == "TreatmentsCategory")
+    @if (treatmentsNode.Children.Count > 0)
     {
         var url = "#";
+        var treatmentsData = uQuery.GetNodesByType("TreatmentsData");
+        if (treatmentsData.Any())
+        {
+            var treatmentsDataChildren = treatmentsData.First().GetDescendantNodesByType("Treatment");
+            umbraco.NodeFactory.Node matchedNode = null;
         <div class="grid isotope">
-            @foreach (umbraco.NodeFactory.Node treatment in category.GetChildNodesByType("Treatment"))
+            @foreach (umbraco.NodeFactory.Node category in treatmentsNode.GetDescendantNodesByType("Treatment").WhereNotNull())
             {
-                url = "./"+treatment.UrlName;
+                matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
+                url = "./" + matchedNode.UrlName;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img src="@Umbraco.TypedContent(treatment.Id).GetCropUrl("thumbnail", "thumb")" alt="@treatment.GetProperty("heading")"/>
+                        <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedNode.Name"/>
                         <div class="links">
                             <ul>
                                 <li><a href="@url" class="fa fa-mail-forward"></a></li>
                             </ul>
                         </div>
                     </div>
-                    <h3>@treatment.GetProperty("heading")</h3>
+                    <h3>@matchedNode.Name</h3>
                     <p></p>
                 </div>
             }
         </div>
+        }
     }
 </section>

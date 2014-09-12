@@ -17,13 +17,13 @@ namespace PurityBridge.Live
 
         public ActionResult Category(RenderModel model, string category)
         {
-            ViewBag.BreadCrumbs = new BreadCrumb(category.Split('/'));
+            ViewBag.BreadCrumbs = new PageTitleModel(category.Split('/'));
             return View(model);
         }
 
         public ActionResult Treatment(RenderModel model, string category)
         {
-            ViewBag.BreadCrumbs = new BreadCrumb(category.Split('/'));
+            ViewBag.BreadCrumbs = new PageTitleModel(category.Split('/'));
             return View(model);
         }
     }

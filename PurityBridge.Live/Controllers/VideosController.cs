@@ -15,8 +15,15 @@ namespace PurityBridge.Live
             return base.Index(model);
         }
 
-        public ActionResult Treatment(RenderModel model)
+        public ActionResult TreatmentVideos(RenderModel model, string category)
         {
+            ViewBag.BreadCrumbs = new PageTitleModel(category.Split('/'));
+            return View(model);
+        }
+
+        public ActionResult Videos(RenderModel model, string category)
+        {
+            ViewBag.BreadCrumbs = new PageTitleModel(category.Split('/'));
             return View(model);
         }
     }

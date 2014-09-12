@@ -5,9 +5,9 @@ using System.Web;
 
 namespace PurityBridge.Live
 {
-    public class BreadCrumb
+    public class PageTitleModel
     {
-        public BreadCrumb(params string[] args)
+        public PageTitleModel(params string[] args)
         {
             BreadCrumbs = new List<string>();
             if (args != null)
