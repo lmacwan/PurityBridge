@@ -4,8 +4,7 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var urlSegments = Request.RawUrl.Split('/').Reverse();
-    var urlName = Request.RawUrl.EndsWith("/") ? string.Concat(urlSegments.Skip(1).Take(1)) : string.Concat(urlSegments.First());
+    var urlName = Request.RawUrl.Split(new string[] {"/"}, StringSplitOptions.RemoveEmptyEntries).Last();
     var treatmentNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("Treatment").Where(d => d.UrlName == urlName).First();
     var details = Umbraco.TypedContent(treatmentNode.Id).Children(c => c.DocumentTypeAlias.Equals("details", StringComparison.CurrentCultureIgnoreCase));
     IEnumerable<IPublishedContent> sideBars = null;

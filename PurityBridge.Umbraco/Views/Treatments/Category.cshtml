@@ -3,23 +3,22 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.UrlPrefix = string.Empty;
-    var treatmentsNode = uQuery.GetCurrentNode();
 }
 
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
-    @if (treatmentsNode.Children.Count > 0)
-    {
+    @{
         var url = "#";
         var treatmentsData = uQuery.GetNodesByType("TreatmentsData");
         if (treatmentsData.Any())
         {
-            var treatmentsDataChildren = treatmentsData.First().GetDescendantNodesByType("Treatment");
+            var urlName = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
+            var treatmentsDataChildren = treatmentsData.First().GetChildNodesByType("TreatmentsCategory").FirstOrDefault(cat => cat.UrlName == urlName).GetChildNodesByType("Treatment");
             umbraco.NodeFactory.Node matchedNode = null;
         <div class="grid isotope">
-            @foreach (umbraco.NodeFactory.Node category in treatmentsNode.GetDescendantNodesByType("Treatment").WhereNotNull())
+            @foreach (umbraco.NodeFactory.Node category in treatmentsDataChildren.WhereNotNull())
             {
                 matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
-                url = "./" + matchedNode.UrlName;
+                url = "./" + urlName + "/" + matchedNode.UrlName;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
                         <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedNode.Name"/>
