@@ -10,7 +10,7 @@
         <div class="grid isotope">
             @foreach (umbraco.NodeFactory.Node videoCategory in videosData.First().ChildrenAsList.WhereNotNull())
             {
-                var url = string.Format("./{0}", videoCategory.UrlName);
+                var url = string.Format("./videos/{0}", videoCategory.UrlName);
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
                         <img src="@Umbraco.TypedContent(videoCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@videoCategory.GetProperty("heading")" />
