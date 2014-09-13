@@ -2,26 +2,25 @@
 @{
     var cols = 12;
     var span = "";
+    string spanNo;
+}
 
-    foreach (IPublishedContent child in Model.Children)
-    {
-        span = child.GetPropertyValue<string>("span");
-        cols = span.Contains("Less")
-                    ? 3
-                    : span.Contains("More")
-                        ? 9
-                        : span.Contains("Full")
-                            ? 12
-                            : 6;
-        if (cols < 12)
+<div class="grid-col grid-col-12" id="page-content">
+    <div class="vc_row-fluid ">
+        @foreach (IPublishedContent child in Model.Children)
         {
-    <div class="grid-col grid-col-@cols">
-        @Html.Partial("_ChildrenPartial", child)
+            span = child.GetPropertyValue<string>("span");
+            cols = span.Contains("Less")
+                        ? 3
+                        : span.Contains("More")
+                            ? 9
+                            : span.Contains("Full")
+                                ? 12
+                                : 6;
+            spanNo = "vc_span" + cols;
+            <div class="@spanNo">
+                @Html.Partial("_ChildrenPartial", child)
+            </div>
+        }
     </div>
-        }
-        else
-        {
-            Html.RenderPartial("_ChildrenPartial", child);
-        }
-    }
- }
+</div>
