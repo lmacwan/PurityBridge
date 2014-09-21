@@ -1,11 +1,15 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<umbraco.NodeFactory.Node>
 @{
-    var homeData = uQuery.GetNodesByType("HomeData");
-    
+    IEnumerable<umbraco.NodeFactory.Node> data = null;    
 }
-@if (homeData.Any())
+@if (Model.UrlName == "home")
 {
-    var sliders = homeData.First().ChildrenAsList.Where(c => c.NodeTypeAlias == "Slider");
+    data = uQuery.GetNodesByType("HomeData");
+}
+
+@if (data != null && data.Any())
+{
+    var sliders = data.First().ChildrenAsList.Where(c => c.NodeTypeAlias == "Slider");
 
     if (sliders.Any())
     {
@@ -59,5 +63,3 @@
     <!--/ slider -->
     }
 }
-
-

@@ -12,22 +12,16 @@ namespace PurityBridge.Live
     {
         public override ActionResult Index(RenderModel model)
         {
+            var breadcrumbs = new List<BreadCrumbElement>();
+
+            breadcrumbs.Add(new BreadCrumbElement()
+            {
+                Name = "Gallery",
+                Value = "/" + model.Content.Name
+            });
+
+            ViewBag.BreadCrumbs = breadcrumbs;
             return base.Index(model);
-        }
-
-        public ActionResult Treatment(RenderModel model)
-        {
-            return View(model);
-        }
-
-        public ActionResult Photos(RenderModel model)
-        {
-            return View(model);
-        }
-
-        public ActionResult Videos(RenderModel model)
-        {
-            return View(model);
         }
 
     }

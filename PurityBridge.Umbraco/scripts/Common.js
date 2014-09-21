@@ -12,6 +12,13 @@ $(document).ready(function () {
     controllerName = loc[i];
     $("header a[controller=" + controllerName + "]").addClass("active");
 
+    // beautify
+    $('.beautify').find("article").each(function (i, e) {
+        $(e).addClass("widget");
+        $(e).find("h3").addClass("widget-title");
+    });
+
+
     // Set Cols Width
     if ($('#page-content .vc_row-fluid').height() > $('#page-content .vc_row-fluid').children().first().height()) {
         var width = 0;

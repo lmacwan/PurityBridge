@@ -36,10 +36,7 @@
 
         @*        @{ Html.RenderPartial("_SearchPartial"); }*@
         @{ Html.RenderPartial("_PageTitlePartial"); }
-        @if(uQuery.GetCurrentNode().UrlName == "home") {
-            Html.RenderPartial("_SliderPartial", uQuery.GetCurrentNode());
-        }
-
+        @Html.Partial("_SliderPartial", uQuery.GetCurrentNode())
         @RenderSection("ImageSection", false)
         <!-- page content -->
         <main>

@@ -7513,9 +7513,9 @@ i.appointment {
         font-size: 26px;
     }
 
-.typography p {
+/*.typography p {
     padding-right: 8%;
-}
+}*/
 
 .grid-col-9 {
     border-right: 1px solid #cecece;
@@ -7610,4 +7610,22 @@ dd > p {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+#treatment-image img {
+    float: right;
+}
+section#banner {
+    min-width: 100%;
+    position: relative;
+    margin-top:-50px;
+}
+    section#banner .grid-row {
+        margin: 0 auto 20px;
+    }
+
+.beautify p,
+.beautify article,
+.beautify h3 {
+    padding-right: 15px;
 }

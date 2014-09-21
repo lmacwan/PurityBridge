@@ -1,0 +1,48 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var dataNode = ((IEnumerable<umbraco.NodeFactory.Node>)ViewBag.DataNode);
+    if (dataNode == null)
+    {
+        dataNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentVideos");
+    }
+    var url = "#";
+}
+<section class="widget photo-tour photo-tour-3" id="photo-tour">
+    <div class="grid isotope">
+
+        @foreach (umbraco.NodeFactory.Node videoitem in dataNode)
+        {
+            foreach (var item in videoitem.ChildrenAsList)
+            {
+                if (item.NodeTypeAlias == "YouTubeVideoItem")
+                {
+                    url = item.GetProperty<string>("videoUrl");
+                    url = url.Replace("watch?v=", "embed/");
+                }
+                else if (item.NodeTypeAlias == "TreatmentVideoItem")
+                {
+                    url = Umbraco.TypedMedia(item.GetProperty<int>("videoUrl")).Url;
+                }
+            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                <div class="pic">
+                    <img src="@Umbraco.TypedContent(item.Id).GetCropUrl("thumbnail", "thumb")" alt="@item.GetProperty("heading")" />
+                    <div class="links">
+                        <ul>
+                            <li><a class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='@url'></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>@item.GetProperty("heading")</h3>
+                <p>@item.GetProperty("text")</p>
+            </div>
+            }
+        }
+    </div>
+    <form method="post">
+        <div id="page" style="display: none">1</div>
+        <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
+    </form>
+</section>

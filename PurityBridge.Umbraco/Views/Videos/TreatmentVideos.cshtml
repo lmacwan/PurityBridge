@@ -2,7 +2,12 @@
 
 @if (Request.RawUrl.Contains("purity-bri"))
 {
-    ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes();
+    ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes().Where(c => c.UrlName == "purity-bridge-experience");
+    @Html.Partial("~/Views/Videos/Videos.cshtml", Model)
+}
+else if (Request.RawUrl.Contains("videos-fro"))
+{
+    ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes().Where(c => c.UrlName == "videos-from-marc");
     @Html.Partial("~/Views/Videos/Videos.cshtml", Model)
 }
 else
@@ -19,7 +24,7 @@ else
                     if (video.ChildrenAsList.Any())
                     {
                         var parent = Umbraco.TypedContent(video.Parent.Id);
-                        var url = "./treatments/" + parent.UrlName;
+                        var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), video.UrlName);
                     <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                         <div class="pic">
                             <img src="@parent.GetCropUrl("thumbnail", "thumb")" alt="@video.GetProperty("heading")" />

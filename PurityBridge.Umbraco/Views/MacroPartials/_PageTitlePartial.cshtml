@@ -1,81 +1,45 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
-    var breadcrumbs = ((PurityBridge.Live.PageTitleModel)ViewBag.BreadCrumbs);
+    var breadcrumbs = ((List<PurityBridge.Live.BreadCrumbElement>)ViewBag.BreadCrumbs);
 }
 
 <!-- page title -->
 @if (!(Model.Name.ToString().Equals("home", StringComparison.InvariantCultureIgnoreCase)))
 {
-    var isUnderConstruction = Request.RawUrl.Contains("construction");
-    var name = breadcrumbs == null
-                    ? Model.GetPropertyValue<string>("heading")
-                    : breadcrumbs.BreadCrumbs.Last();
-
-    if (Model.DocumentTypeAlias == "Photos")
-    {
-        name += " Photos";
-    }
-    else if (Model.DocumentTypeAlias == "Videos")
-    {
-        name += " Videos";
-    }
-    else if (isUnderConstruction)
-    {
-        name += "Under Construction";
-    }
-    <section class="page-title">
-        <div class="grid-row clearfix">
-            <h1>@name</h1>
-            @if (!isUnderConstruction)
-            {
-                @RenderBreadCrumbs(breadcrumbs)
-            }
-        </div>
-    </section>
+    @RenderBreadCrumbs(breadcrumbs);
 }
 <!--/ page title -->
 
-@helper RenderBreadCrumbs(PurityBridge.Live.PageTitleModel breadcrumb)
+@helper RenderBreadCrumbs(List<PurityBridge.Live.BreadCrumbElement> breadcrumb)
 {
-    <nav class="bread-crumbs">
-        <a href="/">Home </a><span>&nbsp;</span>
-        @foreach (IPublishedContent ancestor in Model.AncestorsOrSelf().Where(node => node.Level > 1).Skip(1).Reverse())
-        {
-            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            <a href="@ancestor.Url">@ancestor.Name</a>
-            <span>&nbsp;</span>
-        }
-        <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-        @if (breadcrumb == null)
-        {
-            @Model.Name
-        }
-        else
-        {
-            <a href="@Model.Url">@Model.Name</a>
-            <span>&nbsp;</span>
-            var breadCrumbs = breadcrumb.BreadCrumbs;
-            var currentNodes = uQuery.GetCurrentNode().GetDescendantNodes().Where(node => breadCrumbs.Contains(node.UrlName));
-            var treatmentCategoryNodes = uQuery.GetNodesByType("PageData").First().GetDescendantNodes().Where(node => breadCrumbs.Contains(node.UrlName));
-            //var treatmentNodes = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("Treatment").TakeWhile(node => breadCrumbs.Contains(node.UrlName));
-
-            foreach (umbraco.NodeFactory.Node node in currentNodes.WhereNotNull())
-            {
-            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            <a href="@node.Url">@node.Name</a>
-            <span>&nbsp;</span>
-            }
-            foreach (umbraco.NodeFactory.Node node in treatmentCategoryNodes.WhereNotNull())
-            {
-            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            <a href="@node.UrlName">@node.GetProperty("heading")</a>
-            <span>&nbsp;</span>
-            }
-@*foreach (umbraco.NodeFactory.Node node in treatmentNodes)
-            {
-            <i class="fa fa-angle-right"></i><span>&nbsp;</span>
-            <a href="@node.Url">@node.GetProperty("heading")</a>
-            }*@
-        }
-    </nav>
+    if (Request.RawUrl.Contains("construction"))
+    {
+    <section class="page-title">
+        <div class="grid-row clearfix">
+            <h1>Under Construction</h1>
+        </div>
+    </section>
+    }
+    else if (breadcrumb != null)
+    {
+        var lastCrumb = breadcrumb.Last();
+        breadcrumb.Remove(lastCrumb);
+        
+    <section class="page-title">
+        <div class="grid-row clearfix">
+            <h1>@lastCrumb.Name</h1>
+            <nav class="bread-crumbs">
+                <a href="/">Home </a><span>&nbsp;</span>
+                @foreach (var node in breadcrumb)
+                {
+                    <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+                    <a href="@node.Value">@node.Name</a>
+                    <span>&nbsp;</span>
+                }
+                <i class="fa fa-angle-right"></i><span>&nbsp;</span>
+                @lastCrumb.Name
+            </nav>
+        </div>
+    </section>
+    }
 }

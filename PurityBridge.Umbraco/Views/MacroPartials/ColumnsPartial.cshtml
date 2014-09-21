@@ -19,6 +19,11 @@
                                 : 6;
             spanNo = "vc_span" + cols;
             <div class="@spanNo">
+
+                @if (child.HasProperty("appointmentWidget") && child.GetPropertyValue<bool>("appointmentWidget"))
+                {
+                    Html.RenderPartial("_MakeAnAppointmentPartial");
+                }
                 @Html.Partial("_ChildrenPartial", child)
             </div>
         }

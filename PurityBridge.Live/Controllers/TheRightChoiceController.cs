@@ -1,16 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
 
 namespace PurityBridge.Live
 {
-    public class TheRightChoiceController : BaseController
+    public class TheRightChoiceController : RenderMvcController
     {
-        public ActionResult Index()
+        public override ActionResult Index(RenderModel model)
         {
-            return View();
+            var breadcrumbs = new List<BreadCrumbElement>();
+
+            breadcrumbs.Add(new BreadCrumbElement()
+            {
+                Name = model.Content.Name,
+                Value = "/" + model.Content.UrlName
+            });
+
+            ViewBag.BreadCrumbs = breadcrumbs;
+            return base.Index(model);
         }
     }
 }

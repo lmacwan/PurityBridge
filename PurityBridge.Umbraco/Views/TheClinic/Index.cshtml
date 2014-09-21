@@ -1,0 +1,51 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+
+<style>
+    .centered.vc_row-fluid [class*="vc_span"]:first-child {
+        margin: auto !important;
+    }
+
+    .centered.vc_row-fluid [class*="vc_span"] {
+        float: none;
+    }
+</style>
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.UrlPrefix = string.Empty;
+
+    var url = "#";
+    var clinicData = uQuery.GetNodesByType("ClinicData");
+    if (clinicData.Any())
+    {
+        var clinicDataChildren = clinicData.First().GetChildNodesByType("TreatmentsCategory");
+    <div class="vc_row-fluid centered">
+        <div class="vc_span9">
+            <section class="widget photo-tour photo-tour-3" id="photo-tour">
+                <div class="grid isotope">
+                    @foreach (umbraco.NodeFactory.Node child in clinicDataChildren.WhereNotNull())
+                    {
+                        url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), child.UrlName); ;
+                        <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                            <div class="pic">
+                                <img src="@Umbraco.TypedContent(child.Id).GetCropUrl("thumbnail", "thumb")" alt="@child.Name"/>
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>@child.Name</h3>
+                            <p></p>
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="photo-content" class="beautify">
+        @Html.Partial("_ContentPartial", Umbraco.TypedContent(clinicDataChildren.WhereNotNull().FirstOrDefault(c => c.NodeTypeAlias.Equals("Details", StringComparison.InvariantCultureIgnoreCase)).GetChildNodesByType("content").First().Id))
+    </div>
+    }
+}

@@ -12,6 +12,16 @@ namespace PurityBridge.Live
     {
         public override ActionResult Index(RenderModel model)
         {
+            var breadcrumbs = new List<PurityBridge.Live.BreadCrumbElement>();
+
+            var locationNode = umbraco.uQuery.GetNodesByType("Location").FirstOrDefault();
+            breadcrumbs.Add(new PurityBridge.Live.BreadCrumbElement()
+            {
+                Name = locationNode.Name,
+                Value = "/" + locationNode.UrlName
+            });
+
+            ViewBag.BreadCrumbs = breadcrumbs;
             return base.Index(model);
         }
     }

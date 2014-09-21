@@ -12,7 +12,7 @@
             @foreach (umbraco.NodeFactory.Node photo in photos.WhereNotNull())
             {
                 currentTreatment = Umbraco.TypedContent(photo.GetAncestorNodes().First().Id);
-                var url = "./" + currentTreatment.UrlName;
+                var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), currentTreatment.UrlName);
                 if (currentTreatment != null)
                 {
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">

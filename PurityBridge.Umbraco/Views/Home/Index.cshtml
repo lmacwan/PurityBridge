@@ -16,15 +16,17 @@
         @Html.Partial("_HighlightsPartial", highlights.First())
     }
     }
-    
+
     var featured = homeData.First().ChildrenAsList.Where(data => data.NodeTypeAlias == "Featured");
     if (featured.Any())
     {
         //var featuredContent = Umbraco.TypedContent(featured.First().Id);
-     @section FeaturedSection {
+    @section FeaturedSection {
         @Html.Partial("_FeaturesPartial", featured.First())
     }
     }
     
-    @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+    <div class="beautify">
+        @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+    </div>
 }

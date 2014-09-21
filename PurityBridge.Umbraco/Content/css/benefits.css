@@ -1,0 +1,148 @@
+﻿
+.grid {
+    list-style: none outside none;
+    margin-top: -120px;
+    max-width: 1300px;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+
+    .grid li {
+        display: inline-block;
+        margin: 0 0 0 8px;
+        position: relative;
+        text-align: left;
+        width: 284px;
+    }
+
+        .grid li:first-child {
+            margin-left: 0;
+        }
+
+    .grid figure {
+        border-left: 4px solid #00aba5;
+        border-radius: 40px 40px 0 0;
+        border-right: 4px solid #00aba5;
+        border-top: 8px solid #00aba5;
+        margin: 0;
+        position: relative;
+    }
+
+        .grid figure img {
+            border-radius: 30px 30px 0 0;
+            display: block;
+            max-width: 100%;
+            position: relative;
+            max-width: 100%;
+        }
+
+    .grid figcaption {
+        background: none repeat scroll 0 0 rgba(255, 255, 255, 0.6);
+        border-top: 1px solid #00aba5;
+        color: #000;
+        left: 0;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+    }
+
+    .grid li p {
+        border-bottom: 3px solid #00aba5;
+        border-color: #00aba5;
+        line-height: 18px;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+    .grid figcaption h3 {
+        color: #000;
+        font-size: 20px;
+        font-weight: bold;
+        left: 170px;
+        line-height: 23px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .grid figcaption span:before {
+        content: "by ";
+    }
+
+    .grid figcaption a {
+        background: none repeat scroll 0 0 #ed4e6e;
+        border-radius: 2px;
+        color: #fff;
+        display: inline-block;
+        padding: 5px 10px;
+        text-align: center;
+    }
+
+.cs-style-3 figure {
+    overflow: hidden;
+}
+
+    .cs-style-3 figure img {
+        transition: transform 0.4s ease 0s;
+    }
+
+    .no-touch .cs-style-3 figure:hover img, .cs-style-3 figure.cs-hover img {
+        transform: translateY(0px);
+    }
+
+.cs-style-3 figcaption {
+    bottom: 0;
+    height: 75px;
+    margin-top: -40px;
+    opacity: 0;
+    top: auto;
+    transform: translateY(50%);
+    transition: transform 0.4s ease 0s, opacity 0.1s ease 0.3s;
+    width: 284px;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption, .cs-style-3 figure.cs-hover figcaption {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform 0.4s ease 0s, opacity 0.1s ease 0s;
+}
+
+.cs-style-3 figcaption a {
+    bottom: 5px;
+    position: absolute;
+    right: 30px;
+}
+
+a {
+    color: #888;
+    text-decoration: none;
+}
+
+    a:hover, a:active {
+        color: #333;
+    }
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+@media screen and (max-width: 31.5em) {
+    .grid {
+        padding: 10px 10px 100px;
+    }
+
+        .grid li {
+            min-width: 300px;
+            width: 100%;
+        }
+}

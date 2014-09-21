@@ -24,7 +24,7 @@
 
             hasChildren = topLevelNavigation.Children.Count > 0;
             showOnRight = (hasChildren &&
-                                topLevelNavigation.GetPrecedingSiblingNodes().Count() > topLevelNavigation.GetSiblingNodes().Count() / 2)
+                                topLevelNavigation.GetPrecedingSiblingNodes().Count() >= topLevelNavigation.GetSiblingNodes().Count() / 2)
                                             ? "class=right"
                                             : "";
         }

@@ -8,6 +8,6 @@ namespace PurityBridge.Live
     public class BreadCrumbElement
     {
         public string Value { get; set; }
-        public string Url { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -316,6 +316,7 @@
     <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="Content\audio\californication.html" />
     <Content Include="Content\css\beforeafter.css" />
+    <Content Include="Content\css\benefits.css" />
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\category.css" />
     <Content Include="Content\css\color-blue.css" />
@@ -343,7 +344,6 @@
     <Content Include="Content\css\layerslider.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\owl.carousel.css" />
-    <Content Include="Content\css\styles_old.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
     <Content Include="Content\images\logo5.png" />
     <Content Include="Content\images\logo1.png" />
@@ -512,6 +512,8 @@
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\AnimatedHeader.js" />
     <Content Include="scripts\AnimatedHeader.min.js" />
+    <Content Include="scripts\benefits\modernizr.custom.js" />
+    <Content Include="scripts\benefits\toucheffects.js" />
     <Content Include="scripts\categories.js" />
     <Content Include="scripts\classie.js" />
     <Content Include="scripts\Common.js" />
@@ -3010,7 +3012,9 @@
     <Content Include="umbraco_client\Ui\ui-lightness\jquery-ui.custom.css" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="Views\Partials\Highlighteditem.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -3024,7 +3028,6 @@
     <Content Include="Views\Photos\Index.cshtml" />
     <Content Include="Views\Treatments\Index.cshtml" />
     <Content Include="Views\UnderConstruction.cshtml" />
-    <Content Include="Views\Location.cshtml" />
     <Content Include="Views\NewsAndEvents.cshtml" />
     <Content Include="Views\PhotoTour.cshtml" />
     <Content Include="Views\rightChoice.cshtml" />
@@ -3057,19 +3060,15 @@
     <Content Include="Views\Treatment.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Treatment\Details.cshtml" />
     <Content Include="Views\MacroPartials\BeforeAndAfterPartial.cshtml" />
     <Content Include="Views\MacroPartials\TestimonialPartial.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
-    <Content Include="Views\Navigations\Category.cshtml" />
-    <Content Include="Views\MacroPartials\_Treatments.cshtml" />
-    <Content Include="Views\Navigations\Index.cshtml" />
     <Content Include="Views\MacroPartials\CategoryPartial.cshtml" />
     <Content Include="Views\Videos\Videos.cshtml" />
     <Content Include="Views\Videos\TreatmentVideos.cshtml" />
     <Content Include="Views\Video\Index_old.cshtml" />
     <Content Include="Views\Photos\Treatment.cshtml" />
-    <Content Include="Views\Treatment\Treatment.cshtml" />
+    <Content Include="Views\TheClinic\Index.cshtml" />
     <Content Include="Views\MacroPartials\GetPhoto.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
     <Content Include="umbraco\assets\fonts\helveticons\helveticons.eot" />

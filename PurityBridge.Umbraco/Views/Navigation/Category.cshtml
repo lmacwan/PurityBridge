@@ -1,0 +1,9 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = true;
+    var treatmentIds = Model.Content.Children.Select(c => c.GetPropertyValue<int>("relatedTo")).ToList();
+    var treatmentModel = treatmentIds.ConvertAll<IPublishedContent>(id => Umbraco.TypedContent(id)).ToList().Where(c => c != null);
+}
+@Html.Partial("_Treatments", treatmentModel)
