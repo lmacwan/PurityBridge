@@ -8,9 +8,18 @@
 <style>
     .align {
         border: 1px solid #e4e4e4;
-        margin: 0 20px 10px 0;
         padding: 3px;
+        margin-bottom: 20px !important;
+    }
+
+    .spannedItems .left .align {
         float: left;
+        margin-right: 20px;
+    }
+
+    .spannedItems .right .align {
+        float: right;
+        margin-left: 20px;
     }
 
     .spannedItems .widget + .widget {
@@ -21,43 +30,75 @@
         border-right: 1px solid #cecece;
         padding-right: 1.1%;
     }
+
     .spannedItems .vc_span6 {
         margin-left: 1.1%;
     }
-    .spannedItems .vc_span6:first-child {
-        margin-left: 0px;
-    }
-    .spannedItems .vc_row-fluid, .spannedItems .wpb_content_element{
+
+        .spannedItems .vc_span6:first-child {
+            margin-left: 0px;
+        }
+
+    .spannedItems .vc_row-fluid, .spannedItems .wpb_content_element {
         margin-bottom: 0px !important;
     }
+
+    .spannedItems .vc_span6 > .widget {
+        margin: 50px 15px 15px 15px;
+    }
+
+        .spannedItems .vc_span6 > .widget:first-child {
+            margin-top: 0px;
+        }
 </style>
 @if (rightChoiceData.WhereNotNull().Any())
 {
     var rightChoice = Umbraco.TypedContent(rightChoiceData.First().Id);
-    string isEven = "left";
     string content = string.Empty;
+    var contentItems = rightChoice.Children(c => c.DocumentTypeAlias == "SpannedPhotoItem");
+    int half = Convert.ToInt16(Math.Ceiling(contentItems.Count() / 2.0));
     <div class="vc_row-fluid spannedItems">
-        @foreach (var spannedPhotoItem in rightChoice.Children(c => c.DocumentTypeAlias == "SpannedPhotoItem"))
-        {
-            isEven = (spannedPhotoItem.Index() % 2 == 0) ? "right" : "left";
-            content = string.Format("<h1></h1><p>{0}</p>",
-                        spannedPhotoItem.GetPropertyValue<string>("text")
-                                        .Replace('\n' + "", "</p><h1></h1><p>"));
-            <section class="widget vc_span6">
-                <div class="widget-title">
-                    @spannedPhotoItem.GetPropertyValue("heading")
-                </div>
-                <div class="wpb_text_column wpb_content_element">
-                    <div class="wpb_wrapper">
-                        <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+        <div class="vc_span6">
+            @foreach (var spannedPhotoItem in contentItems.Take(half))
+            {
+                content = string.Format("<h1></h1><p>{0}</p>",
+                            spannedPhotoItem.GetPropertyValue<string>("text")
+                                            .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+                <section class="widget right">
+                    <div class="widget-title">
+                        @spannedPhotoItem.GetPropertyValue("heading")
                     </div>
-                    @Html.Raw(content)
-                </div>
-            </section>
-        }
+                    <div class="wpb_text_column wpb_content_element">
+                        <div class="wpb_wrapper">
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                        </div>
+                        @Html.Raw(content)
+                    </div>
+                </section>
+            }
+        </div>
+        <div class="vc_span6">
+            @foreach (var spannedPhotoItem in contentItems.Skip(half))
+            {
+                content = string.Format("<h1></h1><p>{0}</p>",
+                            spannedPhotoItem.GetPropertyValue<string>("text")
+                                            .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+                <section class="widget left">
+                    <div class="widget-title">
+                        @spannedPhotoItem.GetPropertyValue("heading")
+                    </div>
+                    <div class="wpb_text_column wpb_content_element">
+                        <div class="wpb_wrapper">
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                        </div>
+                        @Html.Raw(content)
+                    </div>
+                </section>
+            }
+        </div>
     </div>
-        IPublishedContent treatment = null;
-        string url;
+            IPublishedContent treatment = null;
+            string url;
     <div class="vc_row-fluid">
 
         @foreach (var list in rightChoice.Children(c => c.DocumentTypeAlias == "List"))
