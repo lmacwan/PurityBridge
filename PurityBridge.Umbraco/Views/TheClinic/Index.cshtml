@@ -9,6 +9,14 @@
     .centered.vc_row-fluid [class*="vc_span"] {
         float: none;
     }
+
+    .page-title {
+        margin-bottom: 0px;
+    }
+
+    main .grid-row:first-child {
+        margin: -120px auto 60px;
+    }
 </style>
 
 @{
@@ -45,7 +53,30 @@
         </div>
     </div>
     <div id="photo-content" class="beautify">
-        @Html.Partial("_ContentPartial", Umbraco.TypedContent(clinicDataChildren.WhereNotNull().FirstOrDefault(c => c.NodeTypeAlias.Equals("Details", StringComparison.InvariantCultureIgnoreCase)).GetChildNodesByType("content").First().Id))
+        @Html.Partial("_ContentPartial", Umbraco.TypedContent(clinicData.First().GetDescendantNodesByType("content").First().Id))
+    </div>
+                    IPublishedContent treatment = null;
+                    string treatmentUrl;
+    <div class="vc_row-fluid">
+
+        @foreach (var list in Umbraco.TypedContent(clinicData.First().Id).Children(c => c.DocumentTypeAlias == "List"))
+        {
+            <div class="vc_span4">
+                <!-- categories -->
+                <section class="widget widget-sevices">
+                    <div class="widget-title">@list.GetPropertyValue("text")</div>
+                    <ul>
+                        @foreach (var listItem in list.Children)
+                        {
+                            treatment = Umbraco.TypedContent(listItem.GetPropertyValue<int>("relatedPage"));
+                            treatmentUrl = treatment.Parent.Url + treatment.UrlName;
+                            <li><i class="fa fa-bookmark"></i><a href="@treatmentUrl">@listItem.GetPropertyValue("heading")</a></li>
+                        }
+                    </ul>
+                </section>
+                <!--/ categories -->
+            </div>
+        }
     </div>
     }
 }

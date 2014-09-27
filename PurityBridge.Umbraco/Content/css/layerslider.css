@@ -95,6 +95,10 @@
 .ls-slide .ls-bg {
 	left: 0px;
 	top: 0px;
+    width:100% !important;
+    height : 100% !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
 	transform: none !important;
 	-o-transform: none !important;
 	-ms-transform: none !important;

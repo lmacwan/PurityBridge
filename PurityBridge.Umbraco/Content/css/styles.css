@@ -1236,11 +1236,11 @@ textarea {
 /* logo */
 /**/
 .logo {
+    font-size: 0;
+    left: 50%;
+    margin-left: -600px;
     position: absolute;
     top: 0;
-    left: 50%;
-    margin-left: -585px;
-    font-size: 0;
 }
 
     .logo div {
@@ -1251,7 +1251,7 @@ textarea {
 
     .logo img {
         display: inline-block;
-        max-height: 92px;
+        max-height: 110px;
     }
 
 @media screen and (max-width: 1190px) { /* laptop */
@@ -7615,11 +7615,13 @@ dd > p {
 #treatment-image img {
     float: right;
 }
+
 section#banner {
     min-width: 100%;
     position: relative;
-    margin-top:-50px;
+    margin-top: -50px;
 }
+
     section#banner .grid-row {
         margin: 0 auto 20px;
     }

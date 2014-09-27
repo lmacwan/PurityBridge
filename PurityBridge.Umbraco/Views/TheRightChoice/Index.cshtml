@@ -97,27 +97,4 @@
             }
         </div>
     </div>
-            IPublishedContent treatment = null;
-            string url;
-    <div class="vc_row-fluid">
-
-        @foreach (var list in rightChoice.Children(c => c.DocumentTypeAlias == "List"))
-        {
-            <div class="vc_span4">
-                <!-- categories -->
-                <section class="widget widget-sevices">
-                    <div class="widget-title">@list.GetPropertyValue("text")</div>
-                    <ul>
-                        @foreach (var listItem in list.Children)
-                        {
-                            treatment = Umbraco.TypedContent(listItem.GetPropertyValue<int>("relatedPage"));
-                            url = treatment.Parent.Url + treatment.UrlName;
-                            <li><i class="fa fa-bookmark"></i><a href="@url">@listItem.GetPropertyValue("heading")</a></li>
-                        }
-                    </ul>
-                </section>
-                <!--/ categories -->
-            </div>
-        }
-    </div>
 }

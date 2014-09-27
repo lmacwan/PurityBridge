@@ -313,7 +313,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="Content\audio\californication.html" />
     <Content Include="Content\css\beforeafter.css" />
     <Content Include="Content\css\benefits.css" />
@@ -509,6 +508,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="masterpages\dummy.txt" />
+    <Content Include="media\14632\tw_2.jpg" />
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\AnimatedHeader.js" />
     <Content Include="scripts\AnimatedHeader.min.js" />
@@ -3282,6 +3282,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="BusinessLogic\" />
   </ItemGroup>
   <PropertyGroup>

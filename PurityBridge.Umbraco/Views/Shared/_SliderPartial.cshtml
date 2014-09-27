@@ -2,9 +2,14 @@
 @{
     IEnumerable<umbraco.NodeFactory.Node> data = null;    
 }
+
 @if (Model.UrlName == "home")
 {
     data = uQuery.GetNodesByType("HomeData");
+}
+else if (Model.UrlName == "the-clinic")
+{
+    data = uQuery.GetNodesByType("ClinicData");
 }
 
 @if (data != null && data.Any())
@@ -46,16 +51,19 @@
                 }
                 
                 <div class="ls-slide" data-ls='transition2d:@slideTransition;slidedelay:@slider.GetProperty("delay")000;'>
-                    <img src="@url" alt="" class="ls-bg">
-                    <div class="intro ls-l" data-ls='@transiton;' style='left: 80%; top: 35%;'>
-                        <h2><span>@slider.GetProperty("line1")</span><span>@slider.GetProperty("line2")</span></h2>
-                        <p>@slider.GetProperty("description")</p>
-                        <div class="buttons">
-                            <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
-                            <a href="@relatedPage" class="button">Read More</a>
-                            <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+                    <img src="@url" alt="" class="ls-bg" />
+                    @if (slider.GetProperty<string>("line1") != "")
+                    {
+                        <div class="intro ls-l" data-ls='@transiton;' style='left: 80%; top: 35%;'>
+                            <h2><span>@slider.GetProperty("line1")</span><span>@slider.GetProperty("line2")</span></h2>
+                            <p>@slider.GetProperty("description")</p>
+                            <div class="buttons">
+                                <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
+                                <a href="@relatedPage" class="button">Read More</a>
+                                <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             }
         </section>
