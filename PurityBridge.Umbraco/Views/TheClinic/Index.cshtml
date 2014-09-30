@@ -52,7 +52,7 @@
             </section>
         </div>
     </div>
-    <div id="photo-content" class="beautify">
+    <div id="page-content" class="vc_row-fluid beautify">
         @Html.Partial("_ContentPartial", Umbraco.TypedContent(clinicData.First().GetDescendantNodesByType("content").First().Id))
     </div>
                     IPublishedContent treatment = null;

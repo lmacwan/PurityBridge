@@ -5,27 +5,23 @@
     string spanNo;
 }
 
-<div class="grid-col grid-col-12" id="page-content">
-    <div class="vc_row-fluid ">
-        @foreach (IPublishedContent child in Model.Children)
-        {
-            span = child.GetPropertyValue<string>("span");
-            cols = span.Contains("Less")
-                        ? 3
-                        : span.Contains("More")
-                            ? 9
-                            : span.Contains("Full")
-                                ? 12
-                                : 6;
-            spanNo = "vc_span" + cols;
-            <div class="@spanNo">
+@foreach (IPublishedContent child in Model.Children(c => c.IsVisible()))
+{
+    span = child.GetPropertyValue<string>("span");
+    cols = span.Contains("Less")
+                ? 3
+                : span.Contains("More")
+                    ? 9
+                    : span.Contains("Full")
+                        ? 12
+                        : 6;
+    spanNo = "vc_span" + cols;
+    <div class="@spanNo">
 
-                @if (child.HasProperty("appointmentWidget") && child.GetPropertyValue<bool>("appointmentWidget"))
-                {
-                    Html.RenderPartial("_MakeAnAppointmentPartial");
-                }
-                @Html.Partial("_ChildrenPartial", child)
-            </div>
+        @if (child.HasProperty("appointmentWidget") && child.GetPropertyValue<bool>("appointmentWidget"))
+        {
+            Html.RenderPartial("_MakeAnAppointmentPartial");
         }
+        @Html.Partial("_ChildrenPartial", child)
     </div>
-</div>
+}

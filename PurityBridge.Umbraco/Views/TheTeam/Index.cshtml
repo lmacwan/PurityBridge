@@ -3,6 +3,6 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = false;
-    var rightChoiceData = uQuery.GetNodesByType("RightChoiceData") ?? new List<umbraco.NodeFactory.Node>();
+    var teamData = uQuery.GetNodesByType("TeamData") ?? new List<umbraco.NodeFactory.Node>();
 }
-@Html.Partial("_PhotoTextContent", rightChoiceData)
+@Html.Partial("_PhotoTextContent", teamData)

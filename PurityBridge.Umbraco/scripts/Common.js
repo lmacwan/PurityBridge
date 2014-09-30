@@ -97,4 +97,9 @@ jQuery.cachedScript = function (url, options) {
 
 $(window).load(function () {
     $('#ui-datepicker-div').addClass('widget-calendar');
+
+    // PhototextContent
+    $('.spannedItems .wpb_text_column.wpb_content_element').each(function (i, e) {
+        $(e).css({ paddingBottom: $(e).find('img').first().outerHeight() - $(e).find('p').first().outerHeight() });
+    });
 });

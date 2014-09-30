@@ -3191,6 +3191,10 @@
     <Content Include="umbraco\Xslt\Web.config" />
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Razor\LICENSE" />
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Sieve\LICENSE" />
+    <Content Include="Views\TheSpecialists\Index.cshtml" />
+    <Content Include="Views\TheTeam\Index.cshtml" />
+    <Content Include="Views\Shared\_PhotoTextContent.cshtml" />
+    <Content Include="Views\PhotoTextContent\TheRightChoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">

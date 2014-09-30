@@ -26,7 +26,7 @@
     }
     }
     
-    <div class="beautify">
+    <div class="vc_row-fluid beautify">
         @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
     </div>
 }

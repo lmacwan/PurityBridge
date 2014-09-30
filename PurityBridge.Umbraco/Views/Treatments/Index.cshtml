@@ -40,7 +40,7 @@
             </section>
         </div>
     </div>
-    <div id="photo-content" class="beautify">
+    <div id="photo-content" class="vc_row-fluid beautify">
         @Html.Partial("_ContentPartial", Umbraco.TypedContent(treatmentsDataChildren.WhereNotNull().FirstOrDefault(c => c.NodeTypeAlias.Equals("Details", StringComparison.InvariantCultureIgnoreCase)).GetChildNodesByType("content").First().Id))
     </div>
     }

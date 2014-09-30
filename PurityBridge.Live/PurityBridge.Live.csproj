@@ -381,8 +381,11 @@
     <Compile Include="Controllers\PhotosController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\PhotoTextContentController.cs" />
     <Compile Include="Controllers\TheClinicController.cs" />
     <Compile Include="Controllers\TheRightChoiceController.cs" />
+    <Compile Include="Controllers\TheSpecialistsController.cs" />
+    <Compile Include="Controllers\TheTeamController.cs" />
     <Compile Include="Controllers\TreatmentsController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\VideosController.cs" />
