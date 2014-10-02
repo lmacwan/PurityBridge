@@ -247,7 +247,7 @@ $(function () {
         autoPauseSlideshow: 'auto',
         touchNav: true,
         skin: 'fullwidth',
-        skinsPath: 'css/',
+        skinsPath: '/Content/css/',
         navPrevNext: false,
         showBarTimer: false,
         showCircleTimer: true,
@@ -273,7 +273,6 @@ $(function () {
         $('#slider').layerSlider('prev');
         return false;
     });
-
 
     /**/
     /* doctors */

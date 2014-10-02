@@ -5,4 +5,20 @@
     ViewBag.ShowTitleBar = false;
     var teamData = uQuery.GetNodesByType("TeamData") ?? new List<umbraco.NodeFactory.Node>();
 }
-@Html.Partial("_PhotoTextContent", teamData)
+<style>
+    
+    .spannedItems .left .align {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .spannedItems .right .align {
+        float: right;
+        margin-left: 20px;
+    }
+    .spannedItems .vc_span6 > .widget {
+        max-height: inherit !important;
+    }
+
+</style>
+@Html.Partial("_TextContent", teamData)

@@ -5,4 +5,13 @@
     ViewBag.ShowTitleBar = false;
     var rightChoiceData = uQuery.GetNodesByType("RightChoiceData") ?? new List<umbraco.NodeFactory.Node>();
 }
-@Html.Partial("_PhotoTextContent", rightChoiceData)
+<style>    
+    .spannedItems .left .align,
+    .spannedItems .right .align     
+    {
+        float: right;
+        margin-left: 20px;
+    }
+</style>
+
+@Html.Partial("_TextContent", rightChoiceData)

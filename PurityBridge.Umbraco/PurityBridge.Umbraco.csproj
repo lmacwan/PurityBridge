@@ -3195,6 +3195,9 @@
     <Content Include="Views\TheTeam\Index.cshtml" />
     <Content Include="Views\Shared\_PhotoTextContent.cshtml" />
     <Content Include="Views\PhotoTextContent\TheRightChoice.cshtml" />
+    <Content Include="Views\Conditionswetreat\Index.cshtml" />
+    <Content Include="Views\Shared\_TextContent.cshtml" />
+    <Content Include="Views\MacroPartials\_TextContentAjaxPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">

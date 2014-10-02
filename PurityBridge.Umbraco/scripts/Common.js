@@ -99,7 +99,11 @@ $(window).load(function () {
     $('#ui-datepicker-div').addClass('widget-calendar');
 
     // PhototextContent
-    $('.spannedItems .wpb_text_column.wpb_content_element').each(function (i, e) {
-        $(e).css({ paddingBottom: $(e).find('img').first().outerHeight() - $(e).find('p').first().outerHeight() });
-    });
+    var height = 0;
+    //$('.spannedItems .wpb_text_column.wpb_content_element').each(function (i, e) {
+    //    height = $(e).find('img').first().outerHeight() - $(e).find('p').first().outerHeight();
+    //    if ($(e).find('img').first().outerHeight() > $(e).outerHeight()) {
+    //        $(e).children().last().css({ paddingBottom: height });
+    //    }
+    //});
 });

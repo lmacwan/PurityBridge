@@ -6,16 +6,6 @@
         margin-bottom: 20px !important;
     }
 
-    .spannedItems .left .align {
-        float: left;
-        margin-right: 20px;
-    }
-
-    .spannedItems .right .align {
-        float: right;
-        margin-left: 20px;
-    }
-
     .spannedItems .widget + .widget {
         margin-top: 0px;
     }
@@ -38,12 +28,53 @@
     }
 
     .spannedItems .vc_span6 > .widget {
-        margin: 50px 15px 15px 15px;
+        margin: 80px 15px 15px;
     }
 
         .spannedItems .vc_span6 > .widget:first-child {
             margin-top: 0px;
         }
+
+    .spannedItems .leftwarpper {
+        float: left;
+        margin-top: 10px;
+    }
+
+    .spannedItems .read-more {
+        background: none repeat scroll 0 0 #fff;
+        border: 2px solid #00aba5;
+    }
+
+    .spannedItems .more {
+        color: #FFF;
+        float: right;
+        font-size: 18px;
+        line-height: 28px;
+        padding: 0 5px;
+        border: 2px solid #00aba5;
+        background: none repeat scroll 0 0 #00aba5;
+    }
+
+    .spannedItems .read-more {
+        color: #00aba5;
+        display: block;
+        float: right;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 130px;
+    }
+
+    /*.fancybox-skin {
+        height: auto !important;
+        padding: 15px !important;
+        width: 890px !important;
+    }
+
+    .fancybox-inner {
+        width: auto !important;
+    }*/
 </style>
 @if (Model.WhereNotNull().Any())
 {
@@ -56,7 +87,7 @@
             @foreach (var spannedPhotoItem in contentItems.Take(half))
             {
                 content = string.Format("<h1></h1><p>{0}</p>",
-                            spannedPhotoItem.GetPropertyValue<string>("text")
+                            string.Concat(spannedPhotoItem.GetPropertyValue<string>("text").Take(500))
                                             .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
                 <section class="widget right">
                     <div class="widget-title">
@@ -67,15 +98,30 @@
                             <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
                         </div>
                         @Html.Raw(content)
+                        <div class="wpb_wrapper leftwarpper">
+                            <a class="read-more fancybox" href="#@spannedPhotoItem.Id">Read More <i class="more fa fa-long-arrow-right"></i></a>
+                        </div>
                     </div>
+
                 </section>
+                <div id="@spannedPhotoItem.Id" style="display:none; width:890px; height: auto;">
+                    <div class="widget-title">
+                        @spannedPhotoItem.GetPropertyValue("heading")
+                    </div>
+                    <div class="wpb_text_column wpb_content_element">
+                        <div class="wpb_wrapper">
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                        </div>
+                        @Html.Raw(content)
+                    </div>
+                </div>
             }
         </div>
         <div class="vc_span6">
             @foreach (var spannedPhotoItem in contentItems.Skip(half))
             {
                 content = string.Format("<h1></h1><p>{0}</p>",
-                            spannedPhotoItem.GetPropertyValue<string>("text")
+                             string.Concat(spannedPhotoItem.GetPropertyValue<string>("text").Take(500))
                                             .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
                 <section class="widget left">
                     <div class="widget-title">
@@ -86,9 +132,31 @@
                             <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
                         </div>
                         @Html.Raw(content)
+                        <div class="wpb_wrapper leftwarpper">
+                            <a class="read-more fancybox" href="#@spannedPhotoItem.Id">Read More <i class="more fa fa-long-arrow-right"></i></a>
+                        </div>
                     </div>
+
                 </section>
+                <div id="@spannedPhotoItem.Id" style="display:none; width:890px; height: auto;">
+                    <div class="widget-title">
+                        @spannedPhotoItem.GetPropertyValue("heading")
+                    </div>
+                    <div class="wpb_text_column wpb_content_element">
+                        <div class="wpb_wrapper">
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                        </div>
+                        @Html.Raw(content)
+                    </div>
+                </div>
             }
         </div>
     </div>
 }
+<script>
+    $(document).ready(function () {
+        $('.read-more').fancybox({
+            autoDimensions: true
+        });
+    });
+</script>

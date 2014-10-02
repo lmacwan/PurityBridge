@@ -20,8 +20,8 @@
 
 @section ImageSection {
     <section id="banner" style="background-color: @Umbraco.TypedContent(treatmentNode.Id).GetPropertyValue("colour");">
-        <div id="treatment-image" class="grid-row">
-            <img src="@Umbraco.TypedContent(treatmentNode.Id).GetCropUrl("thumbnail", "banner")" width="270" height="180"/>
+        <div id="treatment-image" class="grid-row" style="background-color: @Umbraco.TypedContent(treatmentNode.Id).GetPropertyValue("colour");">
+            <img src="@Umbraco.TypedContent(treatmentNode.Id).GetCropUrl("thumbnail", "banner")" width="270" height="180" style="background-color: @Umbraco.TypedContent(treatmentNode.Id).GetPropertyValue("colour");" />
         </div>
     </section>
 }

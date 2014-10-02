@@ -3,7 +3,6 @@
     var highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "HighlightItem" && child != null);
 }
 <link href="~/Content/css/benefits.css" rel="stylesheet" />
-<script src="~/scripts/benefits/modernizr.custom.js"></script>
 @if (highlights.Any())
 {
     <div class="grid-row">
@@ -15,16 +14,16 @@
                             ? "/underconstruction"
                             : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
                 <li>
-                    <figure>
+                    <figure class="cs-hover">
                         <img alt="@highlightItem.GetProperty("heading")" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
 
                         <a href="@url"><figcaption>
                             <h3>@highlightItem.GetProperty("heading")</h3>
                         </figcaption></a>
                     </figure>
+                    <p></p>
                 </li>
             }
         </ul>
     </div>
 }
-<script src="~/scripts/benefits/toucheffects.js"></script>
