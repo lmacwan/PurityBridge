@@ -1,0 +1,215 @@
+﻿@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.ShowTitleBar = false;
+    var treatmentData = uQuery.GetNodesByType("TreatmentsData");
+    IEnumerable<IPublishedContent> children = null;
+}
+<style>
+    .pricing-table .col {
+        margin-left: -4px;
+    }
+
+    .services .pic {
+        font-size: 24px;
+    }
+
+        .services .pic:before, .pic:before {
+            position: absolute;
+            top: 0;
+            width: 10%;
+        }
+</style>
+<div class="callout wpb_content_element">
+    <div class="icon"><i class="fa fa-star"></i></div>
+    <div class="callout-wrapper">
+        <div class="callout-content">
+            <div class="title">Best Services For You</div>
+            <div class="subtitle">Description Here.</div>
+        </div>
+        <div class="callout-button">
+            @{      
+                var pageData = Umbraco.TypedContent(uQuery.GetNodesByType("PriceListData").First().Id);
+            }
+            @if (pageData.HasValue("priceListFile"))
+            {
+                <a  class="button" href="@pageData.GetPropertyValue("priceListFile")">Comprehensive price list</a>
+            }
+        </div>
+    </div>
+</div>
+
+@if (treatmentData.Any())
+{
+    <div class="widget pricing-table wpb_content_element">
+        <div class="widget-title">Pricing Table</div>
+        <div class="row">
+
+            @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategory"))
+            {
+                <div class="col col-4" data-category="@treatmentCategory.Name">
+                    <div class="head"><span>@treatmentCategory.GetProperty("headingLine1")</span>@treatmentCategory.GetProperty("headingLine2")</div>
+                    @* <div class="price">
+                        <div><sup></sup><span></span></div>
+                    </div>*@
+                    <ul class="listing">
+                        @foreach (var treatment in treatmentCategory.GetChildNodesByType("Treatment"))
+                        {
+                            <li><i class="fa fa-star"></i>@treatment.Name</li>
+                        }
+                    </ul>
+                    <div class="summary">@treatmentCategory.GetProperty("description")</div>
+                    <div class="join">
+                        <a href="javascript:void(0)" onclick="loadDetails('@treatmentCategory.Name')">
+                            <button class="wpb_button wpb_btn-large">Load Details</button>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+
+<div class="grid-row-sep" id="servicesSeparator"></div>
+
+<div class="grid-row details">
+    <!-- services -->
+    <section class="services services-wide wpb_content_element" id="services">
+        <div class="widget-title"></div>
+        <div class="owl-carousel owl-theme" id="services-carousel">
+        </div>
+        <div class="owl-controls clickable">
+            <div class="owl-buttons">
+                <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </section>
+    <section id="services-carousel-data">
+        @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategory"))
+        {
+            children = Umbraco.TypedContent(treatmentCategory.Id).Children(c => c.DocumentTypeAlias == "Treatment");
+            <div class="treatment-category" data-category="@treatmentCategory.Name">
+                @if (children.Count() <= 2)
+                {
+                    foreach (var treatment in children)
+                    {
+                        if (treatment.Index() % 2 == 0)
+                        {
+                    <div class="item">
+                        @renderListItems(treatment)
+                    </div>
+                            if (treatment.Next("Treatment", false) != null)
+                            {
+                    <div class="item">
+                        @renderListItems(treatment.Next())
+                    </div>
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var treatment in children)
+                    {
+                        if (treatment.Index() % 2 == 0)
+                        {
+                    <div class="item">
+                        <div style="min-height: 170px; padding-bottom: 40px;">
+                            @renderListItems(treatment)
+                        </div>
+                        @if (treatment.Next("Treatment", false) != null)
+                        {
+                            <div style="min-height: 170px">
+                                @renderListItems(treatment.Next())
+                            </div>
+                        }
+                    </div>
+                        }
+                    }
+                }
+            </div>
+        }
+    </section>
+    <!--/ services -->
+</div>
+
+<div class="grid-row-sep details"></div>
+
+@helper renderListItems(IPublishedContent treatment)
+{
+    <a class="pic">£ @treatment.GetPropertyValue("price")</a>
+    <h2><a href="#">@treatment.Name</a></h2>
+    <p>@treatment.GetPropertyValue("description")</p>
+    <a class="more fa fa-long-arrow-right" href="#"></a>
+    
+}
+<style>
+    .owl-carousel .item {
+        width: initial !important;
+    }
+
+    .services li {
+        width: initial !important;
+    }
+
+    .active {
+        position: relative;
+        background: #fff !important;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2) !important;
+    }
+</style>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.col.col-4').each(function (i, e) {
+                $(e).find('.summary').first().css({ paddingBottom: $('.col.col-4').last().outerHeight() - $(e).outerHeight() })
+            });
+
+            $('.details').hide();
+        });
+        function loadDetails(name) {
+            $('.active').removeClass('active');
+            $(".row .col[data-category='" + name + "']").addClass('active');
+
+            $('#services-carousel-data').first().hide();
+            $('.details .widget-title').text(name + " Price Details");
+            var html = "";
+            html = $('#services-carousel-data').first().find(".treatment-category[data-category='" + name + "']").html();
+            $('#services-carousel').remove();
+            $('.services').first().find('.widget-title').first().after('<div class="owl-carousel owl-theme" id="services-carousel">' + html + '</div>');
+            $('#services-carousel').owlCarousel({
+                items: 2,
+                itemsDesktop: false,
+                itemsDesktopSmall: false,
+                itemsTablet: false,
+                itemsTabletSmall: false,
+                itemsMobile: [479, 1],
+                navigation: true,
+                navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                pagination: false
+            });
+            $('.details').show();
+
+            setTimeout(function () {
+                document.getElementById('servicesSeparator').scrollIntoView();
+            }, 200);
+        }
+
+        function GetComprehensivePriceList() {
+            //$.ajax({
+            //    url: "http://fiddle.jshell.net/favicon.png",
+            //    success : function (xhr) {
+                    
+            //    },
+            //    error: {
+
+            //    }
+            //});
+            window.location.href = '/the-price-list/GetComprehensivePriceList?comprehensive=true';
+        }
+    </script>
+}
