@@ -38,7 +38,7 @@
         }
 
     .grid figcaption {
-        background: none repeat scroll 0 0 rgba(255, 255, 255, 0.6);
+        background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
         border-top: 1px solid #00aba5;
         color: #000;
         left: 0;
@@ -56,7 +56,7 @@
     }
 
     .grid figcaption h3 {
-        color: #000;
+        color: #555;
         font-size: 20px;
         font-weight: bold;
         left: 170px;

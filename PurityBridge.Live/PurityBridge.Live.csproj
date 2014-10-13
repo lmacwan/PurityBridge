@@ -383,6 +383,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\PhotoTextContentController.cs" />
+    <Compile Include="Controllers\PriceListController.cs" />
     <Compile Include="Controllers\TheClinicController.cs" />
     <Compile Include="Controllers\TheRightChoiceController.cs" />
     <Compile Include="Controllers\TheSpecialistsController.cs" />

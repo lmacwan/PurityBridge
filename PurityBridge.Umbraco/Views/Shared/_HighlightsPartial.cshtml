@@ -1,10 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<umbraco.NodeFactory.Node>
 @{
-    var highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "HighlightItem" && child != null);
+    IEnumerable<umbraco.interfaces.INode> highlights = null;
 }
 <link href="~/Content/css/benefits.css" rel="stylesheet" />
-@if (highlights.Any())
+@if (Model.NodeTypeAlias == "Highlights")
 {
+    if ((highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "HighlightItem" && child != null)).Any())
+    {
     <div class="grid-row">
         <!-- benefits -->
         <ul class="grid cs-style-3">
@@ -26,4 +28,30 @@
             }
         </ul>
     </div>
+    }
+}
+else if (Model.NodeTypeAlias == "ClinicData")
+{
+    if ((highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "TreatmentsCategory" && child != null)).Any())
+    {
+    <div class="grid-row">
+        <!-- benefits -->
+        <ul class="grid cs-style-3">
+            @foreach (umbraco.NodeFactory.Node highlightItem in highlights)
+            {
+                var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), highlightItem.UrlName);
+                <li>
+                    <figure class="cs-hover">
+                        <img alt="@highlightItem.Name" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
+
+                        <a href="@url"><figcaption>
+                            <h3>@highlightItem.Name</h3>
+                        </figcaption></a>
+                    </figure>
+                    <p></p>
+                </li>
+            }
+        </ul>
+    </div>
+    }
 }

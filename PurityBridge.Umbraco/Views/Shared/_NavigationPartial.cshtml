@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                          
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                       
 @{
     var isHomePage = Model.Name.Equals("home", StringComparison.CurrentCultureIgnoreCase);
     var navigationItems = uQuery.GetNodesByType("ContentItem");
@@ -11,6 +11,7 @@
     var showOnRight = string.Empty;
     foreach (umbraco.NodeFactory.Node topLevelNavigation in navigationItems.First().ChildrenAsList.Where(c => c.GetProperty<bool>("showInHeader")))
     {
+
         if (topLevelNavigation.UrlName.Contains("home"))
         {
             url = "/";
@@ -31,6 +32,10 @@
         if (isHomePage && !(topLevelNavigation.GetProperty<bool>("isVisibleOnHomePage")))
         {
             continue;
+        }
+        if (topLevelNavigation.GetProperty<bool>("isNotClickable"))
+        {
+            url = "#";
         }
     <li @showOnRight>
         @*<li class="right">*@

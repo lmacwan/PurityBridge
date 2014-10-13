@@ -68,6 +68,8 @@ $(document).ready(function () {
 
     }
     /* retina-animating-blocks */
+
+    onDocumentReady();
 });
 
 /* twitter */

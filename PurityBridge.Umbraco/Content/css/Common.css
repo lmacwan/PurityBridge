@@ -90,3 +90,16 @@
 .photo-tour .links {
     border-radius: 40px 40px 0px 0px;
 }
+
+.quick-search {
+    background: none repeat scroll 0 0 #4dc4c0;
+    color: #fff;
+    font-size: 22px;
+    line-height: 37px;
+    text-align: right;
+    margin-top: 0px;
+}
+
+    .quick-search .grid-row {
+        margin-bottom: 0;
+    }

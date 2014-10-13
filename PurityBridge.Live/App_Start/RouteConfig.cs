@@ -12,13 +12,6 @@ namespace PurityBridge
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapRoute(
-                name: "Default",
-                url: "treatments/botox-therapy",
-                defaults: new { controller = "Treatments", action = "Treatment", id = UrlParameter.Optional }
-            );
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

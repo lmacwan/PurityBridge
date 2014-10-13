@@ -6,7 +6,6 @@
     var teamData = uQuery.GetNodesByType("TeamData") ?? new List<umbraco.NodeFactory.Node>();
 }
 <style>
-    
     .spannedItems .left .align {
         float: left;
         margin-right: 20px;
@@ -16,9 +15,47 @@
         float: right;
         margin-left: 20px;
     }
+
     .spannedItems .vc_span6 > .widget {
         max-height: inherit !important;
     }
 
+    .spannedItems .wpb_content_element {
+        padding-top: 20px;
+    }
+
+    .spannedItems .widget-title {
+        border-bottom-color: #00aba5;
+        margin-bottom: 0px;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+    }
 </style>
 @Html.Partial("_TextContent", teamData)
+
+@section scripts {
+    <script type="text/javascript">
+        $(window).load(function () {
+            setPadding();
+        });
+
+        $(window).resize(function () {
+            setPadding();
+        });
+
+        function setPadding() {
+            var leftSpanChildren = $('.spannedItems .vc_span6').first().find('.widget');
+            var rightSpanChildren = $('.spannedItems .vc_span6').last().find('.widget');
+            var index = 0;
+            leftSpanChildren.each(function (i, e) {
+
+                if ($(e).outerHeight() > $(rightSpanChildren.get(i)).outerHeight()) {
+                    $(rightSpanChildren.get(i)).css({ paddingBottom: $(e).outerHeight() - $(rightSpanChildren.get(i)).outerHeight() })
+                }
+                if ($(e).outerHeight() < $(rightSpanChildren.get(i)).outerHeight()) {
+                    $(e).css({ paddingBottom: $(rightSpanChildren.get(i)).outerHeight() - $(e).outerHeight() })
+                }
+            });
+        }
+    </script>
+}

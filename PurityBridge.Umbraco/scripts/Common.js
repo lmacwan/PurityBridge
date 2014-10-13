@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+function onDocumentReady() {
     // Active Menu-Item
     $("header .active").removeClass("active");
     var loc = window.location.href.toString().split('/');
@@ -25,7 +24,7 @@ $(document).ready(function () {
         var elementWidth = 0;
         $('#page-content .vc_row-fluid').children().each(function (i, e) {
             elementWidth = $(e).outerWidth() + parseInt($(e).css('margin-left').split('px')[0]);
-            if (elementWidth + width >= $('#page-content .vc_row-fluid').outerWidth()) {
+            if (elementWidth + width >= $('#page-content .vc_row-fluid').width()) {
                 $(e).css({ marginLeft: 0 });
                 width = 0;
             } else {
@@ -48,7 +47,7 @@ $(document).ready(function () {
     });
 
     $("#umbracoPreviewBadge").remove();
-});
+}
 
 function setMargin(parent) {
     var width = 0;

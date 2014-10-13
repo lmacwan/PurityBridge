@@ -1,13 +1,41 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
-@foreach (IPublishedContent child in Model.Children())
+@if (Model.DocumentTypeAlias == "Testimonials")
 {
-    if (child.DocumentTypeAlias == "columns")
-    {
-        Html.RenderPartial("ColumnsPartial", child);
-    }
-    else if (child.DocumentTypeAlias == "List")
-    {
-        Html.RenderAction("_ListPartial", child);
-    }
+    //var span = "";
+    //if (Model.HasProperty("childrenCount"))
+    //{
+    //    int cols = 0;
+    //    span = Model.Parent.GetPropertyValue<string>("childrenCount");
+    //    cols = string.IsNullOrEmpty(span) ? 12 : int.Parse(span);
+    //    if (cols > 12 || cols <= 0)
+    //    {
+    //        cols = Convert.ToInt32(Math.Floor((Model.Parent.Children().Count() % 12) / 12.0));
+    //    }
+    //    else
+    //    {
+    //        cols = Convert.ToInt32(Math.Floor((Convert.ToDouble(cols) / Model.Parent.Children().Count())));
+    //    }
+        
+        
+    //    Html.RenderPartial("_ListPartial", child);
+    //}
 }
-@Html.Partial("_ChildrenPartial", Model.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+else
+{
+    foreach (IPublishedContent child in Model.Children())
+    {
+        if (child.DocumentTypeAlias == "columns")
+        {
+            Html.RenderPartial("ColumnsPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "List")
+        {
+            Html.RenderPartial("_ListPartial", child);
+        }
+        else if (child.DocumentTypeAlias == "Testimonials")
+        {
+            Html.RenderPartial("_ListPartial", child);
+        }
+    }
+    @Html.Partial("_ChildrenPartial", Model.Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+}

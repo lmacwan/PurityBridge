@@ -34,7 +34,7 @@
     <div class="page">
         @{ Html.RenderPartial("_HeaderPartial"); }
 
-        @*        @{ Html.RenderPartial("_SearchPartial"); }*@
+        @{ Html.RenderPartial("_SearchPartial"); }
         @{ Html.RenderPartial("_PageTitlePartial"); }
         @Html.Partial("_SliderPartial", uQuery.GetCurrentNode())
         @RenderSection("ImageSection", false)

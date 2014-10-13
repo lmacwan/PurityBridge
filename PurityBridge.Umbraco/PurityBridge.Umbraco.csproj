@@ -3198,6 +3198,7 @@
     <Content Include="Views\Conditionswetreat\Index.cshtml" />
     <Content Include="Views\Shared\_TextContent.cshtml" />
     <Content Include="Views\MacroPartials\_TextContentAjaxPartial.cshtml" />
+    <Content Include="Views\PriceList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">

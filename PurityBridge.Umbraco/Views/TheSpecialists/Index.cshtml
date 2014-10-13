@@ -5,4 +5,158 @@
     ViewBag.ShowTitleBar = false;
     var specialistsData = uQuery.GetNodesByType("SpecialistsData") ?? new List<umbraco.NodeFactory.Node>();
 }
-@Html.Partial("_PhotoTextContent", specialistsData)
+<style>
+    .item .leftwarpper .more {
+        background: none repeat scroll 0 0 #00aba5;
+        border: 2px solid #00aba5;
+        color: #fff;
+        float: right;
+        font-size: 18px;
+        line-height: 28px;
+        padding: 0 5px;
+    }
+
+    .item .leftwarpper .read-more {
+        /*color: #00aba5 !important;
+        display: block !important;
+        float: left;
+        font-size: 16px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        text-align: center;
+        width: 130px !important;*/
+        color: #00aba5;
+        display: block;
+        float: left;
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 130px;
+    }
+
+    .item .leftwarpper .read-more {
+        background: none repeat scroll 0 0 #fff !important;
+        border: 2px solid #00aba5;
+    }
+
+    div.alignleft p {
+        color: #00aba5;
+        border-color: #00aba5;
+        line-height: 18px;
+        padding-bottom: 15px;
+        position: relative;
+        transition: background 0.3s ease 0s, color 0.3s ease 0s;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    div.alignleft {
+        text-align: center;
+        position: relative;
+    }
+
+        div.alignleft h3 {
+            color: #000;
+            font-size: 17px;
+            line-height: 23px;
+            padding-top: 10px;
+            position: relative;
+            transition: background 0.3s ease 0s, color 0.3s ease 0s;
+        }
+
+    .wpb_content_element:hover div.alignleft h3, .wpb_content_element:hover div.alignleft p {
+        background: none repeat scroll 0 0 #00aba5;
+    }
+
+    .wpb_content_element:hover div.alignleft h3, .wpb_content_element:hover div.alignleft p {
+        color: #fff;
+    }
+
+    .item {
+        width: 585px;
+        border-right : solid 2px #cecece;
+    }
+
+    .wpb_wrapper:first-child {
+        width: 550px;
+    }
+
+    .vc_row-fluid, .wpb_content_element {
+        margin-bottom: 100px !important;
+    }
+</style>
+@{
+    var specialists = Umbraco.TypedContent(specialistsData.First().Id).Children(c => c.DocumentTypeAlias == "Specialist");
+}
+<section class="widget">
+    <div class="owl-carousel owl-theme" id="services-carousel">
+
+        @foreach (var treatment in specialists)
+        {
+            if (treatment.Index() % 2 == 0)
+            {
+            <div class="item">
+                @renderListItems(treatment)
+                @if (treatment.Next() != null)
+                {
+                    @renderListItems(treatment.Next())
+                }
+            </div>
+            }
+        }
+    </div>
+    <div class="owl-controls">
+        <div class="owl-buttons">
+            <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+</section>
+
+<div class="grid-row-sep"></div>
+
+@helper renderListItems(IPublishedContent specialist)
+{
+    <div class="wpb_text_column wpb_content_element">
+        <div class="wpb_wrapper">
+            <div class="alignleft">
+                <img width="270" height="270" alt="" src="@specialist.GetCropUrl("spannedPhotoItem", "Rectangular")">
+                <h3 style="max-width: 270px;">@specialist.GetPropertyValue("heading")</h3>
+                <p style="max-width: 270px;">@specialist.GetPropertyValue("designation")</p>
+            </div>
+            <p class="capitalized">@specialist.GetPropertyValue("partialText")</p>
+        </div>
+        <div class="wpb_wrapper leftwarpper">
+            <a class="read-more fancybox" href="#@specialist.Id">Read More <i class="more fa fa-mail-forward"></i></a>
+        </div>
+    </div>
+    <div class="wpb_text_column wpb_content_element" id="@specialist.Id" style="display:none">
+        <div class="wpb_wrapper">
+            <div class="alignleft">
+                <img width="270" height="270" alt="" src="@specialist.GetCropUrl("spannedPhotoItem", "Rectangular")">
+                <h3 style="max-width: 270px;">@specialist.GetPropertyValue("heading")</h3>
+                <p style="max-width: 270px;">@specialist.GetPropertyValue("designation")</p>
+            </div>
+            <p class="capitalized">@specialist.GetPropertyValue("text")</p>
+        </div>
+    </div>
+}
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.wpb_wrapper:first-child').each(function (i, e) {
+                var eHeight = $(e).find('.alignleft').outerHeight();
+                var lastChildHeight = $(e).outerHeight();
+                if (eHeight > lastChildHeight) {
+                    $(e).css({ paddingBottom: eHeight - lastChildHeight - 34 });
+                }
+            });
+
+            $('.read-more').fancybox({
+                autoDimensions: true
+            });
+        });
+    </script>
+}

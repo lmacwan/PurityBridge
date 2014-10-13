@@ -1826,7 +1826,7 @@ nav p {
 
     .page-title nav {
         float: right;
-        margin-right: 150px;
+        margin-right: 18px;
         padding: 22px 0;
         font-size: 14px;
         line-height: 20px;
@@ -3787,7 +3787,6 @@ iframe {
     position: relative;
     padding-bottom: 15px;
     line-height: 18px;
-    min-height: 36px;
     -o-transition: background 0.3s, color 0.3s;
     -ms-transition: background 0.3s, color 0.3s;
     -moz-transition: background 0.3s, color 0.3s;
@@ -7630,4 +7629,8 @@ section#banner {
 .beautify article,
 .beautify h3 {
     padding-right: 15px;
+}
+
+.tuner { 
+    box-sizing: initial !important;
 }

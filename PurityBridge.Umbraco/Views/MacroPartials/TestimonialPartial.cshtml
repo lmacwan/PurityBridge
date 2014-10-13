@@ -1,31 +1,15 @@
 ﻿@model IPublishedContent
 @{
-    var cols = 11;
-    var span = "";
+    var cols = 12;
     string spanNo;
 
-    if (Model.Parent.HasProperty("childrensSpan"))
-    {
-
-        span = Model.Parent.GetPropertyValue<string>("childrensSpan");
-        cols = span.Contains("Less")
-                    ? 3
-                    : span.Contains("More")
-                        ? 9
-                        : span.Contains("Full")
-                            ? 12
-                            : 6;
-    }
+    
     spanNo = "vc_span" + cols;
 
-        <div class="widget testimonial">
-            <div class="clearfix">
-                <p>@Model.GetPropertyValue("Content")</p>
-            </div>
-            <div class="author">@Model.GetPropertyValue("Author")</div>
+    <div class="widget testimonial @spanNo">
+        <div class="clearfix">
+            <p>@Model.GetPropertyValue("Content")</p>
         </div>
+        <div class="author">@Model.GetPropertyValue("Author")</div>
+    </div>
 }
-
-
-
-
