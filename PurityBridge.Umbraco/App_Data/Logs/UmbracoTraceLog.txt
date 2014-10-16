@@ -10259,3 +10259,131 @@ System.Data.SqlClient.SqlException (0x80131904): The conversion of a varchar dat
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    at umbraco.presentation.publishingService.CheckPublishing(Object sender)
 ClientConnectionId:09bf3af8-4bcb-4fd2-9dc8-9f289b041188
+2014-10-15 22:09:47,646 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2014-10-15 22:09:47,786 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 91ms)
+2014-10-15 22:09:47,849 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-10-15 22:09:48,864 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 1016ms)
+2014-10-15 22:09:49,286 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-10-15 22:09:49,318 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 15ms)
+2014-10-15 22:09:49,318 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-10-15 22:09:49,333 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 15ms)
+2014-10-15 22:09:49,443 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-10-15 22:09:49,458 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 10ms)
+2014-10-15 22:09:49,458 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-10-15 22:09:49,474 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 14ms)
+2014-10-15 22:09:49,489 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-10-15 22:09:49,489 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 12ms)
+2014-10-15 22:09:49,489 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-10-15 22:09:49,505 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 13ms)
+2014-10-15 22:09:52,693 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-10-15 22:09:52,802 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 104ms)
+2014-10-15 22:09:52,864 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2014-10-15 22:09:52,880 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 21ms)
+2014-10-15 22:09:52,927 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2014-10-15 22:09:55,851 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-10-15 22:09:55,851 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 13ms)
+2014-10-15 22:10:01,554 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-10-15 22:10:01,554 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 14ms)
+2014-10-15 22:15:03,708 [10] INFO  UmbracoExamine.DataServices.UmbracoLogService - [Thread 12] Index is being optimized, Provider=InternalIndexer, NodeId=-1
+2014-10-15 22:15:33,449 [10] INFO  umbraco.content - [Thread 1] Loading content from disk cache...
+2014-10-15 22:15:34,320 [10] INFO  UmbracoExamine.DataServices.UmbracoLogService - [Thread 5] Index is being optimized, Provider=ExternalIndexer, NodeId=-1
+2014-10-15 22:15:42,530 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2014-10-15 22:15:42,556 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2014-10-15 22:15:42,610 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 54ms)
+2014-10-15 22:15:53,836 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2014-10-15 22:15:53,855 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 7ms)
+2014-10-15 22:15:53,872 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-10-15 22:15:54,084 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 209ms)
+2014-10-15 22:15:54,205 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-10-15 22:15:54,213 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 7ms)
+2014-10-15 22:15:54,213 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-10-15 22:15:54,221 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 7ms)
+2014-10-15 22:15:54,251 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-10-15 22:15:54,257 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 5ms)
+2014-10-15 22:15:54,257 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-10-15 22:15:54,264 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 7ms)
+2014-10-15 22:15:54,270 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-10-15 22:15:54,279 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 8ms)
+2014-10-15 22:15:54,279 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-10-15 22:15:54,288 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 8ms)
+2014-10-15 22:15:55,606 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2014-10-15 22:15:55,622 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 15ms)
+2014-10-15 22:15:55,699 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-10-15 22:15:55,707 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 7ms)
+2014-10-15 22:15:55,728 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2014-10-15 22:15:55,738 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 9ms)
+2014-10-15 22:15:55,754 [19] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2014-10-15 22:15:56,786 [10] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 12] Error executing query delete from umbracoLog where datestamp < @oldestPermittedLogEntry and logHeader in ('open','system')
+System.Data.SqlClient.SqlException (0x80131904): The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:ff42d439-4ea8-4662-bd24-a16ce964e8ed
+2014-10-15 22:15:56,930 [10] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 12] Application shutdown. Reason: CodeDirChangeOrDirectoryRename
+2014-10-15 22:15:57,169 [19] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2014-10-15 22:16:57,206 [19] INFO  Umbraco.Core.PluginManager - [Thread 23] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-10-15 22:16:57,229 [19] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 23ms)
+2014-10-15 22:47:02,560 [19] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 92] Error executing query delete from umbracoLog where datestamp < @oldestPermittedLogEntry and logHeader in ('open','system')
+System.Data.SqlClient.SqlException (0x80131904): The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:27b0d8c4-a3da-49b9-bfc1-b67ee959f99c
+2014-10-15 22:47:02,565 [19] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 92] Application shutdown. Reason: ConfigurationChange
+2014-10-15 22:49:01,282 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Determining hash of code files on disk
+2014-10-15 22:49:01,292 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Hash determined (took 6ms)
+2014-10-15 22:49:01,306 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-10-15 22:49:01,347 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 34 (took 38ms)
+2014-10-15 22:49:01,568 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-10-15 22:49:01,570 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2014-10-15 22:49:01,570 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-10-15 22:49:01,572 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 1ms)
+2014-10-15 22:49:01,617 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-10-15 22:49:01,618 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 1ms)
+2014-10-15 22:49:01,619 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-10-15 22:49:01,623 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 30 (took 4ms)
+2014-10-15 22:49:01,631 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-10-15 22:49:01,632 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2014-10-15 22:49:01,633 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-10-15 22:49:01,634 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2014-10-15 22:49:02,983 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of umbraco.interfaces.IApplication
+2014-10-15 22:49:02,984 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 0ms)
+2014-10-15 22:49:03,103 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-10-15 22:49:03,104 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2014-10-15 22:49:03,134 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Starting resolution types of umbraco.interfaces.ITree
+2014-10-15 22:49:03,136 [98] INFO  Umbraco.Core.PluginManager - [Thread 73] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 1ms)
+2014-10-15 22:49:03,169 [98] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 73] Initializing Examine and binding to business logic events
+2014-10-15 22:49:05,110 [98] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 73] Adding examine event handlers for index providers: 3
+2014-10-15 22:49:06,626 [98] INFO  Umbraco.Core.PluginManager - [Thread 96] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-10-15 22:49:06,637 [98] INFO  Umbraco.Core.PluginManager - [Thread 96] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 10ms)
+2014-10-15 22:57:33,842 [98] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 92] Error executing query delete from umbracoLog where datestamp < @oldestPermittedLogEntry and logHeader in ('open','system')
+System.Data.SqlClient.SqlException (0x80131904): The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:60c7d3dd-b90b-452b-8113-8c209557baf6
+2014-10-15 22:57:33,851 [98] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 92] Application shutdown. Reason: ConfigurationChange

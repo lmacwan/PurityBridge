@@ -20,6 +20,16 @@
             top: 0;
             width: 10%;
         }
+
+    .price-list-bullet {
+        background: url("/favicon.ico") repeat scroll 0 0 rgba(0, 0, 0, 0);
+        content: " ";
+        float: left;
+        height: 16px;
+        margin-right: 6px;
+        margin-top: 3px;
+        width: 15px;
+    }
 </style>
 <div class="callout wpb_content_element">
     <div class="icon"><i class="fa fa-star"></i></div>
@@ -29,34 +39,32 @@
             <div class="subtitle">Description Here.</div>
         </div>
         <div class="callout-button">
-            @{      
+            @{
                 var pageData = Umbraco.TypedContent(uQuery.GetNodesByType("PriceListData").First().Id);
             }
             @if (pageData.HasValue("priceListFile"))
             {
-                <a  class="button" href="@pageData.GetPropertyValue("priceListFile")">Comprehensive price list</a>
+                <a class="button" href="@pageData.GetPropertyValue("priceListFile")">Comprehensive price list</a>
             }
         </div>
     </div>
 </div>
-
 @if (treatmentData.Any())
 {
     <div class="widget pricing-table wpb_content_element">
         <div class="widget-title">Pricing Table</div>
         <div class="row">
-
             @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategory"))
             {
                 <div class="col col-4" data-category="@treatmentCategory.Name">
                     <div class="head"><span>@treatmentCategory.GetProperty("headingLine1")</span>@treatmentCategory.GetProperty("headingLine2")</div>
                     @* <div class="price">
-                        <div><sup></sup><span></span></div>
-                    </div>*@
+                            <div><sup></sup><span></span></div>
+                        </div>*@
                     <ul class="listing">
                         @foreach (var treatment in treatmentCategory.GetChildNodesByType("Treatment"))
                         {
-                            <li><i class="fa fa-star"></i>@treatment.Name</li>
+                            <li><div class="price-list-bullet"></div>@treatment.Name</li>
                         }
                     </ul>
                     <div class="summary">@treatmentCategory.GetProperty("description")</div>
@@ -71,9 +79,7 @@
     </div>
 }
 
-
 <div class="grid-row-sep" id="servicesSeparator"></div>
-
 <div class="grid-row details">
     <!-- services -->
     <section class="services services-wide wpb_content_element" id="services">
@@ -98,14 +104,14 @@
                     {
                         if (treatment.Index() % 2 == 0)
                         {
-                    <div class="item">
-                        @renderListItems(treatment)
-                    </div>
+                            <div class="item">
+                                @renderListItems(treatment)
+                            </div>
                             if (treatment.Next("Treatment", false) != null)
                             {
-                    <div class="item">
-                        @renderListItems(treatment.Next())
-                    </div>
+                                <div class="item">
+                                    @renderListItems(treatment.Next())
+                                </div>
                             }
                         }
                     }
@@ -116,17 +122,17 @@
                     {
                         if (treatment.Index() % 2 == 0)
                         {
-                    <div class="item">
-                        <div style="min-height: 170px; padding-bottom: 40px;">
-                            @renderListItems(treatment)
-                        </div>
-                        @if (treatment.Next("Treatment", false) != null)
-                        {
-                            <div style="min-height: 170px">
-                                @renderListItems(treatment.Next())
+                            <div class="item">
+                                <div style="min-height: 170px; padding-bottom: 40px;">
+                                    @renderListItems(treatment)
+                                </div>
+                                @if (treatment.Next("Treatment", false) != null)
+                                {
+                                    <div style="min-height: 170px">
+                                        @renderListItems(treatment.Next())
+                                    </div>
+                                }
                             </div>
-                        }
-                    </div>
                         }
                     }
                 }
@@ -135,16 +141,14 @@
     </section>
     <!--/ services -->
 </div>
-
 <div class="grid-row-sep details"></div>
-
 @helper renderListItems(IPublishedContent treatment)
 {
     <a class="pic">£ @treatment.GetPropertyValue("price")</a>
     <h2><a href="#">@treatment.Name</a></h2>
     <p>@treatment.GetPropertyValue("description")</p>
     <a class="more fa fa-long-arrow-right" href="#"></a>
-    
+
 }
 <style>
     .owl-carousel .item {
@@ -161,12 +165,12 @@
         box-shadow: 0 0 20px rgba(0,0,0,0.2) !important;
     }
 </style>
-
 @section scripts {
     <script>
         $(document).ready(function () {
+            var temp = $('.col.col-4').toArray().sort(function (a, b) { return $(a).outerHeight() - $(b).outerHeight(); }).reverse()[0];
             $('.col.col-4').each(function (i, e) {
-                $(e).find('.summary').first().css({ paddingBottom: $('.col.col-4').last().outerHeight() - $(e).outerHeight() })
+                $(e).find('.listing').first().css({ minHeight: $(temp).find('.listing').first().height() })
             });
 
             $('.details').hide();
@@ -203,7 +207,7 @@
             //$.ajax({
             //    url: "http://fiddle.jshell.net/favicon.png",
             //    success : function (xhr) {
-                    
+
             //    },
             //    error: {
 

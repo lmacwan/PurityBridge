@@ -177,3 +177,4 @@ FakesAssemblies/
 /PurityBridge.Umbraco/App_Data/cache
 /PurityBridge.Umbraco/App_Data/Logs
 /PurityBridge.Umbraco/App_Data/TEMP
+/PurityBridge.Live/umbraco/Images

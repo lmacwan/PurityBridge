@@ -58,6 +58,7 @@
     string content = string.Empty;
     var contentItems = rightChoice.Children(c => c.DocumentTypeAlias == "SpannedPhotoItem");
     int half = Convert.ToInt16(Math.Ceiling(contentItems.Count() / 2.0));
+    var crop = (string)(ViewBag.Crop ?? string.Empty);
     <div class="vc_row-fluid spannedItems">
         <div class="vc_span6">
             @foreach (var spannedPhotoItem in contentItems.Take(half))
@@ -71,7 +72,7 @@
                     </div>
                     <div class="wpb_text_column wpb_content_element">
                         <div class="wpb_wrapper">
-                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Square Crop")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", crop)" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
                         </div>
                         @Html.Raw(content)
                     </div>
@@ -90,7 +91,7 @@
                     </div>
                     <div class="wpb_text_column wpb_content_element">
                         <div class="wpb_wrapper">
-                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Square Crop")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", crop)" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
                         </div>
                         @Html.Raw(content)
                     </div>
