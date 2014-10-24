@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     //nojs
     $("body").removeClass("no-js");
@@ -6,7 +6,7 @@ $(document).ready(function(){
     //------------------------------------------------------------------------//
 
     //fakelink
-    $('a[href="#"]').on('click',function(e){e.preventDefault();});
+    $('a[href="#"]').on('click', function (e) { e.preventDefault(); });
 
     //------------------------------------------------------------------------//
 
@@ -16,15 +16,19 @@ $(document).ready(function(){
     //------------------------------------------------------------------------//
 
     // tab
-    $(function(){
-        $('.tabs').delegate('li:not(.active)','click',function(){
+    $(function () {
+        $('.tabs').delegate('li:not(.active)', 'click', function () {
             $(this).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($(this).index()).fadeIn(250);
         })
+        var total = $('.tabs li').length;
+        setInterval(function () {
+            $($('.tabs li')[($('.tabs li.active').index() + 1) % total]).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($('.tabs li.active').index()).fadeIn(250);
+        }, 5000);
     });
 
     // tab arrows
-    if ( $(".tab").has(".tab-prev").length || $(".tab").has(".tab-next").length ) {
-        $('.tab-prev, .tab-next').click(function(){
+    if ($(".tab").has(".tab-prev").length || $(".tab").has(".tab-next").length) {
+        $('.tab-prev, .tab-next').click(function () {
             var $active = $(this).parents(".tab").find(".tabs .active");
             $next = $(this).hasClass('tab-prev') ? $active.prev() : $active.next();
             if (!$next.length) $next = $(this).hasClass('tab-prev') ? $(this).parents(".tab").find('.tabs li:last') : $(this).parents(".tab").find('.tabs li:first');
