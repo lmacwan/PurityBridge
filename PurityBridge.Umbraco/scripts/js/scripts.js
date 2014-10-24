@@ -457,8 +457,8 @@ $(function () {
     /**/
     /* widget contacts */
     /**/
-    $('.widget-contacts').on('click', 'dt', function () {
-        $(this).toggleClass('opened').next().slideToggle('fast');
+    $('.widget-contacts').on('click', 'dt.slide', function () {
+        $(this).toggleClass('opened').next('.slide').slideToggle('fast');
     });
 
 

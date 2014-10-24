@@ -6832,12 +6832,12 @@ i.appointment {
 /**/
 /* contacts */
 /**/
-.widget-contacts dl {
+.widget-contacts dl.slide {
     border: 1px solid #e3e3e3;
     border-top: 0;
 }
 
-.widget-contacts dt {
+.widget-contacts dt.slide {
     position: relative;
     padding: 11px 38px 11px 19px;
     border-top: 1px solid #e3e3e3;
@@ -6851,17 +6851,17 @@ i.appointment {
     -webkit-transition: background 0.3s, color 0.3s;
 }
 
-    .widget-contacts dt.opened,
-    .widget-contacts dt.opened + dd {
+    .widget-contacts dt.opened.slide,
+    .widget-contacts dt.opened.slide + dd.slide {
         color: #fff;
     }
 
-        .widget-contacts dt.opened:hover {
+        .widget-contacts dt.opened.slide:hover {
             color: #fff !important;
         }
 
-    .widget-contacts dt:after,
-    .widget-contacts dt:before {
+    .widget-contacts dt.slide:after,
+    .widget-contacts dt.slide:before {
         content: '';
         position: absolute;
         top: 50%;
@@ -6871,23 +6871,23 @@ i.appointment {
         margin-top: -2px;
     }
 
-    .widget-contacts dt:before {
+    .widget-contacts dt.slide:before {
         right: 17px;
         width: 4px;
         height: 12px;
         margin-top: -6px;
     }
 
-    .widget-contacts dt.opened:after,
-    .widget-contacts dt.opened:before {
+    .widget-contacts dt.opened.slider:after,
+    .widget-contacts dt.opened.slide:before {
         background: #fff;
     }
 
-    .widget-contacts dt.opened:before {
+    .widget-contacts dt.opened.slide:before {
         display: none;
     }
 
-.widget-contacts dd {
+.widget-contacts dd.slide {
     display: none;
     padding: 2px 19px 15px 19px;
     -o-transition: background 0.3s, color 0.3s;
@@ -6896,16 +6896,16 @@ i.appointment {
     -webkit-transition: background 0.3s, color 0.3s;
 }
 
-.widget-contacts li {
+.widget-contacts li.slide {
     margin-top: 6px;
     line-height: 20px;
 }
 
-    .widget-contacts li:first-child {
+    .widget-contacts li.slide:first-child {
         margin-top: 0;
     }
 
-.widget-contacts dd i {
+.widget-contacts dd.slide i {
     display: block;
     float: left;
     width: 14px;

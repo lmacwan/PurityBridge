@@ -2,7 +2,131 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
 }
-<div class="vc_span12">
+<style>
+    .newsletter {
+        background: none repeat scroll 0 0 #fafafa;
+        padding: 60px 0;
+    }
+
+        .newsletter .grid-row {
+            margin: 0 auto;
+        }
+
+    .newsletter-title {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        box-sizing: border-box;
+        display: inline-block;
+        margin-bottom: 22px;
+        min-width: 100%;
+        position: relative;
+    }
+
+        .newsletter-form .vc_row-fluid {
+            margin-bottom: 30px;
+        }
+
+    .input-text {
+        background: none repeat scroll 0 0 white !important;
+        border: 2px solid #d8d8d8 !important;
+        border-radius: 5px !important;
+        box-sizing: border-box !important;
+        float: left;
+        font-weight: 500;
+        font-size: 17px/34px;
+        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+    }
+
+    .input-text {
+        height: 58px !important;
+    }
+
+    .textarea {
+        height: 200px !important;
+    }
+
+    .button {
+        background: none repeat scroll 0 0 #00aba5;
+        border: 2px solid #00aba5;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: white;
+        font-weight: 500;
+        font-size: 22px;
+        float: right;
+        height: 58px;
+        padding: 0 21px;
+        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+    }
+
+    input[type="button"], input[type="submit"], input[type="reset"], button {
+        cursor: pointer;
+    }
+
+    .newsletter-form .button {
+        width: 149px;
+    }
+
+    .newsletter p {
+        clear: both;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0 auto;
+        max-width: 556px;
+    }
+
+    .indent li:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    .spanned-row {
+        display: block;
+        padding: 70px 0 60px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .shade-lighter {
+    }
+
+    .shade-light {
+        background: none repeat scroll 0 0 #4dc4c0;
+    }
+
+    .shade {
+        background: none repeat scroll 0 0 #00aba5;
+    }
+
+    .work-time {
+        color: #fff;
+        margin-top: 0px;
+        padding: 60px 0 30px;
+        position: relative;
+    }
+
+        .work-time .widget-icon {
+            top: 0;
+        }
+
+    .widget-contacts dd.slide {
+        padding: 0px;
+    }
+
+    
+    .slide > ul {
+        padding: 0 0 10px 10px;
+    }
+</style>
+<div class="grid-row">
     <!-- map -->
     <section class="map">
         <div class="widget-title">Our Locations</div>
@@ -10,133 +134,99 @@
     </section>
     <!--/ map -->
 </div>
-<br />
-<br />
-<div class="vc_row-fluid">
-    <div class="vc_span9">
-        <!-- feedback -->
-        <article class="feedback">
-            <div class="widget-title">Get in touch by filling the form below</div>
-
-            <p>Donec lacinia suscipit magna, et pulvinar tortor facilisis quis. Donec tempor erat vel scelerisque posuere. Nam elementum elit eget tellus faucibus euismod. Aliquam turpis nibh, dictum eu consequat ac, facilisis eu elit. Pellentesque pellentesque orci quam, nec tempus nibh congue ut. Pellentesque tempus vehicula lectus eget tempor. Donec suscipit enim dui, ut sagittis orci rhoncus id.</p>
-
-            <form action="http://html.creaws.com/clinico/php/contact-send.php" id="contactform">
-                <fieldset>
-                    <div class="clearfix">
-                        <div class="input">
-                            <label>Your name:</label>
-                            <input type="text" name="name">
-                        </div>
-                        <div class="input">
-                            <label>Your email:</label>
-                            <input type="text" name="email">
-                        </div>
+<!-- feedback -->
+<div class="newsletter">
+    <div class="grid-row">
+        <div class="grid-col grid-col-9">
+            <div class="newsletter-title">Get in touch with us</div>
+            <div class="newsletter-form clearfix">
+                <form action="">
+                    <div class="vc_row-fluid">
+                        <input type="text" class="input-text vc_span6" placeholder="Your name">
+                        <input type="email" class="input-text vc_span6" placeholder="Your email">
                     </div>
-                    <div class="clearfix">
-                        <div class="input">
-                            <label>Category:</label>
-                            <input type="text" name="category">
-                        </div>
-                        <div class="input">
-                            <label>Subject:</label>
-                            <input type="text" name="subject">
-                        </div>
+                    <div class="vc_row-fluid">
+                        <input type="text" class="input-text textarea vc_span12" placeholder="Your email">
                     </div>
-                    <label>Message:</label>
-                    <textarea rows="6" name="message"></textarea>
-                    <div class="clearfix captcha">
-                        @*<div class="captcha-wrapper">
-                            <label for="verify">Verification code:</label>
-                            <iframe src="php/capcha.html" class="capcha-frame" name="capcha_image_frame" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-
-                            <input class="verify" type="text" id="verify" name="verify" />
-                        </div>*@
-                        <button type="submit" class="button" value="Submit">Submit</button>
-
+                    <div class="vc_row-fluid">
+                        <input type="button" value="Submit" class="button right">
                     </div>
-                </fieldset>
-            </form>
-        </article>
+                </form>
+                <p></p>
+            </div>
+        </div>
+        <div class="grid-col grid-col-3">
+            <section class="widget widget-contacts">
+                <dl class="slide">
+                    <dt class="slide opened">Address Details</dt>
+                    <dd class="slide">
+                        <ul>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <ul class="indent">
+                                    <li>6 Mount Ephraim</li>
+                                    <li>Tunbridge Wells</li>
+                                    <li>Kent</li>
+                                    <li>United Kingdom</li>
+                                    <li>TN4 8AS</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="slide">
+                    <dt class="slide">Contact Number</dt>
+                    <dd class="slide">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <ul>
+                                    <li> 203-284-2818</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="slide">
+                    <dt class="slide">Email Address</dt>
+                    <dd class="slide">
+                        <ul>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <ul>
+                                    <li> 203-284-2818</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="slide">
+                    <dt class="slide">Opening Hours</dt>
+                    <dd class="slide">
+                        <section class="widget-alt work-time">
+                            <div class="widget-icon"></div>
+                            <dl>
+                                <dt>Mon</dt>
+                                <dd>08:00 am - 12:00 pm</dd>
+                                <dt>Tue</dt>
+                                <dd>01:00 am - 05:00 pm</dd>
+                                <dt>Wed</dt>
+                                <dd>Free day</dd>
+                                <dt>Thu</dt>
+                                <dd>08:00 am - 12:00 pm</dd>
+                                <dt>Fri</dt>
+                                <dd>08:00 am - 12:00 pm</dd>
+                                <dt>Sat</dt>
+                                <dd>08:00 am - 12:00 pm</dd>
+                                <dt>Sun</dt>
+                                <dd>Free day</dd>
+                            </dl>
+                        </section>
+                    </dd>
+                </dl>
+            </section>
+        </div>
         <!--/ feedback -->
-    </div>
-
-    <div class="vc_span3">
-        <!-- contacts -->
-        <section class="widget widget-contacts">
-            <div class="widget-title">Contact Details</div>
-            <dl>
-                <dt class="opened">Adolescent Gynecology</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-                <dt>Breast Cancer Gene (BRCA)</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-                <dt>Replacement Therapy</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-                <dt>Diagnosis With Precise</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-                <dt>STD Screening</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-                <dt>Occupational Health</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-                <dt>Rhinosinusitis</dt>
-                <dd>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>365 Montauk Avenue</li>
-                        <li><i class="fa fa-phone"></i>Call us: 203-284-2818</li>
-                        <li><i class="fa fa-envelope"></i>E-mail: clinico@domain.com</li>
-                    </ul>
-                </dd>
-            </dl>
-        </section>
-        <!--/ contacts -->
-
-        <!-- follow -->
-        <section class="widget widget-follow">
-            <ul>
-                <li><a href="#"><i class="fa fa-rss"></i>150<br>
-                    Subscribers</a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i>5560<br>
-                    Fans</a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i>2300<br>
-                    Followers</a></li>
-            </ul>
-        </section>
-        <!--/ follow -->
     </div>
 </div>
 @section scripts {

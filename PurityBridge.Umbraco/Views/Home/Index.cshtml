@@ -5,32 +5,340 @@
     ViewBag.ShowTitleBar = false;
     var homeData = uQuery.GetNodesByType("HomeData");
 }
+<style>
+    ul, ol {
+        list-style: outside none none;
+    }
 
+    a {
+        background: none repeat scroll 0 0 transparent;
+        color: #00aba5;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .comments {
+        background: none repeat scroll 0 0 #4dc4c0;
+        color: white;
+        padding: 70px 0 60px;
+        text-align: center;
+    }
+
+        .comments .tab {
+            position: relative;
+        }
+
+        .comments .box {
+            display: none;
+            padding: 0 195px 55px;
+            height: 230px;
+            overflow: hidden;
+        }
+
+
+            .comments .box.visible {
+                display: block;
+            }
+
+
+        .comments .tabs {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+            text-align: center;
+        }
+
+            .comments .tabs li {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+                cursor: pointer;
+                display: inline-block;
+                height: 11px;
+                margin: 0 8px;
+                transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s;
+                width: 11px;
+                padding-top: 0px;
+            }
+
+                .comments .tabs li.active {
+                    background-color: transparent;
+                    box-shadow: 0 0 0 2px white;
+                }
+
+
+        .comments .tab-prev, .comments .tab-next, .button-download:after {
+            background: url("../images/sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+        .comments .tab-prev, .comments .tab-next {
+            background-position: 0 0;
+            height: 16px;
+            left: 98px;
+            opacity: 0.5;
+            position: absolute;
+            top: 94px;
+            width: 23px;
+        }
+
+
+        .comments .box h4 {
+            font: 500 29px/46px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+            margin-bottom: 37px;
+        }
+
+        .comments .box p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 32px;
+        }
+
+    .clearfix {
+        display: block;
+    }
+
+        .clearfix .grid-row {
+            margin: 0 auto;
+        }
+
+    .promo-wrapper {
+        margin: 0 -15px;
+    }
+
+
+    .promo-column {
+        box-sizing: border-box;
+        float: left;
+        padding: 0 15px 60px;
+        width: 25%;
+    }
+
+
+        .promo-column h5 {
+            font: bold 18px/24px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+    .grid-row.wrap {
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .newsletter {
+        background: none repeat scroll 0 0 #fafafa;
+        padding: 103px 0 109px;
+        text-align: center;
+    }
+
+    .newsletter-title {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        font-size: 48px;
+    }
+
+    .newsletter-form {
+        box-sizing: border-box;
+        display: inline-block;
+        height: 58px;
+        margin-bottom: 22px;
+        max-width: 556px;
+        min-width: 556px;
+        padding-right: 169px;
+        position: relative;
+    }
+
+    .input-text, .textarea {
+        background: none repeat scroll 0 0 white !important;
+        border: 2px solid #d8d8d8 !important;
+        border-radius: 5px !important;
+        box-sizing: border-box !important;
+        float: left;
+        font-weight: 500;
+        font-size: 17px/34px;
+        height: 58px !important;
+        padding: 10px 21px !important;
+        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+        width: 100% !important;
+    }
+
+
+    .button {
+        background: none repeat scroll 0 0 #00aba5;
+        border: 2px solid #00aba5;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: white;
+        font: 500 22px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+        height: 58px;
+        padding: 0 21px;
+        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+    }
+
+    input[type="button"], input[type="submit"], input[type="reset"], button {
+        cursor: pointer;
+    }
+
+    .newsletter-form .button {
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 149px;
+    }
+
+    .newsletter p {
+        clear: both;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0 auto;
+        max-width: 556px;
+    }
+</style>
 @if (homeData.Any())
 {
     var highlights = homeData.First().ChildrenAsList.Where(data => data.NodeTypeAlias == "Highlights");
     if (highlights.Any())
     {
         //var highlightsContent = Umbraco.TypedContent(highlights.First().Id);
-    @section HighlightsSection {
-        @Html.Partial("_HighlightsPartial", highlights.First())
-    }
+        @section HighlightsSection {
+            @Html.Partial("_HighlightsPartial", highlights.First())
+        }
     }
 
     var featured = homeData.First().ChildrenAsList.Where(data => data.NodeTypeAlias == "Featured");
     if (featured.Any())
     {
         //var featuredContent = Umbraco.TypedContent(featured.First().Id);
-    @section FeaturedSection {
-        @Html.Partial("_FeaturesPartial", featured.First())
+        @section FeaturedSection {
+            @Html.Partial("_FeaturesPartial", featured.First())
+        }
     }
+
+    if (Request.RawUrl.Contains("home1"))
+    {
+        <div class="grid-row">
+            <div class="vc_row-fluid beautify">
+                @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+            </div>
+
+            <div class="vc_row-fluid beautify">
+                @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("Testimonials", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
+            </div>
+        </div>
     }
-    
-    <div class="vc_row-fluid beautify">
-        @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("index", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
-    </div>
-    
-    <div class="vc_row-fluid beautify">
-        @Html.Partial("_ContentPartial", Umbraco.TypedContent(homeData.First().Id).Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("Testimonials", StringComparison.InvariantCultureIgnoreCase) && c.IsVisible()))
-    </div>
+    else
+    {
+
+
+        var homeDataIndex = homeData.First().GetChildNodesByType("index").First();
+        var rows = homeDataIndex.GetChildNodesByType("columns");
+        if (rows.Any())
+        {
+            @*<div class="promo clearfix">
+                    <div class="grid-row wrap">
+                        <div class="promo-wrapper clearfix">
+                            @foreach (var column in rows.First().GetDescendantNodesByType("Text"))
+                            {
+                                <div class="promo-column">
+                                    <h5>@column.GetProperty("heading")</h5>
+                                    <p>@column.GetProperty("text")</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>*@
+
+            var classActive = "active";
+            var classVisible = "visible";
+            <div class="comments clearfix">
+                <div class="grid-row">
+                    <div class="tab">
+                        @foreach (var column in rows.First().GetDescendantNodesByType("Text"))
+                        {
+                            <div class="box @classVisible">
+                                @{
+                            classVisible = "";
+                                }
+                                <h4>@column.GetProperty("heading")</h4>
+                                <p>@column.GetProperty("text")</p>
+                            </div>
+                        }
+                        <ul class="tabs">
+                            @foreach (var column in rows.First().GetDescendantNodesByType("Text"))
+                            {
+                                <li class="@classActive">
+                                    @{
+                                classActive = "";
+                                    }
+                                </li>
+                            }
+                        </ul>
+                        <a class="tab-prev" href="#"></a>
+                        <a class="tab-next" href="#"></a>
+                    </div>
+                </div>
+                <!-- /.wrap -->
+            </div>
+
+            <div class="newsletter clearfix">
+                <div class="wrap">
+                    <div class="newsletter-title">our newsletter</div>
+                    <div class="newsletter-form clearfix">
+                        <form action="">
+                            <input type="email" class="input-text" placeholder="Your email">
+                            <input type="button" value="Subscribe" class="button">
+                        </form>
+                    </div>
+                    <p>If you want to recieve monthly updates from us just pop your email in the box.</p>
+                </div>
+                <!-- /.wrap -->
+            </div>
+
+
+
+
+            <!-- /.comments clearfix -->
+            @*<div class="simple clearfix">
+                        <div class="wrap">
+                            <div class="simple-content">
+                                <h3>The Simplest UI</h3>
+                                <ul>
+                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico1.png"><span>Fastest navigation</span></li>
+                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico2.png"><span>Huge number of cities</span></li>
+                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico3.png"><span>Only the best routes</span></li>
+                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico4.png"><span>Beautiful locations</span></li>
+                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico5.png"><span>Cloud sync</span></li>
+                                </ul>
+                            </div>
+                            <div class="simple-img">
+                                <img width="587" height="508" alt="" src="upload/screen.png">
+                            </div>
+                        </div>
+                        <!-- /.wrap -->
+                    </div>
+                    <!-- /.simple clearfix -->
+                <div class="newsletter clearfix">
+                    <div class="wrap">
+                        <div class="newsletter-title">our newsletter</div>
+                        <div class="newsletter-form clearfix">
+                            <form action="">
+                                <input type="email" class="input-text" placeholder="john@doe.com">
+                                <input type="button" value="Subscribe" class="button">
+                            </form>
+                        </div>
+                        <p>If you want to recieve monthly updates from us just pop your email in the box. We think that spam is for jerks. And we are no jerks.</p>
+                    </div>
+                    <!-- /.wrap -->
+                </div>*@
+            <!-- /.newsletter clearfix -->
+        }
+    }
+}
+@section Scripts {
+    <script src="~/scripts/library.js"></script>
+    <script src="~/scripts/spascript.js"></script>
 }

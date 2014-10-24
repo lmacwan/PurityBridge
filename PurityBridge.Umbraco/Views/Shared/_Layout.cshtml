@@ -40,16 +40,24 @@
         @RenderSection("ImageSection", false)
         <!-- page content -->
         <main>
-        @RenderSection("HighlightsSection", false)
-        @RenderSection("FeaturedSection", false)
-        <div class="grid-row">
-            @RenderSection("LeftSideBar", false)
-            @RenderBody()
-            @RenderSection("RightSideBar", false)
-        </div>
+            @RenderSection("HighlightsSection", false)
+            @RenderSection("FeaturedSection", false)
+
+            @*@if (!(Model.Content.GetPropertyValue<bool>("spa")) && !(Request.RawUrl.Contains("/home")) && !(Request.RawUrl.Contains("/contact")))*@
+            @if (!(Model.Content.Url.Contains("/home")) && !(Request.RawUrl.Contains("/the-contact")))
+            {
+                <div class="grid-row">
+                    @RenderSection("LeftSideBar", false)
+                    @RenderBody()
+                    @RenderSection("RightSideBar", false)
+                </div>
+            }
+            else
+            {
+                @RenderBody()
+            }
         </main>
         <!--/ page content -->
-
         @{ Html.RenderPartial("_FooterPartial"); }
         <!-- copyrights -->
         <div class="copyrights">
@@ -90,11 +98,10 @@
     <script src="/Scripts/js/scripts.js"></script>
     <script src="/Scripts/Common.js"></script>
     @*<script src="~/scripts/classie.js"></script>
-    <script src="~/scripts/AnimatedHeader.js"></script>*@
+        <script src="~/scripts/AnimatedHeader.js"></script>*@
 
     @RenderSection("scripts", required: false)
     <!--/ scripts -->
-
     <!-- tuner -->
     <script src="/Content/tuner/js/scripts.js"></script>
     <div id="tuner" class="tuner">

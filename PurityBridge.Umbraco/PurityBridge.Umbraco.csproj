@@ -343,6 +343,7 @@
     <Content Include="Content\css\layerslider.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\spastyle.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
     <Content Include="Content\images\logo5.png" />
     <Content Include="Content\images\logo1.png" />
@@ -562,8 +563,10 @@
     <Content Include="scripts\js\TweenMax.min.js" />
     <Content Include="scripts\knockout-2.2.0.debug.js" />
     <Content Include="scripts\knockout-2.2.0.js" />
+    <Content Include="scripts\library.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\modernizr.custom.js" />
+    <Content Include="scripts\spascript.js" />
     <Content Include="scripts\_references.js" />
     <Content Include="umbraco\Actions\delete.aspx" />
     <Content Include="umbraco\Actions\editContent.aspx" />
