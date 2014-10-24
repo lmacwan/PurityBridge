@@ -19,10 +19,13 @@ $(document).ready(function () {
     $(function () {
         $('.tabs').delegate('li:not(.active)', 'click', function () {
             $(this).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($(this).index()).fadeIn(250);
+            $('.mask').first().html($($('.tabs li.active').parents('.tab').find('.box')[$('.tabs li.active').index()]).find('img').clone());
         })
-        var total = $('.tabs li').length;
+
+        $('.mask').first().html($($('.tabs li.active').parents('.tab').find('.box')[$('.tabs li.active').index()]).find('img').clone());
+
         setInterval(function () {
-            $($('.tabs li')[($('.tabs li.active').index() + 1) % total]).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($('.tabs li.active').index()).fadeIn(250);
+            changeImageInterval();
         }, 5000);
     });
 
@@ -35,6 +38,12 @@ $(document).ready(function () {
             $next.click();
             return false;
         });
+    }
+
+    function changeImageInterval() {
+        var total = $('.tabs li').length;
+        $($('.tabs li')[($('.tabs li.active').index() + 1) % total]).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($('.tabs li.active').index()).fadeIn(250);
+        $('.mask').first().html($($('.tabs li.active').parents('.tab').find('.box')[$('.tabs li.active').index()]).find('img').clone());
     }
 
     //------------------------------------------------------------------------//

@@ -26,11 +26,13 @@
 
         .comments .tab {
             position: relative;
+            width: 55%;
+            float: right;
         }
 
         .comments .box {
             display: none;
-            padding: 0 195px 55px;
+            padding: 0 25px 55px;
             height: 230px;
             overflow: hidden;
         }
@@ -100,6 +102,7 @@
 
         .clearfix .grid-row {
             margin: 0 auto;
+            z-index: 1000;
         }
 
     .promo-wrapper {
@@ -198,6 +201,28 @@
         margin: 0 auto;
         max-width: 556px;
     }
+
+    .mask {
+        position: absolute;
+        width: 60%;
+        height: 700px;
+        margin-top: -440px;
+        border-radius: 0 46% 60%;
+        border: solid 3px #cecece;
+        margin-left: -100px;
+        overflow: hidden;
+    }
+
+    .mask img {
+        padding-top:100%;
+        margin-top:-391px;
+        left:0;
+        display: block !important;
+    }
+
+    .box .img-hide {
+        display: none;
+    }
 </style>
 @if (homeData.Any())
 {
@@ -239,26 +264,16 @@
         var rows = homeDataIndex.GetChildNodesByType("columns");
         if (rows.Any())
         {
-            @*<div class="promo clearfix">
-                    <div class="grid-row wrap">
-                        <div class="promo-wrapper clearfix">
-                            @foreach (var column in rows.First().GetDescendantNodesByType("Text"))
-                            {
-                                <div class="promo-column">
-                                    <h5>@column.GetProperty("heading")</h5>
-                                    <p>@column.GetProperty("text")</p>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </div>*@
 
             var classActive = "active";
             var classVisible = "visible";
-            <div class="comments clearfix">
+            <div class="comments clearfix" style="position:relative; overflow:hidden;">
+                <div class="mask">
+                </div>
                 <div class="grid-row">
+
                     <div class="tab">
-                        @foreach (var column in rows.First().GetDescendantNodesByType("Text"))
+                        @foreach (var column in rows.First().GetDescendantNodesByType("PhotoText"))
                         {
                             <div class="box @classVisible">
                                 @{
@@ -266,10 +281,11 @@
                                 }
                                 <h4>@column.GetProperty("heading")</h4>
                                 <p>@column.GetProperty("text")</p>
+                                <img src="@Umbraco.TypedContent(column.Id).GetCropUrl("photo", "home")" class="img-hide">
                             </div>
                         }
                         <ul class="tabs">
-                            @foreach (var column in rows.First().GetDescendantNodesByType("Text"))
+                            @foreach (var column in rows.First().GetDescendantNodesByType("PhotoText"))
                             {
                                 <li class="@classActive">
                                     @{
@@ -298,48 +314,15 @@
                 </div>
                 <!-- /.wrap -->
             </div>
-
-
-
-
-            <!-- /.comments clearfix -->
-            @*<div class="simple clearfix">
-                        <div class="wrap">
-                            <div class="simple-content">
-                                <h3>The Simplest UI</h3>
-                                <ul>
-                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico1.png"><span>Fastest navigation</span></li>
-                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico2.png"><span>Huge number of cities</span></li>
-                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico3.png"><span>Only the best routes</span></li>
-                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico4.png"><span>Beautiful locations</span></li>
-                                    <li class="clearfix"><img width="32" height="32" alt="" src="upload/ico5.png"><span>Cloud sync</span></li>
-                                </ul>
-                            </div>
-                            <div class="simple-img">
-                                <img width="587" height="508" alt="" src="upload/screen.png">
-                            </div>
-                        </div>
-                        <!-- /.wrap -->
-                    </div>
-                    <!-- /.simple clearfix -->
-                <div class="newsletter clearfix">
-                    <div class="wrap">
-                        <div class="newsletter-title">our newsletter</div>
-                        <div class="newsletter-form clearfix">
-                            <form action="">
-                                <input type="email" class="input-text" placeholder="john@doe.com">
-                                <input type="button" value="Subscribe" class="button">
-                            </form>
-                        </div>
-                        <p>If you want to recieve monthly updates from us just pop your email in the box. We think that spam is for jerks. And we are no jerks.</p>
-                    </div>
-                    <!-- /.wrap -->
-                </div>*@
-            <!-- /.newsletter clearfix -->
         }
     }
 }
 @section Scripts {
     <script src="~/scripts/library.js"></script>
     <script src="~/scripts/spascript.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+            });
+        </script>
 }
