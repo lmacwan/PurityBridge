@@ -210,12 +210,20 @@
         overflow: hidden;
     }
 
-        .mask img {
-            padding-top: 100%;
-            margin-top: -391px;
-            left: 0;
-            display: block !important;
+        .mask .mask-wrapper {
+            position: relative;
+            height: 100%;
         }
+
+            .mask .mask-wrapper img {
+                position: absolute;
+                top: 100%;
+                left: 0px;
+                margin-top: -290px;
+                display: block !important;
+                width: 790px;
+                height: 290px;
+            }
 
     .box .img-hide {
         display: none;
@@ -266,6 +274,9 @@
             var classVisible = "visible";
             <div class="comments clearfix" style="position:relative; overflow:hidden;">
                 <div class="mask">
+                    <div class="mask-wrapper">
+
+                    </div>
                 </div>
                 <div class="grid-row">
 
@@ -279,6 +290,7 @@
                                 <h4>@column.GetProperty("heading")</h4>
                                 <p>@column.GetProperty("text")</p>
                                 <img src="@Umbraco.TypedContent(column.Id).GetCropUrl("photo", "home")" class="img-hide">
+                              @*  <img src="~/Content/pic/medical-slide-1.jpg" class="img-hide">*@
                             </div>
                         }
                         <ul class="tabs">
