@@ -59,9 +59,12 @@ function changeImageInterval() {
 function stopInterval() {
     if (timer != undefined) {
         clearInterval(timer);
+        timer = undefined;
     }
 }
 
 function startInterval() {
-    timer = setInterval(changeImageInterval, 5000);
+    if (timer == undefined) {
+        timer = setInterval(changeImageInterval, 5000);
+    }
 }
