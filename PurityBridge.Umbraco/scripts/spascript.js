@@ -1,3 +1,5 @@
+
+var timer;
 $(document).ready(function () {
 
     //nojs
@@ -24,7 +26,7 @@ $(document).ready(function () {
 
         $('.mask').first().html($($('.tabs li.active').parents('.tab').find('.box')[$('.tabs li.active').index()]).find('img').clone());
 
-        setInterval(function () {
+        timer = setInterval(function () {
             changeImageInterval();
         }, 5000);
     });
@@ -40,12 +42,26 @@ $(document).ready(function () {
         });
     }
 
-    function changeImageInterval() {
-        var total = $('.tabs li').length;
-        $($('.tabs li')[($('.tabs li.active').index() + 1) % total]).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($('.tabs li.active').index()).fadeIn(250);
-        $('.mask').first().html($($('.tabs li.active').parents('.tab').find('.box')[$('.tabs li.active').index()]).find('img').clone());
-    }
+
+    $('.comments.clearfix').mouseenter(null, stopInterval);
+    $('.comments.clearfix').mouseleave(null, startInterval);
 
     //------------------------------------------------------------------------//
 
 });//document ready
+
+function changeImageInterval() {
+    var total = $('.tabs li').length;
+    $($('.tabs li')[($('.tabs li.active').index() + 1) % total]).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($('.tabs li.active').index()).fadeIn(250);
+    $('.mask').first().html($($('.tabs li.active').parents('.tab').find('.box')[$('.tabs li.active').index()]).find('img').clone());
+}
+
+function stopInterval() {
+    if (timer != undefined) {
+        clearInterval(timer);
+    }
+}
+
+function startInterval() {
+    timer = setInterval(changeImageInterval, 5000);
+}
