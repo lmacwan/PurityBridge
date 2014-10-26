@@ -44,7 +44,7 @@
             {
                 <i class="fa fa-plus"></i>
             }
-            @topLevelNavigation.Name</a>
+            @topLevelNavigation.GetProperty("heading")</a>
         @if (hasChildren)
         {
             @childPages(topLevelNavigation.Children)
