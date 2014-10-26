@@ -12,7 +12,7 @@
             @Model.GetPropertyValue("heading")
         </h3>
         <p>
-            <img src="@Umbraco.TypedMedia(Model.GetPropertyValue("photo")).Url" alt="@Model.GetPropertyValue("heading")" width="100%"/>
+            <img src="@Model.GetCropUrl("photo", "portrait")" alt="@Model.GetPropertyValue("heading")" width="100%"/>
         </p>
         @Html.Raw(content)
     </div>

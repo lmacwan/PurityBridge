@@ -14,34 +14,35 @@
     {
         var treatmentsDataChildren = treatmentsData.First().GetChildNodes();
         umbraco.NodeFactory.Node matchedNode = null;
-        
-    <div class="vc_row-fluid">
-        <div class="vc_span12">
-            <section class="widget photo-tour photo-tour-4" id="photo-tour">
-                <div class="grid isotope">
-                    @foreach (umbraco.NodeFactory.Node category in treatmentsNode.GetChildNodes().WhereNotNull())
-                    {
-                        matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
-                        url  = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), category.UrlName);;
-                        <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                            <div class="pic">
-                                <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedNode.Name"/>
-                                <div class="links">
-                                    <ul>
-                                        <li><a href="@url" class="fa fa-mail-forward"></a></li>
-                                    </ul>
+
+        <div class="vc_row-fluid">
+            <div class="vc_span12">
+                <section class="widget photo-tour photo-tour-4" id="photo-tour">
+                    <div class="grid isotope">
+                        @foreach (umbraco.NodeFactory.Node category in treatmentsNode.GetChildNodesByType("TreatmentsCategoryPage").WhereNotNull())
+                        {
+                            var heading = uQuery.GetNodesByName(category.Name).FirstOrDefault(n => n.Parent.NodeTypeAlias == "Treatments").GetProperty("heading");
+                            matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
+                            url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), category.UrlName);
+                            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                                <div class="pic">
+                                    <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@heading" />
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3>@matchedNode.Name</h3>
+                                <h3>@heading</h3>
                             <p></p>
                         </div>
-                    }
-                </div>
-            </section>
+                        }
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-    <div id="photo-content" class="vc_row-fluid beautify">
-        @Html.Partial("_ContentPartial", Umbraco.TypedContent(treatmentsDataChildren.WhereNotNull().FirstOrDefault(c => c.NodeTypeAlias.Equals("Details", StringComparison.InvariantCultureIgnoreCase)).GetChildNodesByType("content").First().Id))
-    </div>
+        <div id="photo-content" class="vc_row-fluid beautify">
+            @Html.Partial("_ContentPartial", Umbraco.TypedContent(treatmentsDataChildren.WhereNotNull().FirstOrDefault(c => c.NodeTypeAlias.Equals("Details", StringComparison.InvariantCultureIgnoreCase)).GetChildNodesByType("content").First().Id))
+        </div>
     }
 }

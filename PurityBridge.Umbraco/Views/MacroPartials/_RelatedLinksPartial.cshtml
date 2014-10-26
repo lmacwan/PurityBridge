@@ -23,31 +23,33 @@
 @helper RenderChildren(IPublishedContent child)
 {
     var linkedContent = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
+    var heading = uQuery.GetNodesByName(linkedContent.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").FirstOrDefault().GetProperty("heading");
     <li class="item">
         <div class="pic">
-            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@linkedContent.GetPropertyValue("heading")">
+            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@heading">
             <div class="links">
                 <ul>
                     <li><a href="@linkedContent.Url" class="fa fa-mail-forward"></a></li>
                 </ul>
             </div>
         </div>
-        <h3>@linkedContent.GetPropertyValue("heading")</h3>
+        <h3>@heading</h3>
         <p></p>
     </li>
     if (child.FollowingSibling() != null)
     {
         linkedContent = Umbraco.TypedContent(child.Next().GetPropertyValue<int>("relatedPage"));
+        heading = uQuery.GetNodesByName(linkedContent.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").FirstOrDefault().GetProperty("heading");
     <li class="item">
         <div class="pic">
-            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" alt="@linkedContent.GetPropertyValue("heading")">
+            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" alt="@heading">
             <div class="links">
                 <ul>
                     <li><a href="@linkedContent.Url" class="fa fa-mail-forward"></a></li>
                 </ul>
             </div>
         </div>
-        <h3>@linkedContent.GetPropertyValue("heading")</h3>
+        <h3>@heading</h3>
         <p></p>
     </li>
     }

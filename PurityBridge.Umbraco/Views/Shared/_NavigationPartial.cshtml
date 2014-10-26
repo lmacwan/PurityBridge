@@ -68,7 +68,7 @@
                     {
                         <i class="fa fa-angle-right"></i>
                     }
-                    @page.Name</a>
+                    @page.GetProperty("heading")</a>
                 @if (page.Children.Count > 0)
                 {
                     @childPages(page.Children)

@@ -93,13 +93,14 @@
                     </div>
                 </div>
                 <div class="grid-row">
-                    @foreach (var treatmentCategory in uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentsCategory"))
+                    @foreach (var treatmentCategory in uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentsCategoryData"))
                     {
                         var url = "/treatments/" + treatmentCategory.UrlName;
+                        umbraco.NodeFactory.Node matchedNode = uQuery.GetNodesByName(treatmentCategory.Name).FirstOrDefault(node => node.Parent.NodeTypeAlias == "Treatments");
                         <div class="grid-col grid-col-3">
                             <div class="treatments-wrap">
-                                <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" />
-                                <a href="@url" class="treatment-link"> <div class="treatment-heading">@treatmentCategory.Name </div></a>
+                                <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedNode.GetProperty("heading") " />
+                                <a href="@url" class="treatment-link"> <div class="treatment-heading">@matchedNode.GetProperty("heading") </div></a>
                             </div>
                         </div>
                     }
