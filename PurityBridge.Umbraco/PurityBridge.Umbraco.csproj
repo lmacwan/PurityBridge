@@ -339,6 +339,7 @@
     <Content Include="Content\css\fullwidth\loading.gif" />
     <Content Include="Content\css\fullwidth\skin.css" />
     <Content Include="Content\css\fullwidth\skin.png" />
+    <Content Include="Content\css\home.css" />
     <Content Include="Content\css\jquery.fancybox.css" />
     <Content Include="Content\css\layerslider.css" />
     <Content Include="Content\css\menu.css" />

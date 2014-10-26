@@ -5,230 +5,7 @@
     ViewBag.ShowTitleBar = false;
     var homeData = uQuery.GetNodesByType("HomeData");
 }
-<style>
-    ul, ol {
-        list-style: outside none none;
-    }
-
-    a {
-        background: none repeat scroll 0 0 transparent;
-        color: #00aba5;
-        cursor: pointer;
-        text-decoration: none;
-    }
-
-    .comments {
-        background: none repeat scroll 0 0 #4dc4c0;
-        color: white;
-        padding: 25px 0 20px;
-        text-align: center;
-    }
-
-        .comments .tab {
-            position: relative;
-            width: 55%;
-            float: right;
-        }
-
-        .comments .box {
-            display: none;
-            padding: 0 25px 55px;
-            height: 230px;
-            overflow: hidden;
-        }
-
-
-            .comments .box.visible {
-                display: block;
-            }
-
-
-        .comments .tabs {
-            display: block;
-            font-size: 0;
-            line-height: 0;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-            .comments .tabs li {
-                background-color: rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
-                cursor: pointer;
-                display: inline-block;
-                height: 11px;
-                margin: 0 8px;
-                transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s;
-                width: 11px;
-                padding-top: 0px;
-            }
-
-                .comments .tabs li.active {
-                    background-color: transparent;
-                    box-shadow: 0 0 0 2px white;
-                }
-
-
-        .comments .tab-prev, .comments .tab-next, .button-download:after {
-            background: url("../images/sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-        }
-
-        .comments .tab-prev, .comments .tab-next {
-            background-position: 0 0;
-            height: 16px;
-            left: 98px;
-            opacity: 0.5;
-            position: absolute;
-            top: 94px;
-            width: 23px;
-        }
-
-
-        .comments .box h4 {
-            font: 500 29px/46px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
-            margin-bottom: 5px;
-        }
-
-        .comments .box p {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 32px;
-        }
-
-    .clearfix {
-        display: block;
-    }
-
-        .clearfix .grid-row {
-            margin: 0 auto;
-            z-index: 1000;
-        }
-
-    .promo-wrapper {
-        margin: 0 -15px;
-    }
-
-
-    .promo-column {
-        box-sizing: border-box;
-        float: left;
-        padding: 0 15px 60px;
-        width: 25%;
-    }
-
-
-        .promo-column h5 {
-            font: bold 18px/24px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-    .grid-row.wrap {
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-
-    .newsletter {
-        background: none repeat scroll 0 0 #fafafa;
-        padding: 25px 0 50px;
-        text-align: center;
-    }
-
-    .newsletter-title {
-        font-weight: bold;
-        letter-spacing: 1px;
-        margin-bottom: 28px;
-        text-transform: uppercase;
-        font-size: 28px;
-    }
-
-    .newsletter-form {
-        box-sizing: border-box;
-        display: inline-block;
-        height: 48px;
-        margin-bottom: 22px;
-        max-width: 556px;
-        min-width: 556px;
-        padding-right: 169px;
-        position: relative;
-    }
-
-    .input-text, .textarea {
-        background: none repeat scroll 0 0 white !important;
-        border: 2px solid #d8d8d8 !important;
-        border-radius: 5px !important;
-        box-sizing: border-box !important;
-        float: left;
-        font-weight: 500;
-        font-size: 17px/34px;
-        height: 48px !important;
-        padding: 10px 21px !important;
-        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
-        width: 100% !important;
-    }
-
-    input[type="button"], input[type="submit"], input[type="reset"], button {
-        cursor: pointer;
-    }
-
-    .newsletter-form .button {
-        padding-left: 0;
-        padding-right: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 149px;
-        background: none repeat scroll 0 0 #00aba5;
-        border: 2px solid #00aba5;
-        border-radius: 5px;
-        box-sizing: border-box;
-        color: white;
-        height: 48px;
-        font-size: 16px;
-        padding: 0 21px;
-        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
-        line-height: 20px;
-    }
-
-    .newsletter p {
-        clear: both;
-        font-size: 16px;
-        line-height: 28px;
-        margin: 0 auto;
-        max-width: 556px;
-    }
-
-    .mask {
-        position: absolute;
-        width: 60%;
-        height: 700px;
-        margin-top: -440px;
-        border-radius: 0 46% 60%;
-        border: solid 3px #cecece;
-        margin-left: -100px;
-        overflow: hidden;
-    }
-
-        .mask .mask-wrapper {
-            position: relative;
-            height: 100%;
-        }
-
-            .mask .mask-wrapper img {
-                position: absolute;
-                top: 100%;
-                left: 0px;
-                margin-top: -290px;
-                display: block !important;
-                width: 790px;
-                height: 290px;
-            }
-
-    .box .img-hide {
-        display: none;
-    }
-</style>
+<link href="~/Content/css/home.css" rel="stylesheet" />
 @if (homeData.Any())
 {
     var highlights = homeData.First().ChildrenAsList.Where(data => data.NodeTypeAlias == "Highlights");
@@ -290,7 +67,7 @@
                                 <h4>@column.GetProperty("heading")</h4>
                                 <p>@column.GetProperty("text")</p>
                                 <img src="@Umbraco.TypedContent(column.Id).GetCropUrl("photo", "home")" class="img-hide">
-                              @*  <img src="~/Content/pic/medical-slide-1.jpg" class="img-hide">*@
+                                @*  <img src="~/Content/pic/medical-slide-1.jpg" class="img-hide">*@
                             </div>
                         }
                         <ul class="tabs">
@@ -307,7 +84,36 @@
                         <a class="tab-next" href="#"></a>
                     </div>
                 </div>
-                <!-- /.wrap -->
+            </div>
+
+            <div class="treatments clearfix">
+                <div class="grid-row">
+                    <div class="newsletter-title">
+                        The Treatments we offer
+                    </div>
+                </div>
+                <div class="grid-row">
+                    @foreach (var treatmentCategory in uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentsCategory"))
+                    {
+                        var url = "/treatments/" + treatmentCategory.UrlName;
+                        <div class="grid-col grid-col-3">
+                            <div class="treatments-wrap">
+                                <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" />
+                                <a href="@url" class="treatment-link"> <div class="treatment-heading">@treatmentCategory.Name </div></a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="grid-row">
+                    <div class="treatment-text">
+                        <p>
+                            Here at Purity Bridge in Tunbridge Wells we have carefully selected the treatments we offer and the highly skilled practitioners who administer them.
+                        </p>
+                        <p>
+                            All products and treatments have a proven track record with regard to safety and high quality evidence of effectiveness. We have also been careful to choose therapies that complement one another and reach across the spectrum: from topical therapies, through to injectables, and other skin care treatments.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="newsletter clearfix">
@@ -321,7 +127,6 @@
                     </div>
                     <p>If you want to recieve monthly updates from us just pop your email in the box.</p>
                 </div>
-                <!-- /.wrap -->
             </div>
         }
     }
@@ -329,9 +134,4 @@
 @section Scripts {
     <script src="~/scripts/library.js"></script>
     <script src="~/scripts/spascript.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-        });
-    </script>
 }
