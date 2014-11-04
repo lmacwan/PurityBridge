@@ -1,10 +1,15 @@
 ﻿@using Umbraco.Web.Models
 @using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<RenderModel>
+@section styles {
+    <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
+    <link href="~/Content/css/treatment.css" rel="stylesheet" />
+    <link href="~/Content/css/testimonial.css" rel="stylesheet" />
+}
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = true;
-    var urlName = Request.RawUrl.Split(new string[] {"/"}, StringSplitOptions.RemoveEmptyEntries).Last();
+    var urlName = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
     var treatmentNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentData").Where(d => d.UrlName == urlName).First();
     var details = Umbraco.TypedContent(treatmentNode.Id).Children(c => c.DocumentTypeAlias.Equals("details", StringComparison.CurrentCultureIgnoreCase));
     IEnumerable<IPublishedContent> sideBars = null;
@@ -14,18 +19,27 @@
     }
     var cols = 12;
 }
-@section styles {
-    <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
+@{
+    var treatmentContent = Umbraco.TypedContent(treatmentNode.Id);
+    var bannarTestimonial = treatmentContent.Descendants().FirstOrDefault(d => d.DocumentTypeAlias == "Testimonial" && d.GetPropertyValue<bool>("banner"));
 }
-
 @section ImageSection {
-    <section id="banner" style="background-color: @Umbraco.TypedContent(treatmentNode.Id).GetPropertyValue("colour");">
-        <div id="treatment-image" class="grid-row" style="background-color: @Umbraco.TypedContent(treatmentNode.Id).GetPropertyValue("colour");">
-            <img src="@Umbraco.TypedContent(treatmentNode.Id).GetCropUrl("thumbnail", "banner")" width="270" height="180" style="background-color: @Umbraco.TypedContent(treatmentNode.Id).GetPropertyValue("colour");" />
+
+    <section id="banner" style="background-color: @treatmentContent.GetPropertyValue("colour");">
+        <div id="treatment-image" class="grid-row" style="background-color: @treatmentContent.GetPropertyValue("colour");">
+            @if (bannarTestimonial != null)
+            {
+                <div class="widget banner-testimonial testimonial">
+                    <div class="clearfix">
+                        <p>@bannarTestimonial.GetPropertyValue("content")</p>
+                    </div>
+                    <div class="author">@bannarTestimonial.GetPropertyValue("author")</div>
+                </div>
+            }
+            <img src="@treatmentContent.GetCropUrl("thumbnail", "banner")" width="270" height="180" style="background-color: @treatmentContent.GetPropertyValue("colour");" />
         </div>
     </section>
 }
-
 @if (sideBars != null && sideBars.Any())
 {
     foreach (IPublishedContent sidebar in sideBars.DistinctBy(s => s.GetPropertyValue<bool>("Left")))
@@ -33,39 +47,54 @@
         cols -= 3;
         if (sidebar.GetPropertyValue<bool>("Left"))
         {
-    @section LeftSideBar {
-        <div class="grid-col grid-col-3">
-
-            @Html.Partial("_RelatedLinksPartial", sidebar)
-            @if (sidebar.GetPropertyValue<bool>("appointmenWidget"))
-            {
-                Html.RenderPartial("_MakeAnAppointmentPartial");
-            }
-        </div>
-    }
         }
         else
         {
-    @section RightSideBar {
-        <div class="grid-col grid-col-3">
-
-            @Html.Partial("_RelatedLinksPartial", sidebar)
-            @if (sidebar.GetPropertyValue<bool>("appointmenWidget"))
-            {
-                Html.RenderPartial("_MakeAnAppointmentPartial");
+            int photo = treatmentNode.GetDescendantNodesByType("photo").Count();
+            int video = treatmentNode.GetDescendantNodesByType("TreatmentVideos").Count();
+            @section RightSideBar {
+                <div class="grid-col grid-col-3">
+                    @if (photo > 0 || video > 0)
+                    {
+                        <section id="relatedTreatmentLinksSection" class="widget doctors-carousel doctors">
+                            <div class="widget-title">Related Links</div>
+                            @if (photo > 0)
+                            {
+                                var link = "/gallery/photos/" + treatmentNode.UrlName;
+                                <div class="relatedTeaatmentLink">
+                                    <a href="@link" class="read-more">
+                                        Related Photos
+                                        <i class="fa fa-camera more"></i>
+                                    </a>
+                                </div>
+                            }
+                            @if (video > 0)
+                            {
+                                var link = "/gallery/videos/treatments/" + treatmentNode.UrlName;
+                                <div class="relatedTeaatmentLink">
+                                    <a href="@link" class="read-more">
+                                        Related Videos
+                                        <i class="fa fa-video-camera more"></i>
+                                    </a>
+                                </div>
+                            }
+                        </section>
+                    }
+                    @Html.Partial("_RelatedLinksPartial", sidebar)
+                    @if (sidebar.GetPropertyValue<bool>("appointmenWidget"))
+                    {
+                        Html.RenderPartial("_MakeAnAppointmentPartial");
+                    }
+                </div>
             }
-        </div>
-    }        
         }
     }
 }
-
 <div id="page-content" class="grid-col grid-col-@cols beautify">
     <div class="vc_row-fluid">
         @Html.Partial("_ChildrenPartial", details.First().Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible()))
     </div>
 </div>
-
 @section scripts {
     <script src="~/scripts/BeforeAndAfter.js"></script>
 }

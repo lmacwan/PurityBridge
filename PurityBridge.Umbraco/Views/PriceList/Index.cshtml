@@ -6,31 +6,7 @@
     var treatmentData = uQuery.GetNodesByType("TreatmentsData");
     IEnumerable<IPublishedContent> children = null;
 }
-<style>
-    .pricing-table .col {
-        margin-left: -4px;
-    }
-
-    .services .pic {
-        font-size: 24px;
-    }
-
-        .services .pic:before, .pic:before {
-            position: absolute;
-            top: 0;
-            width: 10%;
-        }
-
-    .price-list-bullet {
-        background-image: url("/favicon.ico");
-        content: " ";
-        float: left;
-        height: 16px;
-        margin-right: 6px;
-        margin-top: 3px;
-        width: 15px;
-    }
-</style>
+<link href="~/Content/css/pricelist.css" rel="stylesheet" />
 <div class="callout wpb_content_element">
     <div class="icon"><i class="fa fa-star"></i></div>
     <div class="callout-wrapper">
@@ -44,7 +20,7 @@
             }
             @if (pageData.HasValue("priceListFile"))
             {
-                <a class="button" href="@pageData.GetPropertyValue("priceListFile")">Comprehensive price list</a>
+                <a class="button" href="@pageData.GetPropertyValue("priceListFile")">Click here to download Full Pricelist</a>
             }
         </div>
     </div>
@@ -54,23 +30,31 @@
     <div class="widget pricing-table wpb_content_element">
         <div class="widget-title">Pricing Table</div>
         <div class="row">
-            @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategory"))
+            @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategoryData"))
             {
-                <div class="col col-4" data-category="@treatmentCategory.Name">
+                var heading = uQuery.GetNodesByName(treatmentCategory.Name).Where(n => n.Parent.NodeTypeAlias == "Treatments").First().GetProperty("heading").Value;
+                <div class="col col-4" data-category="@heading">
                     <div class="head"><span>@treatmentCategory.GetProperty("headingLine1")</span>@treatmentCategory.GetProperty("headingLine2")</div>
                     @* <div class="price">
                             <div><sup></sup><span></span></div>
                         </div>*@
                     <ul class="listing">
-                        @foreach (var treatment in treatmentCategory.GetChildNodesByType("Treatment"))
+                        @foreach (var treatment in treatmentCategory.GetChildNodesByType("TreatmentData"))
                         {
-                            <li><div class="price-list-bullet"></div>@treatment.Name</li>
+                            <li>
+                                <div class="price-list-bullet">
+                                    <img src="/favicon.ico" />
+                                </div>
+                                <div class="price-list-item">
+                                    @uQuery.GetNodesByName(treatment.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").First().GetProperty("heading").Value
+                                </div>
+                            </li>
                         }
                     </ul>
                     <div class="summary">@treatmentCategory.GetProperty("description")</div>
                     <div class="join">
-                        <a href="javascript:void(0)" onclick="loadDetails('@treatmentCategory.Name')">
-                            <button class="wpb_button wpb_btn-large">Load Details</button>
+                        <a href="javascript:void(0)" onclick="loadDetails('@heading')">
+                            <button class="wpb_button wpb_btn-large">Click here for prices</button>
                         </a>
                     </div>
                 </div>
@@ -94,10 +78,10 @@
         </div>
     </section>
     <section id="services-carousel-data">
-        @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategory"))
+        @foreach (var treatmentCategory in treatmentData.First().GetChildNodesByType("TreatmentsCategoryData"))
         {
-            children = Umbraco.TypedContent(treatmentCategory.Id).Children(c => c.DocumentTypeAlias == "Treatment");
-            <div class="treatment-category" data-category="@treatmentCategory.Name">
+            children = Umbraco.TypedContent(treatmentCategory.Id).Children(c => c.DocumentTypeAlias == "TreatmentData");
+            <div class="treatment-category" data-category="@uQuery.GetNodesByName(treatmentCategory.Name).Where(n => n.Parent.NodeTypeAlias == "Treatments").First().GetProperty("heading").Value">
                 @if (children.Count() <= 2)
                 {
                     foreach (var treatment in children)
@@ -107,7 +91,7 @@
                             <div class="item">
                                 @renderListItems(treatment)
                             </div>
-                            if (treatment.Next("Treatment", false) != null)
+                            if (treatment.Next("TreatmentData", false) != null)
                             {
                                 <div class="item">
                                     @renderListItems(treatment.Next())
@@ -126,7 +110,7 @@
                                 <div style="min-height: 170px; padding-bottom: 40px;">
                                     @renderListItems(treatment)
                                 </div>
-                                @if (treatment.Next("Treatment", false) != null)
+                                @if (treatment.Next("TreatmentData", false) != null)
                                 {
                                     <div style="min-height: 170px">
                                         @renderListItems(treatment.Next())
@@ -144,8 +128,8 @@
 <div class="grid-row-sep details"></div>
 @helper renderListItems(IPublishedContent treatment)
 {
-    <a class="pic">£ @treatment.GetPropertyValue("price")</a>
-    <h2><a href="#">@treatment.Name</a></h2>
+    <a class="pic"><div>From £@treatment.GetPropertyValue("price")</div></a>
+    <h2><a href="#">@uQuery.GetNodesByName(treatment.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").First().GetProperty("heading").Value</a></h2>
     <p>@treatment.GetPropertyValue("description")</p>
     <a class="more fa fa-long-arrow-right" href="#"></a>
 

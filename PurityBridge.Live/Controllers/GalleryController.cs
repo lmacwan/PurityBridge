@@ -16,7 +16,7 @@ namespace PurityBridge.Live
 
             breadcrumbs.Add(new BreadCrumbElement()
             {
-                Name = "Gallery",
+                Name = (string)model.Content.GetProperty("heading").Value,
                 Value = "/" + model.Content.Name
             });
 

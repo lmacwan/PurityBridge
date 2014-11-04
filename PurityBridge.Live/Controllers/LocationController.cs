@@ -17,7 +17,7 @@ namespace PurityBridge.Live
             var locationNode = umbraco.uQuery.GetNodesByType("Location").FirstOrDefault();
             breadcrumbs.Add(new PurityBridge.Live.BreadCrumbElement()
             {
-                Name = locationNode.Name,
+                Name = (string)model.Content.GetProperty("heading").Value,
                 Value = "/" + locationNode.UrlName
             });
 

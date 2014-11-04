@@ -397,6 +397,7 @@
     <Compile Include="Models\BreadCrumbElement.cs" />
     <Compile Include="Models\PageTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\MailUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />

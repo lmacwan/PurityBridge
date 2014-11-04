@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using umbraco;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
@@ -16,7 +17,7 @@ namespace PurityBridge.Live
 
             breadcrumbs.Add(new BreadCrumbElement()
             {
-                Name = "Gallery",
+                Name = uQuery.GetNodesByType("Gallery").First().GetProperty<string>("heading"),
                 Value = "/gallery"
             });
 
@@ -35,7 +36,7 @@ namespace PurityBridge.Live
 
             breadcrumbs.Add(new BreadCrumbElement()
             {
-                Name = "Gallery",
+                Name = uQuery.GetNodesByType("Gallery").First().GetProperty<string>("heading"),
                 Value = "/gallery"
             });
 
@@ -46,10 +47,11 @@ namespace PurityBridge.Live
             });
 
             var crumb = Request.RawUrl.Split(new string[]{"/"}, StringSplitOptions.RemoveEmptyEntries).Last();
-
+            var treatment = umbraco.uQuery.GetNodesByType("Treatment").Where(c => c.UrlName == crumb).FirstOrDefault();
             breadcrumbs.Add(new BreadCrumbElement()
             {
-                Name = umbraco.uQuery.GetNodesByType("Treatment").Where(c => c.UrlName == crumb).FirstOrDefault(t => t.Parent.Parent.NodeTypeAlias == "TreatmentsData").Name,
+
+                Name = treatment.GetProperty<string>("heading"),
                 Value = "/" + model.Content.UrlName + "/" + crumb
             });
             ViewBag.BreadCrumbs = breadcrumbs;

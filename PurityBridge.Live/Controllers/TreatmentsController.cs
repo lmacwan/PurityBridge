@@ -58,9 +58,10 @@ namespace PurityBridge.Live
                 Value = "/treatments/" + crumbs[0]
             });
 
+            var treatment = umbraco.uQuery.GetNodesByType("Treatment").Where(c => c.UrlName == crumbs[1]).FirstOrDefault();
             breadcrumbs.Add(new BreadCrumbElement()
             {
-                Name = umbraco.uQuery.GetNodesByType("TreatmentData").Where(c => c.UrlName == crumbs[1]).FirstOrDefault(t => t.Parent.Parent.NodeTypeAlias == "TreatmentsData").Name,
+                Name = (string)treatment.GetProperty("heading").Value,
                 Value = "/treatments/" + crumbs[0] + "/" + crumbs[1]
             });
             ViewBag.BreadCrumbs = breadcrumbs;

@@ -2,61 +2,82 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
-    ViewBag.ShowTitleBar = false;
     var teamData = uQuery.GetNodesByType("TeamData") ?? new List<umbraco.NodeFactory.Node>();
-    ViewBag.Crop = "Rectangular";
 }
-<style>
-    .spannedItems .left .align {
-        float: left;
-        margin-right: 20px;
-    }
+<link href="~/Content/css/textcontent.css" rel="stylesheet" />
+@{
+    var specialists = Umbraco.TypedContent(teamData.First().Id).Children(c => c.DocumentTypeAlias == "Specialist");
+}
+@if (specialists.Any())
+{
+    string content = string.Empty;
+    <div class="vc_row-fluid spannedItems">
+        <div class="vc_span6">
+            @foreach (var specialistItem in specialists.Where(i => i.Index() % 2 == 0))
+            {
+                <section class="widget right item">
+                    @renderSpecialistItem(specialistItem, specialistItem.GetPropertyValue<string>("partialText"))
+                    <div class="wpb_wrapper leftwarpper">
+                        <a class="read-more fancybox" href="#@specialistItem.Id"> Read More <i class="more fa fa-mail-forward"></i></a>
+                    </div>
+                </section>
 
-    .spannedItems .right .align {
-        float: right;
-        margin-left: 20px;
-    }
+                <div id="@specialistItem.Id" style="display: none; width: 500px !important;">
+                    <section class="widget right">
+                        @renderSpecialistItem(specialistItem, specialistItem.GetPropertyValue<string>("text"))
+                    </section>
+                </div>
+            }
+        </div>
+        <div class="vc_span6">
+            @foreach (var specialistItem in specialists.Where(i => i.Index() % 2 == 1))
+            {
+                <section class="widget right item">
+                    @renderSpecialistItem(specialistItem, specialistItem.GetPropertyValue<string>("partialText"))
 
-    .spannedItems .vc_span6 > .widget {
-        max-height: inherit !important;
-    }
+                    <div class="wpb_wrapper leftwarpper">
+                        <a class="read-more fancybox" href="#@specialistItem.Id"> Read More <i class="more fa fa-mail-forward"></i></a>
+                    </div>
+                </section>
 
-    .spannedItems .wpb_content_element {
-        padding-top: 20px;
-    }
+                <div id="@specialistItem.Id" style="display: none; width: 500px !important;">
+                    <section class="widget right">
+                        @renderSpecialistItem(specialistItem, specialistItem.GetPropertyValue<string>("text"))
+                    </section>
+                </div>
+            }
+        </div>
+    </div>
+}
 
-    .spannedItems .widget-title {
-        border-bottom-color: #00aba5;
-        margin-bottom: 0px;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-    }
-</style>
-@Html.Partial("_TextContent", teamData)
+@helper renderSpecialistItem(IPublishedContent item, string text)
+{
+    var content = string.Format("<h1></h1><p class='capitalized'>{0}</p>", text.Replace('\n' + "", "</p><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+    <div class="widget-title">
+        @item.GetPropertyValue("heading")
+    </div>
+    <div class="wpb_text_column wpb_content_element">
+        <div class="wpb_wrapper">
+            <img src="@item.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@item.GetPropertyValue("heading")" class="align" />
+        </div>
+        @Html.Raw(content)
+    </div>
+}
 
 @section scripts {
-    <script type="text/javascript">
-        $(window).load(function () {
-            setPadding();
-        });
-
-        $(window).resize(function () {
-            setPadding();
-        });
-
-        function setPadding() {
-            var leftSpanChildren = $('.spannedItems .vc_span6').first().find('.widget');
-            var rightSpanChildren = $('.spannedItems .vc_span6').last().find('.widget');
-            var index = 0;
-            leftSpanChildren.each(function (i, e) {
-
-                if ($(e).outerHeight() > $(rightSpanChildren.get(i)).outerHeight()) {
-                    $(rightSpanChildren.get(i)).css({ paddingBottom: $(e).outerHeight() - $(rightSpanChildren.get(i)).outerHeight() })
-                }
-                if ($(e).outerHeight() < $(rightSpanChildren.get(i)).outerHeight()) {
-                    $(e).css({ paddingBottom: $(rightSpanChildren.get(i)).outerHeight() - $(e).outerHeight() })
+    <script>
+        $(document).ready(function () {
+            $('.wpb_wrapper:first-child').each(function (i, e) {
+                var eHeight = $(e).find('.alignleft').outerHeight();
+                var lastChildHeight = $(e).outerHeight();
+                if (eHeight > lastChildHeight) {
+                    $(e).css({ paddingBottom: eHeight - lastChildHeight - 34 });
                 }
             });
-        }
+
+            $('.read-more').fancybox({
+                autoDimensions: true
+            });
+        });
     </script>
-}
+}}

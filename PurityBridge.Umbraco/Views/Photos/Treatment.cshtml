@@ -4,7 +4,7 @@
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.ShowTitleBar = false;
     var currentUrlName = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
-    var treatmentsNodes = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("Treatment").Where(d => d.UrlName == currentUrlName);
+    var treatmentsNodes = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentData").Where(d => d.UrlName == currentUrlName);
 }
 <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
 @if (treatmentsNodes.Any())
@@ -19,9 +19,5 @@
                 </a>
             }
         </div>
-        <form method="post">
-            <div id="page" style="display: none">1</div>
-            <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
-        </form>
     </section>
 }

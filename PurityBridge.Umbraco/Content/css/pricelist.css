@@ -1,0 +1,41 @@
+﻿.pricing-table .col {
+    margin-left: -4px;
+}
+
+.services .pic {
+    font-size: 24px;
+}
+
+    .services .pic:before, .pic:before {
+        position: absolute;
+        top: 0;
+        width: 10%;
+    }
+
+
+.pricing-table .listing li {
+    position: relative !important;
+}
+
+.price-list-bullet {
+    height: 16px;
+    margin-top: 4px;
+    position: absolute;
+    width: 15px;
+}
+
+
+    .price-list-bullet img {
+        max-height: 100%;
+    }
+
+.price-list-item {
+    margin-left: 22px;
+}
+
+.pic div {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 21px 2px;
+    word-wrap: break-word !important;
+}

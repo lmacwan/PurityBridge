@@ -15,16 +15,17 @@
                 var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), currentTreatment.UrlName);
                 if (currentTreatment != null)
                 {
+                    var heading = uQuery.GetNodesByName(currentTreatment.Name).FirstOrDefault(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").GetProperty("heading").Value;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img src="@currentTreatment.GetCropUrl("thumbnail", "thumb")" alt="@currentTreatment.GetPropertyValue("heading")" />
+                        <img src="@currentTreatment.GetCropUrl("thumbnail", "thumb")" alt="@heading" />
                         <div class="links">
                             <ul>
                                 <li><a href="@url" class="fa fa-mail-forward"></a></li>
                             </ul>
                         </div>
                     </div>
-                    <h3>@currentTreatment.GetPropertyValue("heading")</h3>
+                    <h3>@heading</h3>
                     <p></p>
                 </div>
                 }

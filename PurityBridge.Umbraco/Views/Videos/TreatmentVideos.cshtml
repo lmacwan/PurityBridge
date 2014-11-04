@@ -1,5 +1,4 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
-
 @if (Request.RawUrl.Contains("purity-bri"))
 {
     ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes().Where(c => c.UrlName == "purity-bridge-experience");
@@ -17,34 +16,31 @@ else
     <section class="widget photo-tour photo-tour-3" id="photo-tour">
         @if (treatmentsData.Any())
         {
-            var videos = treatmentsData.First().GetDescendantNodesByType("Treatment").Select(d => d.GetDescendantNodesByType("TreatmentVideos").FirstOrDefault()).WhereNotNull();
+            var videos = treatmentsData.First().GetDescendantNodesByType("TreatmentData").Select(d => d.GetDescendantNodesByType("TreatmentVideos").FirstOrDefault()).WhereNotNull();
             <div class="grid isotope">
                 @foreach (umbraco.NodeFactory.Node video in videos)
                 {
                     if (video.ChildrenAsList.Any())
                     {
-                        var parent = Umbraco.TypedContent(video.Parent.Id);
-                        var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), video.UrlName);
-                    <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                        <div class="pic">
-                            <img src="@parent.GetCropUrl("thumbnail", "thumb")" alt="@video.GetProperty("heading")" />
-                            <div class="links">
-                                <ul>
-                                    <li><a href="@url" class="fa fa-mail-forward"></a></li>
-                                </ul>
+                        var parent = Umbraco.TypedContent(video.GetAncestorNodes().FirstOrDefault(n => n.NodeTypeAlias == "TreatmentData").Id);
+                        var treatmentPage = uQuery.GetNodesByName(parent.Name).FirstOrDefault(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage");
+                        var heading = (string)treatmentPage.GetProperty("heading").Value;
+                        var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), treatmentPage.UrlName);
+                        <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                            <div class="pic">
+                                <img src="@parent.GetCropUrl("thumbnail", "thumb")" alt="@heading" />
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <h3>@video.GetProperty("heading")</h3>
+                            <h3>@heading</h3>
                         <p>@video.GetProperty("text")</p>
                     </div>
                     }
                 }
             </div>
         }
-        <form method="post">
-            <div id="page" style="display: none">1</div>
-            <button type="button" class="button more" onclick="getPage()"><i class="fa fa-refresh"></i>Load more</button>
-        </form>
     </section>
 }
-

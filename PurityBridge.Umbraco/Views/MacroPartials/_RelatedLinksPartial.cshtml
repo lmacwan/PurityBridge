@@ -7,50 +7,37 @@
     <div id="help-carousel" class="owl-carousel">
         @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
         {
-            if (child.Index() % 2 == 0)
-            {
             <div>
                 <ul>
                     @RenderChildren(child)
                 </ul>
             </div>
-            }
         }
     </div>
 </section>
 <!--/ help -->
-
 @helper RenderChildren(IPublishedContent child)
 {
-    var linkedContent = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
-    var heading = uQuery.GetNodesByName(linkedContent.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").FirstOrDefault().GetProperty("heading");
-    <li class="item">
-        <div class="pic">
-            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@heading">
-            <div class="links">
-                <ul>
-                    <li><a href="@linkedContent.Url" class="fa fa-mail-forward"></a></li>
-                </ul>
-            </div>
-        </div>
-        <h3>@heading</h3>
-        <p></p>
-    </li>
-    if (child.FollowingSibling() != null)
+    if (child.HasValue("relatedPage"))
     {
-        linkedContent = Umbraco.TypedContent(child.Next().GetPropertyValue<int>("relatedPage"));
-        heading = uQuery.GetNodesByName(linkedContent.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").FirstOrDefault().GetProperty("heading");
-    <li class="item">
-        <div class="pic">
-            <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" alt="@heading">
-            <div class="links">
-                <ul>
-                    <li><a href="@linkedContent.Url" class="fa fa-mail-forward"></a></li>
-                </ul>
-            </div>
-        </div>
-        <h3>@heading</h3>
-        <p></p>
-    </li>
+        var element = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
+
+        var heading = element.GetPropertyValue<string>("heading");
+        var linkedContent = Umbraco.TypedContent(uQuery.GetNodesByName(element.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryData").FirstOrDefault().Id);
+        if (linkedContent != null)
+        {
+            <li class="item">
+                <div class="pic">
+                    <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@heading">
+                    <div class="links">
+                        <ul>
+                            <li><a href="@element.Url" class="fa fa-mail-forward"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>@heading</h3>
+                <p></p>
+            </li>
+        }
     }
 }

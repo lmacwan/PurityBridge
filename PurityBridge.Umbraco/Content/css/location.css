@@ -1,0 +1,145 @@
+﻿.newsletter {
+    background: none repeat scroll 0 0 #fafafa;
+    padding: 30px 0;
+    margin-top: -60px;
+}
+
+    .newsletter .grid-row {
+        margin: 0 auto;
+    }
+
+.newsletter-title {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.newsletter-form {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 22px;
+    min-width: 100%;
+    position: relative;
+}
+
+    .newsletter-form .vc_row-fluid {
+        margin-bottom: 22px;
+    }
+
+.input-text {
+    background: none repeat scroll 0 0 white !important;
+    border: 2px solid #d8d8d8 !important;
+    border-radius: 5px !important;
+    box-sizing: border-box !important;
+    float: left;
+    font-weight: 500;
+    font-size: 17px/34px;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+}
+
+.input-text {
+    height: 45px !important;
+}
+
+.textarea {
+    height: 130px !important;
+}
+
+.button {
+    background: none repeat scroll 0 0 #00aba5;
+    border: 2px solid #00aba5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    float: right;
+    font-size: 18px;
+    font-weight: 500;
+    height: 40px;
+    padding: 0 21px;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button {
+    cursor: pointer;
+}
+
+.newsletter-form .button {
+    width: 149px;
+}
+
+.newsletter p {
+    clear: both;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 auto;
+    max-width: 556px;
+}
+
+.spanned-row {
+    display: block;
+    padding: 70px 0 60px;
+}
+
+.center {
+    text-align: center;
+}
+
+.shade-lighter {
+}
+
+.shade-light {
+    background: none repeat scroll 0 0 #4dc4c0;
+}
+
+.shade {
+    background: none repeat scroll 0 0 #00aba5;
+}
+
+.work-time {
+    color: #fff;
+    margin-top: 0px;
+    padding: 60px 0 30px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.map .google-map {
+    height: 300px !important;
+}
+
+.map {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    border-top: 1px solid #e3e3e3;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px 38px 11px 19px;
+    position: relative;
+}
+
+.indent {
+    margin-left: 22px;
+    font-size: 14px;
+    word-spacing: 5px;
+}
+
+.contact-details-sidebar .widget ul > li i {
+    font-size: 20px;
+    float: left;
+    margin-top: 3px;
+}
+
+.contact-details-sidebar .widget + .widget {
+    margin-top: 20px;
+}
+
+.openining-hours {
+    margin-top: 50px !important;
+}

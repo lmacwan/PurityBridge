@@ -342,9 +342,14 @@
     <Content Include="Content\css\home.css" />
     <Content Include="Content\css\jquery.fancybox.css" />
     <Content Include="Content\css\layerslider.css" />
+    <Content Include="Content\css\location.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\pricelist.css" />
     <Content Include="Content\css\spastyle.css" />
+    <Content Include="Content\css\textcontent.css" />
+    <Content Include="Content\css\testimonial.css" />
+    <Content Include="Content\css\treatment.css" />
     <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
     <Content Include="Content\images\logo5.png" />
     <Content Include="Content\images\logo1.png" />
@@ -3239,13 +3244,17 @@
     <Content Include="config\scripting.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\metablogConfig.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\log4net.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\FileSystemProviders.config" />
+    <Content Include="config\FileSystemProviders.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\feedProxy.config" />
