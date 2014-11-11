@@ -6,7 +6,7 @@
     }
 </style>
 @{
-    var email = "marc@pacifico.co.uk";
+    var masterConfigurations = uQuery.GetNodesByType("MasterConfigurations").First();
 }
 
 <!-- page footer -->
@@ -18,35 +18,35 @@
                 <ul>
                     <li>
                         <a target="_blank" href="http://www.cqc.org.uk/" class="footer-logo">
-                            <img width="158" height="50" alt="" src="/Content/images/logo5.png">
+                            <img width="158" height="50" alt="" src="@Umbraco.TypedMedia(masterConfigurations.GetProperty<int>("qualityCareLogo")).Url">
                         </a>
                     </li>
                     <li>
-                        <p>Purity Bridge is based within Tunbridge Wells Plastic Surgery Limited, registered in England &amp; Wales with number 8226611. Tunbridge Wells Plastic Surgery Ltd is registered and regulated by The Care Quality Commission.</p>
+                        <p>@masterConfigurations.GetProperty("qualityCareText")</p>
                     </li>
                 </ul>
             </div>
             <div class="vc_span5">
                 <section class="widget-alt recent-posts">
-                    <div class="widget-title">Recent Posts</div>
+                    <div class="widget-title">@masterConfigurations.GetProperty("headingRecentPosts")</div>
                     <ul>
-                        <li>
-                            <a href="#"><img width="80" height="80" alt="" src="/Content/pic/post/1.png"></a>
-                            <p><a href="#">New study links lutein with eye health benefits, consectetur adipiscing</a><br>5 months ago</p>
-                        </li>
-                        <li>
-                            <a href="#"><img width="80" height="80" alt="" src="/Content/pic/post/2.png"></a>
-                            <p><a href="#">Pets may reduce risk of heart disease, et congue dolor heart</a><br>8 months ago</p>
-                        </li>
+                        @foreach (IPublishedContent post in Umbraco.TypedContent(masterConfigurations.GetProperty<int>("relatedPost")).Children(c => c.DocumentTypeAlias == "SmartBlogComment").Take(2))
+                        {
+                            var date = post.CreateDate.ToString("dd MMM yyyy");
+                                            
+                            <li>
+                                <p><a href="javascript:void(0)">@post.GetProperty("smartBlogComment").GetValue("smartBlogComment")</a><br>@date</p>
+                            </li>
+                        }
                     </ul>
                 </section>
             </div>
             <div class="vc_span2">
                 <section class="widget-alt location">
                     <ul>
-                        <li><i class="fa fa-phone"></i>+44 (0)1892 536960</li>
-                        <li><i class="fa fa-envelope"></i> @email</li>
-                        <li><i class="fa fa-skype"></i>+44 (0)1892 536960</li>
+                        <li><i class="fa fa-phone"></i>@masterConfigurations.GetProperty("phoneNumber")</li>
+                        <li><i class="fa fa-envelope"></i> @masterConfigurations.GetProperty("emailAddress")</li>
+                        <li><i class="fa fa-skype"></i>@masterConfigurations.GetProperty("skypeContact")</li>
                     </ul>
                 </section>
             </div>
@@ -54,29 +54,11 @@
 
                 <section class="widget-alt location">
                     <address style="text-align: right">
-                        Purity Bridge
-
-                        <br />
-                        Tunbridge Wells Plastic Surgery Ltd
-
-                        <br />
-                        6 Mount Ephraim
-
-                        <br />
-                        Tunbridge Wells
-
-                        <br />
-                        Kent
-
-                        <br />
-                        United Kingdom
-
-                        <br />
-                        TN4 8AS
+                        @Html.Raw(masterConfigurations.GetProperty("address").ToString())
                     </address>
                     <nav style="float: right">
-                        <a href="https://twitter.com/PurityBridgeTW" class="fa fa-twitter"></a>
-                        <a href="https://www.facebook.com/puritybridgetw" class="fa fa-facebook"></a>
+                        <a href="@masterConfigurations.GetProperty("twitterPageUrl")" class="fa fa-twitter"></a>
+                        <a href="@masterConfigurations.GetProperty("facebookPageUrl")" class="fa fa-facebook"></a>
                     </nav>
                 </section>
             </div>

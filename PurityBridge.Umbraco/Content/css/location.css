@@ -143,3 +143,11 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 .openining-hours {
     margin-top: 50px !important;
 }
+
+.indent p {
+    clear: initial;
+    font-size: inherit;
+    line-height: inherit;
+    margin: initial;
+    max-width: initial;
+}

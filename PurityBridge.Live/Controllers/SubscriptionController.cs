@@ -1,17 +1,14 @@
-﻿using System.Web.Mvc;
-using Umbraco.Web.Models;
-using Umbraco.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
 namespace PurityBridge.Live
 {
-    public class HomeController : RenderMvcController
+    public class SubscriptionController : Umbraco.Web.Mvc.SurfaceController
     {
-        public override ActionResult Index(RenderModel model)
-        {
-            return base.Index(model);
-        }
-
-        public JsonResult Subscribe(string none, string email)
+        public JsonResult SubscribeNewsletter(string email)
         {
             var success = false;
             var msg = string.Empty;

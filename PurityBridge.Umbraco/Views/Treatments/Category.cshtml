@@ -20,7 +20,7 @@
             {
                 matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
                 url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), category.UrlName);
-                matchedContentNodeHeading = uQuery.GetNodesByName(matchedNode.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage").First().GetProperty("heading").Value;
+                matchedContentNodeHeading = uQuery.GetNodeByUrl(url).GetProperty("heading").Value;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
                         <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedContentNodeHeading"/>

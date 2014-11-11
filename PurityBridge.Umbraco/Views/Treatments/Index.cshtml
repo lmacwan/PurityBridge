@@ -21,7 +21,7 @@
                     <div class="grid isotope">
                         @foreach (umbraco.NodeFactory.Node category in treatmentsNode.GetChildNodesByType("TreatmentsCategoryPage").WhereNotNull())
                         {
-                            var heading = uQuery.GetNodesByName(category.Name).FirstOrDefault(n => n.Parent.NodeTypeAlias == "Treatments").GetProperty("heading");
+                            var heading = category.GetProperty("heading");
                             matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
                             url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), category.UrlName);
                             <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">

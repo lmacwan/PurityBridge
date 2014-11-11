@@ -6,18 +6,21 @@
 @section styles {
     <link href="~/Content/css/location.css" rel="stylesheet" />
 }
+@{
+    var pageData = Umbraco.TypedContent(uQuery.GetNodesByType("ContactData").First().Id);
+}
 <!-- feedback -->
 <div class="newsletter">
     <div class="grid-row">
         <div class="grid-col grid-col-9">
             <!-- map -->
             <section class="map">
-                <div class="widget-title">Our Location</div>
+                <div class="widget-title">@pageData.GetPropertyValue("mapHeading")</div>
                 <div id="map" class="google-map"></div>
             </section>
             <!--/ map -->
 
-            <div class="newsletter-title">Make an Enquiry</div>
+            <div class="newsletter-title">@pageData.GetPropertyValue("inquiryFormHeading")</div>
             <div class="newsletter-form clearfix">
                 <form action="">
                     <div class="vc_row-fluid">
@@ -25,7 +28,7 @@
                         <input type="email" class="input-text vc_span6" placeholder="Your email">
                     </div>
                     <div class="vc_row-fluid">
-                        <input type="text" class="input-text textarea vc_span12" placeholder="Your email">
+                        <input type="text" class="input-text textarea vc_span12" placeholder="Message">
                     </div>
                     <div class="vc_row-fluid">
                         <input type="button" value="Submit" class="button right">
@@ -34,19 +37,19 @@
                 <p></p>
             </div>
         </div>
+        @{
+            var masterConfigurations = Umbraco.TypedContent(uQuery.GetNodesByType("MasterConfigurations").First().Id);
+            var addrress = masterConfigurations.GetPropertyValue("address").ToString();
+        }
         <div class="grid-col grid-col-3 contact-details-sidebar">
             <section class="widget">
-                <div class="widget-title">Contact Details</div>
+                <div class="widget-title">@pageData.GetPropertyValue("contactDetailsHeading")</div>
                 <div>
                     <ul>
                         <li>
                             <i class="fa fa-map-marker"></i>
                             <ul class="indent">
-                                <li>6 Mount Ephraim</li>
-                                <li>Tunbridge Wells</li>
-                                <li>Kent</li>
-                                <li>United Kingdom</li>
-                                <li>TN4 8AS</li>
+                                @Html.Raw(addrress)
                             </ul>
                         </li>
                     </ul>
@@ -58,7 +61,7 @@
                         <li>
                             <i class="fa fa-phone"></i>
                             <ul class="indent">
-                                <li>  01892 536960</li>
+                                <li>@masterConfigurations.GetPropertyValue("phoneNumber")</li>
                             </ul>
                         </li>
                     </ul>
@@ -70,7 +73,7 @@
                         <li>
                             <i class="fa fa-envelope"></i>
                             <ul class="indent">
-                                <li> @email</li>
+                                <li> @masterConfigurations.GetPropertyValue("emailAddress")</li>
                             </ul>
                         </li>
                     </ul>

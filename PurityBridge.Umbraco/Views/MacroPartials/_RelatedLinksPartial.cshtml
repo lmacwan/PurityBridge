@@ -23,7 +23,7 @@
         var element = Umbraco.TypedContent(child.GetPropertyValue<int>("relatedPage"));
 
         var heading = element.GetPropertyValue<string>("heading");
-        var linkedContent = Umbraco.TypedContent(uQuery.GetNodesByName(element.Name).Where(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryData").FirstOrDefault().Id);
+        var linkedContent = Umbraco.TypedContent(uQuery.GetNodeByUrl("/data" + element.Url).Id);
         if (linkedContent != null)
         {
             <li class="item">

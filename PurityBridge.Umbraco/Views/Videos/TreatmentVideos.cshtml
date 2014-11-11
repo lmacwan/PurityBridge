@@ -23,7 +23,7 @@ else
                     if (video.ChildrenAsList.Any())
                     {
                         var parent = Umbraco.TypedContent(video.GetAncestorNodes().FirstOrDefault(n => n.NodeTypeAlias == "TreatmentData").Id);
-                        var treatmentPage = uQuery.GetNodesByName(parent.Name).FirstOrDefault(n => n.Parent.NodeTypeAlias == "TreatmentsCategoryPage");
+                        var treatmentPage = uQuery.GetNodeByUrl(parent.Url.Replace("/data/", "/"));
                         var heading = (string)treatmentPage.GetProperty("heading").Value;
                         var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), treatmentPage.UrlName);
                         <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">

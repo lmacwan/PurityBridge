@@ -1,5 +1,29 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = "Layout.cshtml";
+    Layout = null;
 }
-@RenderBody()
+@if (Session.IsNewSession)
+{
+    Html.RenderPartial("BlogsLogin");
+}
+else {
+    Html.RenderPartial("BlogsList");
+}
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Web.Mvc.Html;
+@using System.Web.Mvc;
+@{
+    Layout = "SmartBlogLayout.cshtml";
+}
+
+<div class="smartBlogLeft">
+    @RenderBody()
+</div>
+<div class="smartBlogRight">
+    @Html.Partial("SmartSearch")
+    @Html.Partial("SmartListTags")
+    @Html.Partial("SmartListLatestComments")
+    @Html.Partial("SmartListAuthors")
+    @Html.Partial("SmartListCategories")
+</div>
