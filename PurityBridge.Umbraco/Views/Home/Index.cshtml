@@ -134,8 +134,8 @@
             </div>
             <p class="subscription-msg"></p>
             <p> @homeData.First().GetProperty("emailInformation").Value</p>
-            <div style="display:none" id="email-procssing">@homeData.First().GetProperty("emailProcessingSuccessMessage").Value </div>
-            <div style="display:none" id="email-procssing-success">@homeData.First().GetProperty("emailProcessingMessage").Value </div>
+            <div style="display:none" id="email-procssing">@homeData.First().GetProperty("emailProcessingMessage").Value </div>
+            <div style="display:none" id="email-procssing-success">@homeData.First().GetProperty("emailProcessingSuccessMessage").Value </div>
             <div style="display:none" id="email-procssing-error">@homeData.First().GetProperty("emailSubscriptionError").Value </div>
         </div>
     </div>
@@ -146,23 +146,25 @@
     <script type="text/javascript">
         function subscribeNewsLetter() {
             var subscribeEmail = $('.newsletter-form input[type=email]').first().val();
-            var subscribeUrl = $('.newsletter-form form').attr('action');
-            $.ajax({
-                cache: false,
-                url: subscribeUrl,
-                type: "POST",
-                data: { email: subscribeEmail },
-                beforeSend: function () {
-                    $('.subscription-msg').text($("div#email-procssing").text());
-                },
-                success: function (data) {
-                    if (data.success == true) {
-                        $('.subscription-msg').text($('div#email-procssing-success').text());
-                    } else {
-                        $('.subscription-msg').text($('div#email-procssing-error').text());
-                    }
-                }
-            });
+	    if(subscribeEmail.length > 0) {
+            	var subscribeUrl = $('.newsletter-form form').attr('action');
+            	$.ajax({
+                	cache: false,
+                	url: subscribeUrl,
+                	type: "POST",
+                	data: { email: subscribeEmail },
+                	beforeSend: function () {
+                    		$('.subscription-msg').text($("div#email-procssing").text());
+                	},
+                	success: function (data) {
+                    		if (data.success == true) {
+                        		$('.subscription-msg').text($('div#email-procssing-success').text());
+                    		} else {
+                        		$('.subscription-msg').text($('div#email-procssing-error').text());
+                    		}
+                	}
+            	});
+	    }
         }
     </script>
 }
