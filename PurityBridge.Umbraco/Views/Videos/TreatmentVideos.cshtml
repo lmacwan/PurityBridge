@@ -4,9 +4,9 @@
     ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes().Where(c => c.UrlName == "purity-bridge-experience");
     @Html.Partial("~/Views/Videos/Videos.cshtml", Model)
 }
-else if (Request.RawUrl.Contains("videos-fro"))
+else if (Request.RawUrl.Contains("discussions-on"))
 {
-    ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes().Where(c => c.UrlName == "videos-from-marc");
+    ViewBag.DataNode = uQuery.GetNodesByType("VideoData").First().GetChildNodes().Where(c => c.UrlName == "discussions-on-procedures");
     @Html.Partial("~/Views/Videos/Videos.cshtml", Model)
 }
 else
@@ -36,8 +36,8 @@ else
                                 </div>
                             </div>
                             <h3>@heading</h3>
-                        <p>@video.GetProperty("text")</p>
-                    </div>
+                            <p>@video.GetProperty("heading")</p>
+                        </div>
                     }
                 }
             </div>

@@ -86,20 +86,18 @@
                 <section class="widget-alt work-time">
                     <div class="widget-icon"></div>
                     <dl>
-                        <dt>Mon</dt>
-                        <dd>08:00 am - 12:00 pm</dd>
-                        <dt>Tue</dt>
-                        <dd>01:00 am - 05:00 pm</dd>
-                        <dt>Wed</dt>
-                        <dd>Free day</dd>
-                        <dt>Thu</dt>
-                        <dd>08:00 am - 12:00 pm</dd>
-                        <dt>Fri</dt>
-                        <dd>08:00 am - 12:00 pm</dd>
-                        <dt>Sat</dt>
-                        <dd>08:00 am - 12:00 pm</dd>
-                        <dt>Sun</dt>
-                        <dd>Free day</dd>
+                        @foreach (var weekDay in pageData.Descendants().Where(c => c.DocumentTypeAlias == "WeekDay"))
+                        {
+                            <dt>@weekDay.Name.ToString().Substring(0, 3)</dt>
+                            if (weekDay.GetPropertyValue<bool>("isFreeDay") || string.IsNullOrEmpty(weekDay.GetPropertyValue("openingTime").ToString()))
+                            {
+                                <dd>Free day</dd>
+                            }
+                            else
+                            {
+                                <dd>@weekDay.GetPropertyValue("openingTime").ToString().Replace("am", " am").Replace("AM", " am").Replace("pm", " pm").Replace("PM", " pm") - @weekDay.GetPropertyValue("closingTime").ToString().Replace("am", " am").Replace("AM", " am").Replace("pm", " pm").Replace("PM", " pm")</dd>
+                            }
+                        }
                     </dl>
                 </section>
             </section>

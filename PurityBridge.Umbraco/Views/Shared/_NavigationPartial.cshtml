@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>                                                                       
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
     var isHomePage = Model.Name.Equals("home", StringComparison.CurrentCultureIgnoreCase);
     var navigationItems = uQuery.GetNodesByType("ContentItem");
@@ -37,19 +37,20 @@
         {
             url = "#";
         }
-    <li @showOnRight>
-        @*<li class="right">*@
-        <a href="@url">
+        <li @showOnRight>
+            @*<li class="right">*@
+            <a href="@url">
+                @if (hasChildren)
+                {
+                    <i class="fa fa-plus"></i>
+                }
+                @topLevelNavigation.GetProperty("heading")
+            </a>
             @if (hasChildren)
             {
-                <i class="fa fa-plus"></i>
+                @childPages(topLevelNavigation.Children)
             }
-            @topLevelNavigation.GetProperty("heading")</a>
-        @if (hasChildren)
-        {
-            @childPages(topLevelNavigation.Children)
-        }
-    </li>
+        </li>
     }
 }
 
@@ -61,19 +62,23 @@
         @foreach (umbraco.NodeFactory.Node page in pages)
         {
             url = page.GetProperty<bool>("isPageUnderConstruction") ? "/under-construction" : page.Url;
-            hasChildren = page.Children.Count > 0;
-            <li>
-                <a href="@url">
-                    @if (page.Children.Count > 0)
+            if (page.GetProperty<bool>("showInHeader"))
+            {
+                hasChildren = page.GetChildNodes().Where(c => c.GetProperty<bool>("showInHeader")).Count() > 0;
+                <li>
+                    <a href="@url">
+                        @if (hasChildren)
+                        {
+                            <i class="fa fa-angle-right"></i>
+                        }
+                        @page.GetProperty("heading")
+                    </a>
+                    @if (hasChildren)
                     {
-                        <i class="fa fa-angle-right"></i>
+                        @childPages(page.Children)
                     }
-                    @page.GetProperty("heading")</a>
-                @if (page.Children.Count > 0)
-                {
-                    @childPages(page.Children)
-                }
-            </li>
+                </li>
+            }
         }
     </ul>
 }

@@ -65,7 +65,7 @@
                         classVisible = "";
                             }
                             <h4>@column.GetProperty("heading")</h4>
-                            <p>@column.GetProperty("text")</p>
+                            <p>@Html.Raw(column.GetProperty("text").Value.ToString())</p>
                             <img src="@Umbraco.TypedContent(column.Id).GetCropUrl("photo", "home")" class="img-hide">
                             @*  <img src="~/Content/pic/medical-slide-1.jpg" class="img-hide">*@
                         </div>
@@ -114,7 +114,7 @@
                 <div class="treatment-text">
                     @{
             var htmlText = treatmentRows.First().GetProperty("text").Value;
-            htmlText = string.Format("<p>{0}</p>", htmlText.ToString().Replace('\n' + "", "</p><p>"));
+            htmlText = string.Format("{0}", htmlText.ToString().Replace('\n' + "", "</p><p>"));
                     }
                     @Html.Raw(htmlText)
                 </div>

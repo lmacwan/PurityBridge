@@ -5,14 +5,15 @@
     var dataNode = ((IEnumerable<umbraco.NodeFactory.Node>)ViewBag.DataNode);
     if (dataNode == null)
     {
-        dataNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentVideos");
+        var urlName = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
+        dataNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentData").Where(n => n.UrlName == urlName);
     }
     var url = "#";
 }
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
     <div class="grid isotope">
 
-        @foreach (umbraco.NodeFactory.Node videoitem in dataNode)
+        @foreach (umbraco.NodeFactory.Node videoitem in dataNode.First().GetDescendantNodesByType("TreatmentVideos"))
         {
             foreach (var item in videoitem.ChildrenAsList)
             {
@@ -36,7 +37,7 @@
                     </div>
                 </div>
                 <h3>@item.GetProperty("heading")</h3>
-                <p>@item.GetProperty("text")</p>
+                @Html.Raw(item.GetProperty("text").Value.ToString())
             </div>
             }
         }
