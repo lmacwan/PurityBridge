@@ -3,29 +3,20 @@
     <div class="pic">
         <ul class="ca-image">
             <li class="before">
-                <div class="ca-content">
-                    <div class="mask">
-                        <p>B</p>
-                        <p>E</p>
-                        <p>F</p>
-                        <p>O</p>
-                        <p>R</p>
-                        <p>E</p>
-                    </div>
+                <div class="mask">
+                    BEFORE
                 </div>
-                <img alt="@Model.GetPropertyValue("heading")-before" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("beforeImage")).Url">
+                <div class="image-div">
+                    <img alt="@Model.GetPropertyValue("heading")-before" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("beforeImage")).Url">
+                </div>
             </li>
             <li class="after">
-                <div class="ca-content">
-                    <div class="mask">
-                        <p>A</p>
-                        <p>F</p>
-                        <p>T</p>
-                        <p>E</p>
-                        <p>R</p>
-                    </div>
+                <div class="image-div">
+                    <img alt="@Model.GetPropertyValue("heading")-after" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("afterImage")).Url">
                 </div>
-                <img alt="@Model.GetPropertyValue("heading")-after" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("afterImage")).Url">
+                <div class="mask">
+                    AFTER
+                </div>
             </li>
         </ul>
     </div>

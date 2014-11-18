@@ -11,23 +11,26 @@
         <div class="grid isotope">
             @foreach (umbraco.NodeFactory.Node photo in photos.WhereNotNull())
             {
-                currentTreatment = Umbraco.TypedContent(photo.GetAncestorNodes().First().Id);
-                var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), currentTreatment.UrlName);
-                if (currentTreatment != null)
+                if (photo.Children.Count > 0)
                 {
-                    var heading = uQuery.GetNodeByUrl(currentTreatment.Url().Replace("/data/","/")).GetProperty("heading").Value;
-                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                    <div class="pic">
-                        <img src="@currentTreatment.GetCropUrl("thumbnail", "thumb")" alt="@heading" />
-                        <div class="links">
-                            <ul>
-                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
-                            </ul>
+                    currentTreatment = Umbraco.TypedContent(photo.GetAncestorNodes().First().Id);
+                    var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), currentTreatment.UrlName);
+                    if (currentTreatment != null)
+                    {
+                        var heading = uQuery.GetNodeByUrl(currentTreatment.Url().Replace("/data/", "/")).GetProperty("heading").Value;
+                        <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                            <div class="pic">
+                                <img src="@currentTreatment.GetCropUrl("thumbnail", "thumb")" alt="@heading" />
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>@heading</h3>
+                            <p></p>
                         </div>
-                    </div>
-                    <h3>@heading</h3>
-                    <p></p>
-                </div>
+                    }
                 }
             }
         </div>
