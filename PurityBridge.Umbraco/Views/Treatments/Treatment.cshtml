@@ -2,7 +2,6 @@
 @using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<RenderModel>
 @section styles {
-    <link href="~/Content/css/beforeafter.css" rel="stylesheet" />
     <link href="~/Content/css/treatment.css" rel="stylesheet" />
     <link href="~/Content/css/testimonial.css" rel="stylesheet" />
 }
@@ -95,6 +94,3 @@
         @Html.Partial("_ChildrenPartial", details.First().Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible()))
     </div>
 </div>
-@section scripts {
-    <script src="~/scripts/BeforeAndAfter.js"></script>
-}

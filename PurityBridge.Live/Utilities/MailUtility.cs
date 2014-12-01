@@ -10,7 +10,7 @@ namespace PurityBridge.Live
 {
     public class MailUtility
     {
-        public static bool SendMultipleMails(List<string> toAddresses, List<string> ccAddresses = null, string from = "", string subject = "Test Mail", string body = "This is a Test Mail.")
+        public static bool SendMultipleMails(List<string> toAddresses, List<string> ccAddresses = null, string from = "", string subject = "Test Mail", string body = "This is a Test Mail.", bool isHtml = false)
         {
             try
             {
@@ -36,6 +36,7 @@ namespace PurityBridge.Live
                     }
                     mail.Subject = subject;
                     mail.Body = body;
+                    mail.IsBodyHtml = isHtml;
 
                     if (MailConfigurations.Port > 0)
                     {
@@ -57,11 +58,11 @@ namespace PurityBridge.Live
             }
         }
 
-        public static bool SendSingleMail(string toAddress, List<string> ccAddresses = null, string from = "", string subject = "Test Mail", string body = "This is a Test Mail.")
+        public static bool SendSingleMail(string toAddress, List<string> ccAddresses = null, string from = "", string subject = "Test Mail", string body = "This is a Test Mail.", bool isHtml = false)
         {
             var list = new List<string>();
             list.Add(toAddress);
-            return SendMultipleMails(list, ccAddresses, from, subject, body);
+            return SendMultipleMails(list, ccAddresses, from, subject, body, isHtml);
         }
     }
 

@@ -3,43 +3,64 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     var dataNode = ((IEnumerable<umbraco.NodeFactory.Node>)ViewBag.DataNode);
-    if (dataNode == null)
+
+    if (!(Request.RawUrl.Contains("discussions-on") || Request.RawUrl.Contains("purity-bri")))
     {
+        // Videos for Treatments
         var urlName = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
         dataNode = uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentData").Where(n => n.UrlName == urlName);
-    }
-    var url = "#";
-}
-<section class="widget photo-tour photo-tour-3" id="photo-tour">
-    <div class="grid isotope">
-
-        @foreach (umbraco.NodeFactory.Node videoitem in dataNode.First().GetDescendantNodesByType("TreatmentVideos"))
-        {
-            foreach (var item in videoitem.ChildrenAsList)
-            {
-                if (item.NodeTypeAlias == "YouTubeVideoItem")
+        var url = "#";
+        <section class="widget photo-tour photo-tour-3" id="photo-tour">
+            <div class="grid isotope">
+                @foreach (umbraco.NodeFactory.Node videoitem in dataNode.First().GetDescendantNodesByType("TreatmentVideos"))
                 {
-                    url = item.GetProperty<string>("videoUrl");
-                    url = url.Replace("watch?v=", "embed/");
+                    foreach (var item in videoitem.ChildrenAsList)
+                    {
+                        if (item.NodeTypeAlias == "YouTubeVideoItem")
+                        {
+                            url = item.GetProperty<string>("videoUrl");
+                            url = url.Replace("watch?v=", "embed/");
+                            @RenderVideos(Umbraco.TypedContent(item.Id), url)
+                        }
+                    }
                 }
-                else if (item.NodeTypeAlias == "TreatmentVideoItem")
-                {
-                    url = Umbraco.TypedMedia(item.GetProperty<int>("videoUrl")).Url;
-                }
-            <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                <div class="pic">
-                    <img src="@Umbraco.TypedContent(item.Id).GetCropUrl("thumbnail", "thumb")" alt="@item.GetProperty("heading")" />
-                    <div class="links">
-                        <ul>
-                            <li><a class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='@url'></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3>@item.GetProperty("heading")</h3>
-                @Html.Raw(item.GetProperty("text").Value.ToString())
             </div>
-            }
-        }
+        </section>
+    }
+    else
+    {
+        // General Videos
+        var url = "#";
+        <section class="widget photo-tour photo-tour-3" id="photo-tour">
+            <div class="grid isotope">
+                @foreach (umbraco.NodeFactory.Node item in dataNode.First().ChildrenAsList)
+                {
+                    if (item.NodeTypeAlias == "YouTubeVideoItem")
+                    {
+                        url = item.GetProperty<string>("videoUrl");
+                        url = url.Replace("watch?v=", "embed/");
+                        @RenderVideos(Umbraco.TypedContent(item.Id), url)
+                    }
+                }
+            </div>
+        </section>
+    }
+}
+
+@helper RenderVideos(IPublishedContent child, string url)
+{
+    <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+        <div class="pic">
+            <img src="@child.GetCropUrl("thumbnail", "thumb")" alt="@child.GetPropertyValue("heading")" />
+            <div class="links">
+                <ul>
+                    <li>
+                        <a class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='@url'></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h3>@child.GetPropertyValue("heading")</h3>
+        @Html.Raw(child.GetProperty("text").Value.ToString())
     </div>
-</section>
+}

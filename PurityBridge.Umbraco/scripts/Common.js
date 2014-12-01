@@ -1,4 +1,11 @@
 function onDocumentReady() {
+	
+	if( Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
+		//Safari
+		$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '/Content/css/safari.css') );
+	}
+    
+
     // Active Menu-Item
     $("header .active").removeClass("active");
     var loc = window.location.href.toString().split('/');
@@ -75,11 +82,43 @@ function getPhoto(photoId) {
                 width: 850
             });
             $('#' + photoId).click();
+		$('.fancybox-content .pic .image-div').each(function(i, e) {
+  $(e).css({lineHeight: $(e).parentsUntil('.pic').last().find('.before .mask').first().height()+'px'});
+	 });
         },
         error: function (data) {
             alert("Error : " + data);
         }
     });
+}
+
+function sendAppointmentEmail() {
+    var fullName = $('#appointment-full-name').val();
+    var phoneno = $('#appointment-phone').val();
+    var email = $('#appointment-email').val();
+    var message = $('#appointment-message').val();
+    if (fullName != "" && email != "") {
+        $.ajax({
+            url: "/umbraco/surface/subscription/BookAppointment/",
+            data: { fullName: fullName, phone: phoneno, email: email, message: message },
+            success: function (data) {
+                alert(data.message);
+                if (data.success) {
+                    $('#appointment-full-name').val("");
+                    $('#appointment-phone').val("");
+                    $('#appointment-email').val("");
+                    $('#appointment-message').val("");
+                }
+            },
+            error: function (data) {
+                alert(data);
+            }
+        });
+    }
+    else {
+        alert("Please provide your full name and email address.");
+    }
+    return false;
 }
 
 jQuery.cachedScript = function (url, options) {

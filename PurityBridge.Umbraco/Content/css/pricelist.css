@@ -1,4 +1,4 @@
-﻿.pricing-table .col {
+.pricing-table .col {
     margin-left: -4px;
 }
 
@@ -37,5 +37,6 @@
     font-size: 18px;
     line-height: 24px;
     padding: 21px 2px;
-    word-wrap: break-word !important;
+    word-break: break-all !important;
+    word-spacing: 2px;
 }

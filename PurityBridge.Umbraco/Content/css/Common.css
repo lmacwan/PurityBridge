@@ -103,3 +103,7 @@
     .quick-search .grid-row {
         margin-bottom: 0;
     }
+
+    .page-title nav {
+        margin-right: 0px !important;
+    }
