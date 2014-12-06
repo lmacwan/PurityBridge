@@ -1,8 +1,10 @@
-﻿
+﻿/* 940px */
+
+
 .grid {
     list-style: none outside none;
     margin-top: -30px;
-    max-width: 1300px;
+    /*max-width: 1300px;*/
     position: relative;
     text-align: center;
     z-index: 10;
@@ -10,10 +12,10 @@
 
     .grid li {
         display: inline-block;
-        margin: 0 0 0 8px;
+        margin-left: 8px;
         position: relative;
         text-align: left;
-        width: 284px;
+        width: 282px;
     }
 
         .grid li:first-child {
@@ -41,10 +43,10 @@
         background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
         border-top: 1px solid #00aba5;
         color: #000;
-        left: 0;
-        padding: 20px;
+        /* left: 0; */
+        padding-top: 20px;
         position: absolute;
-        top: 0;
+        /* top: 0; */
     }
 
     .grid li p {
@@ -57,13 +59,14 @@
 
     .grid figcaption h3 {
         color: #555;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         left: 170px;
         line-height: 23px;
         margin: 0;
         padding: 0;
         text-align: center;
+        /*letter-spacing: 1px;*/
     }
 
     .grid figcaption span:before {
@@ -83,7 +86,7 @@
     overflow: hidden;
 }
 
-    /*.cs-style-3 figure img {
+/*.cs-style-3 figure img {
         transition: transform 0.4s ease 0s;
     }
 
@@ -94,12 +97,12 @@
 .cs-style-3 figcaption {
     bottom: 0;
     height: 50px;
-    margin-top: -40px;
+    /* margin-top: -40px; */
     opacity: 0;
-    top: auto;
+    /* top: auto; */
     /*transform: translateY(50%);
     transition: transform 0.4s ease 0s, opacity 0.1s ease 0.3s;*/
-    width: 284px;
+    width: 100%;
 }
 
 .no-touch .cs-style-3 figure:hover figcaption, .cs-style-3 figure.cs-hover figcaption {
@@ -134,15 +137,4 @@ a {
 
 .clearfix:after {
     clear: both;
-}
-
-@media screen and (max-width: 31.5em) {
-    .grid {
-        padding: 10px 10px 100px;
-    }
-
-        .grid li {
-            min-width: 300px;
-            width: 100%;
-        }
 }

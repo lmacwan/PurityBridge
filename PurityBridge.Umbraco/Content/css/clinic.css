@@ -1,0 +1,33 @@
+﻿.centered.vc_row-fluid [class*="vc_span"]:first-child {
+    margin: auto !important;
+}
+
+.centered.vc_row-fluid [class*="vc_span"] {
+    float: none;
+}
+
+.page-title {
+    margin-bottom: 0px;
+}
+
+main .grid-row:first-child {
+    margin: -120px auto 60px;
+}
+
+.grid li {
+    height: initial;
+    width: initial;
+}
+
+.grid figure {
+    height: 270px;
+    width: 350px;
+}
+
+    .grid figure img {
+        max-width: 350px;
+    }
+
+.cs-style-3 figcaption {
+    width: 344px;
+}

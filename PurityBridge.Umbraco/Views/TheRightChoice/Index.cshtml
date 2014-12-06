@@ -6,13 +6,8 @@
     var rightChoiceData = uQuery.GetNodesByType("RightChoiceData") ?? new List<umbraco.NodeFactory.Node>();
     ViewBag.Crop = "Rectangular";
 }
-<style>    
-    .spannedItems .left .align,
-    .spannedItems .right .align     
-    {
-        float: right;
-        margin-left: 20px;
-    }
-</style>
-
+<link href="~/Content/css/right-choice.css" rel="stylesheet" />
 @Html.Partial("_TextContent", rightChoiceData)
+@section Scripts {
+    <script src="~/scripts/restive/right-choice.js"></script>
+}

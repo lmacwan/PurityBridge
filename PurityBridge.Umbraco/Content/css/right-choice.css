@@ -1,0 +1,20 @@
+﻿.spannedItems .left .align,
+.spannedItems .right .align {
+    float: right;
+    margin-left: 20px;
+}
+
+/* 10000
+   1280
+*/
+.nb .align,
+.nb1280 .align {
+    width: 250px;
+    height: 350px;
+}
+
+/* 1024 */
+.nb1024 .align {
+    width: 200px;
+    height: 280px;
+}

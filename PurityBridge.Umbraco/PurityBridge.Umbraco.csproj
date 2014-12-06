@@ -646,6 +646,7 @@
     <Content Include="Content\css\benefits.css" />
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\category.css" />
+    <Content Include="Content\css\clinic.css" />
     <Content Include="Content\css\color-blue.css" />
     <Content Include="Content\css\color-cyan.css" />
     <Content Include="Content\css\color-green.css" />
@@ -674,6 +675,7 @@
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\pricelist.css" />
+    <Content Include="Content\css\right-choice.css" />
     <Content Include="Content\css\spastyle.css" />
     <Content Include="Content\css\textcontent.css" />
     <Content Include="Content\css\testimonial.css" />
@@ -967,6 +969,10 @@
     <Content Include="scripts\library.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\modernizr.custom.js" />
+    <Content Include="scripts\restive.min.js" />
+    <Content Include="scripts\restive\clinic.js" />
+    <Content Include="scripts\restive\home.js" />
+    <Content Include="scripts\restive\right-choice.js" />
     <Content Include="scripts\spascript.js" />
     <Content Include="scripts\_references.js" />
     <Content Include="umbraco\Actions\delete.aspx" />
@@ -3679,7 +3685,6 @@
     <Content Include="config\404handlers.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\oldFiles.zip" />
     <Content Include="Content\fonts\fontawesome-webfontba72.eot" />
     <Content Include="Content\fonts\fontawesome-webfontba72.ttf" />
     <Content Include="Content\fonts\fontawesome-webfontba72.woff" />

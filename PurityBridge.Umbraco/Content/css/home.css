@@ -1,289 +1,332 @@
 ul, ol {
-        list-style: outside none none;
-    }
+    list-style: outside none none;
+}
 
-    a {
-        background: none repeat scroll 0 0 transparent;
-        color: #00aba5;
-        cursor: pointer;
-        text-decoration: none;
-    }
+a {
+    background: none repeat scroll 0 0 transparent;
+    color: #00aba5;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-    .comments {
-        background: none repeat scroll 0 0 #4dc4c0;
-        color: white;
-        padding: 25px 0 20px;
-        text-align: center;
-        margin-top: -20px;
-    }
+.comments {
+    background: none repeat scroll 0 0 #4dc4c0;
+    color: white;
+    padding: 25px 0 20px;
+    text-align: center;
+    margin-top: -20px;
+}
 
-        .comments .tab {
-            position: relative;
-            width: 53%;
-            float: right;
-        }
-
-        .comments .box {
-            display: none;
-            padding: 0 25px 55px;
-            height: 230px;
-            overflow: hidden;
-        }
-
-
-            .comments .box.visible {
-                display: block;
-            }
-
-
-        .comments .tabs {
-            display: block;
-            font-size: 0;
-            line-height: 0;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-            .comments .tabs li {
-                background-color: rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
-                cursor: pointer;
-                display: inline-block;
-                height: 11px;
-                margin: 0 8px;
-                transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s;
-                width: 11px;
-                padding-top: 0px;
-            }
-
-                .comments .tabs li.active {
-                    background-color: transparent;
-                    box-shadow: 0 0 0 2px white;
-                }
-
-
-        .comments .tab-prev, .comments .tab-next, .button-download:after {
-            background: url("../images/sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-        }
-
-        .comments .tab-prev, .comments .tab-next {
-            background-position: 0 0;
-            height: 16px;
-            left: 98px;
-            opacity: 0.5;
-            position: absolute;
-            top: 94px;
-            width: 23px;
-        }
-
-
-        .comments .box h4 {
-            font: 500 29px/46px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
-            margin-bottom: 5px;
-        }
-
-        .comments .box p {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 32px;
-        }
-
-    .clearfix {
-        display: block;
-    }
-
-        .clearfix .grid-row {
-            margin: 0 auto;
-            z-index: 1000;
-        }
-
-    .promo-wrapper {
-        margin: 0 -15px;
-    }
-
-
-    .promo-column {
-        box-sizing: border-box;
-        float: left;
-        padding: 0 15px 60px;
-        width: 25%;
-    }
-
-
-        .promo-column h5 {
-            font: bold 18px/24px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-    .grid-row.wrap {
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-
-    .newsletter {
-        background: none repeat scroll 0 0 rgba(206, 206, 206, 0.2);
-        padding: 25px 0 50px;
-        text-align: center;
-    }
-
-    .newsletter-title {
-        font-weight: bold;
-        letter-spacing: 1px;
-        margin-bottom: 28px;
-        text-transform: uppercase;
-        font-size: 28px;
-    }
-
-    .newsletter-form {
-        box-sizing: border-box;
-        display: inline-block;
-        height: 48px;
-        margin-bottom: 22px;
-        max-width: 556px;
-        min-width: 556px;
-        padding-right: 169px;
+    .comments .tab {
         position: relative;
+        width: 53%;
+        float: right;
     }
 
-    .input-text, .textarea {
-        background: none repeat scroll 0 0 white !important;
-        border: 2px solid #d8d8d8 !important;
-        border-radius: 5px !important;
-        box-sizing: border-box !important;
-        float: left;
-        font-weight: 500;
-        font-size: 17px/34px;
-        height: 48px !important;
-        padding: 10px 21px !important;
-        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
-        width: 100% !important;
+    .comments .box {
+        display: none;
+        padding: 0 25px 55px;
+        height: 230px;
+        overflow: hidden;
     }
 
-    input[type="button"], input[type="submit"], input[type="reset"], button {
-        cursor: pointer;
+
+        .comments .box.visible {
+            display: block;
+        }
+
+
+    .comments .tabs {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        text-align: center;
+        margin-top: 5px;
     }
 
-    .newsletter-form .button {
-        padding-left: 0;
-        padding-right: 0;
+        .comments .tabs li {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+            cursor: pointer;
+            display: inline-block;
+            height: 11px;
+            margin: 0 8px;
+            transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s;
+            width: 11px;
+            padding-top: 0px;
+        }
+
+            .comments .tabs li.active {
+                background-color: transparent;
+                box-shadow: 0 0 0 2px white;
+            }
+
+
+    .comments .tab-prev, .comments .tab-next, .button-download:after {
+        background: url("../images/sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    }
+
+    .comments .tab-prev, .comments .tab-next {
+        background-position: 0 0;
+        height: 16px;
+        left: 98px;
+        opacity: 0.5;
         position: absolute;
-        right: 0;
-        top: 0;
-        width: 149px;
-        background: none repeat scroll 0 0 #00aba5;
-        border: 2px solid #00aba5;
-        border-radius: 5px;
-        box-sizing: border-box;
-        color: white;
-        height: 48px;
-        font-size: 16px;
-        padding: 0 21px;
-        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
-        line-height: 20px;
+        top: 94px;
+        width: 23px;
     }
 
-    .newsletter p {
-        clear: both;
-        font-size: 16px;
-        line-height: 28px;
+
+    .comments .box h4 {
+        font: 500 29px/46px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+        margin-bottom: 5px;
+    }
+
+    .comments .box p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 32px;
+    }
+
+.clearfix {
+    display: block;
+}
+
+    .clearfix .grid-row {
         margin: 0 auto;
-        max-width: 556px;
+        z-index: 1000;
     }
 
-    .mask {
-        border: 3px solid #cecece;
+.promo-wrapper {
+    margin: 0 -15px;
+}
+
+
+.promo-column {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 15px 60px;
+    width: 25%;
+}
+
+
+    .promo-column h5 {
+        font: bold 18px/24px "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+.grid-row.wrap {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.newsletter {
+    background: none repeat scroll 0 0 rgba(206, 206, 206, 0.2);
+    padding: 25px 0 50px;
+    text-align: center;
+}
+
+.newsletter-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.newsletter-form {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 48px;
+    margin-bottom: 22px;
+    max-width: 556px;
+    min-width: 556px;
+    padding-right: 169px;
+    position: relative;
+}
+
+.input-text, .textarea {
+    background: none repeat scroll 0 0 white !important;
+    border: 2px solid #d8d8d8 !important;
+    border-radius: 5px !important;
+    box-sizing: border-box !important;
+    float: left;
+    font-weight: 500;
+    font-size: 17px/34px;
+    height: 48px !important;
+    padding: 10px 21px !important;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+    width: 100% !important;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button {
+    cursor: pointer;
+}
+
+.newsletter-form .button {
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 149px;
+    background: none repeat scroll 0 0 #00aba5;
+    border: 2px solid #00aba5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    height: 48px;
+    font-size: 16px;
+    padding: 0 21px;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+    line-height: 20px;
+}
+
+.newsletter p {
+    clear: both;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 auto;
+    max-width: 556px;
+}
+
+.mask {
+    border: 3px solid #cecece;
     height: 700px;
     margin-left: -100px;
     margin-top: -440px;
     overflow: hidden;
     padding-left: 96px;
     width: 800px;
+}
+
+    .mask .mask-wrapper {
+        height: 360px;
+        /* margin-left: -100px; */
+        margin-top: 412px;
     }
 
-        .mask .mask-wrapper {
-		height: 360px;
-    /* margin-left: -100px; */
-    margin-top: 412px;
+        .mask .mask-wrapper img {
+            height: 100%;
+            width: 100%;
         }
 
-            .mask .mask-wrapper img {
-               height: 100%;
-		    width: 100%;
-            }
-
-		.mask, .mask .mask-wrapper, .mask .mask-wrapper img 		{
-			border-radius: 0px 0px 60% 46%;
-		}
-
-    .box .img-hide {
-        display: none;
-    }
-
-
-    .treatments {
-        background: none repeat scroll 0 0 #ffffff;
-        padding: 40px 0px 50px 0px;
-        text-align: center;
-    }
-
-    .treatments-wrap {
-        position: relative;
-        height: 198px;
-        overflow: hidden;
-        border: solid #00aba5;
-        border-width: 3px 1px 0px 1px;
-    }
-
-    .treatments-wrap, .treatment-image {
-            border-radius: 30% 30% 0% 0%;
-    }
-
-    .treatment-image {
-        height: 100%;
-        width: 100%;
-    }
-
-    .treatment-heading {
-        position: absolute;
-        height: 50px;
-        background-color: rgba(255,255,255,0.6);
-        color: rgba(0,0,0, 0.6);
-        border-top: solid 1px rgba(0,0,0,0.6);
-        width: 100%;
-        top: 100%;
-        margin-top: -50px;
-        vertical-align: middle;
-        /* padding-top: 15px; */
-        font-size: 18px;
-        line-height: 50px;
-        font-weight: bold;
-    }
-
-    .treatments .grid-col {
-        margin-left: 30px;
-    }
-
-        .treatments .grid-col:first-child {
-            margin-left: 0px;
+        .mask, .mask .mask-wrapper, .mask .mask-wrapper img {
+            border-radius: 0px 0px 60% 46%;
         }
 
-    .treatments .treatment-text p {
-        clear: both;
-        font-size: 18px;
-        line-height: 40px;
-        margin: 0 auto;
-        max-width: 870px;
-        padding-top: 20px;
+.box .img-hide {
+    display: none;
+}
+
+
+.treatments {
+    background: none repeat scroll 0 0 #ffffff;
+    padding: 40px 0px 50px 0px;
+    text-align: center;
+}
+
+.treatments-wrap {
+    position: relative;
+    height: 198px;
+    overflow: hidden;
+    border: solid #00aba5;
+    border-width: 3px 1px 0px 1px;
+}
+
+.treatments-wrap, .treatment-image {
+    border-radius: 30% 30% 0% 0%;
+}
+
+.treatment-image {
+    height: 100%;
+    width: 100%;
+}
+
+.treatment-heading {
+    position: absolute;
+    height: 50px;
+    background-color: rgba(255,255,255,0.6);
+    color: rgba(0,0,0, 0.6);
+    border-top: solid 1px rgba(0,0,0,0.6);
+    width: 100%;
+    top: 100%;
+    margin-top: -50px;
+    vertical-align: middle;
+    /* padding-top: 15px; */
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.treatments .grid-col {
+    margin-left: 30px;
+}
+
+    .treatments .grid-col:first-child {
+        margin-left: 0px !important;
     }
 
-        .treatments .treatment-text p:first-child {
-            margin-top: 40px;
-        }
+.treatments .treatment-text p {
+    clear: both;
+    font-size: 18px;
+    line-height: 40px;
+    margin: 0 auto;
+    max-width: 870px;
+    padding-top: 20px;
+}
 
-    .treatments .treatment-link {
-        text-decoration: none;
-        background: none;
-        cursor: pointer;
+    .treatments .treatment-text p:first-child {
+        margin-top: 40px;
     }
+
+.treatments .treatment-link {
+    text-decoration: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* 1440 */
+.nb1440 .comments .box {
+    padding: 0 30px 55px;
+}
+
+.nb1444 .mask {
+    width: 850px;
+}
+
+/* 1280 */
+.nb1280 .comments .box {
+    padding: 0 16px 55px;
+}
+
+.nb1280 .comments .tab,
+.nb1024 .comments .tab {
+    width: 50%;
+}
+
+/* 1240 */
+.nb1240 .comments .box {
+    display: none;
+    padding: 0 35px 55px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.nb1024 .grid li {
+    width: 220px;
+}
+
+.nb1024 .comments .box p {
+    line-height: 25px;
+}
+
+.nb1024 .mask {
+    width: 666px;
+}
+
+.nb1024 .treatments .grid-col {
+    margin-left: 20px;
+}

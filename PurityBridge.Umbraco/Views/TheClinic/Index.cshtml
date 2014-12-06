@@ -1,42 +1,6 @@
 ﻿@using Umbraco.Core.Models
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.Models.RenderModel>
-
-<style>
-    .centered.vc_row-fluid [class*="vc_span"]:first-child {
-        margin: auto !important;
-    }
-
-    .centered.vc_row-fluid [class*="vc_span"] {
-        float: none;
-    }
-
-    .page-title {
-        margin-bottom: 0px;
-    }
-
-    main .grid-row:first-child {
-        margin: -120px auto 60px;
-    }
-
-    .grid li {
-        height: initial;
-        width: initial;
-    }
-
-    .grid figure {
-        height: 270px;
-        width: 350px;
-    }
-
-        .grid figure img {
-            max-width: 350px;
-        }
-
-    .cs-style-3 figcaption {
-        width: 344px;
-    }
-</style>
-
+<link href="~/Content/css/clinic.css" rel="stylesheet" />
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.UrlPrefix = string.Empty;
@@ -46,60 +10,62 @@
     if (clinicData.Any())
     {
         var clinicDataChildren = clinicData.First().GetChildNodesByType("TreatmentsCategory");
-@*<div class="vc_row-fluid centered">
-        <div class="vc_span9">
-            <section class="widget photo-tour photo-tour-3" id="photo-tour">
-                <div class="grid isotope">
-                    @foreach (umbraco.NodeFactory.Node child in clinicDataChildren.WhereNotNull())
-                    {
-                        url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), child.UrlName); ;
-                        <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
-                            <div class="pic">
-                                <img src="@Umbraco.TypedContent(child.Id).GetCropUrl("thumbnail", "thumb")" alt="@child.Name"/>
-                                <div class="links">
-                                    <ul>
-                                        <li><a href="@url" class="fa fa-mail-forward"></a></li>
-                                    </ul>
+        @*<div class="vc_row-fluid centered">
+                <div class="vc_span9">
+                    <section class="widget photo-tour photo-tour-3" id="photo-tour">
+                        <div class="grid isotope">
+                            @foreach (umbraco.NodeFactory.Node child in clinicDataChildren.WhereNotNull())
+                            {
+                                url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), child.UrlName); ;
+                                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                                    <div class="pic">
+                                        <img src="@Umbraco.TypedContent(child.Id).GetCropUrl("thumbnail", "thumb")" alt="@child.Name"/>
+                                        <div class="links">
+                                            <ul>
+                                                <li><a href="@url" class="fa fa-mail-forward"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3>@child.Name</h3>
+                                    <p></p>
                                 </div>
-                            </div>
-                            <h3>@child.Name</h3>
-                            <p></p>
+                            }
                         </div>
-                    }
+                    </section>
                 </div>
-            </section>
-        </div>
-    </div>*@
+            </div>*@
         //var highlightsContent = Umbraco.TypedContent(highlights.First().Id);
-    @section HighlightsSection {
-        @Html.Partial("_HighlightsPartial", clinicData.First())
-    }
-    
-    <div id="page-content" class="vc_row-fluid beautify">
-        @Html.Partial("_ContentPartial", Umbraco.TypedContent(clinicData.First().GetDescendantNodesByType("content").First().Id))
-    </div>
+        @section HighlightsSection {
+            @Html.Partial("_HighlightsPartial", clinicData.First())
+        }
+
+        <div id="page-content" class="vc_row-fluid beautify">
+            @Html.Partial("_ContentPartial", Umbraco.TypedContent(clinicData.First().GetDescendantNodesByType("content").First().Id))
+        </div>
         IPublishedContent treatment = null;
         string treatmentUrl;
-    <div class="vc_row-fluid">
-
-        @foreach (var list in Umbraco.TypedContent(clinicData.First().Id).Children(c => c.DocumentTypeAlias == "List"))
-        {
-            <div class="vc_span4">
-                <!-- categories -->
-                <section class="widget widget-sevices">
-                    <div class="widget-title">@list.GetPropertyValue("text")</div>
-                    <ul>
-                        @foreach (var listItem in list.Children)
-                        {
-                            treatment = Umbraco.TypedContent(listItem.GetPropertyValue<int>("relatedPage"));
-                            treatmentUrl = treatment.Parent.Url + treatment.UrlName;
-                            <li><i class="fa fa-bookmark"></i><a href="@treatmentUrl">@listItem.GetPropertyValue("heading")</a></li>
-                        }
-                    </ul>
-                </section>
-                <!--/ categories -->
-            </div>
-        }
-    </div>
+        <div class="vc_row-fluid">
+            @foreach (var list in Umbraco.TypedContent(clinicData.First().Id).Children(c => c.DocumentTypeAlias == "List"))
+            {
+                <div class="vc_span4">
+                    <!-- categories -->
+                    <section class="widget widget-sevices">
+                        <div class="widget-title">@list.GetPropertyValue("text")</div>
+                        <ul>
+                            @foreach (var listItem in list.Children)
+                            {
+                                treatment = Umbraco.TypedContent(listItem.GetPropertyValue<int>("relatedPage"));
+                                treatmentUrl = treatment.Parent.Url + treatment.UrlName;
+                                <li><i class="fa fa-bookmark"></i><a href="@treatmentUrl">@listItem.GetPropertyValue("heading")</a></li>
+                            }
+                        </ul>
+                    </section>
+                    <!--/ categories -->
+                </div>
+            }
+        </div>
     }
+}
+@section scripts {
+    <script src="~/scripts/restive/clinic.js"></script>
 }

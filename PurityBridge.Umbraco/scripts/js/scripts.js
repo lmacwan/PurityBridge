@@ -1,4 +1,12 @@
 $(document).ready(function () {
+
+
+    $('body').restive({
+        breakpoints: ['10000'],
+        classes: ['nb']
+    });
+
+
     $("video").attr("preload", "none");
     $(".detailed-services dt.opened").next().slideToggle('fast');
     $(".widget-contacts dt.opened").next().slideToggle('fast');
@@ -148,6 +156,7 @@ function init_map() {
 /* on resize event */
 /**/
 $(window).resize(function () {
+
     /**/
     /* benefits */
     /**/

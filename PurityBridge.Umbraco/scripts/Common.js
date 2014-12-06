@@ -1,10 +1,12 @@
 function onDocumentReady() {
-	
-	if( Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
-		//Safari
-		$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '/Content/css/safari.css') );
-	}
-    
+
+    pagePreDocumentReady();
+
+    if (Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
+        //Safari
+        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '/Content/css/safari.css'));
+    }
+
 
     // Active Menu-Item
     $("header .active").removeClass("active");
@@ -54,7 +56,32 @@ function onDocumentReady() {
     });
 
     $("#umbracoPreviewBadge").remove();
+
+    pagePostDocumentReady();
 }
+
+function handleScreenSize() {
+    var screen = $("div.page");
+    var width = window.innerWidth;
+    if (width > 1253) {
+        screen.removeClass('tablet');
+        screen.removeClass('lscreen')
+    } else if (width > 1188) {
+        /* 
+            handle : 1239
+        */
+        screen.addClass('lscreen')
+        screen.removeClass('tablet');
+    }
+    else if (width > 982) {
+
+    }
+    else {
+        screen.addClass('tablet');
+        screen.removeClass('lscreen');
+    }
+}
+
 
 function setMargin(parent) {
     var width = 0;
@@ -73,7 +100,7 @@ function setMargin(parent) {
 
 function getPhoto(photoId) {
     $.ajax({
-        url: "/gallery/photos/get/"+photoId,
+        url: "/gallery/photos/get/" + photoId,
         success: function (data) {
             $('#' + photoId).fancybox({
                 content: data,
@@ -82,9 +109,9 @@ function getPhoto(photoId) {
                 width: 850
             });
             $('#' + photoId).click();
-		$('.fancybox-content .pic .image-div').each(function(i, e) {
-  $(e).css({lineHeight: $(e).parentsUntil('.pic').last().find('.before .mask').first().height()+'px'});
-	 });
+            $('.fancybox-content .pic .image-div').each(function (i, e) {
+                $(e).css({ lineHeight: $(e).parentsUntil('.pic').last().find('.before .mask').first().height() + 'px' });
+            });
         },
         error: function (data) {
             alert("Error : " + data);

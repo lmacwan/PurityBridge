@@ -15,13 +15,15 @@
                 var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
                             ? "/underconstruction"
                             : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
-                <li>
+                <li class="grid-col grid-col-3">
                     <figure class="cs-hover">
                         <img alt="@highlightItem.GetProperty("heading")" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
 
-                        <a href="@url"><figcaption>
-                            <h3>@highlightItem.GetProperty("heading")</h3>
-                        </figcaption></a>
+                        <a href="@url">
+                            <figcaption>
+                                <h3>@highlightItem.GetProperty("heading")</h3>
+                            </figcaption>
+                        </a>
                     </figure>
                     <p></p>
                 </li>
@@ -42,13 +44,15 @@ else if (Model.NodeTypeAlias == "ClinicData")
                 var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
                             ? "/underconstruction"
                             : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
-                <li>
+                <li class="grid-col grid-col-6">
                     <figure class="cs-hover">
                         <img alt="@highlightItem.GetProperty("heading")" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
 
-                        <a href="@url"><figcaption>
-                            <h3>@highlightItem.GetProperty("heading")</h3>
-                        </figcaption></a>
+                        <a href="@url">
+                            <figcaption>
+                                <h3>@highlightItem.GetProperty("heading")</h3>
+                            </figcaption>
+                        </a>
                     </figure>
                     <p></p>
                 </li>
