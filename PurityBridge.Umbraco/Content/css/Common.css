@@ -1,4 +1,4 @@
-﻿/*
+/*
     ============================================
         Header
     ============================================
@@ -107,3 +107,19 @@
     .page-title nav {
         margin-right: 0px !important;
     }
+
+/* 1024 */
+.nb1024 .grid-col-9 {
+    border-right: 1px solid #cecece;
+    padding-right: 15px;
+    width: 650px !important;
+}
+
+.nb1024 .grid-col-3 {
+    margin-left: 20px;
+}
+
+.nb1024 .photo-tour h3 {
+	font-size: 15px;
+}
+

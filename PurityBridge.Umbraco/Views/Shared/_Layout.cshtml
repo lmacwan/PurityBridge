@@ -8,11 +8,12 @@
     <title>@ViewBag.Title</title>
     <!-- metas -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content='Welcome to Purity Bridge - the private cosmetic clinic based in Tunbridge Wells. Call 01892 536 960 to make an appointment.' />
     <meta name="keywords" content='purity bridge,Minor surgery,beauty therapy,Pacifico,Private cosmetic clinic,Tunbridge Wells,Royal Tunbridge wells,holistic,skin care,facial rejuvenation,body conturing,medical skin care,cosmetic surgery,Consultant plastic surgeon,Marc Pacifico,Mark Pacifico,advanced beauty therapists,South East clinic,BAAPS accredited,BAPRAS,Personalised skin care,TWPS,Tunbridge Wells Plastic Surgery,CQC approved,Care Quality commission,Private consulting' />
     <meta name="author" content='Purity Bridge' />
+    <meta name="pageId" id="pageId" content="@Model.Content.Id" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <!--/ metas -->
     <!-- styles -->
@@ -22,6 +23,8 @@
     <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
     <link href="/Content/css/owl.carousel.css" rel="stylesheet" />
     <link href="/Content/css/jquery.fancybox.css" rel="stylesheet" />
+
+    <link href="~/Content/css/composer.css" rel="stylesheet" />
     <link href="/Content/css/styles.css" rel="stylesheet" />
     <link href="/Content/css/color-cyan.css" rel="stylesheet" />
     <link href="~/Content/tuner/css/styles.css" rel="stylesheet" />
@@ -32,7 +35,10 @@
 </head>
 <body>
     <div class="page">
-        @{ Html.RenderPartial("_HeaderPartial"); }
+        @{ Html.RenderPartial("_HeaderPartial");
+           
+           Model.Content.GetPropertyValue }
+
 
         @{ Html.RenderPartial("_SearchPartial"); }
         @{ Html.RenderPartial("_PageTitlePartial"); }

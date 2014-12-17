@@ -63,21 +63,3 @@
         @Html.Raw(content)
     </div>
 }
-
-@section scripts {
-    <script>
-        $(document).ready(function () {
-            $('.wpb_wrapper:first-child').each(function (i, e) {
-                var eHeight = $(e).find('.alignleft').outerHeight();
-                var lastChildHeight = $(e).outerHeight();
-                if (eHeight > lastChildHeight) {
-                    $(e).css({ paddingBottom: eHeight - lastChildHeight - 34 });
-                }
-            });
-
-            $('.read-more').fancybox({
-                autoDimensions: true
-            });
-        });
-    </script>
-}

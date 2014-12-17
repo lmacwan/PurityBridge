@@ -2,7 +2,7 @@
     border: 1px solid #e4e4e4;
     padding: 3px;
     margin-bottom: 20px !important;
-        float: right;
+    float: right;
     margin-left: 20px;
 }
 
@@ -88,4 +88,22 @@
 
 .wpb_wrapper img, .wpb_text_column {
     min-height: 316px;
+}
+
+/* 1024 */
+.nb1024 .wpb_wrapper img, .wpb_text_column {
+    min-height: 240px;
+}
+
+.nb1024 .align {
+    width: 172px;
+}
+
+/* 1280 */
+.nb1280 .wpb_wrapper img, .wpb_text_column {
+    min-height: 280px;
+}
+
+.nb1280 .align{
+    width: 200px;
 }

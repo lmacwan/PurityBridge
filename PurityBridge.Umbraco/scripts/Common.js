@@ -1,12 +1,18 @@
 function onDocumentReady() {
 
-    pagePreDocumentReady();
+    $('body').restive({
+        breakpoints: ['1024', '1240', '1280', '1440', '1920', '10000'],
+        classes: ['nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
+        platform: 'all',
+        force_dip: true
+    });
 
     if (Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
         //Safari
         $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '/Content/css/safari.css'));
     }
 
+    $('#tuner label:first-child').prepend('<div>Width = ' + $(window).innerWidth() + '</div>');
 
     // Active Menu-Item
     $("header .active").removeClass("active");
@@ -56,32 +62,43 @@ function onDocumentReady() {
     });
 
     $("#umbracoPreviewBadge").remove();
-
-    pagePostDocumentReady();
 }
 
-function handleScreenSize() {
-    var screen = $("div.page");
-    var width = window.innerWidth;
-    if (width > 1253) {
-        screen.removeClass('tablet');
-        screen.removeClass('lscreen')
-    } else if (width > 1188) {
-        /* 
-            handle : 1239
-        */
-        screen.addClass('lscreen')
-        screen.removeClass('tablet');
-    }
-    else if (width > 982) {
+function handlePadding() {
+    if (window.location.href.split('clinic/').length > 1) {
+        var cols = $('.vc_row-fluid.spannedItems').children().length;
+        var cols2 = $('.vc_row-fluid.spannedItems').children();
+        $('.wpb_text_column.wpb_content_element').each(function (i, e) {
 
+            if (i % cols == 0) {
+                cols2.each(function (ai, ae) {
+                    var len2 = 0;
+                    var arr2 = $(ae).find('.wpb_text_column.wpb_content_element');
+                    if (arr2.length >= i) {
+                        len2 = $(arr2[i]).outerHeight();
+                        if (len2 > $(e).outerHeight()) {
+                            $(e).siblings('.leftwarpper').css({ paddingTop: len2 - $(e).outerHeight() });
+                        } else {
+                            $(arr2[i]).siblings('.leftwarpper').css({ paddingTop: $(e).outerHeight() - len2 });
+                        }
+                    }
+                });
+            } $(e).css('padding-bottom', '20px');
+        });
     }
-    else {
-        screen.addClass('tablet');
-        screen.removeClass('lscreen');
-    }
+    $('.read-more').fancybox({
+        autoDimensions: true
+    });
 }
 
+function handleBlogPadding() {
+    $('.wpb_text_column.wpb_content_element').each(function (i, e) {
+        var arr2 = $(e).find('img');
+        if ($(arr2).outerHeight() > $(e).outerHeight()) {
+            $(e).css({ paddingBottom: $(arr2).outerHeight() - $(e).outerHeight() - 28 });
+        }
+    });
+}
 
 function setMargin(parent) {
     var width = 0;
@@ -163,12 +180,18 @@ jQuery.cachedScript = function (url, options) {
 $(window).load(function () {
     $('#ui-datepicker-div').addClass('widget-calendar');
 
-    // PhototextContent
-    var height = 0;
-    //$('.spannedItems .wpb_text_column.wpb_content_element').each(function (i, e) {
-    //    height = $(e).find('img').first().outerHeight() - $(e).find('p').first().outerHeight();
-    //    if ($(e).find('img').first().outerHeight() > $(e).outerHeight()) {
-    //        $(e).children().last().css({ paddingBottom: height });
-    //    }
-    //});
+    if (window.location.href.toString().indexOf('/blog') > 0) {
+        handleBlogPadding();
+    }
+    else {
+        handlePadding();
+    }
+
+	var i = $('#postPageBody img:not(.align)');
+	if(i.length == 0) {
+		$('#postPageBody .wpb_wrapper').hide();
+	}else {
+		i.first().hide();
+		$('#postPageBody .wpb_wrapper img').attr('src', i.first().attr('src'));
+	}
 });

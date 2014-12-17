@@ -128,8 +128,8 @@ function twitter_carousel_init() {
 /**/
 
 function init_map() {
-    var coordLat = 51.13234;
-    var coordLng = 0.26370;
+    var coordLat = 51.137;
+    var coordLng = 0.261068;
     if (jQuery(window).width() < 756) {
         delta = 0;
     }

@@ -1,4 +1,4 @@
-﻿#relatedTreatmentLinksSection .relatedTeaatmentLink .more {
+#relatedTreatmentLinksSection .relatedTeaatmentLink .more {
     background: none repeat scroll 0 0 #00aba5;
     border: 2px solid #00aba5;
     color: #fff;
@@ -57,3 +57,31 @@
         padding: 0 !important;
         position: relative !important;
     }
+
+/* 1024 */
+.nb1024 #relatedTreatmentLinksSection .relatedTeaatmentLink .read-more {
+    font-size: 14px;
+}
+
+.nb1024 .doctors-carousel h3 {
+    font-size: 15px;
+}
+
+.nb1024 .widget-appointment i, i.appointment {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.nb1024 .widget-appointment input {
+    height: 40px;
+    padding: 13px 10px 13px 60px;
+}
+
+.nb1024 .beautify p, .beautify article, .beautify h3 {
+    padding-right: 15px;
+}
+
+.nb1024 .widget-departments dl {
+    margin-right: 10px;
+}

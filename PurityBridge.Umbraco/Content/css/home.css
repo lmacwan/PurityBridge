@@ -315,6 +315,8 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
     overflow: hidden;
 }
 
+
+/* 1024 */
 .nb1024 .grid li {
     width: 220px;
 }
@@ -329,4 +331,14 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 
 .nb1024 .treatments .grid-col {
     margin-left: 20px;
+}
+
+.nb1024 .treatments .treatment-text p {
+    font-size: 18px;
+    line-height: 36px;
+    max-width: 870px;
+}
+
+.nb1024 .treatments .treatment-text p:first-child {
+    margin-top: 10px;
 }

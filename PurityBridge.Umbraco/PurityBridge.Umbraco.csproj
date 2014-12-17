@@ -656,6 +656,7 @@
     <Content Include="Content\css\Common.css" />
     <Content Include="Content\css\Common_old.css" />
     <Content Include="Content\css\Common1.css" />
+    <Content Include="Content\css\composer.css" />
     <Content Include="Content\css\demo\csshover3.htc" />
     <Content Include="Content\css\demo\img\01.jpg" />
     <Content Include="Content\css\demo\img\02.jpg" />
@@ -974,6 +975,7 @@
     <Content Include="scripts\restive\home.js" />
     <Content Include="scripts\restive\right-choice.js" />
     <Content Include="scripts\spascript.js" />
+    <Content Include="scripts\restive\team.js" />
     <Content Include="scripts\_references.js" />
     <Content Include="umbraco\Actions\delete.aspx" />
     <Content Include="umbraco\Actions\editContent.aspx" />
@@ -3620,6 +3622,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WebServices\SmartBlogService.asmx" />
     <Content Include="xslt\Web.config" />
   </ItemGroup>
   <ItemGroup>

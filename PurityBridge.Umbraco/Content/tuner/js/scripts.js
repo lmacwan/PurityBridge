@@ -5,7 +5,8 @@ $(function()
 {
 	$('#tuner-switcher').on('click', function()
 	{
-		$('#tuner').toggleClass('tuner-visible');
+	    $('#tuner').toggleClass('tuner-visible');
+	    $('#tuner label:first-child div').text('Width = ' + $(window).innerWidth());
 	});
 	
 	$('#tuner').on('click', '.colors li', function()
