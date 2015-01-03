@@ -19,7 +19,7 @@
                             url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), child.UrlName);
                             <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                                 <div class="pic">
-                                    <img width="370" height="195" alt="@child.Name" src="@Umbraco.TypedContent(child.Id).GetCropUrl("thumbnail", "thumb")">
+                                    <img width="370" height="195" alt="@child.GetProperty("thumbnailImageAltValue").Value" src="@Umbraco.TypedContent(child.Id).GetCropUrl("thumbnail", "thumb")">
                                     <div class="links">
                                         <ul>
                                             <li><a href="@url" class="fa fa-mail-forward"></a></li>
