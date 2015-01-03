@@ -1,17 +1,22 @@
 ﻿@inherits UmbracoTemplatePage
 @{
     Layout = null;
+    var metaTitle = Model == null ? "" : Model.Content.GetPropertyValue("pageTitle");
+    var metaDescription = Model == null ? "" : Model.Content.GetPropertyValue("description");
+    var metaKeywords = Model == null ? "" : Model.Content.GetPropertyValue("keywords") == null ? "" : Model.Content.GetPropertyValue("keywords").ToString().Trim().Replace('\n' + "", ",");
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@ViewBag.Title</title>
+        <title>
+            @metaTitle
+        </title>
     <!-- metas -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="description" content='Welcome to Purity Bridge - the private cosmetic clinic based in Tunbridge Wells. Call 01892 536 960 to make an appointment.' />
-    <meta name="keywords" content='purity bridge,Minor surgery,beauty therapy,Pacifico,Private cosmetic clinic,Tunbridge Wells,Royal Tunbridge wells,holistic,skin care,facial rejuvenation,body conturing,medical skin care,cosmetic surgery,Consultant plastic surgeon,Marc Pacifico,Mark Pacifico,advanced beauty therapists,South East clinic,BAAPS accredited,BAPRAS,Personalised skin care,TWPS,Tunbridge Wells Plastic Surgery,CQC approved,Care Quality commission,Private consulting' />
+    <meta name="description" content="@metaDescription" />
+    <meta name="keywords" content="@metaKeywords" />
     <meta name="author" content='Purity Bridge' />
     <meta name="pageId" id="pageId" content="@Model.Content.Id" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -35,9 +40,7 @@
 </head>
 <body>
     <div class="page">
-        @{ Html.RenderPartial("_HeaderPartial");
-           
-           Model.Content.GetPropertyValue }
+        @{ Html.RenderPartial("_HeaderPartial"); }
 
 
         @{ Html.RenderPartial("_SearchPartial"); }
@@ -105,24 +108,24 @@
     @RenderSection("scripts", required: false)
     <!--/ scripts -->
     <!-- tuner -->
-    <script src="/Content/tuner/js/scripts.js"></script>
-    <div id="tuner" class="tuner">
-        <label>Theme Colors</label>
-        <ul class="colors">
-            <li data-color="blue" class="color-blue active"><span></span></li>
-            <li data-color="green" class="color-green"><span></span></li>
-            <li data-color="pink" class="color-pink"><span></span></li>
-            <li data-color="cyan" class="color-cyan"><span></span></li>
-            <li data-color="orange" class="color-orange"><span></span></li>
-            <li data-color="purple" class="color-purple"><span></span></li>
-        </ul>
-        <label>Layout Styles</label>
-        <ul class="layouts">
-            <li data-layout="boxed">Boxed</li>
-            <li data-layout="widescreen" class="active">Widescreen</li>
-        </ul>
-        <i id="tuner-switcher" class="fa fa-cogs"></i>
-    </div>
+    @*<script src="/Content/tuner/js/scripts.js"></script>
+        <div id="tuner" class="tuner">
+            <label>Theme Colors</label>
+            <ul class="colors">
+                <li data-color="blue" class="color-blue active"><span></span></li>
+                <li data-color="green" class="color-green"><span></span></li>
+                <li data-color="pink" class="color-pink"><span></span></li>
+                <li data-color="cyan" class="color-cyan"><span></span></li>
+                <li data-color="orange" class="color-orange"><span></span></li>
+                <li data-color="purple" class="color-purple"><span></span></li>
+            </ul>
+            <label>Layout Styles</label>
+            <ul class="layouts">
+                <li data-layout="boxed">Boxed</li>
+                <li data-layout="widescreen" class="active">Widescreen</li>
+            </ul>
+            <i id="tuner-switcher" class="fa fa-cogs"></i>
+        </div>*@
     <!--/ tuner -->
 </body>
 </html>

@@ -31,16 +31,23 @@
     }
     else if (documentType.Equals("testimonial"))
     {
-        @Html.Partial("TestimonialPartial", child)
+        if (!(child.GetPropertyValue<bool>("banner")))
+        {
+            Html.RenderPartial("TestimonialPartial", child);
+        }
     }
     else if (child.DocumentTypeAlias.Equals("testimonials", StringComparison.CurrentCultureIgnoreCase))
     {
-    <section class="testimonials-section">
-        @if (child.HasValue("heading"))
+        if (child.Children.Where(c => c.IsVisible() && !(c.GetPropertyValue<bool>("banner"))).Count() > 0)
         {
-            <div class="widget-title">@child.GetPropertyValue("heading") </div>
+            <section class="testimonials-section">
+                @if (child.HasValue("heading"))
+                {
+                    <div class="widget-title">@child.GetPropertyValue("heading") </div>
+                }
+
+                @Html.Partial("_ChildrenPartial", child)
+            </section>
         }
-        @Html.Partial("_ChildrenPartial", child)
-    </section>
     }
 }

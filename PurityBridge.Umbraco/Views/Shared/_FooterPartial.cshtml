@@ -30,12 +30,11 @@
                 <section class="widget-alt recent-posts">
                     <div class="widget-title">@masterConfigurations.GetProperty("headingRecentPosts")</div>
                     <ul>
-                        @foreach (IPublishedContent post in Umbraco.TypedContent(masterConfigurations.GetProperty<int>("relatedPost")).Children(c => c.DocumentTypeAlias == "SmartBlogComment").Take(2))
+                        @foreach (umbraco.NodeFactory.Node post in uQuery.GetNodesByType("SmartBlogPost").ToList().OrderByDescending(c => c.GetProperty<DateTime>("smartBlogDate")).Take(3))
                         {
-                            var date = post.CreateDate.ToString("dd MMM yyyy");
-                                            
+                            var date = post.GetProperty<DateTime>("smartBlogDate").ToString("dd MMM yyyy");
                             <li>
-                                <p><a href="javascript:void(0)">@post.GetProperty("smartBlogComment").GetValue("smartBlogComment")</a><br>@date</p>
+                                <p><a href="@post.Url">@post.GetProperty("smartBlogTitle").Value</a><br>@date</p>
                             </li>
                         }
                     </ul>

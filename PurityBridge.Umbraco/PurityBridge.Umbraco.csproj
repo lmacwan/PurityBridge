@@ -740,6 +740,7 @@
     <Content Include="Content\img\purple\work-time.png" />
     <Content Include="Content\img\select.png" />
     <Content Include="Content\img\white_bar.png" />
+    <Content Include="Content\Logo.png" />
     <Content Include="Content\php\capcha.html" />
     <Content Include="Content\php\image.html" />
     <Content Include="Content\pic\404_mask.png" />

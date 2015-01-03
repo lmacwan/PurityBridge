@@ -1,8 +1,8 @@
 function onDocumentReady() {
 
     $('body').restive({
-        breakpoints: ['1024', '1240', '1280', '1440', '1920', '10000'],
-        classes: ['nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
+        breakpoints: ['768-p', '1024', '1240', '1280', '1440', '1920', '10000'],
+        classes: ['nb768', 'nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
         platform: 'all',
         force_dip: true
     });
@@ -136,6 +136,31 @@ function getPhoto(photoId) {
     });
 }
 
+function subscribeNewsLetter() {
+    var subscribeEmail = $('.newsletter-form input[type=email]').first().val();
+    if (subscribeEmail.length > 0) {
+        var subscribeUrl = $('.newsletter-form form').attr('action');
+        $.ajax({
+            cache: false,
+            url: subscribeUrl,
+            type: "POST",
+            data: { email: subscribeEmail },
+            beforeSend: function () {
+                $('.subscription-msg').text($("div#email-procssing").text());
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    $('.subscription-msg').text($('div#email-procssing-success').text());
+                } else {
+                    $('.subscription-msg').text($('div#email-procssing-error').text());
+                }
+            }
+        });
+    }
+}
+
+
+
 function sendAppointmentEmail() {
     var fullName = $('#appointment-full-name').val();
     var phoneno = $('#appointment-phone').val();
@@ -152,6 +177,33 @@ function sendAppointmentEmail() {
                     $('#appointment-phone').val("");
                     $('#appointment-email').val("");
                     $('#appointment-message').val("");
+                }
+            },
+            error: function (data) {
+                alert(data);
+            }
+        });
+    }
+    else {
+        alert("Please provide your full name and email address.");
+    }
+    return false;
+}
+
+function sendContactUsEmail() {
+    var fullName = $('#inquiry-form-name').val();
+    var email = $('#inquiry-form-email').val();
+    var message = $('#inquiry-form-message').val();
+    if (fullName != "" && email != "") {
+        $.ajax({
+            url: "/umbraco/surface/subscription/ContactUs/",
+            data: { fullName: fullName, email: email, message: message },
+            success: function (data) {
+                alert(data.message);
+                if (data.success) {
+                    $('#inquiry-form-name').val("");
+                    $('#inquiry-form-email').val("");
+                    $('#inquiry-form-message').val("");
                 }
             },
             error: function (data) {
@@ -195,3 +247,4 @@ $(window).load(function () {
 		$('#postPageBody .wpb_wrapper img').attr('src', i.first().attr('src'));
 	}
 });
+

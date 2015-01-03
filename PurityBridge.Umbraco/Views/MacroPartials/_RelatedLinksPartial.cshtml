@@ -2,18 +2,21 @@
 
 <!-- help -->
 <section id="relatedLinksSection" class="widget doctors-carousel doctors">
-    <div class="widget-title">Similar Treatments</div>
+    @if (Model.Children(c => c.DocumentTypeAlias == "Link" && c.IsVisible()).Count() > 0)
+    {
+        <div class="widget-title">Similar Treatments</div>
 
-    <div id="help-carousel" class="owl-carousel">
-        @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
-        {
-            <div>
-                <ul>
-                    @RenderChildren(child)
-                </ul>
-            </div>
-        }
-    </div>
+        <div id="help-carousel" class="owl-carousel">
+            @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
+            {
+                <div>
+                    <ul>
+                        @RenderChildren(child)
+                    </ul>
+                </div>
+            }
+        </div>
+    }
 </section>
 <!--/ help -->
 @helper RenderChildren(IPublishedContent child)

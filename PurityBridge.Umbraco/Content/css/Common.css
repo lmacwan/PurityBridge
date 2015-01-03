@@ -13,7 +13,6 @@
     z-index: 10000;
 }
 
-
 .page-header .logo img {
     display: inline-block;
     height: 112px;
@@ -42,8 +41,6 @@
         line-height: 112px;
         padding: 0px 20px;
     }
-
-
 /*
     ============================================
         Header Shrink
@@ -108,6 +105,8 @@
         margin-right: 0px !important;
     }
 
+
+
 /* 1024 */
 .nb1024 .grid-col-9 {
     border-right: 1px solid #cecece;
@@ -123,3 +122,14 @@
 	font-size: 15px;
 }
 
+.nb1024 .footer-logo img {
+	margin-top: 0px;
+}
+
+.nb1024 .location li:first-child{
+	margin-top: 0px;
+}
+
+.nb1024 .location{
+	margin: 0px;
+}

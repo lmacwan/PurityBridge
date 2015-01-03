@@ -293,7 +293,7 @@ nav p {
         .main-nav li a {
             position: relative;
             display: block;
-            padding: 49px 20px 28px;
+            padding: 49px 16px 28px;
             font-size: 15px;
             line-height: 15px;
             color: #000;
@@ -5841,41 +5841,41 @@ i.appointment {
     -webkit-transition: background 0.3s, color 0.3s;
 }
 
-    .widget-contacts dt.opened.slide,
-    .widget-contacts dt.opened.slide + dd.slide {
-        color: #fff;
+.widget-contacts dt.opened.slide,
+.widget-contacts dt.opened.slide + dd.slide {
+    color: #fff;
+}
+
+    .widget-contacts dt.opened.slide:hover {
+        color: #fff !important;
     }
 
-        .widget-contacts dt.opened.slide:hover {
-            color: #fff !important;
-        }
+.widget-contacts dt.slide:after,
+.widget-contacts dt.slide:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    width: 12px;
+    height: 4px;
+    margin-top: -2px;
+}
 
-    .widget-contacts dt.slide:after,
-    .widget-contacts dt.slide:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 13px;
-        width: 12px;
-        height: 4px;
-        margin-top: -2px;
-    }
+.widget-contacts dt.slide:before {
+    right: 17px;
+    width: 4px;
+    height: 12px;
+    margin-top: -6px;
+}
 
-    .widget-contacts dt.slide:before {
-        right: 17px;
-        width: 4px;
-        height: 12px;
-        margin-top: -6px;
-    }
+.widget-contacts dt.opened.slider:after,
+.widget-contacts dt.opened.slide:before {
+    background: #fff;
+}
 
-    .widget-contacts dt.opened.slider:after,
-    .widget-contacts dt.opened.slide:before {
-        background: #fff;
-    }
-
-    .widget-contacts dt.opened.slide:before {
-        display: none;
-    }
+.widget-contacts dt.opened.slide:before {
+    display: none;
+}
 
 .widget-contacts dd.slide {
     display: none;
@@ -6621,6 +6621,25 @@ section#banner {
     padding-right: 15px;
 }
 
-.tuner { 
+.tuner {
     box-sizing: initial !important;
+}
+
+
+.recent-posts li {
+    min-height: 0px;
+}
+
+/* 1024 */
+.nb1024 .logo img {
+    max-width: 150px;
+    margin-top: 15px;
+}
+
+.nb1024 .page-title h1 {
+    font-size: 20px;
+}
+
+.nb1024 section.logo {
+    margin-left: -482px;
 }

@@ -38,26 +38,36 @@
     line-height: 24px;
     padding: 21px 2px;
     word-break: break-all !important;
-    word-spacing: 20px;
+    word-spacing: 34px;
+}
+
+.callout .icon img {
+    height: 95px;
+    padding: 9px 0px 0px 15px;
+}
+
+.callout .icon:before {
+    width: 10%;
+    height: 100%;
 }
 
 /* 1024 */
 .nb1024 .pricing-table .head span {
-	font-size: 20px;
+    font-size: 20px;
 }
 
 .nb1024 .callout-content {
-	width: 65%;
+    width: 65%;
 }
 
 .nb1024 .callout-button {
-	width: 35%;
+    width: 35%;
 }
 
 .nb1024 .pic div {
-	padding: 21px 6px;
+    padding: 21px 6px;
 }
 
 .nb1024 .callout {
-	padding: 23px 23px 16px 130px;
+    padding: 23px 23px 16px 130px;
 }

@@ -24,14 +24,14 @@
             <div class="newsletter-form clearfix">
                 <form action="">
                     <div class="vc_row-fluid">
-                        <input type="text" class="input-text vc_span6" placeholder="Your name">
-                        <input type="email" class="input-text vc_span6" placeholder="Your email">
+                        <input id="inquiry-form-name" type="text" class="input-text vc_span6" placeholder="Your name">
+                        <input id="inquiry-form-email" type="email" class="input-text vc_span6" placeholder="Your email">
                     </div>
                     <div class="vc_row-fluid">
-                        <input type="text" class="input-text textarea vc_span12" placeholder="Message">
+                        <input id="inquiry-form-message" type="text" class="input-text textarea vc_span12" placeholder="Message">
                     </div>
                     <div class="vc_row-fluid">
-                        <input type="button" value="Submit" class="button right">
+                        <input type="button" value="Submit" onclick="sendContactUsEmail()" class="button right">
                     </div>
                 </form>
                 <p></p>

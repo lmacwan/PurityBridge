@@ -52,6 +52,16 @@
             }
         </li>
     }
+    var blogNode = uQuery.GetNodesByType("SmartBlogBlog");
+    if (blogNode.Any())
+    {
+        <li>
+            <a href="@blogNode.First().Url">
+                @blogNode.First().GetProperty("smartBlogTitle")
+            </a>
+        </li>
+
+    }
 }
 
 @helper childPages(umbraco.NodeFactory.Nodes pages)
