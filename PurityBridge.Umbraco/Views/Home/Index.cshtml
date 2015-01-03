@@ -44,6 +44,7 @@
 
     var homeDataIndex = homeData.First().GetChildNodesByType("HomeSliderContent").First();
     var rows = homeDataIndex.GetChildNodes();
+    var alt = string.Empty;
     if (rows.Any())
     {
 
@@ -62,13 +63,14 @@
                 <div class="tab">
                     @foreach (var column in rows)
                     {
+                        alt = column.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
                         <div class="box @classVisible">
                             @{
                         classVisible = "";
                             }
                             <h4>@column.GetProperty("heading")</h4>
                             <p>@Html.Raw(column.GetProperty("text").Value.ToString())</p>
-                            <img src="@Umbraco.TypedContent(column.Id).GetCropUrl("photo", "home")" class="img-hide">
+                            <img src="@Umbraco.TypedContent(column.Id).GetCropUrl("photo", "home")" alt="@alt" class="img-hide">
                             @*  <img src="~/Content/pic/medical-slide-1.jpg" class="img-hide">*@
                         </div>
                     }
@@ -102,9 +104,11 @@
             {
                 var url = "/treatments/" + treatmentCategory.UrlName;
                 umbraco.NodeFactory.Node matchedNode = uQuery.GetNodeByUrl(url);
+                alt = treatmentCategory.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
+                    
                 <div class="grid-col grid-col-3">
                     <div class="treatments-wrap">
-                        <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@matchedNode.GetProperty("heading") " />
+                        <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@alt" />
                         <a href="@url" class="treatment-link"> <div class="treatment-heading">@matchedNode.GetProperty("heading") </div></a>
                     </div>
                 </div>

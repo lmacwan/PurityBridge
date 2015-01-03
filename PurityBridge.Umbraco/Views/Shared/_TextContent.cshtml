@@ -13,13 +13,14 @@
                 content = string.Format("<h1></h1><p class='capitalized'>{0}</p>",
                             spannedPhotoItem.GetPropertyValue<string>("text")
                                             .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+                var alt = spannedPhotoItem.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
                 <section class="widget right">
                     <div class="widget-title">
                         @spannedPhotoItem.GetPropertyValue("heading")
                     </div>
                     <div class="wpb_text_column wpb_content_element">
                         <div class="wpb_wrapper">
-                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", crop)" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", crop)" alt="@alt" class="align"/>
                         </div>
                         @Html.Raw(content)
                     </div>
@@ -32,13 +33,14 @@
                 content = string.Format("<h1></h1><p class='capitalized'>{0}</p>",
                             spannedPhotoItem.GetPropertyValue<string>("text")
                                             .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+                var alt = spannedPhotoItem.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
                 <section class="widget left">
                     <div class="widget-title">
                         @spannedPhotoItem.GetPropertyValue("heading")
                     </div>
                     <div class="wpb_text_column wpb_content_element">
                         <div class="wpb_wrapper">
-                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", crop)" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                            <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", crop)" alt="@alt" class="align"/>
                         </div>
                         @Html.Raw(content)
                     </div>

@@ -43,9 +43,12 @@
     if (Model.Content.DocumentTypeAlias.ToLower() == "specificcontent")
     {
     @section ImageSection {
+        @{
+            var alt = CurrentPage.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
+        }
         <section  class="thumbnail-image" style="background-color:@Model.Content.GetPropertyValue("colour")">
             <div class="grid-row">
-                <img src="@CurrentPage.GetCropUrl("thumbnail", "banner")" style="float:right; height:180px; width:360px;">
+                <img src="@CurrentPage.GetCropUrl("thumbnail", "banner")" alt="@alt" style="float:right; height:180px; width:360px;">
             </div>
         </section>
     }

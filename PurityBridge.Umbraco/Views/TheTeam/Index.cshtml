@@ -53,12 +53,13 @@
 @helper renderSpecialistItem(IPublishedContent item, string text)
 {
     var content = string.Format("<h1></h1><p class='capitalized'>{0}</p>", text.Replace('\n' + "", "</p><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+    var alt = item.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
     <div class="widget-title">
         @item.GetPropertyValue("heading")
     </div>
     <div class="wpb_text_column wpb_content_element">
         <div class="wpb_wrapper">
-            <img src="@item.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@item.GetPropertyValue("heading")" class="align" />
+            <img src="@item.GetCropUrl("spannedPhotoItem", "Rectangular")" alt="@alt" class="align" />
         </div>
         @Html.Raw(content)
     </div>

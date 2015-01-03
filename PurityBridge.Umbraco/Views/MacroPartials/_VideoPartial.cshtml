@@ -5,8 +5,9 @@
 @section BeforeContent {
     @{
         var videoUrl = Umbraco.TypedMedia(Model.Content.GetPropertyValue("video")).Url;
+        var alt=  Model.Content.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
     }
     <p>
-        <img src="@videoUrl" alt="@Model.Content.GetPropertyValue("heading")"/>
+        <img src="@videoUrl" alt="@alt"/>
     </p>
 }

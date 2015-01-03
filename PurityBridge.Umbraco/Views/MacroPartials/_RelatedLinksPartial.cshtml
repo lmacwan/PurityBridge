@@ -27,11 +27,12 @@
 
         var heading = element.GetPropertyValue<string>("heading");
         var linkedContent = Umbraco.TypedContent(uQuery.GetNodeByUrl("/data" + element.Url).Id);
+        var alt = element.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
         if (linkedContent != null)
         {
             <li class="item">
                 <div class="pic">
-                    <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@heading">
+                    <img src="@linkedContent.GetCropUrl("thumbnail", "thumb")" width="142" height="142" alt="@alt">
                     <div class="links">
                         <ul>
                             <li><a href="@element.Url" class="fa fa-mail-forward"></a></li>

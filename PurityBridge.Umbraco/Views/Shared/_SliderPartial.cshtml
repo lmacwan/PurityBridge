@@ -50,9 +50,9 @@ else if (Model.UrlName == "clinic")
                     {
                         transiton = " offsetyin:top;offsetxin:0;durationin:" + textDuration + ";offsetyout:bottom;offsetxout: 0;durationout:" + (textDuration / 2) + ";";
                     }
-
+                    var alt = slider.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
                     <div class="ls-slide" data-ls='transition2d:@slideTransition;slidedelay:@slider.GetProperty("delay")000;'>
-                        <img src="@url" alt="" class="ls-bg" />
+                        <img src="@url" alt="@alt" class="ls-bg" />
                         @if (slider.GetProperty<string>("line1") != "")
                         {
                             <div class="intro ls-l" data-ls='@transiton;' style='left: 80%; top: 35%;'>

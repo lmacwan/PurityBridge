@@ -23,7 +23,9 @@
     var bannarTestimonial = treatmentContent.Descendants().FirstOrDefault(d => d.DocumentTypeAlias == "Testimonial" && d.GetPropertyValue<bool>("banner"));
 }
 @section ImageSection {
-
+    @{
+        var alt  = treatmentContent.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
+    }
     <section id="banner" style="background-color: @treatmentContent.GetPropertyValue("colour");">
         <div id="treatment-image" class="grid-row" style="background-color: @treatmentContent.GetPropertyValue("colour");">
             @if (bannarTestimonial != null)
@@ -35,7 +37,7 @@
                     <div class="author">@bannarTestimonial.GetPropertyValue("author")</div>
                 </div>
             }
-            <img src="@treatmentContent.GetCropUrl("thumbnail", "banner")" width="270" height="180" style="background-color: @treatmentContent.GetPropertyValue("colour");" />
+            <img src="@treatmentContent.GetCropUrl("thumbnail", "banner")" alt="@alt" width="270" height="180" style="background-color: @treatmentContent.GetPropertyValue("colour");" />
         </div>
     </section>
 }

@@ -1,4 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var beforeAlt = Model.GetProperty("beforeImageAltValue").Value ?? string.Empty;
+    var afterAlt = Model.GetProperty("afterImageAltValue").Value ?? string.Empty;
+}
 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
     <div class="pic">
         <ul class="ca-image">
@@ -7,12 +11,12 @@
                     BEFORE
                 </div>
                 <div class="image-div">
-                    <img alt="@Model.GetPropertyValue("heading")-before" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("beforeImage")).Url">
+                    <img alt="@beforeAlt" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("beforeImage")).Url">
                 </div>
             </li>
             <li class="after">
                 <div class="image-div">
-                    <img alt="@Model.GetPropertyValue("heading")-after" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("afterImage")).Url">
+                    <img alt="@afterAlt" src="@Umbraco.TypedMedia(Model.GetPropertyValue<int>("afterImage")).Url">
                 </div>
                 <div class="mask">
                     AFTER

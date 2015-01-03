@@ -116,13 +116,14 @@
     var content = string.Format("<h1></h1><p>{0}</p>",
                             string.Concat(spannedPhotoItem.GetPropertyValue<string>("text").Take(447)) + "..."
                                             .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
+    var alt = spannedPhotoItem.GetPropertyValue("thumbnailImageAltValue") ?? string.Empty;
     <section class="widget right">
         <div class="widget-title">
             @spannedPhotoItem.GetPropertyValue("heading")
         </div>
         <div class="wpb_text_column wpb_content_element">
             <div class="wpb_wrapper">
-                <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Landscape")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Landscape")" alt="@alt" class="align"/>
             </div>
             <div class="wpb_wrapper leftwarpper">
                 <a class="read-more fancybox" href="#@spannedPhotoItem.Id">Read More <i class="more fa fa-long-arrow-right"></i></a>
@@ -135,7 +136,7 @@
         </div>
         <div class="wpb_text_column wpb_content_element">
             <div class="wpb_wrapper">
-                <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Landscape")" alt="@spannedPhotoItem.GetPropertyValue("heading")" class="align"/>
+                <img src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Landscape")" alt="@alt" class="align"/>
             </div>
             @Html.Raw(spannedPhotoItem.GetPropertyValue<string>("text"))
         </div>

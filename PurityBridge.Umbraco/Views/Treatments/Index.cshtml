@@ -29,9 +29,10 @@
                             var heading = category.GetProperty("heading");
                             matchedNode = treatmentsDataChildren.FirstOrDefault(node => node.UrlName == category.UrlName);
                             url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), category.UrlName);
+                            var alt = matchedNode.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
                             <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                                 <div class="pic">
-                                    <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@heading" />
+                                    <img src="@Umbraco.TypedContent(matchedNode.Id).GetCropUrl("thumbnail", "thumb")" alt="@alt" />
                                     <div class="links">
                                         <ul>
                                             <li><a href="@url" class="fa fa-mail-forward"></a></li>
@@ -39,8 +40,8 @@
                                     </div>
                                 </div>
                                 <h3>@heading</h3>
-                            <p></p>
-                        </div>
+                                <p></p>
+                            </div>
                         }
                     </div>
                 </section>

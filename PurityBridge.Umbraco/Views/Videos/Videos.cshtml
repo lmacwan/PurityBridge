@@ -49,9 +49,10 @@
 
 @helper RenderVideos(IPublishedContent child, string url)
 {
+    var alt = child.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
     <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
         <div class="pic">
-            <img src="@child.GetCropUrl("thumbnail", "thumb")" alt="@child.GetPropertyValue("heading")" />
+            <img src="@child.GetCropUrl("thumbnail", "thumb")" alt="@alt" />
             <div class="links">
                 <ul>
                     <li>

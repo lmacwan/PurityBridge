@@ -7,6 +7,7 @@
 </style>
 @{
     var masterConfigurations = uQuery.GetNodesByType("MasterConfigurations").First();
+    var alt = masterConfigurations.GetProperty<string>("qualityCareLogoImageAltValue") ?? string.Empty;
 }
 
 <!-- page footer -->
@@ -18,7 +19,7 @@
                 <ul>
                     <li>
                         <a target="_blank" href="http://www.cqc.org.uk/" class="footer-logo">
-                            <img width="158" height="50" alt="" src="@Umbraco.TypedMedia(masterConfigurations.GetProperty<int>("qualityCareLogo")).Url">
+                            <img width="158" height="50" alt="@alt" src="@Umbraco.TypedMedia(masterConfigurations.GetProperty<int>("qualityCareLogo")).Url">
                         </a>
                     </li>
                     <li>

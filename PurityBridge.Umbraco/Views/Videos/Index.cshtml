@@ -3,7 +3,6 @@
     Layout = "/Views/Shared/_Layout.cshtml";
     var videosData = uQuery.GetNodesByType("VideoData");
 }
-
 <section class="widget photo-tour photo-tour-3" id="photo-tour">
     @if (videosData.Any())
     {
@@ -11,9 +10,10 @@
             @foreach (umbraco.NodeFactory.Node videoCategory in videosData.First().ChildrenAsList.WhereNotNull())
             {
                 var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), videoCategory.UrlName);
+                var alt = videoCategory.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
                 <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                     <div class="pic">
-                        <img src="@Umbraco.TypedContent(videoCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@videoCategory.GetProperty("heading")" />
+                        <img src="@Umbraco.TypedContent(videoCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@alt" />
                         <div class="links">
                             <ul>
                                 <li><a href="@url" class="fa fa-mail-forward"></a></li>

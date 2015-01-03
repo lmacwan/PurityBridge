@@ -26,9 +26,10 @@ else
                         var treatmentPage = uQuery.GetNodeByUrl(parent.Url.Replace("/data/", "/"));
                         var heading = (string)treatmentPage.GetProperty("heading").Value;
                         var url = string.Format("{0}{1}{2}", Request.RawUrl, (Request.RawUrl.EndsWith("/") ? string.Empty : "/"), treatmentPage.UrlName);
+                        var alt  =treatmentPage.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
                         <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
                             <div class="pic">
-                                <img src="@parent.GetCropUrl("thumbnail", "thumb")" alt="@heading" />
+                                <img src="@parent.GetCropUrl("thumbnail", "thumb")" alt="@alt" />
                                 <div class="links">
                                     <ul>
                                         <li><a href="@url" class="fa fa-mail-forward"></a></li>
