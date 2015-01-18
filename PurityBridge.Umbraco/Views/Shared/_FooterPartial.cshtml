@@ -53,10 +53,10 @@
             <div class="vc_span2">
 
                 <section class="widget-alt location">
-                    <address style="text-align: right">
+                    <address>
                         @Html.Raw(masterConfigurations.GetProperty("address").ToString())
                     </address>
-                    <nav style="float: right">
+                    <nav class="social-icons">
                         <a href="@masterConfigurations.GetProperty("twitterPageUrl")" class="fa fa-twitter"></a>
                         <a href="@masterConfigurations.GetProperty("facebookPageUrl")" class="fa fa-facebook"></a>
                     </nav>

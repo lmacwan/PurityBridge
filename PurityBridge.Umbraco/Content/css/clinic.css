@@ -31,3 +31,52 @@ main .grid-row:first-child {
 .cs-style-3 figcaption {
     width: 344px;
 }
+
+.grid.cs-style-3 .grid-col:first-child li {
+    float: right;
+}
+
+.grid.cs-style-3 .grid-col:last-child li {
+    float: left;
+}
+
+/* ---------- */
+/*    768     */
+/* ---------- */
+
+/* highlights */
+
+.nb768 main .grid-row:first-child {
+    margin: -90px auto 60px;
+}
+
+
+/* ---------- */
+/*    320     */
+/* ---------- */
+.nb320 .grid figure {
+    height: 200px;
+    width: 250px;
+}
+
+.nb320 .grid.cs-style-3 .grid-col li {
+    float: initial !important;
+}
+
+.nb320 .grid figure img {
+    max-width: 250px;
+}
+
+.nb320 .cs-style-3 figcaption {
+    width: 248px;
+}
+
+.nb320 .grid {
+    margin-top: 0px !important;
+}
+
+/* ---------- */
+/*    320     */
+/* ---------- */
+
+.nb320 

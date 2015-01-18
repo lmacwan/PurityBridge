@@ -44,6 +44,7 @@ namespace PurityBridge.Live
                     }
                     SmtpServer.Credentials = new System.Net.NetworkCredential(MailConfigurations.UserName, MailConfigurations.Password);
                     SmtpServer.EnableSsl = MailConfigurations.EnableSsl;
+                    SmtpServer.Timeout = 3000;
 
                     SmtpServer.Send(mail);
                     return true;
@@ -96,6 +97,7 @@ namespace PurityBridge.Live
                     Password = document.GetElementsByTagName("password")[0].InnerText;
                     int port;
                     int.TryParse(document.GetElementsByTagName("port")[0].InnerText, out port);
+                    Port = port;
                     FromAddress = document.GetElementsByTagName("fromAddress")[0].InnerText;
                     bool ssl = false;
                     bool.TryParse(document.GetElementsByTagName("enableSsl")[0].InnerText, out ssl);

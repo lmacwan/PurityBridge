@@ -1,8 +1,8 @@
 function onDocumentReady() {
 
     $('body').restive({
-        breakpoints: ['768-p', '1024', '1240', '1280', '1440', '1920', '10000'],
-        classes: ['nb768', 'nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
+        breakpoints: ['320', '768-p', '1024', '1240', '1280', '1440', '1920', '10000'],
+        classes: ['nb320', 'nb768', 'nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
         platform: 'all',
         force_dip: true
     });

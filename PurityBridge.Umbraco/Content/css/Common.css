@@ -79,6 +79,11 @@
     position: fixed;
 }*/
 
+.widget-alt.location address, .social-icons {
+    float: right;
+}
+
+
 .thumbnail-image {
     margin-top: -50px;
     margin-bottom: 50px;
@@ -132,4 +137,11 @@
 
 .nb1024 .location{
 	margin: 0px;
+}
+
+/* ---------- */
+/*    320     */
+/* ---------- */
+.widget-alt.location address, .social-icons {
+    float: initial !important;
 }

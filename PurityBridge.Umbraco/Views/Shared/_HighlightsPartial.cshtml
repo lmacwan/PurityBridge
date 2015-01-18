@@ -7,59 +7,61 @@
 {
     if ((highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "HighlightItem" && child != null)).Any())
     {
-    <div class="grid-row">
-        <!-- benefits -->
-        <ul class="grid cs-style-3">
-            @foreach (umbraco.NodeFactory.Node highlightItem in highlights)
-            {
-                var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
-                            ? "/underconstruction"
-                            : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
-                var alt = highlightItem.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
-                <li class="grid-col grid-col-3">
-                    <figure class="cs-hover">
-                        <img alt="@alt" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
+        <div class="grid-row">
+            <!-- benefits -->
+            <ul class="grid cs-style-3">
+                @foreach (umbraco.NodeFactory.Node highlightItem in highlights)
+                {
+                    var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
+                                ? "/underconstruction"
+                                : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
+                    var alt = highlightItem.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
+                    <li class="grid-col grid-col-3">
+                        <figure class="cs-hover">
+                            <img alt="@alt" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
 
-                        <a href="@url">
-                            <figcaption>
-                                <h3>@highlightItem.GetProperty("heading")</h3>
-                            </figcaption>
-                        </a>
-                    </figure>
-                    <p></p>
-                </li>
-            }
-        </ul>
-    </div>
+                            <a href="@url">
+                                <figcaption>
+                                    <h3>@highlightItem.GetProperty("heading")</h3>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <p></p>
+                    </li>
+                }
+            </ul>
+        </div>
     }
 }
 else if (Model.NodeTypeAlias == "ClinicData")
 {
     if ((highlights = Model.ChildrenAsList.Where(child => child.NodeTypeAlias == "HighlightItem" && child != null)).Any())
     {
-    <div class="grid-row">
-        <!-- benefits -->
-        <ul class="grid cs-style-3">
-            @foreach (umbraco.NodeFactory.Node highlightItem in highlights)
-            {
-                var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
-                            ? "/underconstruction"
-                            : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
-                var alt = highlightItem.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
-                <li class="grid-col grid-col-6">
-                    <figure class="cs-hover">
-                        <img alt="@alt" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
+        <div class="grid-row">
+            <!-- benefits -->
+            <ul class="grid cs-style-3">
+                @foreach (umbraco.NodeFactory.Node highlightItem in highlights)
+                {
+                    var url = string.IsNullOrEmpty(highlightItem.GetProperty<string>("relatedTo"))
+                                ? "/underconstruction"
+                                : Umbraco.TypedContent(highlightItem.GetProperty<int>("relatedTo")).Url;
+                    var alt = highlightItem.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
+                    <div class=" grid-col grid-col-6">
+                        <li>
+                            <figure class="cs-hover">
+                                <img alt="@alt" src="@Umbraco.TypedContent(highlightItem.Id).GetCropUrl("thumbnail", "thumb")">
 
-                        <a href="@url">
-                            <figcaption>
-                                <h3>@highlightItem.GetProperty("heading")</h3>
-                            </figcaption>
-                        </a>
-                    </figure>
-                    <p></p>
-                </li>
-            }
-        </ul>
-    </div>
+                                <a href="@url">
+                                    <figcaption>
+                                        <h3>@highlightItem.GetProperty("heading")</h3>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <p></p>
+                        </li>
+                    </div>
+                }
+            </ul>
+        </div>
     }
 }
