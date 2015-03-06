@@ -104,6 +104,23 @@
     min-height: 280px;
 }
 
-.nb1280 .align{
+.nb1280 .align {
     width: 200px;
+}
+
+/* ---------- */
+/*    320     */
+/* ---------- */
+.nb320 .spannedItems .vc_span6:first-child {
+    border-right: none !important;
+}
+
+.nb320 .align {
+    float: initial !important;
+    margin-left: 0px !important;
+    height: 300px;
+}
+
+.nb320 .wpb_wrapper img, .wpb_text_column {
+    min-height: initial !important;
 }
