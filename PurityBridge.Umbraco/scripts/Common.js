@@ -1,8 +1,8 @@
 function onDocumentReady() {
 
     $('body').restive({
-        breakpoints: ['736', '736-p', '736-l', '980',  '980-p', '980-l', '1024', '1240', '1280', '1440', '1920', '10000'],
-        classes: ['nb320', 'nb320', 'nb320', 'nb768',  'nb768', 'nb768', 'nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
+        breakpoints: ['567', '626', '736', '980', '1024', '1240', '1280', '1440', '1920', '10000'],
+        classes: ['nb567', 'nb626', 'nb320', 'nb768', 'nb1024', 'nb1240', 'nb1280', 'nb1440', 'nb1920', 'nb'],
         platform: 'all',
         force_dip: true
     });
@@ -62,6 +62,21 @@ function onDocumentReady() {
     });
 
     $("#umbracoPreviewBadge").remove();
+}
+
+function OnWindowResized() {
+    /* Home Slider */
+    var homeSliderTabs = $('.comments .box');
+    homeSliderTabs.removeClass('home-slider').removeClass('large').removeClass('xlarge').removeClass('xxlarge');
+    if ($(window).width() > 507) {
+        homeSliderTabs.addClass('home-slider large');
+    } else if ($(window).width() > 369) {
+        homeSliderTabs.addClass('home-slider xlarge');
+    } else if ($(window).width() > 319) {
+        homeSliderTabs.addClass('home-slider xxlarge');
+    } else {
+        homeSliderTabs.addClass('home-slider');
+    }
 }
 
 function handlePadding() {

@@ -224,69 +224,48 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 
 .treatments {
     background: none repeat scroll 0 0 #ffffff;
-    padding: 40px 0px 50px 0px;
+    padding: 40px 25px 50px 25px;
     text-align: center;
 }
 
-.treatments-wrap {
-    position: relative;
-    height: 198px;
-    overflow: hidden;
-    border: solid #00aba5;
-    border-width: 3px 1px 0px 1px;
-}
 
-.treatments-wrap, .treatment-image {
-    border-radius: 30% 30% 0% 0%;
-}
-
-.treatment-image {
-    height: 100%;
-    width: 100%;
-}
-
-.treatment-heading {
-    position: absolute;
-    height: 50px;
-    background-color: rgba(255,255,255,0.6);
-    color: rgba(0,0,0, 0.6);
-    border-top: solid 1px rgba(0,0,0,0.6);
-    width: 100%;
-    top: 100%;
-    margin-top: -50px;
-    vertical-align: middle;
-    /* padding-top: 15px; */
-    font-size: 18px;
-    line-height: 50px;
-    font-weight: bold;
-}
-
-.treatments .grid-col {
-    margin-left: 30px;
-}
-
-    .treatments .grid-col:first-child {
-        margin-left: 0px !important;
+    .treatments .grid {
+        margin-top: 10px;
     }
 
-.treatments .treatment-text p {
-    clear: both;
-    font-size: 18px;
-    line-height: 40px;
-    margin: 0 auto;
-    max-width: 870px;
-    padding-top: 20px;
-}
+        .treatments .grid figure {
+            border-left: 1px solid #00aba5;
+            border-radius: 30% 30% 0 0;
+            border-right: 1px solid #00aba5;
+            border-top: 3px solid #00aba5;
+        }
 
-    .treatments .treatment-text p:first-child {
-        margin-top: 40px;
+            .treatments .grid figure img {
+                border-radius: 30% 30% 0 0;
+            }
+
+        .treatments .grid li p {
+            border-bottom: 1px solid #00aba5;
+        }
+
+    .treatments .treatment-text p {
+        clear: both;
+        font-size: 18px;
+        line-height: 40px;
+        margin: 0 auto;
+        max-width: 870px;
+        padding-top: 20px;
     }
 
-.treatments .treatment-link {
-    text-decoration: none;
-    background: none;
-    cursor: pointer;
-}
+        .treatments .treatment-text p:first-child {
+            margin-top: 40px;
+        }
+
+    .treatments .treatment-link {
+        text-decoration: none;
+        background: none;
+        cursor: pointer;
+    }
 
 /* 1440 */
 .nb1440 .comments .box {
@@ -329,19 +308,6 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
     width: 666px;
 }
 
-.nb1024 .treatments .grid-col {
-    margin-left: 20px;
-}
-
-.nb1024 .treatments .treatment-text p {
-    font-size: 18px;
-    line-height: 36px;
-    max-width: 870px;
-}
-
-.nb1024 .treatments .treatment-text p:first-child {
-    margin-top: 10px;
-}
 
 /* ---------- */
 /*    768     */
@@ -354,88 +320,182 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 }
 
 .nb768 .grid figure {
-   border-left: none;
-   border-right: none;
-   border-top: 4px solid #00aba5;
+    border-left: none;
+    border-right: none;
+    border-top: 4px solid #00aba5;
 }
 
-.nb768 .grid figure img {
-   border-right: solid 2px #00aba5;
-   border-left: solid 2px #00aba5;
-}
+    .nb768 .grid figure img {
+        border-right: solid 2px #00aba5;
+        border-left: solid 2px #00aba5;
+    }
 
 .nb768 .cs-style-3 figcaption {
-   bottom: 0;
-   height: 40px;
-   opacity: 0;
-   width: 100%;
+    bottom: 0;
+    width: 100%;
 }
 
 .nb768 .grid figcaption {
-   border-top: 1px solid #00aba5;
-   padding: 4px;
-   position: relative;
+    border-top: 1px solid #00aba5;
+    padding: 4px;
+    position: relative;
 }
 
-.nb768 .grid figcaption h3 {
-   font-size: 14px;
-   line-height: 30px;
-}
+    .nb768 .grid figcaption h3 {
+        font-size: 14px;
+        padding-top: 25%;
+        transform: translateY(-50%);
+    }
 
 .nb768 .grid li p {
-   /* display: none !important; */
-   padding-bottom: 4px;
+    /* display: none !important; */
+    padding-bottom: 4px;
 }
 
 .nb768 .comments > div:not(.grid-row) {
-   display: none;
+    display: none;
 }
 
 .nb768 .comments .tab {
-   width: 100%;
-}
-
-.nb768 .treatments .grid-col {
-   margin-left: 15px;
+    width: 100%;
 }
 
 .nb768 .treatments-wrap {
-   height: 100%;
-   border-width: 3px 0px 0px 0px;
+    height: 100%;
+    border-width: 3px 0px 0px 0px;
 }
 
 .nb768 .treatment-image {
-   border: solid 1px #00aba5;
-   border-width: 0px 1px 0px 1px;
+    border: solid 1px #00aba5;
+    border-width: 0px 1px 0px 1px;
 }
 
 .nb768 .treatment-heading {
-   position: initial;
-   height: 50px;
-   background-color: rgba(255,255,255,0.6);
-   color: rgba(0,0,0, 0.6);
-   border-top: none;
-   width: 100%;
-   top: 100%;
-   margin-top: -5px;
-   vertical-align: middle;
-   padding: 6px;
-   font-size: 14px;
-   line-height: 20px;
-   font-weight: bold;
-   border-bottom: solid 1px rgba(0,0,0,0.6);
+    position: initial;
+    height: 50px;
+    background-color: rgba(255,255,255,0.6);
+    color: rgba(0,0,0, 0.6);
+    border-top: none;
+    width: 100%;
+    top: 100%;
+    margin-top: -5px;
+    vertical-align: middle;
+    padding: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    border-bottom: solid 1px rgba(0,0,0,0.6);
 }
 
 .nb768 .treatments .treatment-text p:first-child {
-   margin-top: 10px;
+    margin-top: 10px;
 }
 
 .nb768 .treatments .treatment-text p {
-   font-size: 16px;
-   line-height: 36px;
-   width: 90%;
+    font-size: 16px;
+    line-height: 36px;
+    width: 90%;
 }
 
 .nb768 .location li {
-   word-break: break-word;
+    word-break: break-word;
 }
+
+/* ---------- */
+/*    626     */
+/* ---------- */
+
+/* highlights */
+.nb320 .mask, .nb567 .mask, .nb626 .mask {
+    display: none;
+}
+
+.nb626 .grid, .nb567 .grid, .nb320 .grid {
+    margin-top: -9px;
+}
+
+    .nb626 .grid li {
+        width: 240px;
+    }
+
+        .nb626 .grid li:nth-child(n+3), .nb320 .grid li:nth-child(n+3) {
+            margin-top: 18px;
+        }
+
+    .nb626 .grid figcaption, .nb567 .grid figcaption {
+        padding-top: 0px;
+    }
+
+        .nb626 .grid figcaption h3, .nb567 .grid figcaption h3 {
+            padding-top: 50px;
+            transform: translateY(-50%);
+        }
+
+    /* ---------- */
+    /*    567     */
+    /* ---------- */
+
+    /* highlights */
+    .nb567 .grid figure img, .nb567 .grid li {
+        width: 100%;
+    }
+
+    .nb567 .grid li {
+        margin-top: 18px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+/* Home Slider */
+.nb320 .comments .tab, .nb567 .comments .tab, .nb626 .comments .tab {
+    width: 100%;
+    float: none;
+}
+
+.nb320 .comments .box, .nb567 .comments .box, .nb626 .comments .box {
+    height: initial;
+    padding: 0px 25px 25px 25px;
+}
+
+.home-slider {
+    height: 550px;
+}
+
+    .home-slider.large {
+        height: 250px !important;
+    }
+
+    .home-slider.xlarge {
+        height: 350px !important;
+    }
+
+    .home-slider.xxlarge {
+        height: 450px !important;
+    }
+
+
+/* Newsleter-form */
+.nb567 .wrap {
+    padding: 0px 20px;
+}
+
+.nb567 .newsletter-form {
+    height: initial;
+    max-width: inherit;
+    min-width: inherit;
+    padding-right: 0px;
+    width: 100%;
+}
+
+    .nb567 .newsletter-form .button {
+        width: 100%;
+        border: 2px solid #00aba5;
+        border-radius: 5px;
+        height: 48px;
+        font-size: 16px;
+        padding: 0 21px;
+        position: relative;
+        transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+        line-height: 20px;
+        margin-top: 10px;
+    }

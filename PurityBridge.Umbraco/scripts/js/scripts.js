@@ -181,6 +181,8 @@ $(window).resize(function () {
     }
 
 
+    OnWindowResized();
+
     /**/
     /* doctors */
     /**/

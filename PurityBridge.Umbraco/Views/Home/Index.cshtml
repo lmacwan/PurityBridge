@@ -100,19 +100,32 @@
             </div>
         </div>
         <div class="grid-row">
-            @foreach (var treatmentCategory in uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentsCategoryData"))
-            {
-                var url = "/treatments/" + treatmentCategory.UrlName;
-                umbraco.NodeFactory.Node matchedNode = uQuery.GetNodeByUrl(url);
-                alt = treatmentCategory.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
-                    
-                <div class="grid-col grid-col-3">
-                    <div class="treatments-wrap">
-                        <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@alt" />
-                        <a href="@url" class="treatment-link"> <div class="treatment-heading">@matchedNode.GetProperty("heading") </div></a>
-                    </div>
-                </div>
-            }
+
+            <ul class="grid cs-style-3">
+                @foreach (var treatmentCategory in uQuery.GetNodesByType("TreatmentsData").First().GetDescendantNodesByType("TreatmentsCategoryData"))
+                {
+                    var url = "/treatments/" + treatmentCategory.UrlName; umbraco.NodeFactory.Node matchedNode = uQuery.GetNodeByUrl(url); alt = treatmentCategory.GetProperty<string>("thumbnailImageAltValue") ?? string.Empty;
+                    <li class="grid-col grid-col-3">
+                        <figure class="cs-hover">
+                            <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@alt" />
+
+                            <a href="@url">
+                                <figcaption>
+                                    <h3>@matchedNode.GetProperty("heading")</h3>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <p></p>
+                    </li>
+
+                    @*<div class="grid-col grid-col-3">
+                            <div class="treatments-wrap">
+                                <img class="treatment-image" src="@Umbraco.TypedContent(treatmentCategory.Id).GetCropUrl("thumbnail", "thumb")" alt="@alt" />
+                                <a href="@url" class="treatment-link"> <div class="treatment-heading">@matchedNode.GetProperty("heading") </div></a>
+                            </div>
+                        </div>*@
+                }
+            </ul>
         </div>
         @if (treatmentRows.Any())
         {
