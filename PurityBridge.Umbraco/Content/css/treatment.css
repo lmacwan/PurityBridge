@@ -86,4 +86,12 @@
     margin-right: 10px;
 }
 
-/*  */
+/* 1023 */
+.nb1023 #page-content {
+    width: 100% !important;
+}
+
+.nb1023 .sidebar.active.opened {
+  padding-left: 40px;
+  padding-right: 40px;
+}

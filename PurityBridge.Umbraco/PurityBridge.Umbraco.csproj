@@ -655,8 +655,6 @@
     <Content Include="Content\css\color-pink.css" />
     <Content Include="Content\css\color-purple.css" />
     <Content Include="Content\css\Common.css" />
-    <Content Include="Content\css\Common_old.css" />
-    <Content Include="Content\css\Common1.css" />
     <Content Include="Content\css\composer.css" />
     <Content Include="Content\css\demo\csshover3.htc" />
     <Content Include="Content\css\demo\img\01.jpg" />

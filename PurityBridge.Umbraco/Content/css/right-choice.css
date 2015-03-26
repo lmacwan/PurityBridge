@@ -13,8 +13,21 @@
     height: 350px;
 }
 
-/* 1024 */
-.nb1024 .align {
+/* 1024
+    1023
+*/
+.nb1023 .align, .nb1024 .align {
     width: 200px;
     height: 280px;
+}
+
+/* 1023 */
+.nb1023 .align {
+ float: initial !important; 
+ margin-left: 0px !important; 
+}
+
+/* 767 */
+.nb767 .spannedItems .vc_span6:first-child {
+    border-right :none !important;
 }

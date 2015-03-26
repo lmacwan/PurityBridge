@@ -24,7 +24,7 @@
 }
 @section ImageSection {
     @{
-        var alt  = treatmentContent.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
+        var alt = treatmentContent.GetPropertyValue<string>("thumbnailImageAltValue") ?? string.Empty;
     }
     <section id="banner" style="background-color: @treatmentContent.GetPropertyValue("colour");">
         <div id="treatment-image" class="grid-row" style="background-color: @treatmentContent.GetPropertyValue("colour");">
@@ -54,7 +54,10 @@
             int photo = treatmentNode.GetDescendantNodesByType("photo").Count();
             int video = treatmentNode.GetDescendantNodesByType("TreatmentVideos").Count();
             @section RightSideBar {
-                <div class="grid-col grid-col-3">
+                <div class="grid-col grid-col-3 sidebar" data-sidebar="1023">
+                    <span class="more">
+                        <i class="fa fa-times"></i>
+                    </span>
                     @if (photo > 0 || video > 0)
                     {
                         <section id="relatedTreatmentLinksSection" class="widget doctors-carousel doctors">
@@ -93,6 +96,9 @@
 }
 <div id="page-content" class="grid-col grid-col-@cols beautify">
     <div class="vc_row-fluid">
+        <span class="more">
+            <i class="fa fa-bars"></i>
+        </span>
         @Html.Partial("_ChildrenPartial", details.First().Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible()))
     </div>
 </div>
