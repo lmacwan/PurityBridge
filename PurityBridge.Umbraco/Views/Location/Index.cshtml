@@ -13,6 +13,11 @@
 <div class="newsletter">
     <div class="grid-row">
         <div class="grid-col grid-col-9">
+
+            <span class="more sidebar-trigger">
+                <i class="fa fa-bars"></i>
+            </span>
+
             <!-- map -->
             <section class="map">
                 <div class="widget-title">@pageData.GetPropertyValue("mapHeading")</div>
@@ -41,7 +46,10 @@
             var masterConfigurations = Umbraco.TypedContent(uQuery.GetNodesByType("MasterConfigurations").First().Id);
             var addrress = masterConfigurations.GetPropertyValue("address").ToString();
         }
-        <div class="grid-col grid-col-3 contact-details-sidebar">
+        <div class="grid-col grid-col-3 contact-details-sidebar sidebar" data-sidebar="1230">
+            <span class="more">
+                <i class="fa fa-times"></i>
+            </span>
             <section class="widget">
                 <div class="widget-title">@pageData.GetPropertyValue("contactDetailsHeading")</div>
                 <div>

@@ -436,7 +436,6 @@ $(function () {
         return false;
     });
 
-
     /**/
     /* map */
     /**/
@@ -626,6 +625,8 @@ $(function () {
         $('html, body').animate({ scrollTop: 0 });
         return false;
     });
+
+    OnWindowLoaded();
 });
 
 

@@ -117,6 +117,10 @@
     margin-right: 0px !important;
 }
 
+/* COMMON */
+.no-border {
+    border: none !important;
+}
 
 /* SIDEBAR */
 .more {

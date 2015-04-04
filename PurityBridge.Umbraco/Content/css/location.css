@@ -137,7 +137,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 }
 
 .contact-details-sidebar .widget + .widget {
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .openining-hours {
@@ -150,4 +150,25 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
     line-height: inherit;
     margin: initial;
     max-width: initial;
+}
+
+
+/* SIDEBAR */
+.sidebar.active.opened {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #fafafa;
+}
+
+/* 1230 */
+.nb1230 .newsletter {
+    padding: 30px 30px;
+}
+
+.nb1230 main .grid-col.grid-col-9 {
+    width: 100% !important;
+}
+
+.nb1230 main .grid-col.grid-col-3.sidebar {
+    width: 260px !important;
 }

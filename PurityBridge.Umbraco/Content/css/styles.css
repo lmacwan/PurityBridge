@@ -2715,8 +2715,15 @@ iframe {
     }
 
     .doctors .item {
-        width: 252px;
         padding: 0 9px;
+    }
+
+    .doctors div:not(.sidebar.active) .item {
+        width: 252px;
+    }
+
+    .doctors div.sidebar.active .item {
+        width: 200px;
     }
 
     [id$="doctors-carousel"] .item {
