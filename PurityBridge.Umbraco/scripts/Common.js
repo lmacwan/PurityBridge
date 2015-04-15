@@ -393,5 +393,12 @@ $(window).load(function () {
         i.first().hide();
         $('#postPageBody .wpb_wrapper img').attr('src', i.first().attr('src'));
     }
+
+    if ($(window).width() <= 615) {
+        $('footer .vc_span5').addClass('full-width');
+    }
+    else {
+        $('footer .vc_span5').removeClass('full-width');
+    }
 });
 
