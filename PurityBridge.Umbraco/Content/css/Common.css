@@ -102,7 +102,7 @@
 
 .quick-search {
     background: none repeat scroll 0 0 #4dc4c0;
-    color: #fff;
+    color: #ffffff;
     font-size: 22px;
     line-height: 37px;
     text-align: right;
@@ -120,6 +120,14 @@
 /* COMMON */
 .no-border {
     border: none !important;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.more:hover {
+    color: #00aba5;
 }
 
 /* SIDEBAR */

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Newsletters";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    var newsLetterSummary = ViewBag.Data == null ? new List<PurityBridge.Live.NewsletterSummary>() : (List<PurityBridge.Live.NewsletterSummary>)ViewBag.Data;
+    
+}
+
+@foreach (var summaryItem in newsLetterSummary.ToList().GroupBy(s => s.Year).Select(grp => new { Year = grp.Key, NewsLetterList = grp.ToList()}))
+{
+    
+}

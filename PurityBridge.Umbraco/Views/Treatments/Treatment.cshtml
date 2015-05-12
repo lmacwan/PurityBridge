@@ -55,9 +55,9 @@
             int video = treatmentNode.GetDescendantNodesByType("TreatmentVideos").Count();
             @section RightSideBar {
                 <div class="grid-col grid-col-3 sidebar" data-sidebar="1023">
-                    <span class="more">
+                    <a class="more" href="javascript:void(0)">
                         <i class="fa fa-times"></i>
-                    </span>
+                    </a>
                     @if (photo > 0 || video > 0)
                     {
                         <section id="relatedTreatmentLinksSection" class="widget doctors-carousel doctors">
@@ -96,9 +96,9 @@
 }
 <div id="page-content" class="grid-col grid-col-@cols beautify">
     <div class="vc_row-fluid">
-        <span class="more">
+        <a class="more" href="javascript:void(0)">
             <i class="fa fa-bars"></i>
-        </span>
+        </a>
         @Html.Partial("_ChildrenPartial", details.First().Children().FirstOrDefault(c => c.DocumentTypeAlias.Equals("content", StringComparison.CurrentCultureIgnoreCase) && c.IsVisible()))
     </div>
 </div>

@@ -26,6 +26,9 @@ function onDocumentReady() {
             platform: 'all',
             force_dip: true
         });
+        $("span.more").first().on("tap", function () {
+            $(this).click();
+        });
     }
     else if (pageId == "2000") {
         $('body').restive({
@@ -41,6 +44,9 @@ function onDocumentReady() {
             classes: ['nb1230','nb'],
             platform: 'all',
             force_dip: true
+        });
+        $("span.more").first().on("tap", function () {
+            $(this).click();
         });
     }
     else {
@@ -78,8 +84,7 @@ function onDocumentReady() {
         $(e).addClass("widget");
         $(e).find("h3").addClass("widget-title");
     });
-
-
+    
     // Set Cols Width
     if ($('#page-content .vc_row-fluid').height() > $('#page-content .vc_row-fluid').children().first().height()) {
         var width = 0;
@@ -141,6 +146,8 @@ function OnWindowResized() {
     } else {
         homeSliderTabs.addClass('home-slider');
     }
+
+    SetFooter();
 }
 
 function handlePadding() {
@@ -364,6 +371,29 @@ function BindGridCallBack() {
     }
 }
 
+function SetFooter() {
+    if ($(window).width() > 800) {
+        $('footer .vc_span2').removeClass('full-width');
+        $('footer .vc_span3').removeClass('full-width');
+        $('footer .vc_span5').removeClass('full-width');
+    }
+    else if ($(window).width() > 615) {
+        $('footer .vc_span2').removeClass('full-width');
+        $('footer .vc_span3').addClass('full-width');
+        $('footer .vc_span5').removeClass('full-width');
+    }
+    else if ($(window).width() > 400) {
+        $('footer .vc_span3').addClass('full-width');
+        $('footer .vc_span5').addClass('full-width');
+        $('footer .vc_span2').removeClass('full-width');
+    }
+    else {
+        $('footer .vc_span3').addClass('full-width');
+        $('footer .vc_span5').addClass('full-width');
+        $('footer .vc_span2').addClass('full-width');
+    }
+}
+
 jQuery.cachedScript = function (url, options) {
     // Allow user to set any option except for dataType, cache, and url
     options = $.extend(options || {}, {
@@ -386,6 +416,8 @@ $(window).load(function () {
         handlePadding();
     }
 
+    $('#mobile-main-nav > ul').find('i').each(function (i, e) { $(e).click(e, function (evt) { $(e).parentsUntil('li').parent().find('ul').toggle(); evt.preventDefault(); }) });
+
     var i = $('#postPageBody img:not(.align)');
     if (i.length == 0) {
         $('#postPageBody .wpb_wrapper').hide();
@@ -394,11 +426,5 @@ $(window).load(function () {
         $('#postPageBody .wpb_wrapper img').attr('src', i.first().attr('src'));
     }
 
-    if ($(window).width() <= 615) {
-        $('footer .vc_span5').addClass('full-width');
-    }
-    else {
-        $('footer .vc_span5').removeClass('full-width');
-    }
+    SetFooter();
 });
-

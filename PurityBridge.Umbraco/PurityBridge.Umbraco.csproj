@@ -3611,6 +3611,9 @@
     <Content Include="Views\Shared\_TextContent.cshtml" />
     <Content Include="Views\MacroPartials\_TextContentAjaxPartial.cshtml" />
     <Content Include="Views\PriceList\Index.cshtml" />
+    <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Views\Shared\SimpleLayout.cshtml" />
+    <Content Include="Views\Newsletters\Newsletter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
@@ -3706,6 +3709,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\NewsLetters\2015\May\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="BusinessLogic\" />
   </ItemGroup>

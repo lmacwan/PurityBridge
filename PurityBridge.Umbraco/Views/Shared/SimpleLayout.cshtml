@@ -1,0 +1,37 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+    var metaTitle = Model == null ? "" : Model.Content.GetPropertyValue("pageTitle");
+    var metaDescription = Model == null ? "" : Model.Content.GetPropertyValue("description");
+    var metaKeywords = Model == null ? "" : Model.Content.GetPropertyValue("keywords") == null ? "" : Model.Content.GetPropertyValue("keywords").ToString().Trim().Replace('\n' + "", ",");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        @metaTitle
+    </title>
+    <!-- metas -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="@metaDescription" />
+    <meta name="keywords" content="@metaKeywords" />
+    <meta name="author" content='Purity Bridge' />
+    <meta name="pageId" id="pageId" content="@Model.Content.Id" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>SimpleLayout</title>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="newsletter-content">
+        @RenderBody()
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+    <script src="/Scripts/js/jquery.min.js"></script>
+    <script src="/Scripts/restive.min.js"></script>
+    <script src="/Scripts/js/jquery-ui.min.js"></script>
+</body>
+</html>
