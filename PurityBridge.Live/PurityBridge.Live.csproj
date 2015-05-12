@@ -409,6 +409,7 @@
     <Compile Include="Models\PageTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\MailUtility.cs" />
+    <Compile Include="Utilities\MonthAttribute.cs" />
     <Compile Include="Utilities\NewsletterUtility.cs" />
   </ItemGroup>
   <ItemGroup>

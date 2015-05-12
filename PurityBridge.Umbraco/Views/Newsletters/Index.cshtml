@@ -1,11 +1,68 @@
-﻿@{
+﻿@using PurityBridge.Live
+@{
     ViewBag.Title = "Newsletters";
     Layout = "~/Views/Shared/Layout.cshtml";
-    var newsLetterSummary = ViewBag.Data == null ? new List<PurityBridge.Live.NewsletterSummary>() : (List<PurityBridge.Live.NewsletterSummary>)ViewBag.Data;
-    
+    var newsLetterSummary = ViewBag.Data == null ? new List<NewsletterSummary>() : (List<NewsletterSummary>)ViewBag.Data;
+    var newsLettersPerRow = 3;
 }
-
-@foreach (var summaryItem in newsLetterSummary.ToList().GroupBy(s => s.Year).Select(grp => new { Year = grp.Key, NewsLetterList = grp.ToList()}))
+@if (newsLetterSummary.Any())
 {
-    
+
+    IEnumerable<NewsletterSummary> newsLettersForCurrentRow = null;
+    var newsLetterSummaryByYear = newsLetterSummary.ToList().GroupBy(s => s.Year).Select(grp => new { Year = grp.Key, NewsLetterList = grp.ToList() });
+    var currentYear = newsLetterSummary.First().Year;
+    <div class="grid-row-sep" id="servicesSeparator"></div>
+    <div class="grid-row details">
+        <!-- services -->
+        <section class="services services-wide wpb_content_element" id="services">
+            <div class="widget-title"></div>
+            <div class="owl-carousel owl-theme" id="services-carousel">
+            </div>
+            <div class="owl-controls clickable">
+                <div class="owl-buttons">
+                    <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                    <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+                </div>
+            </div>
+        </section>
+        <section id="services-carousel-data">
+            @foreach (var summaryItem in newsLetterSummaryByYear)
+            {
+                <div data-year="@summaryItem.Year">
+                    <div class="treatment-category">
+                        @for (int skipCount = 0; skipCount >= summaryItem.NewsLetterList.Count; skipCount += newsLettersPerRow)
+                        {
+                            newsLettersForCurrentRow = summaryItem.NewsLetterList.Skip(skipCount).Take(newsLettersPerRow);
+                            foreach (var newsletter in newsLettersForCurrentRow)
+                            {
+                                <div class="item">
+                                    @renderListItems(newsletter)
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </section>
+        <!--/ services -->
+    </div>
+
+    <div class="grid-row-sep details"></div>
+    <style>
+        .owl-carousel .item {
+            width: initial !important;
+        }
+
+        .services li {
+            width: initial !important;
+        }
+    </style>
+}
+@helper renderListItems(NewsletterSummary newsletter)
+{
+    var newsLetterUrl = string.Concat("/newsletters/", newsletter.Year, "/", newsletter.MonthIndex);
+    <a class="pic"><div>@newsletter.MonthDisplayName</div></a>
+    <h2><a href="@newsLetterUrl">@newsletter.Title</a></h2>
+    <p>@newsletter.Title</p>
+    <a class="more fa fa-long-arrow-right" href="@newsLetterUrl"></a>
 }

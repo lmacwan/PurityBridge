@@ -15,16 +15,27 @@ namespace PurityBridge.Live
 
         public NewsletterSummary(NewsletterSummary summary)
         {
-            Year = summary.Year;
-            Month = summary.Month;
-            Title = summary.Title;
+            if (summary != null)
+            {
+                Year = summary.Year;
+                Title = string.IsNullOrEmpty(summary.Title) ? summary.MonthName + " " + summary.Year.ToString() : summary.Title;
+                MonthIndex = summary.MonthIndex;
+                MonthName = summary.MonthName;
+                MonthDisplayName = summary.MonthDisplayName;
+            }
         }
 
         public int Year { get; set; }
 
-        public Month Month { get; set; }
-
         public string Title { get; set; }
+
+        public string MonthDisplayName { get; set; }
+
+        public int MonthIndex { get; set; }
+
+        public string MonthName { get; set; }
+
+        public bool IsArchived { get; set; }
     }
 
     public class NewsletterModel : NewsletterSummary
@@ -48,5 +59,6 @@ namespace PurityBridge.Live
         public DateTime CreationDate { get; set; }
 
         public string Content { get; set; }
+
     }
 }

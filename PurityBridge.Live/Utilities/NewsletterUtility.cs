@@ -116,6 +116,10 @@ namespace PurityBridge.Live.Utilities
             {
                 model = CreateNewsLetterModel(rootPath, month, year);
             }
+            if (year > 0)
+            {
+                model.IsArchived = DateTime.Now.Year > year + 2;
+            }
             return model;
         }
 
@@ -152,6 +156,11 @@ namespace PurityBridge.Live.Utilities
         {
             NewsletterModel model = null;
             var path = GetNewsLetterPath(rootPath, year, month);
+
+            var type = typeof(Month);
+            var meminfo = type.GetMember(month.ToString());
+            var monthAttrs = meminfo[0].GetCustomAttributes(typeof(MonthAttribute), false);
+
             if (File.Exists(path))
             {
                 try
@@ -162,11 +171,12 @@ namespace PurityBridge.Live.Utilities
                     {
                         model = new NewsletterModel()
                         {
-
                             Content = content,
                             CreationDate = DateTime.Now,
-                            Month = month,
-                            Year = year
+                            Year = year,
+                            MonthDisplayName = ((MonthAttribute)monthAttrs[0]).GetShortName(),
+                            MonthIndex = ((MonthAttribute)monthAttrs[0]).GetIndex(),
+                            MonthName = ((MonthAttribute)monthAttrs[0]).GetName()
                         };
                         if (!_newsLetterDic.ContainsKey(path))
                         {

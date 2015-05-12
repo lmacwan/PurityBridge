@@ -42,10 +42,39 @@ namespace PurityBridge.Live
             ViewBag.BreadCrumbs = breadcrumbs;
 
             var newsLetters = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetters(newsLetterPath);
+            newsLetters = newsLetters.Where(l => l.IsArchived == false).ToList();
+
             var _summary = newsLetters.ConvertAll<NewsletterSummary>(l => l as NewsletterSummary);
 
             ViewBag.Data = _summary;
             return base.Index(model);
+        }
+
+        public ActionResult Archive(RenderModel model, string archived)
+        {
+            var breadcrumbs = new List<BreadCrumbElement>();
+            var crumbs = archived.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
+            breadcrumbs.Add(new BreadCrumbElement()
+            {
+                Name = (string)model.Content.GetProperty("heading").Value,
+                Value = "/" + model.Content.UrlName
+            });
+
+            breadcrumbs.Add(new BreadCrumbElement()
+            {
+                Name = (string)model.Content.Children.FirstOrDefault(c => c.UrlName == crumbs[0]).GetProperty("heading").Value,
+                Value = "/" + model.Content.UrlName + "/" + crumbs[0]
+            });
+
+            ViewBag.BreadCrumbs = breadcrumbs;
+
+            var newsLetters = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetters(newsLetterPath);
+            newsLetters = newsLetters.Where(l => l.IsArchived).ToList();
+
+            var _summary = newsLetters.ConvertAll<NewsletterSummary>(l => l as NewsletterSummary);
+
+            ViewBag.Data = _summary;
+            return View(model);
         }
 
         public ActionResult Newsletter(RenderModel model)
