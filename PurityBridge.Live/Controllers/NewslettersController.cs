@@ -23,7 +23,7 @@ namespace PurityBridge.Live
             {
                 Directory.CreateDirectory(newsLetterPath);
             }
-            newsLetterLogsPath = Path.Combine(newsLetterPath, "Logs");
+            newsLetterLogsPath = Path.Combine(appDataPath, "Logs");
             if (!Directory.Exists(newsLetterLogsPath))
             {
                 Directory.CreateDirectory(newsLetterLogsPath);
@@ -41,10 +41,28 @@ namespace PurityBridge.Live
 
             ViewBag.BreadCrumbs = breadcrumbs;
 
-            var newsLetters = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetters(newsLetterPath);
-            newsLetters = newsLetters.Where(l => l.IsArchived == false).ToList();
+            var newslettersNode = umbraco.uQuery.GetNodeByUrl("/newsletters/");
+            List<NewsletterSummary> _summary = new List<NewsletterSummary>();
 
-            var _summary = newsLetters.ConvertAll<NewsletterSummary>(l => l as NewsletterSummary);
+            if (newslettersNode != null)
+            {
+                List<string> years = new List<string>();
+                newslettersNode.ChildrenAsList.ForEach(c => {
+                    years.Add(c.Name);
+                    c.ChildrenAsList.ForEach(cc => years.Add(cc.Name));
+                });
+
+                var newsLetters = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetters(newsLetterPath);
+                newsLetters = newsLetters.Where(l => years.Contains(l.Year.ToString()) && years.Contains(l.MonthName, StringComparer.CurrentCultureIgnoreCase) && l.IsArchived == false).ToList();
+
+                Umbraco.Core.Models.IPublishedProperty imageProperty = null;
+                _summary = newsLetters.ConvertAll<NewsletterSummary>(l =>
+                {
+                    imageProperty = Umbraco.TypedContent(umbraco.uQuery.GetNodeIdByUrl("/newsletters/2015/april/")).GetProperty("newsletterImage");
+                    l.ImageUrl = imageProperty.HasValue ? umbraco.uQuery.GetMedia(imageProperty.Value.ToString()).getProperty("umbracoFile").Value.ToString() : "/favicon.ico";
+                    return l as NewsletterSummary;
+                });
+            }
 
             ViewBag.Data = _summary;
             return base.Index(model);
@@ -80,21 +98,22 @@ namespace PurityBridge.Live
         public ActionResult Newsletter(RenderModel model)
         {
             var breadcrumbs = new List<BreadCrumbElement>();
-            var args = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
+            var args = Request.RawUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            args.Reverse();
             int year;
-            int month;
             NewsletterModel newsLetterModel = null;
-            if (int.TryParse(args.Length >= 1 ? args[0] : "-1", out year) && int.TryParse(args.Length >= 2 ? args[1] : "-1", out  month))
+            if (int.TryParse(args.ElementAt(1), out year))
             {
-                if (year > 0 && month > 0)
+                if (year > 0)
                 {
-                    newsLetterModel = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetterModel(newsLetterPath, month, year);
+                    newsLetterModel = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetterModel(newsLetterPath, args.ElementAt(0) , year);
                 }
             }
             if (model == null)
             {
                 new HttpStatusCodeResult(404);
             }
+            ViewBag.Data = newsLetterModel;
             return View(model);
         }
     }

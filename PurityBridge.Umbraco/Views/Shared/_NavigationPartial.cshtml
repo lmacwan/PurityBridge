@@ -81,7 +81,7 @@
     <ul>
         @foreach (umbraco.NodeFactory.Node page in pages)
         {
-            url = page.GetProperty<bool>("isPageUnderConstruction") ? "/under-construction" : page.Url;
+            @*url = page.GetProperty<bool>("isPageUnderConstruction") ? "/under-construction" : page.Url;
             if (page.GetProperty<bool>("showInHeader"))
             {
                 hasChildren = page.GetChildNodes().Where(c => c.GetProperty<bool>("showInHeader")).Count() > 0;
@@ -98,7 +98,7 @@
                         @childPages(page.Children)
                     }
                 </li>
-            }
+            }*@
         }
     </ul>
 }

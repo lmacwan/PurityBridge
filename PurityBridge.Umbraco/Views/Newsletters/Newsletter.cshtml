@@ -1,6 +1,24 @@
-﻿@{
-    ViewBag.Title = "Newsletter";
-    Layout = "~/Views/Shared/SimpleLayout.cshtml";
+﻿@using PurityBridge.Live
+
+<style>
+    body {
+        background-color: rgba(128, 128, 128, 0.4);
+    }
+
+    table {
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        background-color: #fff;
+    }
+
+    table table {
+        box-shadow: none;
+        background-color: initial;
+    }
+</style>
+
+@{
+    var newsletter = (NewsletterModel)ViewBag.Data;
+    ViewBag.Title = newsletter == null ? "" : string.Concat(newsletter.MonthName, " ", newsletter.Year.ToString(), " Newsletter");
 }
 
-<h2>Newsletter</h2>
+@Html.Raw(newsletter == null ? "" : newsletter.Content)

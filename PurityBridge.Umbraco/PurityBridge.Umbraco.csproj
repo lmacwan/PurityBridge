@@ -315,6 +315,7 @@
     <Content Include="App_Code\SmartBlogService.cs">
       <SubType>Component</SubType>
     </Content>
+    <Compile Include="Events\RegisterEvents.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -673,6 +674,7 @@
     <Content Include="Content\css\layerslider.css" />
     <Content Include="Content\css\location.css" />
     <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\newsletter.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\pricelist.css" />
     <Content Include="Content\css\right-choice.css" />

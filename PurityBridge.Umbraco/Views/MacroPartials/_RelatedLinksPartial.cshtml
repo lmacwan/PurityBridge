@@ -1,13 +1,15 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var relatedLinks = Model.Children(c => c != null && c.DocumentTypeAlias == "Link" && c.IsVisible() && c.HasValue("relatedPage"));
+}
 
-<!-- help -->
-<section id="relatedLinksSection" class="widget doctors-carousel doctors">
-    @if (Model.Children(c => c.DocumentTypeAlias == "Link" && c.IsVisible()).Count() > 0)
-    {
+@if (relatedLinks != null && relatedLinks.Any())
+{
+    <section id="relatedLinksSection" class="widget doctors-carousel doctors">
         <div class="widget-title">Similar Treatments</div>
 
         <div id="help-carousel" class="owl-carousel">
-            @foreach (IPublishedContent child in Model.Children(c => c.DocumentTypeAlias == "Link"))
+            @foreach (IPublishedContent child in relatedLinks)
             {
                 <div>
                     <ul>
@@ -16,8 +18,8 @@
                 </div>
             }
         </div>
-    }
-</section>
+    </section>
+}
 <!--/ help -->
 @helper RenderChildren(IPublishedContent child)
 {

@@ -36,6 +36,8 @@ namespace PurityBridge.Live
         public string MonthName { get; set; }
 
         public bool IsArchived { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 
     public class NewsletterModel : NewsletterSummary

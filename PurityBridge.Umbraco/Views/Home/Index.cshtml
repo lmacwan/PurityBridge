@@ -129,8 +129,29 @@
         </div>
         @if (treatmentRows.Any())
         {
+            var video = treatmentRows.FirstOrDefault(c => c.NodeTypeAlias == "youtubevideo");
             <div class="grid-row">
                 <div class="treatment-text">
+                    @if(video != null)
+                        {
+                            var videoAltValue = video.GetProperty("thumbnailImageAltValue").Value ?? string.Empty;
+                        <div>
+                                <div class="item item2 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);">
+                                    <div class="pic">
+                                        <img src="@video.GetCropUrl("thumbnail", "thumb")" alt="@alt" />
+                                        <div class="links">
+                                            <ul>
+                                                <li>
+                                                    <a class='fa fa-video-camera fancybox' data-fancybox-type='iframe' href='@url'></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3>@child.GetPropertyValue("heading")</h3>
+                                    @Html.Raw(child.GetProperty("text").Value.ToString())
+                                </div>
+</div>
+                        }
                     @{
             var htmlText = treatmentRows.First().GetProperty("text").Value;
             htmlText = string.Format("{0}", htmlText.ToString().Replace('\n' + "", "</p><p>"));

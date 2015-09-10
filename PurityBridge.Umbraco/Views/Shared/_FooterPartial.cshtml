@@ -4,6 +4,12 @@
         padding-top: 0px;
         border-top: none;
     }
+
+    .recent-posts li img {
+        float : left;
+        margin-right: 10px;
+        border: solid 2px;
+    }
 </style>
 @{
     var masterConfigurations = uQuery.GetNodesByType("MasterConfigurations").First();
@@ -34,11 +40,13 @@
                         @foreach (umbraco.NodeFactory.Node post in uQuery.GetNodesByType("SmartBlogPost").ToList().OrderByDescending(c => c.GetProperty<DateTime>("smartBlogDate")).Take(3))
                         {
                             var date = post.GetProperty<DateTime>("smartBlogDate").ToString("dd MMM yyyy");
-                            <li>
-                                <p><a href="@post.Url">@post.GetProperty("smartBlogTitle").Value</a><br>@date</p>
-                            </li>
-                        }
-                    </ul>
+                            var blogImageUrl = Umbraco.Media(post.GetProperty<int>("featuredImage")).Url;
+                                <li>
+                                    <img src="@blogImageUrl" style="background-color: @(post.GetProperty("colour").Value);" alt="@post.GetProperty("smartBlogTitle").Value" height="50" width="50"/>
+                                    <p><a href="@post.Url">@post.GetProperty("smartBlogTitle").Value</a><br>@date</p>
+                                </li>
+                                }
+</ul>
                 </section>
             </div>
             <div class="vc_span2">

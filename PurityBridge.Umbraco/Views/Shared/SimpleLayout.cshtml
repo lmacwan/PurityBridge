@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoTemplatePage
 @{
     Layout = null;
-    var metaTitle = Model == null ? "" : Model.Content.GetPropertyValue("pageTitle");
+    var metaTitle = ViewBag.Title;
     var metaDescription = Model == null ? "" : Model.Content.GetPropertyValue("description");
     var metaKeywords = Model == null ? "" : Model.Content.GetPropertyValue("keywords") == null ? "" : Model.Content.GetPropertyValue("keywords").ToString().Trim().Replace('\n' + "", ",");
 }
@@ -20,7 +20,6 @@
     <meta name="author" content='Purity Bridge' />
     <meta name="pageId" id="pageId" content="@Model.Content.Id" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <title>SimpleLayout</title>
 </head>
 <body>
     <div class="left"></div>
@@ -32,6 +31,5 @@
 
     <script src="/Scripts/js/jquery.min.js"></script>
     <script src="/Scripts/restive.min.js"></script>
-    <script src="/Scripts/js/jquery-ui.min.js"></script>
 </body>
 </html>

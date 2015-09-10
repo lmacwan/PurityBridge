@@ -1208,10 +1208,14 @@ nav p {
         margin-left: -30px;
     }
 
-    .services li {
+    .services:not(.newsletters) li {
         width: 440px;
         margin-right: 30px;
         margin-left: 30px;
+    }
+
+    .services.newsletters li {
+        width: 121px;
     }
 }
 
@@ -1221,10 +1225,14 @@ nav p {
         margin-left: -20px;
     }
 
-    .services li {
+    .services:not(.newsletters) li {
         width: 349px;
         margin-right: 20px;
         margin-left: 20px;
+    }
+
+    .services.newsletters li {
+        width: 96px;
     }
 }
 

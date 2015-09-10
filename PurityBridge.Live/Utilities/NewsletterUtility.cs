@@ -99,6 +99,11 @@ namespace PurityBridge.Live.Utilities
             return GetNewsLetterModel(rootPath, GetMonth(month), year);
         }
 
+        public NewsletterModel GetNewsLetterModel(string rootPath, string    month, int year)
+        {
+            return GetNewsLetterModel(rootPath, GetMonth(month), year);
+        }
+
         public NewsletterModel GetNewsLetterModel(string rootPath, Month month = Month.ALL, int year = 0)
         {
             NewsletterModel model = null;
@@ -114,7 +119,7 @@ namespace PurityBridge.Live.Utilities
             }
             else
             {
-                model = CreateNewsLetterModel(rootPath, month, year);
+                model = CreateNewsLetterModel(path);
             }
             if (year > 0)
             {
@@ -152,14 +157,22 @@ namespace PurityBridge.Live.Utilities
             return content;
         }
 
-        public NewsletterModel CreateNewsLetterModel(string rootPath, Month month, int year)
+        public NewsletterModel CreateNewsLetterModel(string path)
         {
             NewsletterModel model = null;
-            var path = GetNewsLetterPath(rootPath, year, month);
+
+            path = path.IndexOf("Newsletter.txt") >= 0 ? path : Path.Combine(path, "Newsletter.txt");
+
+            var monthDir = Path.GetDirectoryName(path);
+            var yearDir = Path.GetDirectoryName(".." + Path.DirectorySeparatorChar.ToString() + monthDir);
+
+            var month = Path.GetFileNameWithoutExtension(monthDir);
+            var year = Path.GetFileNameWithoutExtension(yearDir);
 
             var type = typeof(Month);
-            var meminfo = type.GetMember(month.ToString());
+            var meminfo = type.GetMember(month.ToUpper());
             var monthAttrs = meminfo[0].GetCustomAttributes(typeof(MonthAttribute), false);
+
 
             if (File.Exists(path))
             {
@@ -173,16 +186,15 @@ namespace PurityBridge.Live.Utilities
                         {
                             Content = content,
                             CreationDate = DateTime.Now,
-                            Year = year,
+                            Year = int.Parse(year),
                             MonthDisplayName = ((MonthAttribute)monthAttrs[0]).GetShortName(),
                             MonthIndex = ((MonthAttribute)monthAttrs[0]).GetIndex(),
-                            MonthName = ((MonthAttribute)monthAttrs[0]).GetName()
+                            MonthName = ((MonthAttribute)monthAttrs[0]).GetName(),
                         };
                         if (!_newsLetterDic.ContainsKey(path))
                         {
-                            _newsLetterDic.Add(path, model);
+                            _newsLetterDic.Add(path, new NewsletterModel(model));
                         }
-                        model = new NewsletterModel(model);
                     }
                 }
                 catch
@@ -195,8 +207,17 @@ namespace PurityBridge.Live.Utilities
 
         private string GetNewsLetterPath(string rootPath, int year, Month month)
         {
-            int monthIndex = GetMonthIndex(month);
-            return Path.Combine(rootPath, year == 0 ? "" : year.ToString(), month == Month.ALL ? "" : Convert.ToInt32(month).ToString(), "Newsletter.txt");
+            var type = typeof(Month);
+            var meminfo = type.GetMember(month.ToString());
+            var monthAttrs = meminfo[0].GetCustomAttributes(typeof(MonthAttribute), false);
+            return Path.Combine(rootPath, year == 0 ? "" : year.ToString(), month == Month.ALL ? "" : ((MonthAttribute)monthAttrs[0]).GetName(), "Newsletter.txt");
+        }
+
+        public string GetNewsLetterImagePath(string rootPath, int year, int month) 
+        {
+            var defaultPath = Path.Combine(rootPath, "newsletter-img.jpg");
+            var newsLetterImagePath = GetNewsLetterPath(rootPath, year, GetMonth(month + 1));
+            return File.Exists(newsLetterImagePath) ? newsLetterImagePath : defaultPath;
         }
 
         private int GetMonthIndex(Month month)
@@ -233,6 +254,41 @@ namespace PurityBridge.Live.Utilities
                     return Month.DECEMBER;
                 case 0:
                 case -1:
+                default:
+                    return Month.ALL;
+            }
+        }
+
+        private Month GetMonth(string month)
+        {
+            month = month.ToLower();
+            switch (month)
+            {
+                case "january":
+                    return Month.JANUARY;
+                case "february":
+                    return Month.FEBRUARY;
+                case "march":
+                    return Month.MARCH;
+                case "april":
+                    return Month.APRIL;
+                case "may":
+                    return Month.MAY;
+                case "june":
+                    return Month.JUNE;
+                case "july":
+                    return Month.JULY;
+                case "august":
+                    return Month.AUGUST;
+                case "september":
+                    return Month.SEPTEMBER;
+                case "october":
+                    return Month.OCTOBER;
+                case "november":
+                    return Month.NOVEMBER;
+                case "december":
+                    return Month.DECEMBER;
+                case "":
                 default:
                     return Month.ALL;
             }
