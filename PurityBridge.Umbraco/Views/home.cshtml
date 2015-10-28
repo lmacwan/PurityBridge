@@ -1,1 +1,232 @@
-﻿
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Layout.cshtml";
+    var eventPages = CurrentPage.Descendants("EventPage");
+    var queryString = Request.QueryString;
+    string qEventType = queryString["qEventType"];
+    int qLoaded = Convert.ToInt32(queryString["qLoaded"]);
+    DateTime qCurrentDate;
+    //DateTime qNextDate;
+    var isValidDate = DateTime.TryParse(queryString["qCurrentDate"], out qCurrentDate);
+    if (!(isValidDate && qCurrentDate != DateTime.MinValue))
+    {
+        qCurrentDate = DateTime.Today;
+    }
+    //isValidDate = DateTime.TryParse(queryString["qNextDate"], out qNextDate);
+    //if (!(isValidDate && qNextDate != DateTime.MinValue))
+    //{
+    //    qNextDate = DateTime.Today;
+    //}
+}
+
+@section styles {
+    <link href="~/css/events.css" rel="stylesheet" />
+}
+
+@section scripts {
+<script type="text/javascript">
+    function execute(eventType) {
+        var t = $("#tmplEventsContent");
+        var d = t.startDate;
+        $("div.event.page-content").html(t.find(".page-content").html());
+        var navTemplate = $("#tmplEventsFooter > nav");
+        if (t.hasNextPage) {
+            $(".event.page-footer > nav.forward").html(navTemplate.find(".forward").html());
+        }
+        @*$.get("@Url.Action("GetEvents", "Events", new { d = "DATE", type="TYPE" })".replace("DATE", d).replace("TYPE", eventType), null, function (data) {
+
+            //if (data.hasPreviousPage) {
+            //    $(".event.page-footer > nav.backward").html(navTemplate.find(".backward").html());
+            //}
+        });*@
+    }
+
+    function changeEventsType(type) {
+        if ($(this).hasClass("active")) {
+            return;
+        }
+        scrollTo(0, 0);
+        var eventType = ""; // Call upcoming events
+        if ($(this).hasClass("archived")) {
+            // Call archived events
+            eventType = "archived"
+        }
+        execute(eventType);
+    }
+
+    function navigateForward() {
+        //scrollTo(0, 0);
+        var t = $("#tmplEventsContent");
+        execute();
+    }
+
+    function navigateBackward() {
+        scrollTo(0, 0);
+        var t = $("#tmplEventsContent");
+        t.endDate = t.startDate;
+        execute();
+    }
+
+    function nextPage() {
+        scrollTo(0, 0);
+    }
+
+    function previousPage() {
+        scrollTo(0, 0);
+    }
+
+    //changeEventsType();
+
+    //$(document).ready(function () {
+    //    execute();
+    //});
+
+    execute();
+
+</script>
+}
+
+<script type="text/template" id="tmplEventsFooter">
+    <span class="nav backward"><a href="javascript:void(0);" onclick="navigateBackward()"><i class="fa fa-backward"></i> Previous</a></span>
+    <span class="nav forward"><a href="javascript:void(0);" onclick="navigateForward()"><i class="fa fa-forward"></i> Next</a></span>
+</script>
+
+<script type="text/template" id="tmplEventsContent">
+    @{
+        int previousMonth = -1;
+        var lstEvents = eventPages.Where("Visible").Where("eventDate > @0", qCurrentDate).OrderBy("eventDate").AsEnumerable();
+        int eventsPerPage = 6;
+    }
+    <div>
+        <div>
+            <span id="eventType">@(qEventType)</span>
+            <span id="startDate">@(qCurrentDate == DateTime.MinValue ? lstEvents.First().GetPropertyValue("eventDate") : qCurrentDate.ToString())</span>
+            <span id="loaded">@(qLoaded)</span>
+            <span id="hasNextPage">@(lstEvents.Count() > (qLoaded + 1) * eventsPerPage)</span>
+        </div>
+        <div class="page-content">
+            @foreach (dynamic eventPage in lstEvents.Take(eventsPerPage))
+            {
+                var eDate = eventPage.GetPropertyValue("eventDate");
+                if (previousMonth < eDate.Month)
+                {
+                    <span class="event-month-seperator">
+                        <span> @eDate.ToString("MMMM yyyy")</span>
+                    </span>
+                }
+                previousMonth = eDate.Month;
+
+                @RenderEvent(eventPage)
+            }
+        </div>
+    </div>
+</script>
+
+
+<div class="event page-title">
+    <ul>
+        <li class="active">
+            Upcoming Events
+        </li>
+        <li>
+            Archived Events
+        </li>
+    </ul>
+</div>
+<div class="event page-content">
+
+</div>
+<div class="event page-footer">
+    <span class="nav backward">&nbsp;</span>
+    <span class="nav forward">&nbsp;</span>
+</div>
+
+
+@helper RenderEvent(dynamic eventPage)
+{
+
+    var eventId = eventPage.Id;
+    var eventName = eventPage.Name;
+    var eventUrl = eventPage.Url;
+    var eventCost = eventPage.GetPropertyValue("eventCost");
+
+    var eventStartDate = eventPage.GetPropertyValue("eventDate");
+    var eventStartTime = eventStartDate.ToString("hh:mm tt");
+    var eventEndDate = eventPage.GetPropertyValue("eventEndDate");
+    var eventEndTime = eventEndDate.ToString("hh:mm tt");
+
+    var eventDate = eventStartDate.ToString("MMMM d, yyyy");
+
+    var eventImageId = Umbraco.Media("eventImage");
+    var hasImage = eventImageId != null;
+    var eventImageUrl = eventImageId.UmbracoFile;
+
+    var eventSummary = eventPage.GetPropertyValue("eventSummary");
+
+    var googleMapLink = eventPage.GetPropertyValue("eventGmapLink");
+
+    var addrStreet = eventPage.GetPropertyValue("addrStreet");
+    var addrLocality = eventPage.GetPropertyValue("addrLocality");
+    var addrRegion = eventPage.GetPropertyValue("addrRegion");
+    var addrCountry = eventPage.GetPropertyValue("addrCountry");
+    var addrRegionAbbr = eventPage.GetPropertyValue("addrRegionAbbr");
+
+    <h2 class="event-title">
+        <a class="url" href="@eventUrl" title="@eventName" rel="bookmark">
+            @eventName
+
+            @if (eventCost > 0)
+            {
+                <span>&nbsp; - &nbsp; &#163;@eventCost</span>
+            }
+        </a>
+    </h2>
+    if (hasImage)
+    {
+
+        <div class="event-image">
+            <a href="@eventUrl">
+                <img src='@eventImageId.UmbracoFile' alt="@eventName">
+            </a>
+        </div>
+
+    }
+
+
+    <div class="event-summary">
+        <p> @eventSummary </p>
+    </div>
+
+    <div class="event-footer">
+
+        <div class="event-schedule">
+            <span class="start-time">@eventStartDate &#64; @eventStartTime</span>
+            -
+            <span class="end-time">@eventEndTime</span>
+        </div>
+
+        <div class="event-venue">
+            @*<span class="author"></span>*@
+            <address class="event-address">
+                <span class="adr">
+                    <span class="street-address">@addrStreet</span>
+                    <br>
+                    <span class="locality">@addrLocality</span>
+                    <span class="delimiter">,</span>
+                    <abbr class="region" title="@addrRegion">@addrRegionAbbr</abbr>
+                    <span class="country-name">@addrCountry</span>
+                </span>
+            </address>
+
+            @if (googleMapLink != null && googleMapLink != "")
+            {
+                <a class="event-gmap" href="@googleMapLink" title="Click to view a Google Map" target="_blank">
+                    + Google Map
+                </a>
+            }
+        </div>
+
+        <a href="@eventUrl" class="more fa fa-long-arrow-right" rel="bookmark"></a>
+    </div>
+
+}
