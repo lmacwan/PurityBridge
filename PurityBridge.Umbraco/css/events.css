@@ -1,9 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Stylesheet>
-  <Name>events</Name>
-  <FileName>
-  </FileName>
-  <Content><![CDATA[.event.page-header {
+.event.page-header {
     /* margin-top: 20px; */
     width: 35%;
     margin: 20px auto;
@@ -164,5 +159,4 @@
         .event-footer .event-venue address {
             display: inline;
         }
-]]></Content>
-</Stylesheet>
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

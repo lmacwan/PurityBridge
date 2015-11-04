@@ -1,8 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Template>
-  <Name>Layout</Name>
-  <Alias>Layout</Alias>
-  <Design><![CDATA[﻿@inherits UmbracoTemplatePage
+﻿@inherits UmbracoTemplatePage
 @{
     Layout = null;
     var metaTitle = @Umbraco.Field("pageName");
@@ -44,7 +40,6 @@
 <body>
     <div class="page">
         @{ Html.RenderPartial("_HeaderPartial"); }
-
         @{ Html.RenderPartial("_SearchPartial"); }
         @{ Html.RenderPartial("_PageTitlePartial"); }
         @Html.Partial("_SliderPartial", uQuery.GetCurrentNode())
@@ -84,7 +79,6 @@
     <script src="/Scripts/js/layerslider.kreaturamedia.jquery.js"></script>
     <script src="/Scripts/modernizr-2.6.2.js"></script>
     <script src="/Scripts/modernizr.custom.js"></script>
-
     <!-- Superscrollorama -->
     <script src="/Scripts/js/jquery.superscrollorama.js"></script>
     <script src="/Scripts/js/TweenMax.min.js"></script>
@@ -103,12 +97,11 @@
     <script src="/Scripts/Common.js"></script>
     @*<script src="~/scripts/classie.js"></script>
         <script src="~/scripts/AnimatedHeader.js"></script>*@
-
     <!-- Page Scripts -->
-    @{ 
+    @{
         <text>
             @RenderSection("eventTemplateScripts", false)
-        </text> 
+        </text>
     }
     @RenderSection("scripts", false)
     <!--/ Page Scripts-->
@@ -134,5 +127,4 @@
         </div>*@
     <!--/ tuner -->
 </body>
-</html>]]></Design>
-</Template>
+</html>

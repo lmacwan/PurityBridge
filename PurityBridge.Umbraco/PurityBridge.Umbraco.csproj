@@ -141,9 +141,11 @@
     </Reference>
     <Reference Include="SmartBlogLibraries">
       <HintPath>C:\Users\admin\Desktop\Documents\Marc\PB\SmartBlogLibraries.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="smartBlogManagement">
       <HintPath>C:\Users\admin\Desktop\Documents\Marc\PB\smartBlogManagement.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.1.4\lib\SQLCE4Umbraco.dll</HintPath>
@@ -324,8 +326,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="App_Data\Logs\UmbracoTraceLog.txt" />
-    <Content Include="App_Data\TEMP\ClientDependency\WIN-GDF53FETF6H-8fdb6d46e44d36457a820a2238bd3eb5-map.xml" />
     <Content Include="Content\audio\californication.html" />
     <Content Include="Content\css\beforeafter.css" />
     <Content Include="Content\css\benefits.css" />
@@ -527,11 +527,11 @@
     <Content Include="Content\tuner\css\styles.css" />
     <Content Include="Content\tuner\js\scripts.js" />
     <Content Include="css\dummy.txt" />
+    <Content Include="css\events.css" />
     <Content Include="default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="masterpages\dummy.txt" />
-    <Content Include="media\14632\tw_2.jpg" />
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\AnimatedHeader.js" />
     <Content Include="scripts\AnimatedHeader.min.js" />
@@ -545,65 +545,9 @@
     <Content Include="macroScripts\YouTubeVideoScript.cshtml" />
     <Content Include="Content\css\demo\img\Thumbs.db" />
     <Content Include="App_Data\access.config" />
-    <Content Include="App_Data\packages\created\createdPackages.config" />
-    <Content Include="App_Data\packages\installed\installedPackages.config" />
-    <Content Include="App_Data\preview\1_6a4ad98d-e828-4625-b0d2-7230d6b45639.config" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments_7h" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments_7i" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_74.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_75.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_76.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_77_3.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_79.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_7a.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_7b.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments_4" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments_ae" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments_af" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_a9_6.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_aa.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_aa_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ab.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ac.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ad.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ad_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ae.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_af.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_af_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ag.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ai.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_ai_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_aj.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_al.cfs" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.WIN-GDF53FETF6H.hash" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.WIN-GDF53FETF6H.list" />
     <Content Include="App_Data\umbraco.config" />
     <None Include="Properties\PublishProfiles\PurityBridge.pubxml" />
+    <None Include="Properties\PublishProfiles\Twaesthetics.com.pubxml" />
     <None Include="Properties\PublishProfiles\VidaHost.pubxml" />
     <None Include="scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="scripts\jquery-1.8.2.js" />
@@ -3292,11 +3236,17 @@
     <Content Include="Views\Newsletters\Index.cshtml" />
     <Content Include="Views\Shared\SimpleLayout.cshtml" />
     <Content Include="Views\Newsletters\Newsletter.cshtml" />
+    <Content Include="Views\Events.cshtml" />
+    <Content Include="Views\MacroPartials\_EventsTemplate.cshtml" />
+    <Content Include="Views\Layout.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurityBridge.Live\PurityBridge.Live.csproj">
       <Project>{38ca711f-2477-4518-b369-6af25634a8a0}</Project>
       <Name>PurityBridge.Live</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -3387,9 +3337,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\cache\" />
     <Folder Include="App_Data\NewsLetters\2015\May\" />
-    <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="BusinessLogic\" />
   </ItemGroup>
   <PropertyGroup>
