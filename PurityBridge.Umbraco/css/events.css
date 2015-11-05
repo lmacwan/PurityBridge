@@ -1,7 +1,11 @@
+main > .grid-row {
+    margin-top: 26px;
+}
+
 .event.page-header {
     /* margin-top: 20px; */
-    width: 35%;
-    margin: 20px auto;
+    width: 65%;
+    margin: auto;
     height: 100%;
 }
 

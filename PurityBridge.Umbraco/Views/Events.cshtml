@@ -69,7 +69,7 @@
         execute();
     </script>
 }
-<div id="page-content vc_span9">
+<div id="page-content" class="grid-col grid-col-9">
     <div class="event page-header">
         <ul>
             <li class="active">
@@ -86,7 +86,8 @@
         <span class="loadmore">&nbsp;</span>
     </div>
 </div>
-<div id="page-sidebar-right vc_span3">
-    Leon
+<div id="page-sidebar-right" class="grid-col grid-col-3">
+    @Html.Partial("_RegisterForEvent")
 </div>
+
 @Html.Partial("_EventsTemplate")

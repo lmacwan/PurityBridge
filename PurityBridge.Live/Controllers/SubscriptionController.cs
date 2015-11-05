@@ -65,5 +65,27 @@ namespace PurityBridge.Live
             }
             return Json(new { success = success, message = msg }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult ReserveForEvent(string fullName, string phone, string email, string eventName)
+        {
+            var success = false;
+            var msg = string.Empty;
+
+            var body = "<html><body>Name : " + fullName + "<br />"
+                        + "Phone : " + phone + "<br />"
+                        + "Email : " + email + "<br />"
+                        + "Event : " + eventName + "<br />" 
+                        + "</body></html>";
+            var cc = new List<string>();
+            cc.Add("lmacwan@hotmail.com");
+            cc.Add("richard6495@yahoo.com");
+            if (MailUtility.SendSingleMail("info@puritybridge.co.uk", cc, "bookAppointment@pacifico.co.uk", "Make an appointment ", body, true))
+            {
+                success = true;
+                msg = "Your request has been submitted successfully.";
+            }
+
+            return Json(new { success = success, message = msg }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

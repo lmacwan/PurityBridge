@@ -71,7 +71,6 @@
         width: 130px;
     }
 
-
     .widget-title {
         margin-bottom: 0px;
         height: 30px;
@@ -82,6 +81,22 @@
         border: 2px #00aba5;
         border-style: solid solid none none;
         padding: 15px 17px 15px 0;
+    }
+
+    .fancybox-skin .photo-content {
+        border-style: solid none none none;
+        padding: 20px 0px;
+    }
+
+    .fancybox-skin p {
+        line-height: 1.8;
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    .fancybox-skin .photo {
+        float:left;
+        margin-right: 15px;
     }
 </style>
 @if (Model.WhereNotNull().Any())
@@ -108,35 +123,33 @@
                                             .Replace('\n' + "", "</p><h1></h1><p>").Replace("<<.>>", "<i class='fa fa-circle'>  </i>"));
     var alt = spannedPhotoItem.GetPropertyValue("thumbnailImageAltValue") ?? string.Empty;
     <section class="widget">
-        <a id="@spannedPhotoItem.Id" class="fancybox">
+        <div>
             <h2 class="widget-title">
                 @spannedPhotoItem.GetPropertyValue("heading")
             </h2>
             <div class="photo-content">
                 <img class="photo align" src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Landscape")" alt="@alt" />
-                <p class="content"></p>
             </div>
-            <script type="text/template">
-                @Html.Raw(spannedPhotoItem.GetPropertyValue<string>("text"))
-            </script>
-        </a>
-        <a class="read-more" data-element-id="@spannedPhotoItem.Id">Read More <i class="more fa fa-long-arrow-right"></i></a>
+        </div>
+        <a class="read-more fancybox" data-element-id="@spannedPhotoItem.Id" href="#@spannedPhotoItem.Id">Read More <i class="more fa fa-long-arrow-right"></i></a>
+        <div id="@spannedPhotoItem.Id" style="display:none; width:890px; height: auto;">
+            <div>
+                <h2 class="widget-title">
+                    @spannedPhotoItem.GetPropertyValue("heading")
+                </h2>
+                <div class="photo-content">
+                    <img class="photo align" src="@spannedPhotoItem.GetCropUrl("spannedPhotoItem", "Landscape")" alt="@alt" />
+                    @Html.Raw(spannedPhotoItem.GetPropertyValue<string>("text"))
+                </div>
+            </div>
+        </div>
     </section>
 }
 
 <script>
     $(document).ready(function () {
         $('.fancybox').fancybox({
-            beforeLoad: function () {
-                //var id = $(this.element).data("element-id");
-                //if (id) {
-                //    var ele = $('#' + id);
-                //    ele.find(".content").html($(this).find("script").html());
-                //}
-                var ele = $(this);
-                ele.find(".content").html($(this).find("script").html());
-            },
-            autoDimensions: true,
+            autoDimensions: true
         });
     });
 </script>
