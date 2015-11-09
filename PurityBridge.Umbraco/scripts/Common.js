@@ -280,35 +280,6 @@ function sendAppointmentEmail() {
     return false;
 }
 
-function sendEventEmail() {
-    var fullName = $('#event-full-name').val();
-    var phoneno = $('#event-phone').val();
-    var email = $('#event-email').val();
-    var eventName = $('#event-name').val();
-    if (fullName != "" && email != "") {
-        $.ajax({
-            url: "/umbraco/surface/subscription/ReserveForEvent/",
-            data: { fullName: fullName, phone: phoneno, email: email, eventName: eventName },
-            success: function (data) {
-                alert(data.message);
-                if (data.success) {
-                    //$('#event-full-name').val("");
-                    //$('#event-phone').val("");
-                    //$('#event-email').val("");
-                    $('#event-name').val("");
-                }
-            },
-            error: function (data) {
-                alert("Your request cannot be served at the moment. Please try again later.");
-            }
-        });
-    }
-    else {
-        alert("Please provide your full name and email address.");
-    }
-    return false;
-}
-
 function sendContactUsEmail() {
     var fullName = $('#inquiry-form-name').val();
     var email = $('#inquiry-form-email').val();

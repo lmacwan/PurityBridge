@@ -1,8 +1,10 @@
-/* 940px */
+﻿/* 940px */
+
 
 .grid {
     list-style: none outside none;
-    margin-top: -30px; /*max-width: 1300px;*/
+    margin-top: -30px;
+    /*max-width: 1300px;*/
     position: relative;
     text-align: center;
     z-index: 10;
@@ -13,15 +15,12 @@
         margin-left: 8px;
         position: relative;
         text-align: left;
+        width: 282px;
     }
 
         .grid li:first-child {
             margin-left: 0;
         }
-
-    .treatments .grid li {
-        width: 226px;
-    }
 
     .grid figure {
         border-left: 4px solid #00aba5;
@@ -43,9 +42,11 @@
     .grid figcaption {
         background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
         border-top: 1px solid #00aba5;
-        color: #000; /* left: 0; */
+        color: #000;
+        /* left: 0; */
         padding-top: 20px;
-        position: absolute; /* top: 0; */
+        position: absolute;
+        /* top: 0; */
     }
 
     .grid li p {
@@ -64,7 +65,8 @@
         line-height: 23px;
         margin: 0;
         padding: 0;
-        text-align: center; /*letter-spacing: 1px;*/
+        text-align: center;
+        /*letter-spacing: 1px;*/
     }
 
     .grid figcaption span:before {
@@ -83,18 +85,30 @@
 .cs-style-3 figure {
     overflow: hidden;
 }
-/*.cs-style-3 figure img {        transition: transform 0.4s ease 0s;    }    .no-touch .cs-style-3 figure:hover img, .cs-style-3 figure.cs-hover img {        transform: translateY(0px);    }*/
+
+/*.cs-style-3 figure img {
+        transition: transform 0.4s ease 0s;
+    }
+
+    .no-touch .cs-style-3 figure:hover img, .cs-style-3 figure.cs-hover img {
+        transform: translateY(0px);
+    }*/
 
 .cs-style-3 figcaption {
     bottom: 0;
-    height: 50px; /* margin-top: -40px; */
-    opacity: 0; /* top: auto; */ /*transform: translateY(50%);    transition: transform 0.4s ease 0s, opacity 0.1s ease 0.3s;*/
+    height: 50px;
+    /* margin-top: -40px; */
+    opacity: 0;
+    /* top: auto; */
+    /*transform: translateY(50%);
+    transition: transform 0.4s ease 0s, opacity 0.1s ease 0.3s;*/
     width: 100%;
-    padding: 5px 10px;
 }
 
 .no-touch .cs-style-3 figure:hover figcaption, .cs-style-3 figure.cs-hover figcaption {
-    opacity: 1; /*transform: translateY(0px);    transition: transform 0.4s ease 0s, opacity 0.1s ease 0s;*/
+    opacity: 1;
+    /*transform: translateY(0px);
+    transition: transform 0.4s ease 0s, opacity 0.1s ease 0s;*/
 }
 
 .cs-style-3 figcaption a {

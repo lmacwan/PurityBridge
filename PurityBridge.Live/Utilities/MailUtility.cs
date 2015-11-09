@@ -51,7 +51,7 @@ namespace PurityBridge.Live
                 #endregion
                 return false;
             }
-            catch
+            catch (Exception ex)
             {
                 return false;
 

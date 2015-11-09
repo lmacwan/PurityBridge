@@ -123,7 +123,7 @@ namespace PurityBridge.Live.Utilities
             }
             if (year > 0)
             {
-                model.IsArchived = DateTime.Now.Year > year + 2;
+                model.IsActive = DateTime.Now.Year > year + 2;
             }
             return model;
         }

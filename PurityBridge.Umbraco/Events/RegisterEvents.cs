@@ -13,6 +13,7 @@ namespace PurityBridge.Umbraco.Events
     public class UmbracoApplicationEventHandler : ApplicationEventHandler
     {
         private int SiteStructureId = 0;
+        private int SiteDataId = 0;
 
         public static readonly ILog Log =
             LogManager.GetLogger(
@@ -41,13 +42,13 @@ namespace PurityBridge.Umbraco.Events
             UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             Log.Info(string.Format("Umbraco is running on {0}.", Environment.MachineName));
-            //ContentService.Copied += ContentService_Copied;
-            //ContentService.Moved += ContentService_Moved;
-            //ContentService.Deleted += ContentService_Deleted;
-            //ContentService.Published += ContentService_Published;
-            //ContentService.UnPublished += ContentService_UnPublished;
-            //ContentService.Saved += ContentService_Saved;
-            //ContentService.Saving += ContentService_Saving;
+            ContentService.Copied += ContentService_Copied;
+            ContentService.Moved += ContentService_Moved;
+            ContentService.Deleted += ContentService_Deleted;
+            ContentService.Published += ContentService_Published;
+            ContentService.UnPublished += ContentService_UnPublished;
+            ContentService.Saved += ContentService_Saved;
+            ContentService.Saving += ContentService_Saving;
             Log.Info(string.Format("Application Events are registered."));
         }
 
@@ -80,6 +81,14 @@ namespace PurityBridge.Umbraco.Events
                     }
                 }
             });
+        }
+
+        private void IntitializeMembers(IContentService sender, )
+        {
+            if (SiteStructure == null)
+            {
+
+            }
         }
 
         void ContentService_Saved(IContentService sender, SaveEventArgs<IContent> e)

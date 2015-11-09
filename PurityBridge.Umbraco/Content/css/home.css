@@ -248,32 +248,18 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
             border-bottom: 1px solid #00aba5;
         }
 
-
-
     .treatments .treatment-text p {
-        /*clear: both;*/
+        clear: both;
         font-size: 18px;
         line-height: 40px;
         margin: 0 auto;
-        /* max-width: 870px; */
-        padding-top: 10px;
+        max-width: 870px;
+        padding-top: 20px;
     }
 
-.treatments .treatment-text {
-	margin-top: 20px;
-}
-
-.treatments .treatment-text p:first-child {
-	padding-top: 0px;
-}
-
-.treatments .treatment-text .welcome-video {
-	display: inline;
-	float: left;
-	width : 600px;
-	max-width: 100%;
-	margin: 30px 20px 10px 0;
-}
+        .treatments .treatment-text p:first-child {
+            margin-top: 40px;
+        }
 
     .treatments .treatment-link {
         text-decoration: none;

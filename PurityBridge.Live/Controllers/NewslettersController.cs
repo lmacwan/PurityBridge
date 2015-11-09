@@ -53,7 +53,7 @@ namespace PurityBridge.Live
                 });
 
                 var newsLetters = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetters(newsLetterPath);
-                newsLetters = newsLetters.Where(l => years.Contains(l.Year.ToString()) && years.Contains(l.MonthName, StringComparer.CurrentCultureIgnoreCase) && l.IsArchived == false).ToList();
+                newsLetters = newsLetters.Where(l => years.Contains(l.Year.ToString()) && years.Contains(l.MonthName, StringComparer.CurrentCultureIgnoreCase) && l.IsActive == false).ToList();
 
                 Umbraco.Core.Models.IPublishedProperty imageProperty = null;
                 _summary = newsLetters.ConvertAll<NewsletterSummary>(l =>
@@ -87,7 +87,7 @@ namespace PurityBridge.Live
             ViewBag.BreadCrumbs = breadcrumbs;
 
             var newsLetters = NewsletterUtility.GetNewsletterUtility(newsLetterLogsPath).GetNewsLetters(newsLetterPath);
-            newsLetters = newsLetters.Where(l => l.IsArchived).ToList();
+            newsLetters = newsLetters.Where(l => l.IsActive).ToList();
 
             var _summary = newsLetters.ConvertAll<NewsletterSummary>(l => l as NewsletterSummary);
 

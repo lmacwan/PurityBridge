@@ -134,6 +134,12 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SmartBlogLibraries">
+      <HintPath>..\PurityBridge.Umbraco\bin\SmartBlogLibraries.dll</HintPath>
+    </Reference>
+    <Reference Include="smartBlogManagement">
+      <HintPath>..\PurityBridge.Umbraco\bin\smartBlogManagement.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.1.4\lib\SQLCE4Umbraco.dll</HintPath>
       <Private>False</Private>
@@ -379,7 +385,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
-    <Compile Include="Controllers\NewsAndEventsController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\NewslettersController.cs" />
     <Compile Include="Controllers\PhotosController.cs">
       <SubType>Code</SubType>
@@ -399,6 +405,7 @@
     </Compile>
     <Compile Include="Models\BreadCrumbElement.cs" />
     <Compile Include="Models\Month.cs" />
+    <Compile Include="Models\EventsModel.cs" />
     <Compile Include="Models\NewsletterModel.cs" />
     <Compile Include="Models\PageTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -408,9 +415,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
