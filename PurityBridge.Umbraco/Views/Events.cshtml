@@ -71,23 +71,34 @@
 }
 <div id="page-content" class="grid-col grid-col-9">
     <div class="event page-header">
-        <ul>
+        @*<ul>
             <li class="active">
                 Upcoming Events
             </li>
             <li>
                 Archived Events
             </li>
-        </ul>
+        </ul>*@
     </div>
     <div class="event page-detail">
     </div>
-    <div class="event page-footer">
+    @*<div class="event page-footer">
         <span class="loadmore">&nbsp;</span>
-    </div>
+    </div>*@
 </div>
 <div id="page-sidebar-right" class="grid-col grid-col-3">
     @Html.Partial("_RegisterForEvent")
 </div>
 
 @Html.Partial("_EventsTemplate")
+
+<script>
+    function registerForEvent() {
+        debugger;
+        var t = $(this).data("data-title");
+        if (t) {
+            $("section.widget-appointment #event-name").val(t);
+        }
+        return false;
+    }
+</script>

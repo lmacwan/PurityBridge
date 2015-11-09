@@ -78,7 +78,7 @@
     var addrRegionAbbr = eventPage.AddrRegionAbbr;
 
     <h2 class="event-title">
-        <a class="url" href="@eventUrl" title="@eventName" rel="bookmark">
+        <a class="url" title="@eventName" rel="bookmark">
             @eventName
 
             @if (eventCost > 0)
@@ -91,7 +91,7 @@
     {
 
         <div class="event-image">
-            <a href="@eventUrl">
+            <a>
                 <img src="@eventImageUrl" alt="@eventName">
             </a>
         </div>
@@ -132,7 +132,7 @@
             }
         </div>
 
-        <a href="@eventUrl" class="read-more fa" rel="bookmark">&nbsp;</a>
+        <a href="javascript:void(0)" class="see-more fa" data-title="@eventName" data-event-id="@eventPage.Id" onclick="registerForEvent()">&nbsp;</a>
     </div>
 
 }

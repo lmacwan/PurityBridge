@@ -35,7 +35,7 @@ main > .grid-row {
     border: solid;
 }
 
-.event .read-more {
+.event .see-more {
     padding: 8px 12px;
     border: solid 2px #00aba5;
     background: #00aba5;
@@ -44,17 +44,17 @@ main > .grid-row {
     float: right;
 }
 
-    .event .read-more:hover {
+    .event .see-more:hover {
         color: #00aba5;
         background: #FFF;
     }
 
-    .event .read-more.fa::before {
+    .event .see-more.fa::before {
         content: "\f064";
     }
 
-    .event .read-more.fa::after {
-        content: "read more";
+    .event .see-more.fa::after {
+        content: "reserve a seat";
         font-size: 13px;
         /* font: inherit; */
         text-transform: uppercase;
@@ -108,13 +108,13 @@ main > .grid-row {
         margin: 20px 16px 10px 0 !important;
         position: relative;
         z-index: 1;
-        width: 296px;
+        /* width: 296px; */
         /* border: solid 2px #cecece; */
         max-width: 95%;
     }
 
         .event.page-detail .event-image img {
-            width: 100%;
+            /* width: 100%; */
             height: 130px;
             min-height: 100% !important;
             border: double 6px #aeaeae;
